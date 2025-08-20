@@ -1,0 +1,2 @@
+/Users/enkhjin/Projects/ticketX/android/app/.cxx/RelWithDebInfo/e4e6h6m5/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/enkhjin/Projects/ticketX/android/app/.cxx/RelWithDebInfo/e4e6h6m5/arm64-v8a/CMakeFiles/rebuild_cache.dir

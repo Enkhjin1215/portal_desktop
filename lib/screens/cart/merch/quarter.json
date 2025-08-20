@@ -1,0 +1,10341 @@
+[
+  {
+    "parent": 6501,
+    "id": 650151,
+    "name": "1-р баг, Цагаан даваа",
+    "name_en": "1 bag, Tsagaan davaa"
+  },
+  {
+    "parent": 6501,
+    "id": 650153,
+    "name": "2-р баг, Арслан цохио",
+    "name_en": "2 bag, Arslan tsohio"
+  },
+  {
+    "parent": 6501,
+    "id": 650155,
+    "name": "3-р баг, Цагдуулт",
+    "name_en": "3 bag, Tsagduult"
+  },
+  {
+    "parent": 6501,
+    "id": 650157,
+    "name": "4-р баг, Бор толгой",
+    "name_en": "4 bag, Bor tolgoi"
+  },
+  {
+    "parent": 6501,
+    "id": 650159,
+    "name": "5-р баг, Наранбулаг",
+    "name_en": "5 bag, Naranbulag"
+  },
+  {
+    "parent": 6501,
+    "id": 650161,
+    "name": "6-р баг, Цагаан дэл",
+    "name_en": "6 bag, Tsagaan del"
+  },
+  {
+    "parent": 6504,
+    "id": 650451,
+    "name": "1-р баг, Улаанчулуу",
+    "name_en": "1 bag, Ulaanchuluu"
+  },
+  {
+    "parent": 6504,
+    "id": 650453,
+    "name": "2-р баг, Хөнөг",
+    "name_en": "2 bag, Khunug"
+  },
+  {
+    "parent": 6504,
+    "id": 650455,
+    "name": "3-р баг, Дэл",
+    "name_en": "3 bag, Del"
+  },
+  {
+    "parent": 6504,
+    "id": 650457,
+    "name": "4-р баг, Баян-Уул",
+    "name_en": "4 bag, Bayn-Uul"
+  },
+  {
+    "parent": 6504,
+    "id": 650459,
+    "name": "5-р баг, Цац",
+    "name_en": "5 bag, Tsats"
+  },
+  {
+    "parent": 6504,
+    "id": 650461,
+    "name": "6-р баг, Дайрбор",
+    "name_en": "6 bag, Dairbor"
+  },
+  {
+    "parent": 6507,
+    "id": 650751,
+    "name": "1-р баг, Тусгалт",
+    "name_en": "1 bag, Tusgalt"
+  },
+  {
+    "parent": 6507,
+    "id": 650753,
+    "name": "2-р баг, Зуунмод",
+    "name_en": "2 bag, Zuunmod"
+  },
+  {
+    "parent": 6507,
+    "id": 650755,
+    "name": "3-р баг, Тамир",
+    "name_en": "3 bag, Tamir"
+  },
+  {
+    "parent": 6507,
+    "id": 650757,
+    "name": "4-р баг, Баянбулаг",
+    "name_en": "4 bag, Baynbulag"
+  },
+  {
+    "parent": 6510,
+    "id": 651051,
+    "name": "1-р баг, Асайт",
+    "name_en": "1 bag, Asait"
+  },
+  {
+    "parent": 6510,
+    "id": 651053,
+    "name": "2-р баг, Хоолт",
+    "name_en": "2 bag, Khoolt"
+  },
+  {
+    "parent": 6510,
+    "id": 651055,
+    "name": "3-р баг, Эрдэнэ-Уул",
+    "name_en": "3 bag, Erdene-Uul"
+  },
+  {
+    "parent": 6510,
+    "id": 651057,
+    "name": "4-р баг, Зуслан",
+    "name_en": "4 bag, Zuslan"
+  },
+  {
+    "parent": 6510,
+    "id": 651059,
+    "name": "5-р баг, Баянцагаан",
+    "name_en": "5 bag, Bayntsagaan"
+  },
+  {
+    "parent": 6513,
+    "id": 651351,
+    "name": "1-р баг, Хөхнуур",
+    "name_en": "1 bag, Khukhnuur"
+  },
+  {
+    "parent": 6513,
+    "id": 651353,
+    "name": "2-р баг, Хан-Өндөр",
+    "name_en": "2 bag, Khan-Undur"
+  },
+  {
+    "parent": 6513,
+    "id": 651355,
+    "name": "3-р баг, Борт",
+    "name_en": "3 bag, Bort"
+  },
+  {
+    "parent": 6513,
+    "id": 651357,
+    "name": "4-р баг, Бугат",
+    "name_en": "4 bag, Bugat"
+  },
+  {
+    "parent": 6513,
+    "id": 651359,
+    "name": "5-р баг, Эрдэнэтолгой",
+    "name_en": "5 bag, Erdenetolgoi"
+  },
+  {
+    "parent": 6513,
+    "id": 651361,
+    "name": "6-р баг, Тайхар",
+    "name_en": "6 bag, Taikhar"
+  },
+  {
+    "parent": 6516,
+    "id": 651651,
+    "name": "1-р баг, Дойт",
+    "name_en": "1 bag, Doit"
+  },
+  {
+    "parent": 6516,
+    "id": 651653,
+    "name": "2-р баг, Тоглох",
+    "name_en": "2 bag, Toglokh"
+  },
+  {
+    "parent": 6516,
+    "id": 651655,
+    "name": "3-р баг, Өгий",
+    "name_en": "3 bag, Ugii"
+  },
+  {
+    "parent": 6516,
+    "id": 651657,
+    "name": "4-р баг, Зэгстэй",
+    "name_en": "4 bag, Zegstei"
+  },
+  {
+    "parent": 6516,
+    "id": 651659,
+    "name": "5-р баг, Орхон",
+    "name_en": "5 bag, Orkhon"
+  },
+  {
+    "parent": 6519,
+    "id": 651951,
+    "name": "1-р баг, Ямаат",
+    "name_en": "1 bag, Ymaat"
+  },
+  {
+    "parent": 6519,
+    "id": 651953,
+    "name": "2-р баг, Бодонт",
+    "name_en": "2 bag, Bodont"
+  },
+  {
+    "parent": 6519,
+    "id": 651955,
+    "name": "3-р баг, Байшир",
+    "name_en": "3 bag, Baishir"
+  },
+  {
+    "parent": 6519,
+    "id": 651957,
+    "name": "4-р баг, Хөшөөт",
+    "name_en": "4 bag, Khushuut"
+  },
+  {
+    "parent": 6522,
+    "id": 652251,
+    "name": "1-р баг, Азарга",
+    "name_en": "1 bag, Azarga"
+  },
+  {
+    "parent": 6522,
+    "id": 652253,
+    "name": "2-р баг, Хануй",
+    "name_en": "2 bag, Khanui"
+  },
+  {
+    "parent": 6522,
+    "id": 652255,
+    "name": "3-р баг, Донгой",
+    "name_en": "3 bag, Dongoi"
+  },
+  {
+    "parent": 6522,
+    "id": 652257,
+    "name": "4-р баг, Бэлхи",
+    "name_en": "4 bag, Belgi"
+  },
+  {
+    "parent": 6522,
+    "id": 652259,
+    "name": "5-р баг, Тээл",
+    "name_en": "5 bag, Teel"
+  },
+  {
+    "parent": 6525,
+    "id": 652551,
+    "name": "1-р баг, Тэрх",
+    "name_en": "1 bag, Terkh"
+  },
+  {
+    "parent": 6525,
+    "id": 652553,
+    "name": "2-р баг, Цагааннуур",
+    "name_en": "2 bag, Tsagaannuur"
+  },
+  {
+    "parent": 6525,
+    "id": 652555,
+    "name": "3-р баг, Хорго",
+    "name_en": "3 bag, Khorgo"
+  },
+  {
+    "parent": 6525,
+    "id": 652557,
+    "name": "4-р баг, Суман",
+    "name_en": "4 bag, Suman"
+  },
+  {
+    "parent": 6525,
+    "id": 652559,
+    "name": "5-р баг, Бөөрөлжүүт",
+    "name_en": "5 bag, Buuruljuut"
+  },
+  {
+    "parent": 6525,
+    "id": 652561,
+    "name": "6-р баг, Мөрөн",
+    "name_en": "6 bag, Murun"
+  },
+  {
+    "parent": 6525,
+    "id": 652563,
+    "name": "7-р баг, Алтайд",
+    "name_en": "7 bag, Altaid"
+  },
+  {
+    "parent": 6528,
+    "id": 652851,
+    "name": "1-р баг, Хөх сүм",
+    "name_en": "1 bag, Khukh sum"
+  },
+  {
+    "parent": 6528,
+    "id": 652853,
+    "name": "2-р баг, Баян-Өндөр",
+    "name_en": "2 bag, Bayn-Undur"
+  },
+  {
+    "parent": 6528,
+    "id": 652855,
+    "name": "3-р баг, Урантолгой",
+    "name_en": "3 bag, Urantolgoi"
+  },
+  {
+    "parent": 6528,
+    "id": 652857,
+    "name": "4-р баг, Өртөнт",
+    "name_en": "4 bag, Urtunt"
+  },
+  {
+    "parent": 6531,
+    "id": 653151,
+    "name": "1-р баг, Хайрхан",
+    "name_en": "1 bag, Khairkhan"
+  },
+  {
+    "parent": 6531,
+    "id": 653153,
+    "name": "2-р баг, Асгат",
+    "name_en": "2 bag, Asgat"
+  },
+  {
+    "parent": 6531,
+    "id": 653155,
+    "name": "3-р баг, Жарантай",
+    "name_en": "3 bag, Jarantai"
+  },
+  {
+    "parent": 6531,
+    "id": 653157,
+    "name": "4-р баг, Могой",
+    "name_en": "4 bag, Mogoi"
+  },
+  {
+    "parent": 6531,
+    "id": 653159,
+    "name": "5-р баг, Өгөөмөр",
+    "name_en": "5 bag, Uguumur"
+  },
+  {
+    "parent": 6534,
+    "id": 653451,
+    "name": "1-р баг, Чандмань",
+    "name_en": "1 bag, Chandmani"
+  },
+  {
+    "parent": 6534,
+    "id": 653453,
+    "name": "2-р баг, Гичгэнэ",
+    "name_en": "2 bag, Gichgene"
+  },
+  {
+    "parent": 6534,
+    "id": 653455,
+    "name": "3-р баг, Арбаясгалан",
+    "name_en": "3 bag, Arbaysgalan"
+  },
+  {
+    "parent": 6534,
+    "id": 653457,
+    "name": "4-р баг, Баян-Улаан",
+    "name_en": "4 bag, Bayn-Ulaan"
+  },
+  {
+    "parent": 6534,
+    "id": 653459,
+    "name": "5-р баг, Тэрх",
+    "name_en": "5 bag, Terkh"
+  },
+  {
+    "parent": 6534,
+    "id": 653461,
+    "name": "6-р баг, Ноён хангай",
+    "name_en": "6 bag, Noyn khangai"
+  },
+  {
+    "parent": 6537,
+    "id": 653751,
+    "name": "1-р баг, Жаргалант",
+    "name_en": "1 bag, Jargalant"
+  },
+  {
+    "parent": 6537,
+    "id": 653753,
+    "name": "2-р баг, Номгон",
+    "name_en": "2 bag, Nomgon"
+  },
+  {
+    "parent": 6537,
+    "id": 653755,
+    "name": "3-р баг, Цайдам",
+    "name_en": "3 bag, Tsaidam"
+  },
+  {
+    "parent": 6537,
+    "id": 653757,
+    "name": "4-р баг, Цагаан хад",
+    "name_en": "4 bag, Tsagaan khad"
+  },
+  {
+    "parent": 6537,
+    "id": 653759,
+    "name": "5-р баг, Баян",
+    "name_en": "5 bag, Bayn"
+  },
+  {
+    "parent": 6540,
+    "id": 654051,
+    "name": "1-р баг, Хотонт",
+    "name_en": "1 bag, Khotont"
+  },
+  {
+    "parent": 6540,
+    "id": 654053,
+    "name": "2-р баг, Хөөвөр",
+    "name_en": "2 bag, Khuuvur"
+  },
+  {
+    "parent": 6540,
+    "id": 654055,
+    "name": "3-р баг, Бургалтай",
+    "name_en": "3 bag, Burgaltai"
+  },
+  {
+    "parent": 6540,
+    "id": 654057,
+    "name": "4-р баг, Улаан чулуу",
+    "name_en": "4 bag, Ulaan chuluu"
+  },
+  {
+    "parent": 6540,
+    "id": 654059,
+    "name": "5-р баг, Орхон",
+    "name_en": "5 bag, Orkhon"
+  },
+  {
+    "parent": 6540,
+    "id": 654061,
+    "name": "6-р баг, Өндөр сант",
+    "name_en": "6 bag, Undur sant"
+  },
+  {
+    "parent": 6543,
+    "id": 654351,
+    "name": "1-р баг, Хан-Уул",
+    "name_en": "1 bag, Khan-Uul"
+  },
+  {
+    "parent": 6543,
+    "id": 654353,
+    "name": "2-р баг, Баянгол",
+    "name_en": "2 bag, Bayngol"
+  },
+  {
+    "parent": 6543,
+    "id": 654355,
+    "name": "3-р баг, Цахир",
+    "name_en": "3 bag, Tsakhir"
+  },
+  {
+    "parent": 6546,
+    "id": 654651,
+    "name": "1-р баг, Орхон",
+    "name_en": "1 bag, Orkhon"
+  },
+  {
+    "parent": 6546,
+    "id": 654653,
+    "name": "2-р баг, Цэцэрлэг",
+    "name_en": "2 bag, Tsetserleg"
+  },
+  {
+    "parent": 6546,
+    "id": 654655,
+    "name": "3-р баг, Цэнхэр",
+    "name_en": "3 bag, Tsenkher"
+  },
+  {
+    "parent": 6546,
+    "id": 654657,
+    "name": "4-р баг, Алтан-Овоо",
+    "name_en": "4 bag, Altan-Uvuu"
+  },
+  {
+    "parent": 6546,
+    "id": 654659,
+    "name": "5-р баг, Буйлан",
+    "name_en": "5 bag, Builan"
+  },
+  {
+    "parent": 6546,
+    "id": 654661,
+    "name": "6-р баг, Тамир",
+    "name_en": "6 bag, Tamir"
+  },
+  {
+    "parent": 6549,
+    "id": 654951,
+    "name": "1-р баг, Чулуут",
+    "name_en": "1 bag, Chuluut"
+  },
+  {
+    "parent": 6549,
+    "id": 654953,
+    "name": "2-р баг, Туулант",
+    "name_en": "2 bag, Tuulant"
+  },
+  {
+    "parent": 6549,
+    "id": 654955,
+    "name": "3-р баг, Хужирт",
+    "name_en": "3 bag, Khujirt"
+  },
+  {
+    "parent": 6549,
+    "id": 654957,
+    "name": "4-р баг, Хонгорж",
+    "name_en": "4 bag, Khongorj"
+  },
+  {
+    "parent": 6549,
+    "id": 654959,
+    "name": "5-р баг, Ихбулаг",
+    "name_en": "5 bag, Ikhbulag"
+  },
+  {
+    "parent": 6552,
+    "id": 655251,
+    "name": "1-р баг, Хүрэм",
+    "name_en": "1 bag, Khurem"
+  },
+  {
+    "parent": 6552,
+    "id": 655253,
+    "name": "2-р баг, Хайрхан",
+    "name_en": "2 bag, Khairkhan"
+  },
+  {
+    "parent": 6552,
+    "id": 655255,
+    "name": "3-р баг, Халуун-Ус",
+    "name_en": "3 bag, Khaluun-Us"
+  },
+  {
+    "parent": 6552,
+    "id": 655257,
+    "name": "4-р баг, Зуунмод",
+    "name_en": "4 bag, Zuunmod"
+  },
+  {
+    "parent": 6552,
+    "id": 655259,
+    "name": "5-р баг, Өлзийт гол",
+    "name_en": "5 bag, Ulziit gol"
+  },
+  {
+    "parent": 6555,
+    "id": 655551,
+    "name": "1-р баг, Алаг-Уул",
+    "name_en": "1 bag, Alag-Uul"
+  },
+  {
+    "parent": 6555,
+    "id": 655553,
+    "name": "2-р баг, Идэр-Улаан",
+    "name_en": "2 bag, Ider-Ulaan"
+  },
+  {
+    "parent": 6555,
+    "id": 655555,
+    "name": "3-р баг, Эрдэнэ-Уул",
+    "name_en": "3 bag, Erdene-Uul"
+  },
+  {
+    "parent": 6555,
+    "id": 655557,
+    "name": "4-р баг, Хан-Өндөр",
+    "name_en": "4 bag, Khan-Undur"
+  },
+  {
+    "parent": 6555,
+    "id": 655559,
+    "name": "5-р баг, Тээл",
+    "name_en": "5 bag, Bugat"
+  },
+  {
+    "parent": 6555,
+    "id": 655561,
+    "name": "6-р баг, Өлзийт",
+    "name_en": "6 bag, Ulziit"
+  },
+  {
+    "parent": 8301,
+    "id": 830151,
+    "name": "1-р баг, Хуст арал",
+    "name_en": "1 bag, Khust aral"
+  },
+  {
+    "parent": 8301,
+    "id": 830153,
+    "name": "2-р баг, Цагаан эрэг",
+    "name_en": "2 bag, Tsagaan ereg"
+  },
+  {
+    "parent": 8301,
+    "id": 830155,
+    "name": "3-р баг, Бөхөн-Уул",
+    "name_en": "3 bag, Bukhun-Uul"
+  },
+  {
+    "parent": 8301,
+    "id": 830157,
+    "name": "4-р баг, Их булан",
+    "name_en": "4 bag, Ikh bulan"
+  },
+  {
+    "parent": 8301,
+    "id": 830159,
+    "name": "5-р баг, Ховд гол",
+    "name_en": "5 bag, Khovd gol"
+  },
+  {
+    "parent": 8301,
+    "id": 830161,
+    "name": "6-р баг, Хөх толгой",
+    "name_en": "6 bag, Khukh tolgoi"
+  },
+  {
+    "parent": 8301,
+    "id": 830163,
+    "name": "7-р баг, Хотгор",
+    "name_en": "7 bag, Khotgor"
+  },
+  {
+    "parent": 8301,
+    "id": 830165,
+    "name": "8-р баг, Ах хус тау",
+    "name_en": "8 bag, Akh khus tau"
+  },
+  {
+    "parent": 8301,
+    "id": 830167,
+    "name": "9-р баг, Хөх хад",
+    "name_en": "9 bag, Khukh khad"
+  },
+  {
+    "parent": 8304,
+    "id": 830451,
+    "name": "1-р баг, Хар нуур",
+    "name_en": "1 bag, Khar nuur"
+  },
+  {
+    "parent": 8304,
+    "id": 830453,
+    "name": "2-р баг, Улаан хад",
+    "name_en": "2 bag, Ulaan khad"
+  },
+  {
+    "parent": 8304,
+    "id": 830455,
+    "name": "3-р баг, Бардам",
+    "name_en": "3 bag, Bardam"
+  },
+  {
+    "parent": 8304,
+    "id": 830457,
+    "name": "4-р баг, Чихэртэй сумын төв",
+    "name_en": "4 bag, Chikhertei sum"
+  },
+  {
+    "parent": 8304,
+    "id": 830459,
+    "name": "5-р баг, Борбургас",
+    "name_en": "5 bag, Borburgas"
+  },
+  {
+    "parent": 8307,
+    "id": 830751,
+    "name": "1-р баг, Хаш",
+    "name_en": "1 bag, Khash"
+  },
+  {
+    "parent": 8307,
+    "id": 830753,
+    "name": "2-р баг, Баянбулаг",
+    "name_en": "2 bag, Baynbulag"
+  },
+  {
+    "parent": 8307,
+    "id": 830755,
+    "name": "3-р баг, Улаанхаргана",
+    "name_en": "3 bag, Ulaankhargana"
+  },
+  {
+    "parent": 8307,
+    "id": 830757,
+    "name": "4-р баг, Цагаан түнгэ, сумын төв",
+    "name_en": "4 bag, Tsagan tunge"
+  },
+  {
+    "parent": 8310,
+    "id": 831051,
+    "name": "1-р баг, Цэцэгт",
+    "name_en": "1 bag, Bugat"
+  },
+  {
+    "parent": 8310,
+    "id": 831053,
+    "name": "2-р баг, Баяннуур",
+    "name_en": "2 bag, Baynnuur"
+  },
+  {
+    "parent": 8310,
+    "id": 831055,
+    "name": "3-р баг, Цагаан арал",
+    "name_en": "3 bag, Tsagaan aral"
+  },
+  {
+    "parent": 8310,
+    "id": 831057,
+    "name": "4-р баг, Шар цэхээ с төв",
+    "name_en": "4 bag, Shar tsekhees"
+  },
+  {
+    "parent": 8310,
+    "id": 831059,
+    "name": "5-р баг, Цул улаан /холимог/",
+    "name_en": "5 bag, Tsul ulaan"
+  },
+  {
+    "parent": 8313,
+    "id": 831351,
+    "name": "1-р баг, Хатуу",
+    "name_en": "1 bag, Khatuu"
+  },
+  {
+    "parent": 8313,
+    "id": 831353,
+    "name": "2-р баг, Улаан толгой",
+    "name_en": "2 bag, Ulaan tolgoi"
+  },
+  {
+    "parent": 8313,
+    "id": 831355,
+    "name": "3-р баг, Бугын гол",
+    "name_en": "3 bag, Bugiin gol"
+  },
+  {
+    "parent": 8313,
+    "id": 831357,
+    "name": "4-р баг, Бугат сумын төв",
+    "name_en": "4 bag, Bugat"
+  },
+  {
+    "parent": 8316,
+    "id": 831651,
+    "name": "1-р баг, Улаагчин",
+    "name_en": "1 bag, Ulaagchin"
+  },
+  {
+    "parent": 8316,
+    "id": 831653,
+    "name": "2-р баг, Сайхан",
+    "name_en": "2 bag, Saikhan"
+  },
+  {
+    "parent": 8316,
+    "id": 831655,
+    "name": "3-р баг, Булган",
+    "name_en": "3 bag, Bulgan"
+  },
+  {
+    "parent": 8316,
+    "id": 831657,
+    "name": "4-р баг, Жаргалант с төв",
+    "name_en": "4 bag, Jargalant"
+  },
+  {
+    "parent": 8316,
+    "id": 831659,
+    "name": "5-р баг, Хужирт",
+    "name_en": "5 bag, Khujirt"
+  },
+  {
+    "parent": 8316,
+    "id": 831661,
+    "name": "6-р баг, Сөнхөл",
+    "name_en": "6 bag, Sunkhul"
+  },
+  {
+    "parent": 8316,
+    "id": 831663,
+    "name": "7-р баг, Улаанхус",
+    "name_en": "7 bag, Ulaankhus"
+  },
+  {
+    "parent": 8319,
+    "id": 831951,
+    "name": "1-р баг, Хөх эрэг",
+    "name_en": "1 bag, Khukh ereg"
+  },
+  {
+    "parent": 8319,
+    "id": 831953,
+    "name": "2-р баг, Хөлцөөт",
+    "name_en": "2 bag, Khultsuut"
+  },
+  {
+    "parent": 8319,
+    "id": 831955,
+    "name": "3-р баг, Өмнөгол",
+    "name_en": "3 bag, Umnugol"
+  },
+  {
+    "parent": 8319,
+    "id": 831957,
+    "name": "4-р баг, Шар тохойт с төв",
+    "name_en": "4 bag, Shar tohoit"
+  },
+  {
+    "parent": 8322,
+    "id": 832251,
+    "name": "1-р баг, Далакөл",
+    "name_en": "1 bag, Dalakul"
+  },
+  {
+    "parent": 8322,
+    "id": 832253,
+    "name": "2-р баг, Саралахаз",
+    "name_en": "2 bag, Saralakhaz"
+  },
+  {
+    "parent": 8322,
+    "id": 832255,
+    "name": "3-р баг, Хар уул",
+    "name_en": "3 bag, Khar uul"
+  },
+  {
+    "parent": 8322,
+    "id": 832257,
+    "name": "4-р баг, Чихэртэй",
+    "name_en": "4 bag, Chikhertei"
+  },
+  {
+    "parent": 8322,
+    "id": 832259,
+    "name": "5-р баг, Рашаант",
+    "name_en": "5 bag, Rashaant"
+  },
+  {
+    "parent": 8322,
+    "id": 832261,
+    "name": "6-р баг, Бугат",
+    "name_en": "6 bag, Bugat"
+  },
+  {
+    "parent": 8322,
+    "id": 832263,
+    "name": "7-р баг, Хөх сэрх",
+    "name_en": "7 bag, Khukh serkh"
+  },
+  {
+    "parent": 8322,
+    "id": 832265,
+    "name": "8-р баг, Бүргэд",
+    "name_en": "8 bag, Burged"
+  },
+  {
+    "parent": 8322,
+    "id": 832267,
+    "name": "9-р баг, Хөх толгой сумын төв",
+    "name_en": "9 bag, Khukh tolgoi"
+  },
+  {
+    "parent": 8322,
+    "id": 832269,
+    "name": "10-р баг, Хүйтэн нуур",
+    "name_en": "10 bag, Khuiten nuur"
+  },
+  {
+    "parent": 8325,
+    "id": 832551,
+    "name": "1-р баг, Бахлаг",
+    "name_en": "1 bag, Barkhag"
+  },
+  {
+    "parent": 8325,
+    "id": 832553,
+    "name": "2-р баг, Чихтэй",
+    "name_en": "2 bag, Chikhtei"
+  },
+  {
+    "parent": 8325,
+    "id": 832555,
+    "name": "3-р баг, Ховд",
+    "name_en": "3 bag, Khovd"
+  },
+  {
+    "parent": 8325,
+    "id": 832557,
+    "name": "4-р баг, Улаанчулуун",
+    "name_en": "4 bag, Ulaanchuluut"
+  },
+  {
+    "parent": 8325,
+    "id": 832559,
+    "name": "5-р баг, Ямаат",
+    "name_en": "5 bag, Ymaat"
+  },
+  {
+    "parent": 8325,
+    "id": 832561,
+    "name": "6-р баг, Хызылхайын сумын төв",
+    "name_en": "6 bag, Khyzylkhayin"
+  },
+  {
+    "parent": 8325,
+    "id": 832563,
+    "name": "7-р баг, Хосхарагай",
+    "name_en": "7 bag, Khoskharagai"
+  },
+  {
+    "parent": 8325,
+    "id": 832565,
+    "name": "8-р баг, Асгат",
+    "name_en": "8 bag, Asgat"
+  },
+  {
+    "parent": 8325,
+    "id": 832567,
+    "name": "9-р баг, Цагааннуур",
+    "name_en": "9 bag, Tsagaannuur"
+  },
+  {
+    "parent": 8328,
+    "id": 832851,
+    "name": "1-р баг, Ямаат",
+    "name_en": "1 bag, Ymaat"
+  },
+  {
+    "parent": 8328,
+    "id": 832853,
+    "name": "2-р баг, Хол агаш",
+    "name_en": "2 bag, Khol agash"
+  },
+  {
+    "parent": 8328,
+    "id": 832855,
+    "name": "3-р баг, Ахкорим",
+    "name_en": "3 bag, Akhkhorim"
+  },
+  {
+    "parent": 8328,
+    "id": 832857,
+    "name": "4-р баг, Хаг",
+    "name_en": "4 bag, Khag"
+  },
+  {
+    "parent": 8328,
+    "id": 832859,
+    "name": "5-р баг, Уужим с төв",
+    "name_en": "5 bag, Uujim"
+  },
+  {
+    "parent": 8328,
+    "id": 832861,
+    "name": "6-р баг, Даян",
+    "name_en": "6 bag, Dayn"
+  },
+  {
+    "parent": 8331,
+    "id": 833151,
+    "name": "1-р баг, Хош",
+    "name_en": "1 bag, Khosh"
+  },
+  {
+    "parent": 8331,
+    "id": 833153,
+    "name": "2-р баг, Толбо нуур",
+    "name_en": "2 bag, Tolbo nuur"
+  },
+  {
+    "parent": 8331,
+    "id": 833155,
+    "name": "3-р баг, Хонгор өлөн",
+    "name_en": "3 bag, Khongor ulun"
+  },
+  {
+    "parent": 8331,
+    "id": 833157,
+    "name": "4-р баг, Дөрөө нуур",
+    "name_en": "4 bag, Duruu nuur"
+  },
+  {
+    "parent": 8331,
+    "id": 833159,
+    "name": "5-р баг, Хөх толгой  с төв",
+    "name_en": "5 bag, Khukh tolgoi"
+  },
+  {
+    "parent": 8331,
+    "id": 833161,
+    "name": "6-р баг, Бураат",
+    "name_en": "6 bag, Buraat"
+  },
+  {
+    "parent": 8334,
+    "id": 833451,
+    "name": "1-р баг, Их ойгор",
+    "name_en": "1 bag, Ikh oigor"
+  },
+  {
+    "parent": 8334,
+    "id": 833453,
+    "name": "2-р баг, Хөх хөтөл",
+    "name_en": "2 bag, Khukh khutul"
+  },
+  {
+    "parent": 8334,
+    "id": 833455,
+    "name": "3-р баг, Хулжаа",
+    "name_en": "3 bag, Khuljaa"
+  },
+  {
+    "parent": 8334,
+    "id": 833457,
+    "name": "4-р баг, Согоог",
+    "name_en": "4 bag, Sogoog"
+  },
+  {
+    "parent": 8334,
+    "id": 833459,
+    "name": "5-р баг, Баян зүрх",
+    "name_en": "5 bag, Bayn zurkh"
+  },
+  {
+    "parent": 8334,
+    "id": 833461,
+    "name": "6-р баг, Даян",
+    "name_en": "6 bag, Dayn"
+  },
+  {
+    "parent": 8334,
+    "id": 833463,
+    "name": "7-р баг, Билүү  /холимог/",
+    "name_en": "7 bag, Biluu"
+  },
+  {
+    "parent": 8334,
+    "id": 833465,
+    "name": "8-р баг, Билүү 2 с төв",
+    "name_en": "8 bag, Biluu 2"
+  },
+  {
+    "parent": 8337,
+    "id": 833751,
+    "name": "1-р баг, Шарговь",
+    "name_en": "1 bag, Shargagobi"
+  },
+  {
+    "parent": 8337,
+    "id": 833753,
+    "name": "2-р баг, Загаст нуур",
+    "name_en": "2 bag, Zagast nuur"
+  },
+  {
+    "parent": 8337,
+    "id": 833755,
+    "name": "3-р баг, Цагаан түнгэ",
+    "name_en": "3 bag, Tsagaan tunge"
+  },
+  {
+    "parent": 8337,
+    "id": 833757,
+    "name": "4-р баг, Хар уул",
+    "name_en": "4 bag, Khar uul"
+  },
+  {
+    "parent": 8337,
+    "id": 833759,
+    "name": "5-р баг, Бор бургас",
+    "name_en": "5 bag, Bor burgas"
+  },
+  {
+    "parent": 8337,
+    "id": 833761,
+    "name": "6-р баг, Уст тохой",
+    "name_en": "6 bag, Ust tokhoi"
+  },
+  {
+    "parent": 8337,
+    "id": 833763,
+    "name": "7-р баг, Долоон гаталга",
+    "name_en": "7 bag, Doloon gatalga"
+  },
+  {
+    "parent": 8337,
+    "id": 833765,
+    "name": "8-р баг, Партизан с төв",
+    "name_en": "8 bag, Partizan"
+  },
+  {
+    "parent": 8337,
+    "id": 833767,
+    "name": "9-р баг, Хөшөөт /холимог/",
+    "name_en": "9 bag, Khushuut"
+  },
+  {
+    "parent": 6401,
+    "id": 640151,
+    "name": "1-р баг, Номгон",
+    "name_en": "1 bag, Nomgon"
+  },
+  {
+    "parent": 6401,
+    "id": 640153,
+    "name": "2-р баг, Эрдэнэмандал",
+    "name_en": "2 bag, Erdenemandal"
+  },
+  {
+    "parent": 6401,
+    "id": 640155,
+    "name": "3-р баг, Дуурсах",
+    "name_en": "3 bag, Duursakh"
+  },
+  {
+    "parent": 6401,
+    "id": 640157,
+    "name": "4-р баг, Угалз",
+    "name_en": "4 bag, Ugalz"
+  },
+  {
+    "parent": 6401,
+    "id": 640159,
+    "name": "5-р баг, Цагаанчулуут",
+    "name_en": "5 bag, Tsagaanchuluut"
+  },
+  {
+    "parent": 6401,
+    "id": 640161,
+    "name": "6-р баг, Гэгээн шавь",
+    "name_en": "6 bag, Gegeen shavi"
+  },
+  {
+    "parent": 6401,
+    "id": 640163,
+    "name": "7-р баг, Цахир",
+    "name_en": "7 bag, Tsakhir"
+  },
+  {
+    "parent": 6401,
+    "id": 640165,
+    "name": "8-р баг, Шаргалжуут",
+    "name_en": "8 bag, Shargaljuut"
+  },
+  {
+    "parent": 6401,
+    "id": 640167,
+    "name": "9-р баг, Есөнбулаг",
+    "name_en": "9 bag, Ysunbulag"
+  },
+  {
+    "parent": 6404,
+    "id": 640451,
+    "name": "1-р баг, Баянбулаг",
+    "name_en": "1 bag, Baynbulag"
+  },
+  {
+    "parent": 6404,
+    "id": 640453,
+    "name": "2-р баг, Оройн бууц",
+    "name_en": "2 bag, Oroin buuts"
+  },
+  {
+    "parent": 6404,
+    "id": 640455,
+    "name": "3-р баг, Буйлсан",
+    "name_en": "3 bag, Builsan"
+  },
+  {
+    "parent": 6404,
+    "id": 640457,
+    "name": "4-р баг, Могой",
+    "name_en": "4 bag, Mogoi"
+  },
+  {
+    "parent": 6404,
+    "id": 640459,
+    "name": "5-р баг, Товгор",
+    "name_en": "5 bag, Tovgor"
+  },
+  {
+    "parent": 6404,
+    "id": 640461,
+    "name": "6-р баг, Зүүнхаяа",
+    "name_en": "6 bag, Zuunkhaya"
+  },
+  {
+    "parent": 6404,
+    "id": 640463,
+    "name": "7-р баг, Баянсайр",
+    "name_en": "7 bag, Baynsair"
+  },
+  {
+    "parent": 6407,
+    "id": 640751,
+    "name": "1-р баг, Сангийн далай",
+    "name_en": "1 bag, Sangiin dalai"
+  },
+  {
+    "parent": 6407,
+    "id": 640753,
+    "name": "2-р баг, Жаргалант",
+    "name_en": "2 bag, Jargalant"
+  },
+  {
+    "parent": 6407,
+    "id": 640755,
+    "name": "3-р баг, Хангал",
+    "name_en": "3 bag, Khangal"
+  },
+  {
+    "parent": 6407,
+    "id": 640757,
+    "name": "4-р баг, Бүрд",
+    "name_en": "4 bag, Burd"
+  },
+  {
+    "parent": 6410,
+    "id": 641051,
+    "name": "1-р баг, Хэлтгий булаг",
+    "name_en": "1 bag, Kheltgii bulag"
+  },
+  {
+    "parent": 6410,
+    "id": 641053,
+    "name": "2-р баг, Өрхт",
+    "name_en": "2 bag, Urkht"
+  },
+  {
+    "parent": 6410,
+    "id": 641055,
+    "name": "3-р баг, Залаа",
+    "name_en": "3 bag, Zalaa"
+  },
+  {
+    "parent": 6410,
+    "id": 641057,
+    "name": "4-р баг, Цоохор",
+    "name_en": "4 bag, Tsookhor"
+  },
+  {
+    "parent": 6410,
+    "id": 641059,
+    "name": "5-р баг, Өргөн",
+    "name_en": "5 bag, Urgun"
+  },
+  {
+    "parent": 6413,
+    "id": 641351,
+    "name": "1-р баг, Халбагант",
+    "name_en": "1 bag, Khalbagant"
+  },
+  {
+    "parent": 6413,
+    "id": 641353,
+    "name": "2-р баг, Баян-Аараг",
+    "name_en": "2 bag, Bayn-Aarag"
+  },
+  {
+    "parent": 6413,
+    "id": 641355,
+    "name": "3-р баг, Бага баян",
+    "name_en": "3 bag, Baga bayn"
+  },
+  {
+    "parent": 6413,
+    "id": 641357,
+    "name": "4-р баг, Их баян",
+    "name_en": "4 bag, Ikh bayn"
+  },
+  {
+    "parent": 6413,
+    "id": 641359,
+    "name": "5-р баг, Хатан суудал",
+    "name_en": "5 bag, Khatan suudal"
+  },
+  {
+    "parent": 6416,
+    "id": 641651,
+    "name": "1-р баг, Мандалхайрхан",
+    "name_en": "1 bag, Mandalkhairkhan"
+  },
+  {
+    "parent": 6416,
+    "id": 641653,
+    "name": "2-р баг, Уранхайрхан",
+    "name_en": "2 bag, Urankhairkhan"
+  },
+  {
+    "parent": 6416,
+    "id": 641655,
+    "name": "3-р баг, Асгамба",
+    "name_en": "3 bag, Asgamba"
+  },
+  {
+    "parent": 6416,
+    "id": 641657,
+    "name": "4-р баг, Хөх бүрд",
+    "name_en": "4 bag, Khukh burd"
+  },
+  {
+    "parent": 6419,
+    "id": 641951,
+    "name": "1-р баг, Улаан үзүүр",
+    "name_en": "1 bag, Ulaan uzuur"
+  },
+  {
+    "parent": 6419,
+    "id": 641953,
+    "name": "2-р баг, Элгэн",
+    "name_en": "2 bag, Elgen"
+  },
+  {
+    "parent": 6419,
+    "id": 641955,
+    "name": "3-р баг, Булган",
+    "name_en": "3 bag, Bulgan"
+  },
+  {
+    "parent": 6419,
+    "id": 641957,
+    "name": "4-рбаг, Идрэн",
+    "name_en": "4 bag, Idren"
+  },
+  {
+    "parent": 6422,
+    "id": 642251,
+    "name": "1-р баг, Гичгэнэ",
+    "name_en": "1 bag, Gichgene"
+  },
+  {
+    "parent": 6422,
+    "id": 642253,
+    "name": "2-р баг, Дэлгэрэх",
+    "name_en": "2 bag, Delgerekh"
+  },
+  {
+    "parent": 6422,
+    "id": 642255,
+    "name": "3-р баг, Цэцэн",
+    "name_en": "3 bag, Tsetsen"
+  },
+  {
+    "parent": 6422,
+    "id": 642257,
+    "name": "4-р баг, Жаргалант",
+    "name_en": "4 bag, Jargalant"
+  },
+  {
+    "parent": 6422,
+    "id": 642259,
+    "name": "5-р баг, Баянбулаг",
+    "name_en": "5 bag, Baynbulag"
+  },
+  {
+    "parent": 6425,
+    "id": 642551,
+    "name": "1-р баг, Луугар",
+    "name_en": "1 bag, Luugar"
+  },
+  {
+    "parent": 6425,
+    "id": 642553,
+    "name": "2-р баг, Гурван гол",
+    "name_en": "2 bag, Gurvan gol"
+  },
+  {
+    "parent": 6425,
+    "id": 642555,
+    "name": "3-р баг, Алтай",
+    "name_en": "3 bag, Altai"
+  },
+  {
+    "parent": 6425,
+    "id": 642557,
+    "name": "4-р баг, Буянт",
+    "name_en": "4 bag, Buynt"
+  },
+  {
+    "parent": 6425,
+    "id": 642559,
+    "name": "5-р баг, Цэлгэр",
+    "name_en": "5 bag, Tselger"
+  },
+  {
+    "parent": 6425,
+    "id": 642561,
+    "name": "6-р баг, Хориулт",
+    "name_en": "6 bag, Khoiult"
+  },
+  {
+    "parent": 6428,
+    "id": 642851,
+    "name": "1-р баг, Улаан сайр",
+    "name_en": "1 bag, Ulaan sair"
+  },
+  {
+    "parent": 6428,
+    "id": 642853,
+    "name": "2-р баг, Хөх толгой",
+    "name_en": "2 bag, Khukh tolgoi"
+  },
+  {
+    "parent": 6428,
+    "id": 642855,
+    "name": "3-р баг, Хотын булан баг",
+    "name_en": "3 bag, Khotiin bulag"
+  },
+  {
+    "parent": 6428,
+    "id": 642857,
+    "name": "4-р баг, Задгай",
+    "name_en": "4 bag, Zadgai"
+  },
+  {
+    "parent": 6431,
+    "id": 643151,
+    "name": "1-р баг, Тэмээт",
+    "name_en": "1 bag, Temeet"
+  },
+  {
+    "parent": 6431,
+    "id": 643153,
+    "name": "2-р баг, Баян",
+    "name_en": "2 bag, Bayn"
+  },
+  {
+    "parent": 6431,
+    "id": 643155,
+    "name": "3-р баг, Өлзийт",
+    "name_en": "3 bag, Ulziit"
+  },
+  {
+    "parent": 6431,
+    "id": 643157,
+    "name": "4-р баг, Баянбүрд",
+    "name_en": "4 bag, Baynburd"
+  },
+  {
+    "parent": 6431,
+    "id": 643159,
+    "name": "5-р баг, Наран",
+    "name_en": "5 bag, Naran"
+  },
+  {
+    "parent": 6431,
+    "id": 643161,
+    "name": "6-р баг, Буянт",
+    "name_en": "6 bag, Buynt"
+  },
+  {
+    "parent": 6434,
+    "id": 643451,
+    "name": "1-р баг, Хайрхан",
+    "name_en": "1 bag, Khairkhan"
+  },
+  {
+    "parent": 6434,
+    "id": 643453,
+    "name": "2-р баг, Сүмбэр",
+    "name_en": "2 bag, Sumber"
+  },
+  {
+    "parent": 6434,
+    "id": 643455,
+    "name": "3-р баг, Үнэгт",
+    "name_en": "3 bag, Unegt"
+  },
+  {
+    "parent": 6434,
+    "id": 643457,
+    "name": "4-р баг, Баяннуур",
+    "name_en": "4 bag, Baynnuur"
+  },
+  {
+    "parent": 6434,
+    "id": 643459,
+    "name": "5-р баг, Мандал",
+    "name_en": "5 bag, Mandal"
+  },
+  {
+    "parent": 6434,
+    "id": 643461,
+    "name": "6-р баг, Баян хошуу",
+    "name_en": "6 bag, Bayn khoshuu"
+  },
+  {
+    "parent": 6437,
+    "id": 643751,
+    "name": "1-р баг, Цэнгэл",
+    "name_en": "1 bag, Tsengel"
+  },
+  {
+    "parent": 6437,
+    "id": 643753,
+    "name": "2-р баг, Давааны ам",
+    "name_en": "2 bag, Davaanii am"
+  },
+  {
+    "parent": 6437,
+    "id": 643755,
+    "name": "3-р баг, Буга",
+    "name_en": "3 bag, Buga"
+  },
+  {
+    "parent": 6437,
+    "id": 643757,
+    "name": "4-р баг, Хөвийн ам",
+    "name_en": "4 bag, Khuviin am"
+  },
+  {
+    "parent": 6437,
+    "id": 643759,
+    "name": "5-р баг, Пионер толгой",
+    "name_en": "5 bag, Pioner tolgoi"
+  },
+  {
+    "parent": 6440,
+    "id": 644051,
+    "name": "1-р баг, Намтолгой",
+    "name_en": "1 bag, Namtolgoi"
+  },
+  {
+    "parent": 6440,
+    "id": 644053,
+    "name": "2-р баг, Өлзийт-Өндөр",
+    "name_en": "2 bag, Ulziit-Undur"
+  },
+  {
+    "parent": 6440,
+    "id": 644055,
+    "name": "3-р баг, Хөндлөн булаг",
+    "name_en": "3 bag, Khundlun bulag"
+  },
+  {
+    "parent": 6440,
+    "id": 644057,
+    "name": "4-р баг, Эмээл толгой",
+    "name_en": "4 bag, Emeel tolgoi"
+  },
+  {
+    "parent": 6443,
+    "id": 644351,
+    "name": "1-р баг, Уу-булан",
+    "name_en": "1 bag, Uu-bulan"
+  },
+  {
+    "parent": 6443,
+    "id": 644353,
+    "name": "2-р баг, Хүйс",
+    "name_en": "2 bag, Khuis"
+  },
+  {
+    "parent": 6443,
+    "id": 644355,
+    "name": "3-р баг, Хөнөг",
+    "name_en": "3 bag, Khunug"
+  },
+  {
+    "parent": 6443,
+    "id": 644357,
+    "name": "4-р баг, Цагаан ус",
+    "name_en": "4 bag, Tsagaan us"
+  },
+  {
+    "parent": 6443,
+    "id": 644359,
+    "name": "5-р баг, Бодь",
+    "name_en": "5 bag, Bodi"
+  },
+  {
+    "parent": 6446,
+    "id": 644651,
+    "name": "1-р баг, Баянбулаг",
+    "name_en": "1 bag, Baynbulag"
+  },
+  {
+    "parent": 6446,
+    "id": 644653,
+    "name": "2-р баг, Баян-Улаан",
+    "name_en": "2 bag, Bayn-Ulaan"
+  },
+  {
+    "parent": 6446,
+    "id": 644655,
+    "name": "3-р баг, Чандмань-Овоо",
+    "name_en": "3 bag, Chandmani-Ovoo"
+  },
+  {
+    "parent": 6446,
+    "id": 644657,
+    "name": "4-р баг, Залаа-Овоо",
+    "name_en": "4 bag, Zalaa-Ovoo"
+  },
+  {
+    "parent": 6449,
+    "id": 644951,
+    "name": "1-р баг, Бурхант",
+    "name_en": "1 bag, Burkhant"
+  },
+  {
+    "parent": 6449,
+    "id": 644953,
+    "name": "2-р баг, Байн ам",
+    "name_en": "2 bag, Bain am"
+  },
+  {
+    "parent": 6449,
+    "id": 644955,
+    "name": "3-р баг, Ёлын ам",
+    "name_en": "3 bag, Yliin am"
+  },
+  {
+    "parent": 6449,
+    "id": 644957,
+    "name": "4-р баг, Худаг урт",
+    "name_en": "4 bag, Khudag urt"
+  },
+  {
+    "parent": 6449,
+    "id": 644959,
+    "name": "5-р баг, Бийрийн уулзвар",
+    "name_en": "5 bag, Biiriin uulzvar"
+  },
+  {
+    "parent": 6449,
+    "id": 644961,
+    "name": "6-р баг, Улаан уул",
+    "name_en": "6 bag, Ulaan uul"
+  },
+  {
+    "parent": 6452,
+    "id": 645251,
+    "name": "1-р баг, Хөх бүрд",
+    "name_en": "1 bag, Khukh durd"
+  },
+  {
+    "parent": 6452,
+    "id": 645253,
+    "name": "2-р баг, Сонор",
+    "name_en": "2 bag, Sonor"
+  },
+  {
+    "parent": 6452,
+    "id": 645255,
+    "name": "3-р баг, Норовлин",
+    "name_en": "3 bag, Norovlin"
+  },
+  {
+    "parent": 6452,
+    "id": 645257,
+    "name": "4-р баг, Цорж",
+    "name_en": "4 bag, Tsorj"
+  },
+  {
+    "parent": 6452,
+    "id": 645259,
+    "name": "5-р баг, Дэлгэр мөрөн",
+    "name_en": "5 bag, Delger murun"
+  },
+  {
+    "parent": 6455,
+    "id": 645551,
+    "name": "1-р баг, Зараа",
+    "name_en": "1 bag, Zaraa"
+  },
+  {
+    "parent": 6455,
+    "id": 645553,
+    "name": "2-р баг, Уртын гол",
+    "name_en": "2 bag, Urtiin gol"
+  },
+  {
+    "parent": 6455,
+    "id": 645555,
+    "name": "3-р баг, Эрдэнэшанд",
+    "name_en": "3 bag, Erdeneshand"
+  },
+  {
+    "parent": 6455,
+    "id": 645557,
+    "name": "4-р баг, Эхэн хавцгай",
+    "name_en": "4 bag, Ekhen khavtsgai"
+  },
+  {
+    "parent": 6458,
+    "id": 645851,
+    "name": "1-р баг, Сэнжит",
+    "name_en": "1 bag, Senjit"
+  },
+  {
+    "parent": 6458,
+    "id": 645853,
+    "name": "2-р баг, Ямаат",
+    "name_en": "2 bag, Ymaat"
+  },
+  {
+    "parent": 6458,
+    "id": 645855,
+    "name": "3-р баг, Өвөржаргалант",
+    "name_en": "3 bag, Uvurjargalant"
+  },
+  {
+    "parent": 6458,
+    "id": 645857,
+    "name": "4-р баг, Жанжин",
+    "name_en": "4 bag, Janjin"
+  },
+  {
+    "parent": 6458,
+    "id": 645859,
+    "name": "5-р баг, Цагаан дэнж",
+    "name_en": "5 bag, Tsagaan denj"
+  },
+  {
+    "parent": 6301,
+    "id": 630151,
+    "name": "1-р баг, Ачуут баг",
+    "name_en": "1 bag, Achuut"
+  },
+  {
+    "parent": 6301,
+    "id": 630153,
+    "name": "2-р баг, Хужирт баг",
+    "name_en": "2 bag, Khujirt"
+  },
+  {
+    "parent": 6301,
+    "id": 630155,
+    "name": "3-р баг, Агуйт баг",
+    "name_en": "3 bag, Aguit"
+  },
+  {
+    "parent": 6301,
+    "id": 630157,
+    "name": "4-р баг, Рашаант баг",
+    "name_en": "4 bag, Rashaant"
+  },
+  {
+    "parent": 6301,
+    "id": 630159,
+    "name": "5-р баг, Жаргалант",
+    "name_en": "5 bag, Jargalant"
+  },
+  {
+    "parent": 6301,
+    "id": 630161,
+    "name": "6-р баг, Булган",
+    "name_en": "6 bag, Bulgan"
+  },
+  {
+    "parent": 6304,
+    "id": 630451,
+    "name": "1-р баг, Шарга",
+    "name_en": "1 bag, Sharga"
+  },
+  {
+    "parent": 6304,
+    "id": 630453,
+    "name": "2-р баг, Баянзүрх",
+    "name_en": "2 bag, Baynzurkh"
+  },
+  {
+    "parent": 6304,
+    "id": 630455,
+    "name": "3-р баг, Баянхайрхан",
+    "name_en": "3 bag, Baynkhairkhan"
+  },
+  {
+    "parent": 6304,
+    "id": 630457,
+    "name": "4-р баг, Дулаанхаан",
+    "name_en": "4 bag, Dulaankhaan"
+  },
+  {
+    "parent": 6304,
+    "id": 630459,
+    "name": "5-р баг, Халтар",
+    "name_en": "5 bag, Khaltar"
+  },
+  {
+    "parent": 6304,
+    "id": 630461,
+    "name": "6-р баг, Хүрэмт",
+    "name_en": "6 bag, Khuremt"
+  },
+  {
+    "parent": 6307,
+    "id": 630751,
+    "name": "1-р баг, Өлзийт",
+    "name_en": "1 bag, Ulziit"
+  },
+  {
+    "parent": 6307,
+    "id": 630753,
+    "name": "2-р баг, Шар тал",
+    "name_en": "2 bag, Shar tal"
+  },
+  {
+    "parent": 6310,
+    "id": 631051,
+    "name": "1-р баг, Баянтөгөл",
+    "name_en": "1 bag, Bayntugul"
+  },
+  {
+    "parent": 6310,
+    "id": 631053,
+    "name": "2-р баг, Ханжаргалант",
+    "name_en": "2 bag, Khanjargalant"
+  },
+  {
+    "parent": 6310,
+    "id": 631055,
+    "name": "3-р баг, /Сөрт/ Сумын төв",
+    "name_en": "3 bag, Surt"
+  },
+  {
+    "parent": 6313,
+    "id": 631351,
+    "name": "1-р баг, Бумбат",
+    "name_en": "1 bag, Bumbat"
+  },
+  {
+    "parent": 6313,
+    "id": 631353,
+    "name": "2-р баг, Цахт",
+    "name_en": "2 bag, Tsakht"
+  },
+  {
+    "parent": 6313,
+    "id": 631355,
+    "name": "3-р баг, Дэрст",
+    "name_en": "3 bag, Derst"
+  },
+  {
+    "parent": 6313,
+    "id": 631357,
+    "name": "4-р баг, Дархан",
+    "name_en": "4 bag, Darkhan"
+  },
+  {
+    "parent": 6316,
+    "id": 631651,
+    "name": "1-р баг, Тогоо",
+    "name_en": "1 bag, Togoo"
+  },
+  {
+    "parent": 6316,
+    "id": 631653,
+    "name": "2-р баг, Авзага",
+    "name_en": "2 bag, Avzaga"
+  },
+  {
+    "parent": 6316,
+    "id": 631655,
+    "name": "3-р баг, Агьт",
+    "name_en": "3 bag, Agit"
+  },
+  {
+    "parent": 6316,
+    "id": 631657,
+    "name": "4-р баг, Бэрх",
+    "name_en": "4 bag, Berkh"
+  },
+  {
+    "parent": 6316,
+    "id": 631659,
+    "name": "5-р баг, Хөгнө",
+    "name_en": "5 bag, Khungu"
+  },
+  {
+    "parent": 6316,
+    "id": 631661,
+    "name": "6-р баг, Хулст",
+    "name_en": "6 bag, Khulst"
+  },
+  {
+    "parent": 6319,
+    "id": 631951,
+    "name": "1-р баг, Хараат",
+    "name_en": "1 bag, Kharaat"
+  },
+  {
+    "parent": 6319,
+    "id": 631953,
+    "name": "2-р баг, Лах",
+    "name_en": "2 bag, Lakh"
+  },
+  {
+    "parent": 6319,
+    "id": 631955,
+    "name": "3-р баг, Доргонт",
+    "name_en": "3 bag, Dorgont"
+  },
+  {
+    "parent": 6319,
+    "id": 631957,
+    "name": "4-р баг, Төв",
+    "name_en": "4 bag, Tuv"
+  },
+  {
+    "parent": 6322,
+    "id": 632251,
+    "name": "1-р баг, Жаргалант",
+    "name_en": "1 bag, Jargalant"
+  },
+  {
+    "parent": 6322,
+    "id": 632253,
+    "name": "2-р баг, Баясгалант",
+    "name_en": "2 bag, Baysgalant"
+  },
+  {
+    "parent": 6322,
+    "id": 632255,
+    "name": "3-р баг, Баянгол",
+    "name_en": "3 bag, Bayngol"
+  },
+  {
+    "parent": 6322,
+    "id": 632257,
+    "name": "4-р баг, Баян-Уул",
+    "name_en": "4 bag, Bayn-Uul"
+  },
+  {
+    "parent": 6322,
+    "id": 632259,
+    "name": "5-р баг, Эрхт",
+    "name_en": "5 bag, Erkht"
+  },
+  {
+    "parent": 6325,
+    "id": 632551,
+    "name": "1-р баг, Арбулаг",
+    "name_en": "1 bag, Arbulag"
+  },
+  {
+    "parent": 6325,
+    "id": 632553,
+    "name": "2-р баг, Халиун",
+    "name_en": "2 bag, Khaliun"
+  },
+  {
+    "parent": 6325,
+    "id": 632555,
+    "name": "3-р баг, Бүхт",
+    "name_en": "3 bag, Bukht"
+  },
+  {
+    "parent": 6325,
+    "id": 632557,
+    "name": "4-р баг, Мааньт",
+    "name_en": "4 bag, Maanit"
+  },
+  {
+    "parent": 6325,
+    "id": 632559,
+    "name": "5-р баг, Сумын төв",
+    "name_en": "5 bag, Sum"
+  },
+  {
+    "parent": 6328,
+    "id": 632851,
+    "name": "1-р баг, Хөгнө хан",
+    "name_en": "1 bag, Khungu khan"
+  },
+  {
+    "parent": 6328,
+    "id": 632853,
+    "name": "2-р баг, Хар чулуут",
+    "name_en": "2 bag, Khar chuluut"
+  },
+  {
+    "parent": 6328,
+    "id": 632855,
+    "name": "3-р баг, Улаан шивээт",
+    "name_en": "3 bag, Ulaan shiveet"
+  },
+  {
+    "parent": 6331,
+    "id": 633151,
+    "name": "1-р баг, Мануулт",
+    "name_en": "1 bag, Manuult"
+  },
+  {
+    "parent": 6331,
+    "id": 633153,
+    "name": "2-р баг, Угалз",
+    "name_en": "2 bag, Ugalz"
+  },
+  {
+    "parent": 6331,
+    "id": 633155,
+    "name": "3-р баг, Хульж",
+    "name_en": "3 bag, Khulj"
+  },
+  {
+    "parent": 6331,
+    "id": 633157,
+    "name": "4-р баг, Ундрах",
+    "name_en": "4 bag, Undrakh"
+  },
+  {
+    "parent": 6331,
+    "id": 633159,
+    "name": "5-р баг, Хүрэмт",
+    "name_en": "5 bag, Khuremt"
+  },
+  {
+    "parent": 6331,
+    "id": 633161,
+    "name": "6-р баг, Сайхан-Овоо",
+    "name_en": "6 bag, Saikhan-Ovoo"
+  },
+  {
+    "parent": 6334,
+    "id": 633451,
+    "name": "1-р баг, Таримал",
+    "name_en": "1 bag, Tarimal"
+  },
+  {
+    "parent": 6334,
+    "id": 633453,
+    "name": "2-р баг, Тариахтай",
+    "name_en": "2 bag, Tariakhtai"
+  },
+  {
+    "parent": 6334,
+    "id": 633455,
+    "name": "3-р баг, Сэлэнгэ",
+    "name_en": "3 bag, Selenge"
+  },
+  {
+    "parent": 6334,
+    "id": 633457,
+    "name": "4-р баг, Сангалтай",
+    "name_en": "4 bag, Sangaltai"
+  },
+  {
+    "parent": 6334,
+    "id": 633459,
+    "name": "5-р баг, Ингэт",
+    "name_en": "5 bag, Inget"
+  },
+  {
+    "parent": 6337,
+    "id": 633751,
+    "name": "1-р баг, Хужирт",
+    "name_en": "1 bag, Khujirt"
+  },
+  {
+    "parent": 6337,
+    "id": 633753,
+    "name": "2-р баг, Харгал",
+    "name_en": "2 bag, Khargal"
+  },
+  {
+    "parent": 6337,
+    "id": 633755,
+    "name": "3-р баг, Далан",
+    "name_en": "3 bag, Dalan"
+  },
+  {
+    "parent": 6337,
+    "id": 633757,
+    "name": "4-р баг, Эрэн",
+    "name_en": "4 bag, Eren"
+  },
+  {
+    "parent": 6337,
+    "id": 633759,
+    "name": "5-р баг, Жаргалант",
+    "name_en": "5 bag, Jargalant"
+  },
+  {
+    "parent": 6340,
+    "id": 634051,
+    "name": "1-р баг, Сөрт",
+    "name_en": "1 bag, Surt"
+  },
+  {
+    "parent": 6340,
+    "id": 634053,
+    "name": "2-р баг, Хангал",
+    "name_en": "2 bag, Khangal"
+  },
+  {
+    "parent": 6340,
+    "id": 634055,
+    "name": "3-р баг, Сумын төв",
+    "name_en": "3 bag, Sum"
+  },
+  {
+    "parent": 6340,
+    "id": 634057,
+    "name": "4-р баг, Хялганат",
+    "name_en": "4 bag, Khylganat"
+  },
+  {
+    "parent": 6343,
+    "id": 634351,
+    "name": "1-р баг, Банзар",
+    "name_en": "1 bag, Banzar"
+  },
+  {
+    "parent": 6343,
+    "id": 634353,
+    "name": "2-р баг, Хүрэмт",
+    "name_en": "2 bag, Khuremt"
+  },
+  {
+    "parent": 6343,
+    "id": 634355,
+    "name": "3-р баг, Тээг",
+    "name_en": "3 bag, Teeg"
+  },
+  {
+    "parent": 6343,
+    "id": 634357,
+    "name": "4-р баг, Жаргалант",
+    "name_en": "4 bag, Jargalant"
+  },
+  {
+    "parent": 6343,
+    "id": 634359,
+    "name": "5-р баг, Мааньт",
+    "name_en": "5 bag, Maanit"
+  },
+  {
+    "parent": 6346,
+    "id": 634651,
+    "name": "1-р баг, Сумын төв",
+    "name_en": "1 bag, Sum"
+  },
+  {
+    "parent": 6346,
+    "id": 634653,
+    "name": "2-р баг, Хантай",
+    "name_en": "2 bag, Khangai"
+  },
+  {
+    "parent": 6346,
+    "id": 634655,
+    "name": "3-р баг, Уньт",
+    "name_en": "3 bag, Unit"
+  },
+  {
+    "parent": 6346,
+    "id": 634657,
+    "name": "4-р баг, Тээл",
+    "name_en": "4 bag, Teel"
+  },
+  {
+    "parent": 6346,
+    "id": 634659,
+    "name": "5-р баг, Хонгор",
+    "name_en": "5 bag, Khongor"
+  },
+  {
+    "parent": 8201,
+    "id": 820151,
+    "name": "1-р баг, Баянхайрхан",
+    "name_en": "1 bag, Baynkhairkhan"
+  },
+  {
+    "parent": 8201,
+    "id": 820153,
+    "name": "2-р баг, Баяншанд",
+    "name_en": "2 bag, Baynshand"
+  },
+  {
+    "parent": 8201,
+    "id": 820155,
+    "name": "3-р баг, Жаргалант",
+    "name_en": "3 bag, Jargalant"
+  },
+  {
+    "parent": 8201,
+    "id": 820157,
+    "name": "4-р баг, Харзат",
+    "name_en": "4 bag, Kharzat"
+  },
+  {
+    "parent": 8201,
+    "id": 820159,
+    "name": "5-р баг, Рашаант",
+    "name_en": "5 bag, Rashaant"
+  },
+  {
+    "parent": 8201,
+    "id": 820161,
+    "name": "6-р баг, Наран",
+    "name_en": "6 bag, Naran"
+  },
+  {
+    "parent": 8204,
+    "id": 820451,
+    "name": "1-р баг, Бадрал",
+    "name_en": "1 bag, Badral"
+  },
+  {
+    "parent": 8204,
+    "id": 820453,
+    "name": "2-р баг, Баянцагаан",
+    "name_en": "2 bag, Bayntsagaan"
+  },
+  {
+    "parent": 8204,
+    "id": 820455,
+    "name": "3-р баг, Урт",
+    "name_en": "3 bag, Urt"
+  },
+  {
+    "parent": 8204,
+    "id": 820457,
+    "name": "4-р баг, Баян-Овоо",
+    "name_en": "4 bag, Bayn-Ovoo"
+  },
+  {
+    "parent": 8207,
+    "id": 820751,
+    "name": "1-р баг, Баян богд",
+    "name_en": "1 bag, Bayn bogd"
+  },
+  {
+    "parent": 8207,
+    "id": 820753,
+    "name": "2-р баг, Чандмань хайрхан",
+    "name_en": "2 bag, Chandmanu khairkhan"
+  },
+  {
+    "parent": 8207,
+    "id": 820755,
+    "name": "3-р баг, Баянхайрхан",
+    "name_en": "3 bag, Baynkhairkhan"
+  },
+  {
+    "parent": 8207,
+    "id": 820757,
+    "name": "4-р баг, Хүйсийн говь",
+    "name_en": "4 bag, Khuisiin gobi"
+  },
+  {
+    "parent": 8207,
+    "id": 820759,
+    "name": "5-р баг, Баянговь",
+    "name_en": "5 bag, Bayngobi"
+  },
+  {
+    "parent": 8207,
+    "id": 820761,
+    "name": "6-р баг, Алтангадас",
+    "name_en": "6 bag, Altangadas"
+  },
+  {
+    "parent": 8210,
+    "id": 821051,
+    "name": "1-р баг, Мянгай",
+    "name_en": "1 bag, Malgai"
+  },
+  {
+    "parent": 8210,
+    "id": 821053,
+    "name": "2-р баг, Урт",
+    "name_en": "2 bag, Urt"
+  },
+  {
+    "parent": 8210,
+    "id": 821055,
+    "name": "3-р баг, Их булаг",
+    "name_en": "3 bag, Ikh bulag"
+  },
+  {
+    "parent": 8210,
+    "id": 821057,
+    "name": "4-р баг, Буудай",
+    "name_en": "4 bag, Buudai"
+  },
+  {
+    "parent": 8210,
+    "id": 821059,
+    "name": "5-р баг, Хүрэмт",
+    "name_en": "5 bag, Khuremt"
+  },
+  {
+    "parent": 8213,
+    "id": 821351,
+    "name": "1-р баг, Биж",
+    "name_en": "1 bag, Bij"
+  },
+  {
+    "parent": 8213,
+    "id": 821353,
+    "name": "2-р баг, Ферм",
+    "name_en": "2 bag, Ferm"
+  },
+  {
+    "parent": 8213,
+    "id": 821355,
+    "name": "3-р баг, Гаханч",
+    "name_en": "3 bag, Gakhanch"
+  },
+  {
+    "parent": 8213,
+    "id": 821357,
+    "name": "4-р баг, Сүж",
+    "name_en": "4 bag, Suj"
+  },
+  {
+    "parent": 8213,
+    "id": 821359,
+    "name": "5-р баг, Баянгол",
+    "name_en": "5 bag, Bayngol"
+  },
+  {
+    "parent": 8216,
+    "id": 821651,
+    "name": "1-р баг, Ихэс",
+    "name_en": "1 bag, Ikhes"
+  },
+  {
+    "parent": 8216,
+    "id": 821653,
+    "name": "2-р баг, Хужирт",
+    "name_en": "2 bag, Khujirt"
+  },
+  {
+    "parent": 8216,
+    "id": 821655,
+    "name": "3-р баг, Жавхлант",
+    "name_en": "3 bag, Javkhlant"
+  },
+  {
+    "parent": 8216,
+    "id": 821657,
+    "name": "4-р баг, Үйлдвэр",
+    "name_en": "4 bag, Uildver"
+  },
+  {
+    "parent": 8219,
+    "id": 821951,
+    "name": "1-р баг, Баян-Өндөр",
+    "name_en": "1 bag, Bayn-Undur"
+  },
+  {
+    "parent": 8219,
+    "id": 821953,
+    "name": "2-р баг, Баянхонгор",
+    "name_en": "2 bag, Baynkhongor"
+  },
+  {
+    "parent": 8219,
+    "id": 821955,
+    "name": "3-р баг, Баянбуурал",
+    "name_en": "3 bag, Baynbuural"
+  },
+  {
+    "parent": 8219,
+    "id": 821957,
+    "name": "4-р баг, Баянсан",
+    "name_en": "4 bag, Baynsan"
+  },
+  {
+    "parent": 8219,
+    "id": 821959,
+    "name": "5-р баг, Гуулин",
+    "name_en": "5 bag, Guulin"
+  },
+  {
+    "parent": 8222,
+    "id": 822251,
+    "name": "1-р баг, Бүрэн",
+    "name_en": "1 bag, Buren"
+  },
+  {
+    "parent": 8222,
+    "id": 822253,
+    "name": "2-р баг, Тээл",
+    "name_en": "2 bag, Teel"
+  },
+  {
+    "parent": 8222,
+    "id": 822255,
+    "name": "3-р баг, Завхан гол",
+    "name_en": "3 bag, Zavkhan gol"
+  },
+  {
+    "parent": 8225,
+    "id": 822551,
+    "name": "1-р баг, Хуримт",
+    "name_en": "1 bag, Khurimt"
+  },
+  {
+    "parent": 8225,
+    "id": 822553,
+    "name": "2-р баг, Галуут",
+    "name_en": "2 bag, Galuut"
+  },
+  {
+    "parent": 8225,
+    "id": 822555,
+    "name": "3-р баг, Далан",
+    "name_en": "3 bag, Dalan"
+  },
+  {
+    "parent": 8228,
+    "id": 822851,
+    "name": "1-р баг, Бүс-Уул",
+    "name_en": "1 bag, Bus-Uul"
+  },
+  {
+    "parent": 8228,
+    "id": 822853,
+    "name": "2-р баг, Тамч",
+    "name_en": "2 bag, Tamch"
+  },
+  {
+    "parent": 8228,
+    "id": 822855,
+    "name": "3-р баг, Зүйл",
+    "name_en": "3 bag, Zuil"
+  },
+  {
+    "parent": 8228,
+    "id": 822857,
+    "name": "4-р баг, Алтансоёмбо",
+    "name_en": "4 bag, Altansoyombo"
+  },
+  {
+    "parent": 8228,
+    "id": 822859,
+    "name": "5-р баг, Алтайн-Оргил",
+    "name_en": "5 bag, Altain-Orgil"
+  },
+  {
+    "parent": 8231,
+    "id": 823151,
+    "name": "1-р баг, Хүрэн гол",
+    "name_en": "1 bag, Khuren gol"
+  },
+  {
+    "parent": 8231,
+    "id": 823153,
+    "name": "2-р баг, Төгрөгийн эх",
+    "name_en": "2 bag, Tugrugiin ekh"
+  },
+  {
+    "parent": 8231,
+    "id": 823155,
+    "name": "3-р баг, Мааньт",
+    "name_en": "3 bag, Maanit"
+  },
+  {
+    "parent": 8231,
+    "id": 823157,
+    "name": "4-р баг, Цагаан хайрхан",
+    "name_en": "4 bag, Tsagaan khairkhan"
+  },
+  {
+    "parent": 8231,
+    "id": 823159,
+    "name": "5-р баг, Тунгалаг",
+    "name_en": "5 bag, Tungalag"
+  },
+  {
+    "parent": 8234,
+    "id": 823451,
+    "name": "1-р баг, Сүүж",
+    "name_en": "1 bag, Suuj"
+  },
+  {
+    "parent": 8234,
+    "id": 823453,
+    "name": "2-р баг, Гүү бариач",
+    "name_en": "2 bag, Guu bariach"
+  },
+  {
+    "parent": 8234,
+    "id": 823455,
+    "name": "3-р баг, Олон булаг",
+    "name_en": "3 bag, Olon bulag"
+  },
+  {
+    "parent": 8234,
+    "id": 823457,
+    "name": "4-р баг, Чацран",
+    "name_en": "4 bag, Chatsran"
+  },
+  {
+    "parent": 8237,
+    "id": 823751,
+    "name": "1-р баг, Цоохор",
+    "name_en": "1 bag, Tsookhor"
+  },
+  {
+    "parent": 8237,
+    "id": 823753,
+    "name": "2-р баг, Завхан гол",
+    "name_en": "2 bag, Zavkhan gol"
+  },
+  {
+    "parent": 8237,
+    "id": 823755,
+    "name": "3-р баг, Сангийн далай",
+    "name_en": "3 bag, Sangiin dalai"
+  },
+  {
+    "parent": 8237,
+    "id": 823757,
+    "name": "4-р баг, Хүйсийн говь",
+    "name_en": "4 bag, Khuisiin gobi"
+  },
+  {
+    "parent": 8237,
+    "id": 823759,
+    "name": "5-р баг, Сайн-Уст",
+    "name_en": "5 bag, Sain-Ust"
+  },
+  {
+    "parent": 8240,
+    "id": 824051,
+    "name": "1-р баг, Рашаант",
+    "name_en": "1 bag, Rashaant"
+  },
+  {
+    "parent": 8240,
+    "id": 824053,
+    "name": "2-р баг, Далан",
+    "name_en": "2 bag, Dalan"
+  },
+  {
+    "parent": 8240,
+    "id": 824055,
+    "name": "3-р баг, Гэгээт",
+    "name_en": "3 bag, Gegeet"
+  },
+  {
+    "parent": 8240,
+    "id": 824057,
+    "name": "4-р баг, Төгрөг",
+    "name_en": "4 bag, Tugrug"
+  },
+  {
+    "parent": 8240,
+    "id": 824059,
+    "name": "5-р баг, Баян-Өндөр",
+    "name_en": "5 bag, Bayn-Undur"
+  },
+  {
+    "parent": 8240,
+    "id": 824061,
+    "name": "6-р баг, Баян-Улаан",
+    "name_en": "6 bag, Bayn-Ulaan"
+  },
+  {
+    "parent": 8240,
+    "id": 824063,
+    "name": "7-р баг, Баян тоорой",
+    "name_en": "7 bag, Bayn tooroi"
+  },
+  {
+    "parent": 8243,
+    "id": 824351,
+    "name": "1-р баг, Бүрэн",
+    "name_en": "1 bag, Buren"
+  },
+  {
+    "parent": 8243,
+    "id": 824353,
+    "name": "2-р баг, Баянгол",
+    "name_en": "2 bag, Bayngol"
+  },
+  {
+    "parent": 8243,
+    "id": 824355,
+    "name": "3-р баг, Дэрстэй",
+    "name_en": "3 bag, Derstei"
+  },
+  {
+    "parent": 8243,
+    "id": 824357,
+    "name": "4-р баг, Жаргалт",
+    "name_en": "4 bag, Jargalt"
+  },
+  {
+    "parent": 8246,
+    "id": 824651,
+    "name": "1-р баг, Чандмань-Уул",
+    "name_en": "1 bag, Chandmani-Uul"
+  },
+  {
+    "parent": 8246,
+    "id": 824653,
+    "name": "2-р баг, Өлзийбулаг",
+    "name_en": "2 bag, Ulziibulag"
+  },
+  {
+    "parent": 8246,
+    "id": 824655,
+    "name": "3-р баг, Эрдэнэ-Уул",
+    "name_en": "3 bag, Erdene-Uul"
+  },
+  {
+    "parent": 8246,
+    "id": 824657,
+    "name": "4-р баг, Хүрхрээ",
+    "name_en": "4 bag, Khurkhree"
+  },
+  {
+    "parent": 8249,
+    "id": 824951,
+    "name": "1-р баг, Баянгол",
+    "name_en": "1 bag, Bayngol"
+  },
+  {
+    "parent": 8249,
+    "id": 824953,
+    "name": "2-р баг, Хамтын хүч",
+    "name_en": "2 bag, Khamtiin khuch"
+  },
+  {
+    "parent": 8249,
+    "id": 824955,
+    "name": "3-р баг, Сондуулт",
+    "name_en": "3 bag, Sonduult"
+  },
+  {
+    "parent": 8249,
+    "id": 824957,
+    "name": "4-р баг, Улаан туг",
+    "name_en": "4 bag, Ulaan tug"
+  },
+  {
+    "parent": 8252,
+    "id": 825251,
+    "name": "1-р баг, Сангийн далай",
+    "name_en": "1 bag, Sangiin dalai"
+  },
+  {
+    "parent": 8252,
+    "id": 825253,
+    "name": "2-р баг, Цэцэг нуур",
+    "name_en": "2 bag, Tsetseg nuur"
+  },
+  {
+    "parent": 8252,
+    "id": 825255,
+    "name": "3-р баг, Цагаан-Уул",
+    "name_en": "3 bag, Tsagaan-Uul"
+  },
+  {
+    "parent": 8252,
+    "id": 825257,
+    "name": "4-р баг, Өлзийт",
+    "name_en": "4 bag, Ulziit"
+  },
+  {
+    "parent": 4401,
+    "id": 440151,
+    "name": "1-р баг"
+  },
+  {
+    "parent": 4401,
+    "id": 440153,
+    "name": "2-р баг"
+  },
+  {
+    "parent": 4401,
+    "id": 440155,
+    "name": "3-р баг"
+  },
+  {
+    "parent": 4401,
+    "id": 440157,
+    "name": "4-р баг"
+  },
+  {
+    "parent": 4401,
+    "id": 440159,
+    "name": "5-р баг /Зүүнбаян/"
+  },
+  {
+    "parent": 4404,
+    "id": 440451,
+    "name": "1-р баг, Нард",
+    "name_en": "1 bag, Nard"
+  },
+  {
+    "parent": 4404,
+    "id": 440453,
+    "name": "2-р баг, Сайн-Ус",
+    "name_en": "2 bag, Sain-Us"
+  },
+  {
+    "parent": 4404,
+    "id": 440455,
+    "name": "3-р баг, Нүдэн",
+    "name_en": "3 bag, Nuden"
+  },
+  {
+    "parent": 4404,
+    "id": 440457,
+    "name": "4-р баг, Цагаан дөрвөлж",
+    "name_en": "4 bag, Tsagaan durvulj"
+  },
+  {
+    "parent": 4407,
+    "id": 440751,
+    "name": "1-р баг, Тойг",
+    "name_en": "1 bag, Toig"
+  },
+  {
+    "parent": 4407,
+    "id": 440753,
+    "name": "2-р баг, Зараа",
+    "name_en": "2 bag, Zaraa"
+  },
+  {
+    "parent": 4407,
+    "id": 440755,
+    "name": "3-р баг, Хаяа",
+    "name_en": "3 bag, Khaya"
+  },
+  {
+    "parent": 4407,
+    "id": 440757,
+    "name": "4-р баг, Чулуун гишгэр",
+    "name_en": "4 bag, Chuluun gishger"
+  },
+  {
+    "parent": 4410,
+    "id": 441051,
+    "name": "1-р баг, Элдэв",
+    "name_en": "1 bag, Eldev"
+  },
+  {
+    "parent": 4410,
+    "id": 441053,
+    "name": "2-р баг, Өнгөт",
+    "name_en": "2 bag, Ungut"
+  },
+  {
+    "parent": 4410,
+    "id": 441055,
+    "name": "3-р баг, Бичигт",
+    "name_en": "3 bag, Bichigt"
+  },
+  {
+    "parent": 4410,
+    "id": 441057,
+    "name": "4-р баг, Цомог",
+    "name_en": "4 bag, Tsomog"
+  },
+  {
+    "parent": 4410,
+    "id": 441059,
+    "name": "5-р баг, Олон-Овоо",
+    "name_en": "5 bag, Olon-Ovoo"
+  },
+  {
+    "parent": 4413,
+    "id": 441351,
+    "name": "1-р баг, Цагаанхад",
+    "name_en": "2 bag, Tsagaankhad"
+  },
+  {
+    "parent": 4413,
+    "id": 441353,
+    "name": "2-р баг, Аман шанд",
+    "name_en": "2 bag, Aman shand"
+  },
+  {
+    "parent": 4413,
+    "id": 441355,
+    "name": "3-р баг, Бумбат",
+    "name_en": "3 bag, Bymbat"
+  },
+  {
+    "parent": 4413,
+    "id": 441357,
+    "name": "4-р баг, Хонгор",
+    "name_en": "4 bag, Khongor"
+  },
+  {
+    "parent": 4416,
+    "id": 441651,
+    "name": "1-р баг"
+  },
+  {
+    "parent": 4416,
+    "id": 441653,
+    "name": "2-р баг"
+  },
+  {
+    "parent": 4416,
+    "id": 441655,
+    "name": "3-р баг"
+  },
+  {
+    "parent": 4419,
+    "id": 441951,
+    "name": "1-р баг, Бүрдэнэ",
+    "name_en": "1 bag, Burdene"
+  },
+  {
+    "parent": 4419,
+    "id": 441953,
+    "name": "2-р баг, Баян",
+    "name_en": "2 bag, Bayn"
+  },
+  {
+    "parent": 4419,
+    "id": 441955,
+    "name": "3-р баг, Зүлэгт",
+    "name_en": "3 bag, Zulegt"
+  },
+  {
+    "parent": 4422,
+    "id": 442251,
+    "name": "1-р баг, Алхантээг",
+    "name_en": "1 bag, Alkhanteeg"
+  },
+  {
+    "parent": 4422,
+    "id": 442253,
+    "name": "2-р баг, Баянхошуу",
+    "name_en": "2 bag, Baynkhoshuu"
+  },
+  {
+    "parent": 4422,
+    "id": 442255,
+    "name": "3-р баг, Өехий",
+    "name_en": "3 bag, Uukhii"
+  },
+  {
+    "parent": 4422,
+    "id": 442257,
+    "name": "4-р баг, Сэрвэн баянхошуу",
+    "name_en": "4 bag, Serven baynkhoshuu"
+  },
+  {
+    "parent": 4422,
+    "id": 442259,
+    "name": "5-р баг, Төхөм",
+    "name_en": "5 bag, Tukhum"
+  },
+  {
+    "parent": 4425,
+    "id": 442551,
+    "name": "1-р баг, Сүмийн булаг",
+    "name_en": "1 bag, Sumiin bulag"
+  },
+  {
+    "parent": 4425,
+    "id": 442553,
+    "name": "2-р баг, Сүмбэр",
+    "name_en": "2 bag, Sumber"
+  },
+  {
+    "parent": 4425,
+    "id": 442555,
+    "name": "3-р баг, Баянмөнх",
+    "name_en": "3 bag, Baynmunkh"
+  },
+  {
+    "parent": 4425,
+    "id": 442557,
+    "name": "4-р баг, Сэнж",
+    "name_en": "4 bag, Senj"
+  },
+  {
+    "parent": 4428,
+    "id": 442851,
+    "name": "1-р баг, Улаан шороот",
+    "name_en": "1 bag, Ulaan shoroot"
+  },
+  {
+    "parent": 4428,
+    "id": 442853,
+    "name": "2-р баг, Жаргалант",
+    "name_en": "2 bag, Jargalant"
+  },
+  {
+    "parent": 4428,
+    "id": 442855,
+    "name": "3-р баг, Цохио",
+    "name_en": "3 bag, Tsohio"
+  },
+  {
+    "parent": 4428,
+    "id": 442857,
+    "name": "4-р баг, Өлзийт",
+    "name_en": "4 bag, Ulzii"
+  },
+  {
+    "parent": 4431,
+    "id": 443151,
+    "name": "1-р баг, Сангийн далай",
+    "name_en": "1 bag, Sangiin dalai"
+  },
+  {
+    "parent": 4431,
+    "id": 443153,
+    "name": "2-р баг, Баянбогд",
+    "name_en": "2 bag, Baynbogd"
+  },
+  {
+    "parent": 4431,
+    "id": 443155,
+    "name": "3-р баг, Аргалант",
+    "name_en": "3 bag, Argalant"
+  },
+  {
+    "parent": 4431,
+    "id": 443157,
+    "name": "4-р баг, Нүдэн",
+    "name_en": "4 bag, Nuden"
+  },
+  {
+    "parent": 4434,
+    "id": 443451,
+    "name": "1-р баг, Халив",
+    "name_en": "2 bag, Khaliv"
+  },
+  {
+    "parent": 4434,
+    "id": 443453,
+    "name": "2-р баг, Эргэл",
+    "name_en": "2 bag, Ergel"
+  },
+  {
+    "parent": 4434,
+    "id": 443455,
+    "name": "3-р баг, Агаруут",
+    "name_en": "3 bag, Argaruut"
+  },
+  {
+    "parent": 4434,
+    "id": 443457,
+    "name": "4-р баг, Сулинхээр",
+    "name_en": "4 bag, Sulinkheer"
+  },
+  {
+    "parent": 4434,
+    "id": 443459,
+    "name": "5-р баг, Аман-Ус",
+    "name_en": "5 bag, Aman-Us"
+  },
+  {
+    "parent": 4434,
+    "id": 443461,
+    "name": "6-р баг, Замын шанд",
+    "name_en": "6 bag, Zamiin shand"
+  },
+  {
+    "parent": 4437,
+    "id": 443751,
+    "name": "1-р баг, Жавхлант",
+    "name_en": "1 bag, Javkhlant"
+  },
+  {
+    "parent": 4437,
+    "id": 443753,
+    "name": "2-р баг, Чулуут",
+    "name_en": "2 bag, Chuluut"
+  },
+  {
+    "parent": 4437,
+    "id": 443755,
+    "name": "3-р баг, Элст",
+    "name_en": "3 bag, Elst"
+  },
+  {
+    "parent": 4437,
+    "id": 443757,
+    "name": "4-р баг, Хөвсгөл",
+    "name_en": "4 bag, Khuvsgul"
+  },
+  {
+    "parent": 4440,
+    "id": 444051,
+    "name": "1-р баг, Бүрдэнэ",
+    "name_en": "1 bag, Burdene"
+  },
+  {
+    "parent": 4440,
+    "id": 444053,
+    "name": "2-р баг, Еншөөв",
+    "name_en": "2 bag, Ynshuuv"
+  },
+  {
+    "parent": 4440,
+    "id": 444055,
+    "name": "3-р баг, Цагаан хөтөл",
+    "name_en": "3 bag, Tsagaan khutul"
+  },
+  {
+    "parent": 4440,
+    "id": 444057,
+    "name": "4-р баг, Дөрвөлж",
+    "name_en": "4 bag, Durvulj"
+  },
+  {
+    "parent": 4440,
+    "id": 444059,
+    "name": "5-р баг, Улаан-Уул",
+    "name_en": "5 bag, Ulaan-Uul"
+  },
+  {
+    "parent": 2101,
+    "id": 210151,
+    "name": "1-р баг"
+  },
+  {
+    "parent": 2101,
+    "id": 210153,
+    "name": "2-р баг"
+  },
+  {
+    "parent": 2101,
+    "id": 210155,
+    "name": "3-р баг"
+  },
+  {
+    "parent": 2101,
+    "id": 210157,
+    "name": "4-р баг"
+  },
+  {
+    "parent": 2101,
+    "id": 210159,
+    "name": "5-р баг"
+  },
+  {
+    "parent": 2101,
+    "id": 210161,
+    "name": "6-р баг"
+  },
+  {
+    "parent": 2101,
+    "id": 210163,
+    "name": "7-р баг"
+  },
+  {
+    "parent": 2101,
+    "id": 210165,
+    "name": "8-р баг"
+  },
+  {
+    "parent": 2101,
+    "id": 210167,
+    "name": "9-р баг"
+  },
+  {
+    "parent": 2101,
+    "id": 210169,
+    "name": "10-р баг"
+  },
+  {
+    "parent": 2104,
+    "id": 210451,
+    "name": "1-р баг, Наран",
+    "name_en": "1 bag, Naran"
+  },
+  {
+    "parent": 2104,
+    "id": 210453,
+    "name": "2-р баг, Хайрхан",
+    "name_en": "2 bag, Khairkhan"
+  },
+  {
+    "parent": 2104,
+    "id": 210455,
+    "name": "3-р баг, Яргай",
+    "name_en": "3 bag, Yrgai"
+  },
+  {
+    "parent": 2104,
+    "id": 210457,
+    "name": "4-р баг, Түргэн",
+    "name_en": "4 bag, Turgen"
+  },
+  {
+    "parent": 2107,
+    "id": 210751,
+    "name": "1-р баг, Цагаан дэрс баг",
+    "name_en": "1 bag, Tsagaan ders"
+  },
+  {
+    "parent": 2107,
+    "id": 210753,
+    "name": "2-р баг, Жаргалант",
+    "name_en": "2 bag, Jargalant"
+  },
+  {
+    "parent": 2107,
+    "id": 210755,
+    "name": "3-р баг, Өлзийт баг",
+    "name_en": "3 bag, Ulziit"
+  },
+  {
+    "parent": 2107,
+    "id": 210757,
+    "name": "4-р баг, Хотонт",
+    "name_en": "4 bag, Khotont"
+  },
+  {
+    "parent": 2110,
+    "id": 211051,
+    "name": "1-р баг, Заяат",
+    "name_en": "1 bag, Zayat"
+  },
+  {
+    "parent": 2110,
+    "id": 211053,
+    "name": "2-р баг, Хар чулуут",
+    "name_en": "2 bag, Khar chuluut"
+  },
+  {
+    "parent": 2110,
+    "id": 211055,
+    "name": "3-р баг, Урт",
+    "name_en": "3 bag, Urt"
+  },
+  {
+    "parent": 2110,
+    "id": 211057,
+    "name": "4-р баг, Бэрх",
+    "name_en": "4 bag, Berkh"
+  },
+  {
+    "parent": 2110,
+    "id": 211059,
+    "name": "5-р баг, Улз",
+    "name_en": "5 bag, Ulz"
+  },
+  {
+    "parent": 2110,
+    "id": 211061,
+    "name": "6-р баг, Өвөр эрээн",
+    "name_en": "6 bag, Uvur ereen"
+  },
+  {
+    "parent": 2113,
+    "id": 211351,
+    "name": "1-р баг, Өндөр хошуу",
+    "name_en": "1 bag, Undur khoshuu"
+  },
+  {
+    "parent": 2113,
+    "id": 211353,
+    "name": "2-р баг, Хулсан шанд",
+    "name_en": "2 bag, Khulsan shand"
+  },
+  {
+    "parent": 2113,
+    "id": 211355,
+    "name": "3-р баг, Баян-Уул",
+    "name_en": "3 bag, Bayn-Uul"
+  },
+  {
+    "parent": 2116,
+    "id": 211651,
+    "name": "1-р баг, Рашаант",
+    "name_en": "1 bag, Rashaant"
+  },
+  {
+    "parent": 2116,
+    "id": 211653,
+    "name": "2-р баг, Цагаан хошуу",
+    "name_en": "2 bag, Tsagaan khoshuu"
+  },
+  {
+    "parent": 2116,
+    "id": 211655,
+    "name": "3-р баг, Сүмийн булаг",
+    "name_en": "3 bag, Sumiin bulag"
+  },
+  {
+    "parent": 2119,
+    "id": 211951,
+    "name": "1-р баг, Сэвсүүл жараахай",
+    "name_en": "1 bag, Sevsuul jaraakhai"
+  },
+  {
+    "parent": 2119,
+    "id": 211953,
+    "name": "2-р баг, Харзат",
+    "name_en": "2 bag, Kharzat"
+  },
+  {
+    "parent": 2119,
+    "id": 211955,
+    "name": "3-р баг, Чух",
+    "name_en": "3 bag, Chukh"
+  },
+  {
+    "parent": 2119,
+    "id": 211957,
+    "name": "4-р баг, Номинт",
+    "name_en": "4 bag, Nomint"
+  },
+  {
+    "parent": 2119,
+    "id": 211959,
+    "name": "5-р баг, Улз",
+    "name_en": "5 bag, Ulz"
+  },
+  {
+    "parent": 2122,
+    "id": 212251,
+    "name": "1-р баг, Жаргалант",
+    "name_en": "1 bag, Jargalant"
+  },
+  {
+    "parent": 2122,
+    "id": 212253,
+    "name": "2-р баг, Баянхангай",
+    "name_en": "2 bag, Baynkhangai"
+  },
+  {
+    "parent": 2122,
+    "id": 212255,
+    "name": "3-р баг, Түмэнхаан",
+    "name_en": "3 bag, Tumenkhaan"
+  },
+  {
+    "parent": 2122,
+    "id": 212257,
+    "name": "4-р баг, Буян-Өндөр",
+    "name_en": "4 bag, Bayn-Undur"
+  },
+  {
+    "parent": 2122,
+    "id": 212259,
+    "name": "5-р баг, Мэнэн",
+    "name_en": "5 bag, Menen"
+  },
+  {
+    "parent": 2125,
+    "id": 212551,
+    "name": "1-р баг, Барчин",
+    "name_en": "1 bag, Barchin"
+  },
+  {
+    "parent": 2125,
+    "id": 212553,
+    "name": "2-р баг, Хурган",
+    "name_en": "2 bag, Khurgan"
+  },
+  {
+    "parent": 2125,
+    "id": 212555,
+    "name": "3-р баг, Баян",
+    "name_en": "3 bag, Bayn"
+  },
+  {
+    "parent": 2125,
+    "id": 212557,
+    "name": "4-р баг, Очир хүрээ",
+    "name_en": "4 bag, Ochir khuree"
+  },
+  {
+    "parent": 2125,
+    "id": 212559,
+    "name": "5-р баг, Галын гол",
+    "name_en": "5 bag, Galiin gol"
+  },
+  {
+    "parent": 2128,
+    "id": 212851,
+    "name": "1-р баг, Сүмбэр",
+    "name_en": "1 bag, Sulber"
+  },
+  {
+    "parent": 2128,
+    "id": 212853,
+    "name": "2-р баг, Ялалт",
+    "name_en": "6 bag, Ylalt"
+  },
+  {
+    "parent": 2128,
+    "id": 212855,
+    "name": "3-р баг, Ташгай",
+    "name_en": "3 bag, Tashai"
+  },
+  {
+    "parent": 2131,
+    "id": 213151,
+    "name": "1-р баг, Баян-Өлзийт баг",
+    "name_en": "1 bag, Bayn-Ulziit"
+  },
+  {
+    "parent": 2131,
+    "id": 213153,
+    "name": "2-р баг, Батхаан",
+    "name_en": "2 bag, BatKhaan"
+  },
+  {
+    "parent": 2131,
+    "id": 213155,
+    "name": "3-р баг, Баян-Уул",
+    "name_en": "3 bag, Bayn-Uul"
+  },
+  {
+    "parent": 2134,
+    "id": 213451,
+    "name": "1-р баг, Баянгол",
+    "name_en": "1 bag, Bayngol"
+  },
+  {
+    "parent": 2134,
+    "id": 213453,
+    "name": "2-р баг, Элст",
+    "name_en": "2 bag, Elst"
+  },
+  {
+    "parent": 2134,
+    "id": 213455,
+    "name": "3-р баг, Зүрх",
+    "name_en": "3 bag, Zurkh"
+  },
+  {
+    "parent": 2134,
+    "id": 213457,
+    "name": "4-р баг, Хүрээт",
+    "name_en": "4 bag, Khureet"
+  },
+  {
+    "parent": 2134,
+    "id": 213459,
+    "name": "5-р баг, Гүн цэнгэлэг",
+    "name_en": "5 bag, Gun tsengeleg"
+  },
+  {
+    "parent": 2134,
+    "id": 213461,
+    "name": "6-р баг, Хөөвөр",
+    "name_en": "6 bag, Khuuvur"
+  },
+  {
+    "parent": 2137,
+    "id": 213751,
+    "name": "1-р баг, Хулстай",
+    "name_en": "1 bag, Khulstai"
+  },
+  {
+    "parent": 2137,
+    "id": 213753,
+    "name": "2-р баг, Сүмбэр",
+    "name_en": "2 bag, Sumber"
+  },
+  {
+    "parent": 2137,
+    "id": 213755,
+    "name": "3-р баг, Энгэр шанд",
+    "name_en": "3 bag, Enger shand"
+  },
+  {
+    "parent": 2140,
+    "id": 214051,
+    "name": "1-р баг, Дулгэр",
+    "name_en": "1 bag, Dulger"
+  },
+  {
+    "parent": 2140,
+    "id": 214053,
+    "name": "2-р баг, Галуут",
+    "name_en": "2 bag, Galuut"
+  },
+  {
+    "parent": 2140,
+    "id": 214055,
+    "name": "3-р баг, Цагаанчулуут",
+    "name_en": "3 bag, Tsagaanchuluut"
+  },
+  {
+    "parent": 4801,
+    "id": 480151,
+    "name": "1-р баг, Наран",
+    "name_en": "1 bag, Naran"
+  },
+  {
+    "parent": 4801,
+    "id": 480153,
+    "name": "2-р баг, Тэвш",
+    "name_en": "2 bag, Tevsh"
+  },
+  {
+    "parent": 4801,
+    "id": 480155,
+    "name": "3-р баг, Далай",
+    "name_en": "3 bag, Dalai"
+  },
+  {
+    "parent": 4801,
+    "id": 480157,
+    "name": "4-р баг, Үйзэн",
+    "name_en": "4 bag, Uizen"
+  },
+  {
+    "parent": 4801,
+    "id": 480159,
+    "name": "5-р баг, Аривжих",
+    "name_en": "5 bag, Arivjikh"
+  },
+  {
+    "parent": 4801,
+    "id": 480161,
+    "name": "6-р баг, Боржигон",
+    "name_en": "6 bag, Borjigon"
+  },
+  {
+    "parent": 4801,
+    "id": 480163,
+    "name": "7-р баг, Нарлаг",
+    "name_en": "7 bag, Narlag"
+  },
+  {
+    "parent": 4801,
+    "id": 480165,
+    "name": "8-р баг, Айраг",
+    "name_en": "8 bag, Airag"
+  },
+  {
+    "parent": 4801,
+    "id": 480167,
+    "name": "9-р баг, Мандал",
+    "name_en": "9 bag, Mandal"
+  },
+  {
+    "parent": 4804,
+    "id": 480451,
+    "name": "1-р баг, Тавин",
+    "name_en": "1 bag, Tavin"
+  },
+  {
+    "parent": 4804,
+    "id": 480453,
+    "name": "2-р баг, Ар-Урт",
+    "name_en": "2 bag, Ar-Urt"
+  },
+  {
+    "parent": 4804,
+    "id": 480455,
+    "name": "3-р баг, Өвөр-Урт",
+    "name_en": "3 bag, Uvur-Urt"
+  },
+  {
+    "parent": 4804,
+    "id": 480457,
+    "name": "4-р баг, Сүм",
+    "name_en": "4 bag, Sum"
+  },
+  {
+    "parent": 4804,
+    "id": 480459,
+    "name": "5-р баг, Хашаат",
+    "name_en": "5 bag, Khashaat"
+  },
+  {
+    "parent": 4807,
+    "id": 480751,
+    "name": "1-р баг, Шилийн гол",
+    "name_en": "1 bag, Shiliin gol"
+  },
+  {
+    "parent": 4807,
+    "id": 480753,
+    "name": "2-р баг, Энгэр-Ус",
+    "name_en": "2 bag, Enger-Us"
+  },
+  {
+    "parent": 4807,
+    "id": 480755,
+    "name": "3-р баг, Аргатай",
+    "name_en": "3 bag, Argatai"
+  },
+  {
+    "parent": 4810,
+    "id": 481051,
+    "name": "1-р баг, Ажирхай",
+    "name_en": "1 bag, Ajirkhai"
+  },
+  {
+    "parent": 4810,
+    "id": 481053,
+    "name": "2-р баг, Морьт",
+    "name_en": "2 bag, Morit"
+  },
+  {
+    "parent": 4810,
+    "id": 481055,
+    "name": "3-р баг, Хонгор",
+    "name_en": "3 bag, Khongor"
+  },
+  {
+    "parent": 4813,
+    "id": 481351,
+    "name": "1-р баг, Элгэн",
+    "name_en": "1 bag, Elgen"
+  },
+  {
+    "parent": 4813,
+    "id": 481353,
+    "name": "2-р баг, Дэрсэнэ ус",
+    "name_en": "2 bag, Dersen us"
+  },
+  {
+    "parent": 4813,
+    "id": 481355,
+    "name": "3-р баг, Чулуут",
+    "name_en": "3 bag, Chuluut"
+  },
+  {
+    "parent": 4813,
+    "id": 481357,
+    "name": "4-р баг, Гурвансайхан",
+    "name_en": "4 bag, Gurvansaikhan"
+  },
+  {
+    "parent": 4813,
+    "id": 481359,
+    "name": "5-р баг, Суугаант",
+    "name_en": "5 bag, Suugaant"
+  },
+  {
+    "parent": 4816,
+    "id": 481651,
+    "name": "1-р баг, Толь",
+    "name_en": "1 bag, toli"
+  },
+  {
+    "parent": 4816,
+    "id": 481653,
+    "name": "2-р баг, Таргат",
+    "name_en": "2 bag, Targat"
+  },
+  {
+    "parent": 4816,
+    "id": 481655,
+    "name": "3-р баг, Ар шавагтай",
+    "name_en": "3 bag, Ar shavartai"
+  },
+  {
+    "parent": 4816,
+    "id": 481657,
+    "name": "4-р баг, Номгон",
+    "name_en": "4 bag, Nomgon"
+  },
+  {
+    "parent": 4819,
+    "id": 481951,
+    "name": "1-р баг, Баянбулаг",
+    "name_en": "1 bag, Baynbulag"
+  },
+  {
+    "parent": 4819,
+    "id": 481953,
+    "name": "2-р баг, Цахиурт",
+    "name_en": "2 bag, Tsakhiur"
+  },
+  {
+    "parent": 4819,
+    "id": 481955,
+    "name": "3-р баг, Дэлгэр-Эмт",
+    "name_en": "3 bag, Delger-Emt"
+  },
+  {
+    "parent": 4822,
+    "id": 482251,
+    "name": "1-р баг, Алаг-Өндөр",
+    "name_en": "1 bag, Alag-Undur"
+  },
+  {
+    "parent": 4822,
+    "id": 482253,
+    "name": "2-р баг, Саруул",
+    "name_en": "2 bag, Saruul"
+  },
+  {
+    "parent": 4822,
+    "id": 482255,
+    "name": "3-р баг, Долоод",
+    "name_en": "3 bag, Dolood"
+  },
+  {
+    "parent": 4822,
+    "id": 482257,
+    "name": "4-р баг, Бумбат",
+    "name_en": "4 bag, Bumbat"
+  },
+  {
+    "parent": 4825,
+    "id": 482551,
+    "name": "1-р баг, Суварга",
+    "name_en": "1 bag, Suvarga"
+  },
+  {
+    "parent": 4825,
+    "id": 482553,
+    "name": "2-р баг, Наран",
+    "name_en": "2 bag, Naran"
+  },
+  {
+    "parent": 4825,
+    "id": 482555,
+    "name": "3-р баг, Зүлэгтий",
+    "name_en": "3 bag, Zulegtii"
+  },
+  {
+    "parent": 4828,
+    "id": 482851,
+    "name": "1-р баг, Буянт-1",
+    "name_en": "1 bag, Buynt-1"
+  },
+  {
+    "parent": 4828,
+    "id": 482853,
+    "name": "2-р баг, Буянт-2",
+    "name_en": "2 bag, Buynt-2"
+  },
+  {
+    "parent": 4828,
+    "id": 482855,
+    "name": "3-р баг, Тагт",
+    "name_en": "3 bag, Tagt"
+  },
+  {
+    "parent": 4828,
+    "id": 482857,
+    "name": "4-р баг, Дэрт-1",
+    "name_en": "4 bag, Dert-1"
+  },
+  {
+    "parent": 4828,
+    "id": 482859,
+    "name": "5-р баг, Дэрт-2",
+    "name_en": "5 bag, Dert-2"
+  },
+  {
+    "parent": 4828,
+    "id": 482861,
+    "name": "6-р баг, Рашаант",
+    "name_en": "6 bag, Rashaant"
+  },
+  {
+    "parent": 4831,
+    "id": 483151,
+    "name": "1-р баг, Цог",
+    "name_en": "1 bag, Tsogt"
+  },
+  {
+    "parent": 4831,
+    "id": 483153,
+    "name": "2-р баг, Талын нар",
+    "name_en": "2 bag, Taliin nar"
+  },
+  {
+    "parent": 4834,
+    "id": 483451,
+    "name": "1-р баг, Мааньт",
+    "name_en": "1 bag, Maanit"
+  },
+  {
+    "parent": 4834,
+    "id": 483453,
+    "name": "2-р баг, Онги",
+    "name_en": "2 bag, Ongi"
+  },
+  {
+    "parent": 4834,
+    "id": 483455,
+    "name": "3-р баг, Төгрөг",
+    "name_en": "3 bag, Tugrug"
+  },
+  {
+    "parent": 4834,
+    "id": 483457,
+    "name": "4-р баг, Найз",
+    "name_en": "4 bag, Naiz"
+  },
+  {
+    "parent": 4837,
+    "id": 483751,
+    "name": "1-р баг, Шувуутай",
+    "name_en": "1 bag, Shuvuutai"
+  },
+  {
+    "parent": 4837,
+    "id": 483753,
+    "name": "2-р баг, Олдох",
+    "name_en": "2 bag, Oldokh"
+  },
+  {
+    "parent": 4837,
+    "id": 483755,
+    "name": "3-р баг, Уул",
+    "name_en": "3 bag, Uul"
+  },
+  {
+    "parent": 4837,
+    "id": 483757,
+    "name": "4-р баг, Бүлээн",
+    "name_en": "4 bag, Buleen"
+  },
+  {
+    "parent": 4840,
+    "id": 484051,
+    "name": "1-р баг, Хараат",
+    "name_en": "1 bag, Kharaat"
+  },
+  {
+    "parent": 4840,
+    "id": 484053,
+    "name": "2-р баг, Дэлгэрэх зам",
+    "name_en": "2 bag, Delgerekh zam"
+  },
+  {
+    "parent": 4840,
+    "id": 484055,
+    "name": "3-р баг, Жаргалант",
+    "name_en": "3 bag, Jargalant"
+  },
+  {
+    "parent": 4840,
+    "id": 484057,
+    "name": "4-р баг, Замын-Улаан",
+    "name_en": "4 bag, Zamiin-Ulaan"
+  },
+  {
+    "parent": 4843,
+    "id": 484351,
+    "name": "1-р баг, Цавчир",
+    "name_en": "1 bag, Tsavchir"
+  },
+  {
+    "parent": 4843,
+    "id": 484353,
+    "name": "2-р баг, Өнгөт",
+    "name_en": "2 bag, Ungut"
+  },
+  {
+    "parent": 4843,
+    "id": 484355,
+    "name": "3-р баг, Тэнгэлэг",
+    "name_en": "3 bag, Tengerleg"
+  },
+  {
+    "parent": 4843,
+    "id": 484357,
+    "name": "4-р баг, Рашаант",
+    "name_en": "4 bag, Rashaant"
+  },
+  {
+    "parent": 4843,
+    "id": 484359,
+    "name": "5-р баг, Цагаан-Овоо",
+    "name_en": "5 bag, Tsagaan-Ovoo"
+  },
+  {
+    "parent": 4843,
+    "id": 484361,
+    "name": "6-р баг, Сангийн далай",
+    "name_en": "6 bag, Sangiin dalai"
+  },
+  {
+    "parent": 4843,
+    "id": 484363,
+    "name": "7-р баг, Сумын төв",
+    "name_en": "7 bag, Sumiin tuv"
+  },
+  {
+    "parent": 8101,
+    "id": 810151,
+    "name": "1-р баг, Жинст",
+    "name_en": "1 bag, Jinst"
+  },
+  {
+    "parent": 8101,
+    "id": 810153,
+    "name": "2-р баг, Жаргалант",
+    "name_en": "2 bag, Jargalant"
+  },
+  {
+    "parent": 8101,
+    "id": 810155,
+    "name": "3-р баг, Чигэстэй",
+    "name_en": "3 bag, Chigestei"
+  },
+  {
+    "parent": 8101,
+    "id": 810157,
+    "name": "4-р баг, Богдын гол",
+    "name_en": "4 bag, Bogdiin gol"
+  },
+  {
+    "parent": 8101,
+    "id": 810159,
+    "name": "5-р баг, Товцог",
+    "name_en": "5 bag, Tovtsog"
+  },
+  {
+    "parent": 8101,
+    "id": 810161,
+    "name": "6-р баг, Өлзийт",
+    "name_en": "6 bag, Ulziit"
+  },
+  {
+    "parent": 8104,
+    "id": 810451,
+    "name": "1-р баг, Алдар",
+    "name_en": "1 bag, Aldar"
+  },
+  {
+    "parent": 8104,
+    "id": 810453,
+    "name": "2-р баг, Аргалант",
+    "name_en": "2 bag, Argalant"
+  },
+  {
+    "parent": 8104,
+    "id": 810455,
+    "name": "3-р баг, Богдын гол",
+    "name_en": "3 bag, Bogdiin gol"
+  },
+  {
+    "parent": 8104,
+    "id": 810457,
+    "name": "4-р баг, Өгөөмөр",
+    "name_en": "4 bag, Uguumur"
+  },
+  {
+    "parent": 8104,
+    "id": 810459,
+    "name": "5-р баг, Чигэстэй",
+    "name_en": "5 bag, Chigestei"
+  },
+  {
+    "parent": 8104,
+    "id": 810461,
+    "name": "6-р баг, Мандаат",
+    "name_en": "6 bag, Mandaat"
+  },
+  {
+    "parent": 8107,
+    "id": 810751,
+    "name": "1-р баг, Аргалант",
+    "name_en": "1 bag, ARgalant"
+  },
+  {
+    "parent": 8107,
+    "id": 810753,
+    "name": "2-р баг, Суварга",
+    "name_en": "2 bag, Suvarga"
+  },
+  {
+    "parent": 8110,
+    "id": 811051,
+    "name": "1-р баг, Бужир",
+    "name_en": "1 bag, Bujir"
+  },
+  {
+    "parent": 8110,
+    "id": 811053,
+    "name": "2-р баг, Жавхлан",
+    "name_en": "2 bag, Javkhlan"
+  },
+  {
+    "parent": 8110,
+    "id": 811055,
+    "name": "3-р баг, Зайгал",
+    "name_en": "3 bag, Zaigal"
+  },
+  {
+    "parent": 8110,
+    "id": 811057,
+    "name": "4-р баг, Хачиг",
+    "name_en": "4 bag, Khachig"
+  },
+  {
+    "parent": 8113,
+    "id": 811351,
+    "name": "1-р баг, Наран",
+    "name_en": "1 bag, Naran"
+  },
+  {
+    "parent": 8113,
+    "id": 811353,
+    "name": "2-р баг, Асгат",
+    "name_en": "2 bag, Asgat"
+  },
+  {
+    "parent": 8113,
+    "id": 811355,
+    "name": "3-р баг, Минж",
+    "name_en": "3 bag, Minj"
+  },
+  {
+    "parent": 8113,
+    "id": 811357,
+    "name": "4-р баг, Төөнт",
+    "name_en": "4 bag, Tuunt"
+  },
+  {
+    "parent": 8116,
+    "id": 811651,
+    "name": "1-р баг, Буга",
+    "name_en": "1 bag, Buga"
+  },
+  {
+    "parent": 8116,
+    "id": 811653,
+    "name": "2-р баг, Цогт",
+    "name_en": "2 bag, Tsogt"
+  },
+  {
+    "parent": 8116,
+    "id": 811655,
+    "name": "3-р баг, Тавантолгой",
+    "name_en": "3 bag, Tavantolgoi"
+  },
+  {
+    "parent": 8116,
+    "id": 811657,
+    "name": "4-р баг, Буурал",
+    "name_en": "4 bag, Buural"
+  },
+  {
+    "parent": 8116,
+    "id": 811659,
+    "name": "5-р баг, Онц",
+    "name_en": "5 bag, Onts"
+  },
+  {
+    "parent": 8119,
+    "id": 811951,
+    "name": "1-р баг, Мандал",
+    "name_en": "1 bag, Mandal"
+  },
+  {
+    "parent": 8119,
+    "id": 811953,
+    "name": "2-р баг, Олонбулаг",
+    "name_en": "2 bag, Olonbulag"
+  },
+  {
+    "parent": 8119,
+    "id": 811955,
+    "name": "3-р баг, Олонтүрүү",
+    "name_en": "3 bag, Olonturuu"
+  },
+  {
+    "parent": 8119,
+    "id": 811957,
+    "name": "4-р баг, Нуга",
+    "name_en": "4 bag, Nuga"
+  },
+  {
+    "parent": 8122,
+    "id": 812251,
+    "name": "1-р баг, Мануустай",
+    "name_en": "1 bag, Manuustai"
+  },
+  {
+    "parent": 8122,
+    "id": 812253,
+    "name": "2-р баг, Цэцэрлэг",
+    "name_en": "2 bag, Tsetserleg"
+  },
+  {
+    "parent": 8122,
+    "id": 812255,
+    "name": "3-р баг, Загастай",
+    "name_en": "3 bag, Zagastai"
+  },
+  {
+    "parent": 8122,
+    "id": 812257,
+    "name": "4-р баг, Дархан-Уул",
+    "name_en": "4 bag, Darkhan-Uul"
+  },
+  {
+    "parent": 8125,
+    "id": 812551,
+    "name": "1-р баг, Баян-Ухаа",
+    "name_en": "1 bag, Bayn-Ukhaa"
+  },
+  {
+    "parent": 8125,
+    "id": 812553,
+    "name": "2-р баг, Үржил",
+    "name_en": "6 bag, Urjil"
+  },
+  {
+    "parent": 8125,
+    "id": 812555,
+    "name": "3-р баг, Хуягт",
+    "name_en": "3 bag, Khuygt"
+  },
+  {
+    "parent": 8125,
+    "id": 812557,
+    "name": "4-р баг, Хонгор",
+    "name_en": "4 bag, Khongor"
+  },
+  {
+    "parent": 8125,
+    "id": 812559,
+    "name": "5-р баг, Цэцүүх",
+    "name_en": "5 bag, Tsetsuukh"
+  },
+  {
+    "parent": 8125,
+    "id": 812561,
+    "name": "6-р баг, Зарт",
+    "name_en": "6 bag, Zart"
+  },
+  {
+    "parent": 8128,
+    "id": 812851,
+    "name": "1-р баг, Хөдрөг",
+    "name_en": "1 bag, Khudrug"
+  },
+  {
+    "parent": 8128,
+    "id": 812853,
+    "name": "2-р баг, Баянзүрх",
+    "name_en": "2 bag, Baynzurkh"
+  },
+  {
+    "parent": 8128,
+    "id": 812855,
+    "name": "3-р баг, Дархан-Уул",
+    "name_en": "3 bag, Darkhan-Uul"
+  },
+  {
+    "parent": 8128,
+    "id": 812857,
+    "name": "4-р баг, Нуур",
+    "name_en": "4 bag, Nuur"
+  },
+  {
+    "parent": 8128,
+    "id": 812859,
+    "name": "5-р баг, Хайрхан",
+    "name_en": "5 bag, Khairkhan"
+  },
+  {
+    "parent": 8131,
+    "id": 813151,
+    "name": "1-р баг, Буянт",
+    "name_en": "1 bag, Buynt"
+  },
+  {
+    "parent": 8131,
+    "id": 813153,
+    "name": "2-р баг, Баянбулаг",
+    "name_en": "2 bag, Baynbulag"
+  },
+  {
+    "parent": 8131,
+    "id": 813155,
+    "name": "3-р баг, Бадрал",
+    "name_en": "3 bag, Badral"
+  },
+  {
+    "parent": 8131,
+    "id": 813157,
+    "name": "4-р баг, Соёл",
+    "name_en": "4 bag, Soyl"
+  },
+  {
+    "parent": 8131,
+    "id": 813159,
+    "name": "5-р баг, Онц",
+    "name_en": "5 bag, Onts"
+  },
+  {
+    "parent": 8131,
+    "id": 813161,
+    "name": "6-р баг, Хужирт",
+    "name_en": "6 bag, Khujirt"
+  },
+  {
+    "parent": 8134,
+    "id": 813451,
+    "name": "1-р баг, Баян-Улаан",
+    "name_en": "1 bag, Bayn-Ulaan"
+  },
+  {
+    "parent": 8134,
+    "id": 813453,
+    "name": "2-р баг, Баяннуур",
+    "name_en": "2 bag, Baynnuur"
+  },
+  {
+    "parent": 8134,
+    "id": 813455,
+    "name": "3-р баг, Баяндавс",
+    "name_en": "3 bag, Bayndavs"
+  },
+  {
+    "parent": 8134,
+    "id": 813457,
+    "name": "4-р баг, Холбоо",
+    "name_en": "4 bag, Kholboo"
+  },
+  {
+    "parent": 8137,
+    "id": 813751,
+    "name": "1-р баг, Баян-Айраг",
+    "name_en": "1 bag, Bayn-Aimag"
+  },
+  {
+    "parent": 8137,
+    "id": 813753,
+    "name": "2-р баг, Айраг нуур",
+    "name_en": "2 bag, Airag nuur"
+  },
+  {
+    "parent": 8137,
+    "id": 813755,
+    "name": "3-р баг, Шар нуруу",
+    "name_en": "3 bag, Shar nuruu"
+  },
+  {
+    "parent": 8137,
+    "id": 813757,
+    "name": "4-р баг, Тариат",
+    "name_en": "4 bag, Tariat"
+  },
+  {
+    "parent": 8137,
+    "id": 813759,
+    "name": "5-р баг, Бор-Өндөр",
+    "name_en": "5 bag, Bor-Undur"
+  },
+  {
+    "parent": 8140,
+    "id": 814051,
+    "name": "1-р баг, Дархан-Уул",
+    "name_en": "1 bag, Darkhan-Uul"
+  },
+  {
+    "parent": 8140,
+    "id": 814053,
+    "name": "2-р баг, Хайрхан",
+    "name_en": "2 bag, Khairkhan"
+  },
+  {
+    "parent": 8140,
+    "id": 814055,
+    "name": "3-р баг, Улаантолгой",
+    "name_en": "3 bag, Ulaantolgoi"
+  },
+  {
+    "parent": 8140,
+    "id": 814057,
+    "name": "4-р баг, Рашаант",
+    "name_en": "4 bag, Rashaant"
+  },
+  {
+    "parent": 8140,
+    "id": 814059,
+    "name": "5-р баг, Баян-Улаан",
+    "name_en": "5 bag, Bayn-Ulaan"
+  },
+  {
+    "parent": 8140,
+    "id": 814061,
+    "name": "6-р баг, Идэр",
+    "name_en": "6 bag, Ider"
+  },
+  {
+    "parent": 8140,
+    "id": 814063,
+    "name": "7-р баг, Оргих",
+    "name_en": "7 bag, Orgikh"
+  },
+  {
+    "parent": 8143,
+    "id": 814351,
+    "name": "1-р баг, Баянцагаан",
+    "name_en": "1 bag, Bayntsagaan"
+  },
+  {
+    "parent": 8143,
+    "id": 814353,
+    "name": "2-р баг, Аргалант",
+    "name_en": "2 bag, Argalant"
+  },
+  {
+    "parent": 8143,
+    "id": 814355,
+    "name": "3-р баг, Ойгон",
+    "name_en": "3 bag, Oigon"
+  },
+  {
+    "parent": 8143,
+    "id": 814357,
+    "name": "4-р баг, Цорго",
+    "name_en": "4 bag, Tsorgo"
+  },
+  {
+    "parent": 8146,
+    "id": 814651,
+    "name": "1-р баг, Өгөөмөр",
+    "name_en": "1 bag, Uguumur"
+  },
+  {
+    "parent": 8146,
+    "id": 814653,
+    "name": "2-р баг, Шургах",
+    "name_en": "2 bag, Shurgakh"
+  },
+  {
+    "parent": 8146,
+    "id": 814655,
+    "name": "3-р баг, Нуур",
+    "name_en": "3 bag, Nuur"
+  },
+  {
+    "parent": 8146,
+    "id": 814657,
+    "name": "4-р баг, Баянтэгш",
+    "name_en": "4 bag, Bayntegsh"
+  },
+  {
+    "parent": 8146,
+    "id": 814659,
+    "name": "5-р баг, Өвөгдий",
+    "name_en": "5 bag, Uvugdii"
+  },
+  {
+    "parent": 8146,
+    "id": 814661,
+    "name": "6-р баг, Баян-Айраг",
+    "name_en": "6 bag, Bayn-Airag"
+  },
+  {
+    "parent": 8149,
+    "id": 814951,
+    "name": "1-р баг, Дооно",
+    "name_en": "1 bag, Doono"
+  },
+  {
+    "parent": 8149,
+    "id": 814953,
+    "name": "2-р баг, Нисэг",
+    "name_en": "2 bag, Niseg"
+  },
+  {
+    "parent": 8149,
+    "id": 814955,
+    "name": "3-р баг, Баян-Уул",
+    "name_en": "3 bag, Bayn-Uul"
+  },
+  {
+    "parent": 8149,
+    "id": 814957,
+    "name": "4-р баг, Зүр",
+    "name_en": "4 bag, Zur"
+  },
+  {
+    "parent": 8152,
+    "id": 815251,
+    "name": "1-р баг, Тосгуур",
+    "name_en": "1 bag, Tosguur"
+  },
+  {
+    "parent": 8152,
+    "id": 815253,
+    "name": "2-р баг, Хульж",
+    "name_en": "2 bag, Khulj"
+  },
+  {
+    "parent": 8152,
+    "id": 815255,
+    "name": "3-р баг, Нуур зөөхий",
+    "name_en": "3 bag, Nuur zuukhii"
+  },
+  {
+    "parent": 8152,
+    "id": 815257,
+    "name": "4-р баг, Төв",
+    "name_en": "4 bag, Tuv"
+  },
+  {
+    "parent": 8152,
+    "id": 815259,
+    "name": "5-р баг, Баян-Улаан",
+    "name_en": "5 bag, Bayn-Ulaan"
+  },
+  {
+    "parent": 8155,
+    "id": 815551,
+    "name": "1-р баг, Цэцэрлэг",
+    "name_en": "1 bag, Tsetserleg"
+  },
+  {
+    "parent": 8155,
+    "id": 815553,
+    "name": "2-р баг, Онц",
+    "name_en": "3 bag, Onts"
+  },
+  {
+    "parent": 8155,
+    "id": 815555,
+    "name": "3-р баг, Баянбулаг",
+    "name_en": "3 bag, Baynbulag"
+  },
+  {
+    "parent": 8155,
+    "id": 815557,
+    "name": "4-р баг, Агьт",
+    "name_en": "4 bag, Agit"
+  },
+  {
+    "parent": 8158,
+    "id": 815851,
+    "name": "1-р баг, Арц",
+    "name_en": "1 bag, Arts"
+  },
+  {
+    "parent": 8158,
+    "id": 815853,
+    "name": "2-р баг, Жавцаг",
+    "name_en": "2 bag, Javtsag"
+  },
+  {
+    "parent": 8158,
+    "id": 815855,
+    "name": "3-р баг, Дэлгэр",
+    "name_en": "3 bag, Delger"
+  },
+  {
+    "parent": 8158,
+    "id": 815857,
+    "name": "4-р баг, Баянхайрхан",
+    "name_en": "4 bag, Baynkhairkhan"
+  },
+  {
+    "parent": 8161,
+    "id": 816151,
+    "name": "1-р баг, Оройн товгор",
+    "name_en": "1 bag, Oroin tovgor"
+  },
+  {
+    "parent": 8161,
+    "id": 816153,
+    "name": "2-р баг, Жаргалант",
+    "name_en": "2 bag, Jargalant"
+  },
+  {
+    "parent": 8161,
+    "id": 816155,
+    "name": "3-р баг, Сангийн далай",
+    "name_en": "3 bag, Sangiin dalai"
+  },
+  {
+    "parent": 8161,
+    "id": 816157,
+    "name": "4-р баг, Шотой",
+    "name_en": "4 bag, Shotoi"
+  },
+  {
+    "parent": 8161,
+    "id": 816159,
+    "name": "5-р баг, Батсуурь",
+    "name_en": "5 bag, Batsuuri"
+  },
+  {
+    "parent": 8164,
+    "id": 816451,
+    "name": "1-р баг, Баян-Улаан",
+    "name_en": "1 bag, Bayn-Ulaan"
+  },
+  {
+    "parent": 8164,
+    "id": 816453,
+    "name": "2-р баг, Чандмань",
+    "name_en": "2 bag, Chandmani"
+  },
+  {
+    "parent": 8164,
+    "id": 816455,
+    "name": "3-р баг, Хөгжил",
+    "name_en": "3 bag, Khugjil"
+  },
+  {
+    "parent": 8164,
+    "id": 816457,
+    "name": "4-р баг, Сайхан",
+    "name_en": "4 bag, Saikhan"
+  },
+  {
+    "parent": 8167,
+    "id": 816751,
+    "name": "1-р баг, Багануур",
+    "name_en": "1 bag, Baganuur"
+  },
+  {
+    "parent": 8167,
+    "id": 816753,
+    "name": "2-р баг, Мөсөн",
+    "name_en": "2 bag, Musun"
+  },
+  {
+    "parent": 8167,
+    "id": 816755,
+    "name": "3-р баг, Алтан",
+    "name_en": "3 bag, Altan"
+  },
+  {
+    "parent": 8167,
+    "id": 816757,
+    "name": "4-р баг, Баянзүрх",
+    "name_en": "4 bag, Baynzurkh"
+  },
+  {
+    "parent": 8167,
+    "id": 816759,
+    "name": "5-р баг, Хайрхан",
+    "name_en": "5 bag, Khairkhan"
+  },
+  {
+    "parent": 8170,
+    "id": 817051,
+    "name": "1-р баг, Зүйл",
+    "name_en": "1 bag, Zuil"
+  },
+  {
+    "parent": 8170,
+    "id": 817053,
+    "name": "2-р баг, Жаргалант",
+    "name_en": "2 bag, Jargalant"
+  },
+  {
+    "parent": 8170,
+    "id": 817055,
+    "name": "3-р баг, Өргөн",
+    "name_en": "3 bag, Urgun"
+  },
+  {
+    "parent": 8170,
+    "id": 817057,
+    "name": "4-р баг, Хэц-Улаан",
+    "name_en": "4 bag, Khets-Ulaan"
+  },
+  {
+    "parent": 8170,
+    "id": 817059,
+    "name": "5-р баг, Чандмань",
+    "name_en": "5 bag, Chandmani"
+  },
+  {
+    "parent": 6201,
+    "id": 620151,
+    "name": "1-р баг, Согоот",
+    "name_en": "1 bag, Sogoot"
+  },
+  {
+    "parent": 6201,
+    "id": 620153,
+    "name": "2-р баг, Эмт",
+    "name_en": "2 bag, Emt"
+  },
+  {
+    "parent": 6201,
+    "id": 620155,
+    "name": "3-р баг, Дэлгэрэх",
+    "name_en": "3 bag, Delgerekh"
+  },
+  {
+    "parent": 6201,
+    "id": 620157,
+    "name": "4-р баг, Өлзийт",
+    "name_en": "4 bag, Ulziit"
+  },
+  {
+    "parent": 6201,
+    "id": 620159,
+    "name": "5-р баг, Арвайхээр",
+    "name_en": "5 bag, Arvaikheer"
+  },
+  {
+    "parent": 6201,
+    "id": 620161,
+    "name": "6-р баг, Ягаантолгой",
+    "name_en": "6 bag, Khyzylkhayin"
+  },
+  {
+    "parent": 6201,
+    "id": 620163,
+    "name": "7-р баг, Дэлгэрэхийн дэнж",
+    "name_en": "7 bag, Delgerekhiin denj"
+  },
+  {
+    "parent": 6201,
+    "id": 620165,
+    "name": "8-р баг, Рашаант",
+    "name_en": "8 bag, Rashaant"
+  },
+  {
+    "parent": 6201,
+    "id": 620167,
+    "name": "9-р баг, Бурхи",
+    "name_en": "9 bag, Burkhi"
+  },
+  {
+    "parent": 6204,
+    "id": 620451,
+    "name": "1-р баг, Өлзийтхошуу",
+    "name_en": "1 bag, Ulziitkhoshuu"
+  },
+  {
+    "parent": 6204,
+    "id": 620453,
+    "name": "2-р баг, Хүүхдийн-Ус",
+    "name_en": "2 bag, Khuukhdiin-Us"
+  },
+  {
+    "parent": 6204,
+    "id": 620455,
+    "name": "3-р баг, Цагаан-Овоо",
+    "name_en": "3 bag, Tsagaan-Ovoo"
+  },
+  {
+    "parent": 6204,
+    "id": 620457,
+    "name": "4-р баг, Хөөвөр",
+    "name_en": "4 bag, Khuuvur"
+  },
+  {
+    "parent": 6207,
+    "id": 620751,
+    "name": "1-р баг, Улаан-Ам",
+    "name_en": "1 bag, Ulaan-Am"
+  },
+  {
+    "parent": 6207,
+    "id": 620753,
+    "name": "2-р баг, Бүрэгтий",
+    "name_en": "2 bag, Buregtii"
+  },
+  {
+    "parent": 6207,
+    "id": 620755,
+    "name": "3-р баг, Өвт",
+    "name_en": "3 bag, Uvt"
+  },
+  {
+    "parent": 6207,
+    "id": 620757,
+    "name": "4-р баг, Зөрүүлэг",
+    "name_en": "4 bag, Zuruuleg"
+  },
+  {
+    "parent": 6210,
+    "id": 621051,
+    "name": "1-р баг, Өнц",
+    "name_en": "1 bag, Unts"
+  },
+  {
+    "parent": 6210,
+    "id": 621053,
+    "name": "2-р баг, Эргэн дэнж",
+    "name_en": "2 bag, Ergen denj"
+  },
+  {
+    "parent": 6210,
+    "id": 621055,
+    "name": "3-р баг, Цагаан булан",
+    "name_en": "3 bag, Tsagaan bulan"
+  },
+  {
+    "parent": 6210,
+    "id": 621057,
+    "name": "4-р баг, Хаяа",
+    "name_en": "4 bag, Haya"
+  },
+  {
+    "parent": 6210,
+    "id": 621059,
+    "name": "5-р баг, Цавын-Ихэр",
+    "name_en": "5 bag, Tsaviin-Ikher"
+  },
+  {
+    "parent": 6210,
+    "id": 621061,
+    "name": "6-р баг, Ширээ",
+    "name_en": "6 bag, Shiree"
+  },
+  {
+    "parent": 6213,
+    "id": 621351,
+    "name": "1-р баг, Бөмбий",
+    "name_en": "1 bag, Bumbii"
+  },
+  {
+    "parent": 6213,
+    "id": 621353,
+    "name": "2-р баг, Батхаан",
+    "name_en": "2 bag, Batkhaan"
+  },
+  {
+    "parent": 6213,
+    "id": 621355,
+    "name": "3-р баг, Өвөр зүлэгт",
+    "name_en": "3 bag, Uvurt zulegt"
+  },
+  {
+    "parent": 6213,
+    "id": 621357,
+    "name": "4-р баг, Хар тойром",
+    "name_en": "4 bag, Khar toirom"
+  },
+  {
+    "parent": 6213,
+    "id": 621359,
+    "name": "5-р баг, Бумбат",
+    "name_en": "5 bag, Bumbat"
+  },
+  {
+    "parent": 6216,
+    "id": 621651,
+    "name": "1-р баг, Өлзийт хошуу",
+    "name_en": "1 bag, Ulziit khoshuu"
+  },
+  {
+    "parent": 6216,
+    "id": 621653,
+    "name": "2-р баг, Хөөвөр",
+    "name_en": "2 bag, Khuuvur"
+  },
+  {
+    "parent": 6216,
+    "id": 621655,
+    "name": "3-р баг, Баян төхөм",
+    "name_en": "3 bag, Bayn tukhum"
+  },
+  {
+    "parent": 6216,
+    "id": 621657,
+    "name": "4-р баг, Гүн-Ус",
+    "name_en": "4 bag, Gun-Us"
+  },
+  {
+    "parent": 6216,
+    "id": 621659,
+    "name": "5-р баг, Далан",
+    "name_en": "5 bag, Dalan"
+  },
+  {
+    "parent": 6216,
+    "id": 621661,
+    "name": "6-р баг, Ялаатай",
+    "name_en": "6 bag, Ylaatai"
+  },
+  {
+    "parent": 6216,
+    "id": 621663,
+    "name": "7-р баг, Ховд",
+    "name_en": "7 bag, Khovd"
+  },
+  {
+    "parent": 6219,
+    "id": 621951,
+    "name": "1-р баг, Ар жаргалант",
+    "name_en": "1 bag, Ar jargalant"
+  },
+  {
+    "parent": 6219,
+    "id": 621953,
+    "name": "2-р баг, Их боригдой",
+    "name_en": "2 bag, Ikh borigdoi"
+  },
+  {
+    "parent": 6219,
+    "id": 621955,
+    "name": "3-р баг, Донгит",
+    "name_en": "3 bag, Dongit"
+  },
+  {
+    "parent": 6219,
+    "id": 621957,
+    "name": "4-р баг, Ар хөшөөт",
+    "name_en": "4 bag, Ar khushuut"
+  },
+  {
+    "parent": 6219,
+    "id": 621959,
+    "name": "5-р баг, Онгон",
+    "name_en": "5 bag, Ongon"
+  },
+  {
+    "parent": 6222,
+    "id": 622251,
+    "name": "1-р баг, Хөөвөр",
+    "name_en": "1 bag, Khuuvur"
+  },
+  {
+    "parent": 6222,
+    "id": 622253,
+    "name": "2-р баг, Гучин",
+    "name_en": "2 bag, Guchin"
+  },
+  {
+    "parent": 6222,
+    "id": 622255,
+    "name": "3-р баг, Аргалант",
+    "name_en": "3 bag, Argalant"
+  },
+  {
+    "parent": 6222,
+    "id": 622257,
+    "name": "4-р баг, Аргуйт",
+    "name_en": "4 bag, Arguit"
+  },
+  {
+    "parent": 6225,
+    "id": 622551,
+    "name": "1-р баг, Тахилга",
+    "name_en": "1 bag, Tahilga"
+  },
+  {
+    "parent": 6225,
+    "id": 622553,
+    "name": "2-р баг, Мөнхбулаг",
+    "name_en": "2 bag, Munkhbulag"
+  },
+  {
+    "parent": 6225,
+    "id": 622555,
+    "name": "3-р баг, Хайрхан",
+    "name_en": "3 bag, Khairkhan"
+  },
+  {
+    "parent": 6225,
+    "id": 622557,
+    "name": "4-р баг, Эрээн",
+    "name_en": "4 bag, Ereen"
+  },
+  {
+    "parent": 6228,
+    "id": 622851,
+    "name": "1-р баг, Эмгэд",
+    "name_en": "1 bag, Emged"
+  },
+  {
+    "parent": 6228,
+    "id": 622853,
+    "name": "2-р баг, Цахиурт",
+    "name_en": "2 bag, Tsahiurt"
+  },
+  {
+    "parent": 6228,
+    "id": 622855,
+    "name": "3-р баг, Дөлгөөн",
+    "name_en": "3 bag, Dulguun"
+  },
+  {
+    "parent": 6228,
+    "id": 622857,
+    "name": "4-р баг, Баян-Улаан",
+    "name_en": "4 bag, Bayn-Ulaan"
+  },
+  {
+    "parent": 6228,
+    "id": 622859,
+    "name": "5-р баг, Хад",
+    "name_en": "5 bag, Khad"
+  },
+  {
+    "parent": 6228,
+    "id": 622861,
+    "name": "6-р баг, Дэвшил",
+    "name_en": "6 bag, Devshil"
+  },
+  {
+    "parent": 6231,
+    "id": 623151,
+    "name": "1-р баг, Шарга",
+    "name_en": "1 bag, Sharga"
+  },
+  {
+    "parent": 6231,
+    "id": 623153,
+    "name": "2-р баг, Баянтээг",
+    "name_en": "2 bag, Baynteeg"
+  },
+  {
+    "parent": 6231,
+    "id": 623155,
+    "name": "3-р баг, Өндөрхөмөг",
+    "name_en": "3 bag, Undurkhaan"
+  },
+  {
+    "parent": 6231,
+    "id": 623157,
+    "name": "4-р баг, Цагаан-Овоо",
+    "name_en": "4 bag, Tsagaan-Ovoo"
+  },
+  {
+    "parent": 6234,
+    "id": 623451,
+    "name": "1-р баг, Бор хошуут",
+    "name_en": "1 bag, Bor hoshuut"
+  },
+  {
+    "parent": 6234,
+    "id": 623453,
+    "name": "2-р баг, Агуйт",
+    "name_en": "2 bag, Aguit"
+  },
+  {
+    "parent": 6234,
+    "id": 623455,
+    "name": "3-р баг, Яргайт",
+    "name_en": "3 bag, Yrgait"
+  },
+  {
+    "parent": 6234,
+    "id": 623457,
+    "name": "4-р баг, Гуулин",
+    "name_en": "4 bag, Guulin"
+  },
+  {
+    "parent": 6237,
+    "id": 623751,
+    "name": "1-р баг, Царги",
+    "name_en": "1 bag, Tsargi"
+  },
+  {
+    "parent": 6237,
+    "id": 623753,
+    "name": "2-р баг, Цахиурт",
+    "name_en": "2 bag, Tsahiurt"
+  },
+  {
+    "parent": 6237,
+    "id": 623755,
+    "name": "3-р баг, Улаан-Овоо",
+    "name_en": "3 bag, Ulaan-Ovoo"
+  },
+  {
+    "parent": 6237,
+    "id": 623757,
+    "name": "4-р баг, Залаа",
+    "name_en": "4 bag, Zalaa"
+  },
+  {
+    "parent": 6237,
+    "id": 623759,
+    "name": "5-р баг, Майхан",
+    "name_en": "5 bag, Maikhan"
+  },
+  {
+    "parent": 6240,
+    "id": 624051,
+    "name": "1-р баг, Туяа",
+    "name_en": "1 bag, Tuya"
+  },
+  {
+    "parent": 6240,
+    "id": 624053,
+    "name": "2-р баг, Арвайнтал",
+    "name_en": "2 bag, Arvaintal"
+  },
+  {
+    "parent": 6240,
+    "id": 624055,
+    "name": "3-р баг, Хүрэмт",
+    "name_en": "3 bag, Khuremt"
+  },
+  {
+    "parent": 6240,
+    "id": 624057,
+    "name": "4-р баг, Урт",
+    "name_en": "4 bag, Urt"
+  },
+  {
+    "parent": 6240,
+    "id": 624059,
+    "name": "5-р баг, Их булаг",
+    "name_en": "5 bag, Ikh bulag"
+  },
+  {
+    "parent": 6240,
+    "id": 624061,
+    "name": "6-р баг, Алтантал",
+    "name_en": "6 bag, Altantal"
+  },
+  {
+    "parent": 6243,
+    "id": 624351,
+    "name": "1-р баг, Хоолт",
+    "name_en": "1 bag, Khoolt"
+  },
+  {
+    "parent": 6243,
+    "id": 624353,
+    "name": "2-р баг, Их-Ус",
+    "name_en": "2 bag, Ikh-Us"
+  },
+  {
+    "parent": 6243,
+    "id": 624355,
+    "name": "3-р баг, Мазар",
+    "name_en": "3 bag, Mazar"
+  },
+  {
+    "parent": 6243,
+    "id": 624357,
+    "name": "4-р баг, Сайн төгрөг",
+    "name_en": "4 bag, Sain tugrug"
+  },
+  {
+    "parent": 6243,
+    "id": 624359,
+    "name": "5-р баг, Баян",
+    "name_en": "5 bag, Bayn"
+  },
+  {
+    "parent": 6246,
+    "id": 624651,
+    "name": "1-р баг, Жаргалант",
+    "name_en": "1 bag, Jargalant"
+  },
+  {
+    "parent": 6246,
+    "id": 624653,
+    "name": "2-р баг, Таац",
+    "name_en": "2 bag, Taats"
+  },
+  {
+    "parent": 6246,
+    "id": 624655,
+    "name": "3-р баг, Шивээ-Овоо",
+    "name_en": "3 bag, Shivee-Ovoo"
+  },
+  {
+    "parent": 6246,
+    "id": 624657,
+    "name": "4-р баг, Шуранга",
+    "name_en": "4 bag, Shuranga"
+  },
+  {
+    "parent": 6246,
+    "id": 624659,
+    "name": "5-р баг, Бадрал",
+    "name_en": "5 bag, Badral"
+  },
+  {
+    "parent": 6246,
+    "id": 624661,
+    "name": "6-р баг, Бөөрөлжүүт",
+    "name_en": "6 bag, Buuruljuut"
+  },
+  {
+    "parent": 6246,
+    "id": 624663,
+    "name": "7-р баг, Өлт",
+    "name_en": "7 bag, Ult"
+  },
+  {
+    "parent": 6246,
+    "id": 624665,
+    "name": "8-р баг, Онги",
+    "name_en": "8 bag, Ongi"
+  },
+  {
+    "parent": 6249,
+    "id": 624951,
+    "name": "1-р баг, Бурхант",
+    "name_en": "1 bag, Burkhant"
+  },
+  {
+    "parent": 6249,
+    "id": 624953,
+    "name": "2-р баг, Нарт",
+    "name_en": "5 bag, Nart"
+  },
+  {
+    "parent": 6249,
+    "id": 624955,
+    "name": "3-р баг, Эмээл",
+    "name_en": "3 bag, Emeel"
+  },
+  {
+    "parent": 6249,
+    "id": 624957,
+    "name": "4-р баг, Дэрсэн хонхор",
+    "name_en": "4 bag, Dersen khonkhor"
+  },
+  {
+    "parent": 6249,
+    "id": 624959,
+    "name": "5-р баг, Ар агуйт",
+    "name_en": "5 bag, Ar aguit"
+  },
+  {
+    "parent": 6249,
+    "id": 624961,
+    "name": "6-р баг, Марзат",
+    "name_en": "6 bag, Marzat"
+  },
+  {
+    "parent": 6252,
+    "id": 625251,
+    "name": "1-р баг, Вангийн-Овоо",
+    "name_en": "1 bag, Vangiin-Ovoo"
+  },
+  {
+    "parent": 6252,
+    "id": 625253,
+    "name": "2-р баг, Ганган-Орхон",
+    "name_en": "2 bag, Gangan-Orkhon"
+  },
+  {
+    "parent": 6252,
+    "id": 625255,
+    "name": "3-р баг, Эрдэнэтолгой",
+    "name_en": "3 bag, Erdenetolgoi"
+  },
+  {
+    "parent": 6252,
+    "id": 625257,
+    "name": "4-р баг, Нарийн хүр",
+    "name_en": "4 bag, Nariin khur"
+  },
+  {
+    "parent": 6252,
+    "id": 625259,
+    "name": "5-р баг, Онгоцон-Ухаа",
+    "name_en": "5 bag, Ongotson-ukhaa"
+  },
+  {
+    "parent": 6252,
+    "id": 625261,
+    "name": "6-р баг, Жалбаа",
+    "name_en": "6 bag, Jalbaa"
+  },
+  {
+    "parent": 6252,
+    "id": 625263,
+    "name": "7-р баг, Шанх",
+    "name_en": "7 bag, Shankh"
+  },
+  {
+    "parent": 6252,
+    "id": 625265,
+    "name": "8-р баг, Орхон",
+    "name_en": "8 bag, Orkhon"
+  },
+  {
+    "parent": 6255,
+    "id": 625551,
+    "name": "1-р баг, Өвөр модот",
+    "name_en": "1 bag, Uvur modot"
+  },
+  {
+    "parent": 6255,
+    "id": 625553,
+    "name": "2-р баг, Уужим",
+    "name_en": "3 bag, Uujim"
+  },
+  {
+    "parent": 6255,
+    "id": 625555,
+    "name": "3-р баг, Бэрх",
+    "name_en": "3 bag, Berkh"
+  },
+  {
+    "parent": 6255,
+    "id": 625557,
+    "name": "4-р баг, Шивээт",
+    "name_en": "4 bag, Shiveet"
+  },
+  {
+    "parent": 6255,
+    "id": 625559,
+    "name": "5-р баг, Шунхлай",
+    "name_en": "5 bag, Shunkhlai"
+  },
+  {
+    "parent": 4601,
+    "id": 460151,
+    "name": "1-р баг, Баруунсайхан",
+    "name_en": "1 bag, Baruunsaikhan"
+  },
+  {
+    "parent": 4601,
+    "id": 460153,
+    "name": "2-р баг, Хан-Уул",
+    "name_en": "2 bag, Khan-Uul"
+  },
+  {
+    "parent": 4601,
+    "id": 460155,
+    "name": "3-р баг, Далан",
+    "name_en": "3 bag, Dalan"
+  },
+  {
+    "parent": 4601,
+    "id": 460157,
+    "name": "4-р баг, Дундсайхан",
+    "name_en": "4 bag, Dundsaikhan"
+  },
+  {
+    "parent": 4601,
+    "id": 460159,
+    "name": "5-р баг, Зүүнсайхан",
+    "name_en": "5 bag, Zuunsaikhan"
+  },
+  {
+    "parent": 4601,
+    "id": 460161,
+    "name": "6-р баг, Начин",
+    "name_en": "6 bag, Nachin"
+  },
+  {
+    "parent": 4601,
+    "id": 460163,
+    "name": "7-р баг, Оюут",
+    "name_en": "7 bag, Oyut"
+  },
+  {
+    "parent": 4601,
+    "id": 460165,
+    "name": "8-р баг, Цагаан булаг",
+    "name_en": "8 bag, Tsagaan bulag"
+  },
+  {
+    "parent": 4604,
+    "id": 460451,
+    "name": "1-р баг, Баян",
+    "name_en": "1 bag, Bayn"
+  },
+  {
+    "parent": 4604,
+    "id": 460453,
+    "name": "2-р баг, Наран",
+    "name_en": "2 bag, Naran"
+  },
+  {
+    "parent": 4604,
+    "id": 460455,
+    "name": "3-р баг, Төхөм",
+    "name_en": "3 bag, Tukhum"
+  },
+  {
+    "parent": 4607,
+    "id": 460751,
+    "name": "1-р баг, Могойт",
+    "name_en": "1 bag, Mogoit"
+  },
+  {
+    "parent": 4607,
+    "id": 460753,
+    "name": "2-р баг, Харзаг",
+    "name_en": "2 bag, Kharzag"
+  },
+  {
+    "parent": 4607,
+    "id": 460755,
+    "name": "3-р баг, Налих",
+    "name_en": "3 bag, Nalikh"
+  },
+  {
+    "parent": 4610,
+    "id": 461051,
+    "name": "1-р баг, Дэн",
+    "name_en": "1 bag, Den"
+  },
+  {
+    "parent": 4610,
+    "id": 461053,
+    "name": "2-р баг, Дал",
+    "name_en": "2 bag, Dal"
+  },
+  {
+    "parent": 4610,
+    "id": 461055,
+    "name": "3-р баг, Хавцгайт",
+    "name_en": "3 bag, Khavtsait"
+  },
+  {
+    "parent": 4610,
+    "id": 461057,
+    "name": "4-р баг, Булган",
+    "name_en": "4 bag, Bulgan"
+  },
+  {
+    "parent": 4613,
+    "id": 461351,
+    "name": "1-р баг, Гоёот",
+    "name_en": "1 bag, Goyot"
+  },
+  {
+    "parent": 4613,
+    "id": 461353,
+    "name": "2-р баг, Баясах",
+    "name_en": "2 bag, Baysakh"
+  },
+  {
+    "parent": 4613,
+    "id": 461355,
+    "name": "3-р баг, Тост",
+    "name_en": "3 bag, Tost"
+  },
+  {
+    "parent": 4613,
+    "id": 461357,
+    "name": "4-р баг, Урт",
+    "name_en": "4 bag, Urt"
+  },
+  {
+    "parent": 4616,
+    "id": 461651,
+    "name": "1-р баг, Өтгөн",
+    "name_en": "1 bag, Utgun"
+  },
+  {
+    "parent": 4616,
+    "id": 461653,
+    "name": "2-р баг, Баянхошуу",
+    "name_en": "2 bag, Baynkhoshuu"
+  },
+  {
+    "parent": 4616,
+    "id": 461655,
+    "name": "3-р баг, Мандал",
+    "name_en": "3 bag, Mandal"
+  },
+  {
+    "parent": 4619,
+    "id": 461951,
+    "name": "1-р баг, Өехий",
+    "name_en": "1 bag, Uukhii"
+  },
+  {
+    "parent": 4619,
+    "id": 461953,
+    "name": "2-р баг, Өгөөмөр",
+    "name_en": "2 bag, Uguumur"
+  },
+  {
+    "parent": 4619,
+    "id": 461955,
+    "name": "3-р баг, Жаргалант",
+    "name_en": "3 bag, Jargalant"
+  },
+  {
+    "parent": 4619,
+    "id": 461957,
+    "name": "4-р баг, Далай",
+    "name_en": "4 bag, Dalai"
+  },
+  {
+    "parent": 4622,
+    "id": 462251,
+    "name": "1-р баг, Сайран",
+    "name_en": "1 bag, Sairan"
+  },
+  {
+    "parent": 4622,
+    "id": 462253,
+    "name": "2-р баг, Ганзагад",
+    "name_en": "2 bag, Ganzagad"
+  },
+  {
+    "parent": 4625,
+    "id": 462551,
+    "name": "1-р баг, Хармагтай",
+    "name_en": "1 bag, Kharmagtai"
+  },
+  {
+    "parent": 4625,
+    "id": 462553,
+    "name": "2-р баг, Төхөм",
+    "name_en": "2 bag, Tukhum"
+  },
+  {
+    "parent": 4625,
+    "id": 462555,
+    "name": "3-р баг, Дэрсэнэ-Ус",
+    "name_en": "3 bag, Dersene-Us"
+  },
+  {
+    "parent": 4625,
+    "id": 462557,
+    "name": "4-р баг, Эмгэнбулаг",
+    "name_en": "4 bag, Emgenbulag"
+  },
+  {
+    "parent": 4625,
+    "id": 462559,
+    "name": "5-р баг, Богт",
+    "name_en": "5 bag, Bogd"
+  },
+  {
+    "parent": 4628,
+    "id": 462851,
+    "name": "1-р баг, Сайншанд",
+    "name_en": "1 bag, Sainshand"
+  },
+  {
+    "parent": 4628,
+    "id": 462853,
+    "name": "2-р баг, Хоолт",
+    "name_en": "2 bag, Khoolt"
+  },
+  {
+    "parent": 4628,
+    "id": 462855,
+    "name": "3-р баг, Бүйлсэн",
+    "name_en": "3 bag, Builsan"
+  },
+  {
+    "parent": 4631,
+    "id": 463151,
+    "name": "1-р баг, Номгон",
+    "name_en": "1 bag, Nomgon"
+  },
+  {
+    "parent": 4631,
+    "id": 463153,
+    "name": "2-р баг, Гавилууд",
+    "name_en": "2 bag, Gaviluud"
+  },
+  {
+    "parent": 4631,
+    "id": 463155,
+    "name": "3-р баг, Жавхлант",
+    "name_en": "3 bag, Javkhlant"
+  },
+  {
+    "parent": 4631,
+    "id": 463157,
+    "name": "4-р баг, Баян",
+    "name_en": "4 bag, Bayn"
+  },
+  {
+    "parent": 4634,
+    "id": 463451,
+    "name": "1-р баг, Мандах",
+    "name_en": "1 bag, Mandakh"
+  },
+  {
+    "parent": 4634,
+    "id": 463453,
+    "name": "2-р баг, Өгөөмөр",
+    "name_en": "2 bag, Uguumur"
+  },
+  {
+    "parent": 4634,
+    "id": 463455,
+    "name": "3-р баг, Хондот",
+    "name_en": "3 bag, Khondot"
+  },
+  {
+    "parent": 4634,
+    "id": 463457,
+    "name": "4-р баг, Жаргалант",
+    "name_en": "4 bag, Jargalant"
+  },
+  {
+    "parent": 4637,
+    "id": 463751,
+    "name": "1-р баг, Жанжин",
+    "name_en": "1 bag, Janjin"
+  },
+  {
+    "parent": 4637,
+    "id": 463753,
+    "name": "2-р баг, Тулга",
+    "name_en": "2 bag, Tulga"
+  },
+  {
+    "parent": 4637,
+    "id": 463755,
+    "name": "3-р баг, Хүрмэн",
+    "name_en": "3 bag, Khurmen"
+  },
+  {
+    "parent": 4640,
+    "id": 464051,
+    "name": "1-р баг,Замын шанд",
+    "name_en": "1 bag, Zamiin shand"
+  },
+  {
+    "parent": 4640,
+    "id": 464053,
+    "name": "2-р баг, Бортээг",
+    "name_en": "2 bag, Borteeg"
+  },
+  {
+    "parent": 4640,
+    "id": 464055,
+    "name": "3-р баг, Найз",
+    "name_en": "3 bag, Naiz"
+  },
+  {
+    "parent": 4643,
+    "id": 464351,
+    "name": "1-р баг, Сийрст",
+    "name_en": "1 bag, Siirst"
+  },
+  {
+    "parent": 4643,
+    "id": 464353,
+    "name": "2-р баг, Билгэх",
+    "name_en": "2 bag, Bilgekh"
+  },
+  {
+    "parent": 4643,
+    "id": 464355,
+    "name": "3-р баг ,Цагаан-Овоо",
+    "name_en": "3 bag, Tsagaan-Ovoo"
+  },
+  {
+    "parent": 2201,
+    "id": 220151,
+    "name": "1-р баг"
+  },
+  {
+    "parent": 2201,
+    "id": 220153,
+    "name": "2-р баг"
+  },
+  {
+    "parent": 2201,
+    "id": 220155,
+    "name": "3-р баг"
+  },
+  {
+    "parent": 2201,
+    "id": 220157,
+    "name": "4-р баг"
+  },
+  {
+    "parent": 2201,
+    "id": 220159,
+    "name": "5-р баг"
+  },
+  {
+    "parent": 2201,
+    "id": 220161,
+    "name": "6-р баг"
+  },
+  {
+    "parent": 2201,
+    "id": 220163,
+    "name": "7-р баг"
+  },
+  {
+    "parent": 2201,
+    "id": 220165,
+    "name": "8-р баг"
+  },
+  {
+    "parent": 2201,
+    "id": 220167,
+    "name": "9-р баг"
+  },
+  {
+    "parent": 2204,
+    "id": 220451,
+    "name": "1-р баг, Өлзийт",
+    "name_en": "1 bag, Ulziit"
+  },
+  {
+    "parent": 2204,
+    "id": 220453,
+    "name": "2-р баг, Дөхөм",
+    "name_en": "5 bag, Dukhum"
+  },
+  {
+    "parent": 2204,
+    "id": 220455,
+    "name": "3-р баг, Их-Уул",
+    "name_en": "3 bag, Ikh-Uul"
+  },
+  {
+    "parent": 2204,
+    "id": 220457,
+    "name": "4-р баг, Жаргалант",
+    "name_en": "4 bag, Jargalant"
+  },
+  {
+    "parent": 2207,
+    "id": 220751,
+    "name": "1-р баг, Баян",
+    "name_en": "1 bag, Bayn"
+  },
+  {
+    "parent": 2207,
+    "id": 220753,
+    "name": "2-р баг, Дэлгэр",
+    "name_en": "2 bag, Delger"
+  },
+  {
+    "parent": 2207,
+    "id": 220755,
+    "name": "3-р баг, Төв",
+    "name_en": "3 bag, Tuv"
+  },
+  {
+    "parent": 2207,
+    "id": 220757,
+    "name": "4-р баг, Дөхөм",
+    "name_en": "4 bag, Dukhum"
+  },
+  {
+    "parent": 2207,
+    "id": 220759,
+    "name": "5-р баг, Хонгор",
+    "name_en": "5 bag, Khongor"
+  },
+  {
+    "parent": 2207,
+    "id": 220761,
+    "name": "6-р баг, Ширээт",
+    "name_en": "6 bag, Shireet"
+  },
+  {
+    "parent": 2210,
+    "id": 221051,
+    "name": "1-р баг, Өрнө дэрс",
+    "name_en": "1 bag, Urnu ders"
+  },
+  {
+    "parent": 2210,
+    "id": 221053,
+    "name": "2-р баг, Бадрах",
+    "name_en": "2 bag, Badrakh"
+  },
+  {
+    "parent": 2210,
+    "id": 221055,
+    "name": "3-р баг, Аман-Ус",
+    "name_en": "3 bag, Aman-Us"
+  },
+  {
+    "parent": 2210,
+    "id": 221057,
+    "name": "4-р баг, Овоот",
+    "name_en": "4 bag, Ovoot"
+  },
+  {
+    "parent": 2213,
+    "id": 221351,
+    "name": "1-р баг, Баянтэрэм",
+    "name_en": "1 bag, Baynterem"
+  },
+  {
+    "parent": 2213,
+    "id": 221353,
+    "name": "2-р баг, Баян-Уул",
+    "name_en": "2 bag, Bayn-Uul"
+  },
+  {
+    "parent": 2213,
+    "id": 221355,
+    "name": "3-р баг, Баянцагаан",
+    "name_en": "3 bag, Bayntsagaan"
+  },
+  {
+    "parent": 2213,
+    "id": 221357,
+    "name": "4-р баг, Баясгалант",
+    "name_en": "4 bag, Baysgalant"
+  },
+  {
+    "parent": 2213,
+    "id": 221359,
+    "name": "5-р баг, Бүрэнцогт",
+    "name_en": "5 bag, Burentsogt"
+  },
+  {
+    "parent": 2216,
+    "id": 221651,
+    "name": "1-р баг, Гүн худаг",
+    "name_en": "1 bag, Gun khudag"
+  },
+  {
+    "parent": 2216,
+    "id": 221653,
+    "name": "2-р баг, Тосонгийн гол",
+    "name_en": "2 bag, Tosolgiin gol "
+  },
+  {
+    "parent": 2216,
+    "id": 221655,
+    "name": "3-р баг, Наранбулаг",
+    "name_en": "3 bag, Naranbulag"
+  },
+  {
+    "parent": 2219,
+    "id": 221951,
+    "name": "1-р баг, Ихбулаг",
+    "name_en": "1 bag, Ikhbulag"
+  },
+  {
+    "parent": 2219,
+    "id": 221953,
+    "name": "2-р баг, Шарбүрд",
+    "name_en": "2 bag, Sharburd"
+  },
+  {
+    "parent": 2219,
+    "id": 221955,
+    "name": "3-р баг, Нүдэн",
+    "name_en": "3 bag, Nuden"
+  },
+  {
+    "parent": 2219,
+    "id": 221957,
+    "name": "4-р баг, Цөнгөрөг",
+    "name_en": "4 bag, Tsungurug"
+  },
+  {
+    "parent": 2219,
+    "id": 221959,
+    "name": "5-р баг, Хавирга",
+    "name_en": "5 bag, Khavirga"
+  },
+  {
+    "parent": 2222,
+    "id": 222251,
+    "name": "1-р баг, Баянгол",
+    "name_en": "1 bag, Bayngol"
+  },
+  {
+    "parent": 2222,
+    "id": 222253,
+    "name": "2-р баг, Хайлааст",
+    "name_en": "2 bag, Khailaast"
+  },
+  {
+    "parent": 2222,
+    "id": 222255,
+    "name": "3-р баг, Хулгар",
+    "name_en": "3 bag, Khulgar"
+  },
+  {
+    "parent": 2222,
+    "id": 222257,
+    "name": "4-р баг, Сайншанд",
+    "name_en": "4 bag, Sainshand"
+  },
+  {
+    "parent": 2222,
+    "id": 222259,
+    "name": "5-р баг, Шинэбулаг",
+    "name_en": "5 bag, Shinebulag"
+  },
+  {
+    "parent": 2225,
+    "id": 222551,
+    "name": "1-р баг, Сэргэлэн",
+    "name_en": "1 bag, Sergelen"
+  },
+  {
+    "parent": 2225,
+    "id": 222553,
+    "name": "2-р баг, Өлзийт",
+    "name_en": "2 bag, Ulziit"
+  },
+  {
+    "parent": 2225,
+    "id": 222555,
+    "name": "3-р баг, Үнэгт",
+    "name_en": "3 bag, Unegt"
+  },
+  {
+    "parent": 2225,
+    "id": 222557,
+    "name": "4-р баг, Дэлгэрхаан",
+    "name_en": "4 bag, Delgerkhaan"
+  },
+  {
+    "parent": 2225,
+    "id": 222559,
+    "name": "5-р баг, Өгөөмөр",
+    "name_en": "5 bag, Uguumur"
+  },
+  {
+    "parent": 2228,
+    "id": 222851,
+    "name": "1-р баг, Лхүмбэ",
+    "name_en": "1 bag, Lhumbe"
+  },
+  {
+    "parent": 2228,
+    "id": 222853,
+    "name": "2-р баг, Хошмиг",
+    "name_en": "2 bag, Khomshig"
+  },
+  {
+    "parent": 2228,
+    "id": 222855,
+    "name": "3-р баг, Баян-Овоо",
+    "name_en": "3 bag, Bayn-Ovoo"
+  },
+  {
+    "parent": 2231,
+    "id": 223151,
+    "name": "1-р баг, Баян",
+    "name_en": "1 bag, Bayn"
+  },
+  {
+    "parent": 2231,
+    "id": 223153,
+    "name": "2-р баг, Жаргалант",
+    "name_en": "2 bag, Jargalant"
+  },
+  {
+    "parent": 2231,
+    "id": 223155,
+    "name": "3-р баг, Тэгш",
+    "name_en": "3 bag, Tegsh"
+  },
+  {
+    "parent": 2231,
+    "id": 223157,
+    "name": "4-р баг, Жавхлант",
+    "name_en": "4 bag, Javkhlant"
+  },
+  {
+    "parent": 2231,
+    "id": 223159,
+    "name": "5-р баг, Дэлгэр",
+    "name_en": "5 bag, Delger"
+  },
+  {
+    "parent": 2234,
+    "id": 223451,
+    "name": "1-р баг, Халзан шанд",
+    "name_en": "1 bag, Khalzan shand"
+  },
+  {
+    "parent": 2234,
+    "id": 223453,
+    "name": "2-р баг, Сахиул",
+    "name_en": "2 bag, Sahiul"
+  },
+  {
+    "parent": 2234,
+    "id": 223455,
+    "name": "3-р баг, Сайншанд",
+    "name_en": "3 bag, Sainshand"
+  },
+  {
+    "parent": 2234,
+    "id": 223457,
+    "name": "4-р баг, Хатавч",
+    "name_en": "4 bag, Khatavch"
+  },
+  {
+    "parent": 2237,
+    "id": 223751,
+    "name": "1-р баг, Хөдлөн хайлааст",
+    "name_en": "1 bag, Khundlun khailaast"
+  },
+  {
+    "parent": 2237,
+    "id": 223753,
+    "name": "2-р баг, Цагаан овоо",
+    "name_en": "2 bag, Tsagaan ovoo"
+  },
+  {
+    "parent": 2237,
+    "id": 223755,
+    "name": "3-р баг, Бадрах",
+    "name_en": "3 bag, Badrakh"
+  },
+  {
+    "parent": 2237,
+    "id": 223757,
+    "name": "4-р баг, Хонгор",
+    "name_en": "4 bag, Khongor"
+  },
+  {
+    "parent": 2237,
+    "id": 223759,
+    "name": "5-р баг, Билүүт",
+    "name_en": "5 bag, Biluut"
+  },
+  {
+    "parent": 2237,
+    "id": 223761,
+    "name": "6-р баг, Жаргалант",
+    "name_en": "6 bag, Jargalant"
+  },
+  {
+    "parent": 2237,
+    "id": 223763,
+    "name": "7-р баг, Хадын булаг",
+    "name_en": "7 bag, Khadnii bulag"
+  },
+  {
+    "parent": 2237,
+    "id": 223765,
+    "name": "8-р баг, Алтан овоо",
+    "name_en": "8 bag, Altan ovoo"
+  },
+  {
+    "parent": 4301,
+    "id": 430151,
+    "name": "1-р баг, Хонгорморьт",
+    "name_en": "1 bag, Khongormorit"
+  },
+  {
+    "parent": 4301,
+    "id": 430153,
+    "name": "2-р баг, Цагаан-Эрэг",
+    "name_en": "2 bag, Tsagaan-Ereg"
+  },
+  {
+    "parent": 4301,
+    "id": 430155,
+    "name": "3-р баг, Салхит",
+    "name_en": "3 bag, Salkhit"
+  },
+  {
+    "parent": 4301,
+    "id": 430157,
+    "name": "4-р баг, Баянхаан",
+    "name_en": "4 bag, Baynkhaan"
+  },
+  {
+    "parent": 4301,
+    "id": 430159,
+    "name": "5-р баг, Боргүвээ",
+    "name_en": "5 bag, Borguvee"
+  },
+  {
+    "parent": 4304,
+    "id": 430451,
+    "name": "1-р баг, Бүргэдтэй",
+    "name_en": "1 bag, Burgedtei"
+  },
+  {
+    "parent": 4304,
+    "id": 430453,
+    "name": "2-р баг, Суварга",
+    "name_en": "2 bag, Suvarga"
+  },
+  {
+    "parent": 4304,
+    "id": 430455,
+    "name": "3-р баг, Цөх",
+    "name_en": "3 bag, Tsukh"
+  },
+  {
+    "parent": 4307,
+    "id": 430751,
+    "name": "1-р баг, Ивэн",
+    "name_en": "1 bag, Iven"
+  },
+  {
+    "parent": 4307,
+    "id": 430753,
+    "name": "2-р баг, Бургалтай",
+    "name_en": "2 bag, Burgaltai"
+  },
+  {
+    "parent": 4307,
+    "id": 430755,
+    "name": "3-р баг, Цагаан-Овоо",
+    "name_en": "3 bag, Tsagaan-Ovoo"
+  },
+  {
+    "parent": 4310,
+    "id": 431051,
+    "name": "1-р баг, Хараа",
+    "name_en": "1 bag, Kharaa"
+  },
+  {
+    "parent": 4310,
+    "id": 431053,
+    "name": "2-р баг, Баян",
+    "name_en": "2 bag, Bayn"
+  },
+  {
+    "parent": 4310,
+    "id": 431055,
+    "name": "3-р баг, Гонир",
+    "name_en": "3 bag, Gonir"
+  },
+  {
+    "parent": 4313,
+    "id": 431351,
+    "name": "1-р баг, Тавин",
+    "name_en": "1 bag, Tavin"
+  },
+  {
+    "parent": 4313,
+    "id": 431353,
+    "name": "2-р баг, Буурагчин",
+    "name_en": "2 bag, Buuragchin"
+  },
+  {
+    "parent": 4313,
+    "id": 431355,
+    "name": "3-р баг, Бугант",
+    "name_en": "3 bag, Bugant"
+  },
+  {
+    "parent": 4316,
+    "id": 431651,
+    "name": "1-р баг, Бумбат",
+    "name_en": "1 bag, Bumbat"
+  },
+  {
+    "parent": 4316,
+    "id": 431653,
+    "name": "2-р баг, Моностой",
+    "name_en": "2 bag, Monostoi"
+  },
+  {
+    "parent": 4319,
+    "id": 431951,
+    "name": "1-р баг, Жаргалант",
+    "name_en": "1 bag, Jargalant"
+  },
+  {
+    "parent": 4319,
+    "id": 431953,
+    "name": "2-р баг, Бэлчир",
+    "name_en": "2 bag, Belchir"
+  },
+  {
+    "parent": 4319,
+    "id": 431955,
+    "name": "3-р баг, Мангирт",
+    "name_en": "3 bag, Mangirt"
+  },
+  {
+    "parent": 4322,
+    "id": 432251,
+    "name": "1-р баг, Төмөр зам",
+    "name_en": "1 bag, Tumur zam"
+  },
+  {
+    "parent": 4322,
+    "id": 432253,
+    "name": "2-р баг, Ширхэнцэг",
+    "name_en": "2 bag, Shirkhentseg"
+  },
+  {
+    "parent": 4322,
+    "id": 432255,
+    "name": "3-р баг, Баянсуудал",
+    "name_en": "3 bag, Baynsuudal"
+  },
+  {
+    "parent": 4322,
+    "id": 432257,
+    "name": "4-р баг, Хэрх",
+    "name_en": "4 bag, Kherkh"
+  },
+  {
+    "parent": 4322,
+    "id": 432259,
+    "name": "5-р баг, Түнхэл",
+    "name_en": "5 bag, Tunkhel"
+  },
+  {
+    "parent": 4325,
+    "id": 432551,
+    "name": "1-р баг, Орхон",
+    "name_en": "1 bag, Orkhon"
+  },
+  {
+    "parent": 4325,
+    "id": 432553,
+    "name": "2-р баг, Бэлэндалай",
+    "name_en": "2 bag, Belendalai"
+  },
+  {
+    "parent": 4328,
+    "id": 432851,
+    "name": "1-р баг, Рашаант",
+    "name_en": "1 bag, Rashaant"
+  },
+  {
+    "parent": 4328,
+    "id": 432853,
+    "name": "2-р баг, Баянцогт",
+    "name_en": "2 bag, Bayntsogt"
+  },
+  {
+    "parent": 4328,
+    "id": 432855,
+    "name": "3-р баг, Хонгор-Овоо",
+    "name_en": "3 bag, Khongor-Ovoo"
+  },
+  {
+    "parent": 4331,
+    "id": 433151,
+    "name": "1-р баг, Хөтөл",
+    "name_en": "1 bag, Khutul"
+  },
+  {
+    "parent": 4331,
+    "id": 433153,
+    "name": "2-р баг, Гавшгай",
+    "name_en": "2 bag, Gavshgai"
+  },
+  {
+    "parent": 4331,
+    "id": 433155,
+    "name": "3-р баг, Номгон",
+    "name_en": "3 bag, Nomgon"
+  },
+  {
+    "parent": 4334,
+    "id": 433451,
+    "name": "1-р баг, Ивэн",
+    "name_en": "1 bag, Iven"
+  },
+  {
+    "parent": 4334,
+    "id": 433453,
+    "name": "2-р баг, Хушаат",
+    "name_en": "2 bag, Khushaat"
+  },
+  {
+    "parent": 4337,
+    "id": 433751,
+    "name": "1-р баг, Жаргалмандах",
+    "name_en": "1 bag, Jargalmandakh"
+  },
+  {
+    "parent": 4337,
+    "id": 433753,
+    "name": "2-р баг, Ар нуга",
+    "name_en": "2 bag, Ar nuga"
+  },
+  {
+    "parent": 4340,
+    "id": 434051,
+    "name": "1-р баг, Тарвагатай",
+    "name_en": "1 bag, Tarvagatai"
+  },
+  {
+    "parent": 4340,
+    "id": 434053,
+    "name": "2-р баг, Баянцагаан",
+    "name_en": "2 bag, Bayntsagaan"
+  },
+  {
+    "parent": 4343,
+    "id": 434351,
+    "name": "1-р баг, Даагат",
+    "name_en": "1 bag, Daagat"
+  },
+  {
+    "parent": 4343,
+    "id": 434353,
+    "name": "2-р баг, Мөнхтолгой",
+    "name_en": "2 bag, Munkhtolgoi"
+  },
+  {
+    "parent": 4346,
+    "id": 434651,
+    "name": "1-р баг, Оргих",
+    "name_en": "1 bag, Orgikh"
+  },
+  {
+    "parent": 4346,
+    "id": 434653,
+    "name": "2-р баг, Хуурч",
+    "name_en": "2 bag, Khuurch"
+  },
+  {
+    "parent": 4346,
+    "id": 434655,
+    "name": "3-р баг, Тийрэг",
+    "name_en": "3 bag, Tiireg"
+  },
+  {
+    "parent": 4349,
+    "id": 434951,
+    "name": "1-р баг, Дэлгэрхаан",
+    "name_en": "1 bag, Delgerkhaan"
+  },
+  {
+    "parent": 4349,
+    "id": 434953,
+    "name": "2-р баг, Охиндий",
+    "name_en": "2 bag, Okhindii"
+  },
+  {
+    "parent": 4349,
+    "id": 434955,
+    "name": "3-р баг, Дулаанхаан",
+    "name_en": "3 bag, Dulaankhaan"
+  },
+  {
+    "parent": 4101,
+    "id": 410151,
+    "name": "1-р баг, Номт",
+    "name_en": "1 bag, Nomt"
+  },
+  {
+    "parent": 4101,
+    "id": 410153,
+    "name": "2-р баг, Ланс",
+    "name_en": "2 bag, Lans"
+  },
+  {
+    "parent": 4101,
+    "id": 410155,
+    "name": "3-р баг, Баянхошуу",
+    "name_en": "3 bag, Baynkhoshuu"
+  },
+  {
+    "parent": 4101,
+    "id": 410157,
+    "name": "4-р баг, Зүүндэлгэр",
+    "name_en": "4 bag, Zuundelger"
+  },
+  {
+    "parent": 4101,
+    "id": 410159,
+    "name": "5-р баг, Нацагдорж",
+    "name_en": "5 bag, Natsagdorj"
+  },
+  {
+    "parent": 4101,
+    "id": 410161,
+    "name": "6-р баг, Баруун зуунмод",
+    "name_en": "6 bag, Baruun zuunmod"
+  },
+  {
+    "parent": 4104,
+    "id": 410451,
+    "name": "1-р баг, Сумт",
+    "name_en": "1 bag, Sumt"
+  },
+  {
+    "parent": 4104,
+    "id": 410453,
+    "name": "2-р баг, Аргал",
+    "name_en": "2 bag, Argal"
+  },
+  {
+    "parent": 4104,
+    "id": 410455,
+    "name": "3-р баг, Алтан-Овоо",
+    "name_en": "3 bag, Altan-Ovoo"
+  },
+  {
+    "parent": 4104,
+    "id": 410457,
+    "name": "4-р баг, Замт",
+    "name_en": "4 bag, Zamt"
+  },
+  {
+    "parent": 4107,
+    "id": 410751,
+    "name": "1-р баг, Аргалын уул",
+    "name_en": "1 bag, Argaliin uul"
+  },
+  {
+    "parent": 4107,
+    "id": 410753,
+    "name": "2-р баг, Хөшөөт",
+    "name_en": "2 bag, Khushuut"
+  },
+  {
+    "parent": 4110,
+    "id": 411051,
+    "name": "1-р баг, Ноён шанд",
+    "name_en": "1 bag, Noyn shand"
+  },
+  {
+    "parent": 4110,
+    "id": 411053,
+    "name": "2-р баг, Нарст",
+    "name_en": "2 bag, Narst"
+  },
+  {
+    "parent": 4113,
+    "id": 411351,
+    "name": "1-р баг, Мандал",
+    "name_en": "1 bag, Mandal"
+  },
+  {
+    "parent": 4113,
+    "id": 411353,
+    "name": "2-р баг, Цогт-Өндөр",
+    "name_en": "2 bag, Tsogt-Undur"
+  },
+  {
+    "parent": 4113,
+    "id": 411355,
+    "name": "3-р баг, Баянгол",
+    "name_en": "3 bag, Bayngol"
+  },
+  {
+    "parent": 4113,
+    "id": 411357,
+    "name": "4-р баг, Үдлэг",
+    "name_en": "4 bag, Udleg"
+  },
+  {
+    "parent": 4116,
+    "id": 411651,
+    "name": "1-р баг, Цант",
+    "name_en": "1 bag, Tsant"
+  },
+  {
+    "parent": 4116,
+    "id": 411653,
+    "name": "2-р баг, Өгөөмөр",
+    "name_en": "2 bag, Uguumur"
+  },
+  {
+    "parent": 4116,
+    "id": 411655,
+    "name": "3-р баг, Цавчир",
+    "name_en": "3 bag, Tsavchir"
+  },
+  {
+    "parent": 4119,
+    "id": 411951,
+    "name": "1-р баг, Байдлаг",
+    "name_en": "1 bag, Baidlag"
+  },
+  {
+    "parent": 4119,
+    "id": 411953,
+    "name": "2-р баг, Галуут",
+    "name_en": "2 bag, Galuut"
+  },
+  {
+    "parent": 4122,
+    "id": 412251,
+    "name": "1-р баг, Жаргалант",
+    "name_en": "1 bag, Jargalant"
+  },
+  {
+    "parent": 4122,
+    "id": 412253,
+    "name": "2-р баг, Улаан ухаа",
+    "name_en": "2 bag, Ulaan Ukhaa"
+  },
+  {
+    "parent": 4122,
+    "id": 412255,
+    "name": "3-р баг, Эрдэнэ",
+    "name_en": "3 bag, Erdene"
+  },
+  {
+    "parent": 4125,
+    "id": 412551,
+    "name": "1-р баг, Бараат",
+    "name_en": "1 bag, Baraat"
+  },
+  {
+    "parent": 4125,
+    "id": 412553,
+    "name": "2-р баг, Цээл",
+    "name_en": "2 bag, Tseel"
+  },
+  {
+    "parent": 4125,
+    "id": 412555,
+    "name": "3-р баг, Бүрд",
+    "name_en": "3 bag, Burd"
+  },
+  {
+    "parent": 4128,
+    "id": 412851,
+    "name": "1-р баг, Найрамдал",
+    "name_en": "1 bag, Nairamdal"
+  },
+  {
+    "parent": 4128,
+    "id": 412853,
+    "name": "2-р баг, Хөшөөт",
+    "name_en": "2 bag, Khushuut"
+  },
+  {
+    "parent": 4131,
+    "id": 413151,
+    "name": "1-р баг, Өлзийт",
+    "name_en": "1 bag, Ulziit"
+  },
+  {
+    "parent": 4131,
+    "id": 413153,
+    "name": "2-р баг, Баян айраг",
+    "name_en": "2 bag, Bayn airag"
+  },
+  {
+    "parent": 4131,
+    "id": 413155,
+    "name": "3-р баг, Гурван түрүү",
+    "name_en": "3 bag, Gurvan turuu"
+  },
+  {
+    "parent": 4131,
+    "id": 413157,
+    "name": "4-р баг, Алтат",
+    "name_en": "4 bag, Altat"
+  },
+  {
+    "parent": 4131,
+    "id": 413159,
+    "name": "5-р баг, Зогсоол",
+    "name_en": "5 bag, Zogsool"
+  },
+  {
+    "parent": 4134,
+    "id": 413451,
+    "name": "1-р баг, Гуна",
+    "name_en": "1 bag, Guna"
+  },
+  {
+    "parent": 4134,
+    "id": 413453,
+    "name": "2-р баг, Сарлаг",
+    "name_en": "2 bag, Sarlag"
+  },
+  {
+    "parent": 4134,
+    "id": 413455,
+    "name": "3-р баг, Даргиат",
+    "name_en": "3 bag, Dargiat"
+  },
+  {
+    "parent": 4137,
+    "id": 413751,
+    "name": "1-р баг, Чандмань",
+    "name_en": "1 bag, Chandmani"
+  },
+  {
+    "parent": 4137,
+    "id": 413753,
+    "name": "2-р баг, Замт",
+    "name_en": "2 bag, Zamt"
+  },
+  {
+    "parent": 4137,
+    "id": 413755,
+    "name": "3-р баг, Эрдэнэ",
+    "name_en": "3 bag, Erdene"
+  },
+  {
+    "parent": 4140,
+    "id": 414051,
+    "name": "1-р баг, Өгөөмөр",
+    "name_en": "1 bag, Uguumur"
+  },
+  {
+    "parent": 4140,
+    "id": 414053,
+    "name": "2-р баг, Мандал",
+    "name_en": "2 bag, Mandal"
+  },
+  {
+    "parent": 4140,
+    "id": 414055,
+    "name": "3-р баг, Бичигт",
+    "name_en": "3 bag, Bichigt"
+  },
+  {
+    "parent": 4140,
+    "id": 414057,
+    "name": "4-р баг, Нарт",
+    "name_en": "4 bag, Nart"
+  },
+  {
+    "parent": 4143,
+    "id": 414351,
+    "name": "1-р баг, Төхөм",
+    "name_en": "1 bag, Tukhum"
+  },
+  {
+    "parent": 4143,
+    "id": 414353,
+    "name": "2-р баг, Баянцогт",
+    "name_en": "2 bag, Bayntsogt"
+  },
+  {
+    "parent": 4143,
+    "id": 414355,
+    "name": "3-р баг, Монгол",
+    "name_en": "3 bag, Mongol"
+  },
+  {
+    "parent": 4143,
+    "id": 414357,
+    "name": "4-р баг, Эрдэнэхангай",
+    "name_en": "4 bag, Erdenekhangai"
+  },
+  {
+    "parent": 4143,
+    "id": 414359,
+    "name": "5-р баг, Өнжүүл",
+    "name_en": "5 bag, Unjuul"
+  },
+  {
+    "parent": 4146,
+    "id": 414651,
+    "name": "1-р баг, Тарган",
+    "name_en": "1 bag, Targan"
+  },
+  {
+    "parent": 4146,
+    "id": 414653,
+    "name": "2-р баг, Дуут-Хуримт",
+    "name_en": "2 bag, Duut-Khurimt"
+  },
+  {
+    "parent": 4146,
+    "id": 414655,
+    "name": "3-р баг, Давст",
+    "name_en": "3 bag, Davst"
+  },
+  {
+    "parent": 4149,
+    "id": 414951,
+    "name": "1-р баг, Буурал",
+    "name_en": "1 bag, Buural"
+  },
+  {
+    "parent": 4149,
+    "id": 414953,
+    "name": "2-р баг, Өгөөмөр",
+    "name_en": "2 bag, Uguumur"
+  },
+  {
+    "parent": 4149,
+    "id": 414955,
+    "name": "3-р баг, Баянбулаг",
+    "name_en": "3 bag, Baynbulag"
+  },
+  {
+    "parent": 4149,
+    "id": 414957,
+    "name": "4-р баг, Загдал",
+    "name_en": "4 bag, Zagdal"
+  },
+  {
+    "parent": 4152,
+    "id": 415251,
+    "name": "1-р баг, Тосон",
+    "name_en": "1 bag, Toson"
+  },
+  {
+    "parent": 4152,
+    "id": 415253,
+    "name": "2-р баг, Төмстэй",
+    "name_en": "2 bag, Tuvstei"
+  },
+  {
+    "parent": 4152,
+    "id": 415255,
+    "name": "3-р баг, Хайлааст",
+    "name_en": "3 bag, Khailaast"
+  },
+  {
+    "parent": 4152,
+    "id": 415257,
+    "name": "4-р баг, Төв",
+    "name_en": "4 bag, Tuv"
+  },
+  {
+    "parent": 4155,
+    "id": 415551,
+    "name": "1-р баг, Цагаан уул",
+    "name_en": "1 bag, Tsagaan uul"
+  },
+  {
+    "parent": 4155,
+    "id": 415553,
+    "name": "2-р баг, Өгөөмөр",
+    "name_en": "2 bag, Uguumur"
+  },
+  {
+    "parent": 4155,
+    "id": 415555,
+    "name": "3-р баг, Төв",
+    "name_en": "3 bag, Tuv"
+  },
+  {
+    "parent": 4158,
+    "id": 415851,
+    "name": "1-р баг, Жаргалант",
+    "name_en": "1 bag, Jargalant"
+  },
+  {
+    "parent": 4158,
+    "id": 415853,
+    "name": "2-р баг, Байдлаг",
+    "name_en": "2 bag, Baidlag"
+  },
+  {
+    "parent": 4158,
+    "id": 415855,
+    "name": "3-р баг, Булаг",
+    "name_en": "3 bag, Bulag"
+  },
+  {
+    "parent": 4161,
+    "id": 416151,
+    "name": "1-р баг, Баянтуул",
+    "name_en": "1 bag, Bayntuul"
+  },
+  {
+    "parent": 4161,
+    "id": 416153,
+    "name": "2-р баг, Хайрхан",
+    "name_en": "2 bag, Khairkhan"
+  },
+  {
+    "parent": 4161,
+    "id": 416155,
+    "name": "3-р баг, Уянга",
+    "name_en": "3 bag, Uyanga"
+  },
+  {
+    "parent": 4161,
+    "id": 416157,
+    "name": "4-р баг, Сант",
+    "name_en": "4 bag, Sant"
+  },
+  {
+    "parent": 4164,
+    "id": 416451,
+    "name": "1-р баг, Сүмбэр",
+    "name_en": "1 bag, Sumber"
+  },
+  {
+    "parent": 4164,
+    "id": 416453,
+    "name": "2-р баг, Жавхлант",
+    "name_en": "2 bag, Javkhlant"
+  },
+  {
+    "parent": 4167,
+    "id": 416751,
+    "name": "1-р баг, Баянбүрд",
+    "name_en": "1 bag, Baynburd"
+  },
+  {
+    "parent": 4167,
+    "id": 416753,
+    "name": "2-р баг, Хайрхан",
+    "name_en": "2 bag, Khairkhan"
+  },
+  {
+    "parent": 4167,
+    "id": 416755,
+    "name": "3-р баг, Хөшиг",
+    "name_en": "5 bag, Khushig"
+  },
+  {
+    "parent": 4167,
+    "id": 416757,
+    "name": "4-р баг, Эрдэнэ-Уул",
+    "name_en": "4 bag, Erdene-tuul"
+  },
+  {
+    "parent": 4167,
+    "id": 416759,
+    "name": "5-р баг, Авдар",
+    "name_en": "5 bag, Avdar"
+  },
+  {
+    "parent": 4170,
+    "id": 417051,
+    "name": "1-р баг, Талын уул",
+    "name_en": "1 bag, Taliin uul"
+  },
+  {
+    "parent": 4170,
+    "id": 417053,
+    "name": "2-р баг, Хар чулуут",
+    "name_en": "2 bag, Khar chuluut"
+  },
+  {
+    "parent": 4170,
+    "id": 417055,
+    "name": "3-р баг, Асгат",
+    "name_en": "3 bag, Asgat"
+  },
+  {
+    "parent": 4173,
+    "id": 417351,
+    "name": "1-р баг, Оргил",
+    "name_en": "1 bag, Orgil"
+  },
+  {
+    "parent": 4173,
+    "id": 417353,
+    "name": "2-р баг, Талын хайрхан",
+    "name_en": "2 bag, Taliin khairkhan"
+  },
+  {
+    "parent": 4173,
+    "id": 417355,
+    "name": "3-р баг, Майхан",
+    "name_en": "3 bag, Maikhan"
+  },
+  {
+    "parent": 4173,
+    "id": 417357,
+    "name": "4-р баг, Сүүл буга",
+    "name_en": "4 bag, Suul buga"
+  },
+  {
+    "parent": 4173,
+    "id": 417359,
+    "name": "5-р баг, Хүүлэй хан",
+    "name_en": "5 bag, Khuulei khan"
+  },
+  {
+    "parent": 4176,
+    "id": 417651,
+    "name": "1-р баг, Өгөөмөр",
+    "name_en": "1 bag, Uguumur"
+  },
+  {
+    "parent": 4176,
+    "id": 417653,
+    "name": "2-р баг, Чулуут",
+    "name_en": "2 bag, Chuluut"
+  },
+  {
+    "parent": 4176,
+    "id": 417655,
+    "name": "3-р баг, Баянтуул",
+    "name_en": "3 bag, Bayntuul"
+  },
+  {
+    "parent": 4176,
+    "id": 417657,
+    "name": "4-р баг, Хушинга",
+    "name_en": "4 bag, Khushinga"
+  },
+  {
+    "parent": 4176,
+    "id": 417659,
+    "name": "5-р баг, Тамган",
+    "name_en": "5 bag, Tamgan"
+  },
+  {
+    "parent": 4179,
+    "id": 417951,
+    "name": "1-р баг, Баян-Уул",
+    "name_en": "1 bag, Bayn-Uul"
+  },
+  {
+    "parent": 4179,
+    "id": 417953,
+    "name": "2-р баг, Баргилт",
+    "name_en": "2 bag, Bargilt"
+  },
+  {
+    "parent": 4179,
+    "id": 417955,
+    "name": "3-р баг, Буянт",
+    "name_en": "3 bag, Buynt"
+  },
+  {
+    "parent": 4179,
+    "id": 417957,
+    "name": "4-р баг, Угалзат",
+    "name_en": "4 bag, Ugalzat"
+  },
+  {
+    "parent": 4179,
+    "id": 417959,
+    "name": "5-р баг, Улаанхудаг",
+    "name_en": "5 bag, Ulaankhudag"
+  },
+  {
+    "parent": 8501,
+    "id": 850151,
+    "name": "1-р баг"
+  },
+  {
+    "parent": 8501,
+    "id": 850153,
+    "name": "2-р баг"
+  },
+  {
+    "parent": 8501,
+    "id": 850155,
+    "name": "3-р баг"
+  },
+  {
+    "parent": 8501,
+    "id": 850157,
+    "name": "4-р баг"
+  },
+  {
+    "parent": 8501,
+    "id": 850159,
+    "name": "5-р баг"
+  },
+  {
+    "parent": 8501,
+    "id": 850161,
+    "name": "6-р баг"
+  },
+  {
+    "parent": 8501,
+    "id": 850163,
+    "name": "7-р баг"
+  },
+  {
+    "parent": 8501,
+    "id": 850165,
+    "name": "8-р баг"
+  },
+  {
+    "parent": 8501,
+    "id": 850167,
+    "name": "9-р баг"
+  },
+  {
+    "parent": 8501,
+    "id": 850169,
+    "name": "10-р баг"
+  },
+  {
+    "parent": 8501,
+    "id": 850171,
+    "name": "11-р баг"
+  },
+  {
+    "parent": 8504,
+    "id": 850451,
+    "name": "1-р баг, Шанд",
+    "name_en": "1 bag, Shand"
+  },
+  {
+    "parent": 8504,
+    "id": 850453,
+    "name": "2-р баг, Зүүн туруун",
+    "name_en": "2 bag, Zuun turuun"
+  },
+  {
+    "parent": 8504,
+    "id": 850455,
+    "name": "3-р баг, Туруун",
+    "name_en": "3 bag, Turuun"
+  },
+  {
+    "parent": 8504,
+    "id": 850457,
+    "name": "4-р баг, Баян-Айраг",
+    "name_en": "4 bag, Bayn-Airag"
+  },
+  {
+    "parent": 8507,
+    "id": 850751,
+    "name": "1-р баг, Гурван жигэртэй",
+    "name_en": "1 bag, Gurvan jigertei"
+  },
+  {
+    "parent": 8507,
+    "id": 850753,
+    "name": "2-р баг, Хар алтад",
+    "name_en": "2 bag, Khar altad"
+  },
+  {
+    "parent": 8507,
+    "id": 850755,
+    "name": "3-р баг, Байшинт",
+    "name_en": "3 bag, Baishint"
+  },
+  {
+    "parent": 8510,
+    "id": 851051,
+    "name": "1-р баг, Торхилог",
+    "name_en": "1 bag, Torkhilog"
+  },
+  {
+    "parent": 8510,
+    "id": 851053,
+    "name": "2-р баг, Зүүнхөвөө",
+    "name_en": "2 bag, Zuunkhuvuu"
+  },
+  {
+    "parent": 8510,
+    "id": 851055,
+    "name": "3-р баг, Хандгайт",
+    "name_en": "3 bag, Khandgait"
+  },
+  {
+    "parent": 8513,
+    "id": 851351,
+    "name": "1-р баг, Айраг нуур",
+    "name_en": "1 bag, Airag nuur"
+  },
+  {
+    "parent": 8513,
+    "id": 851353,
+    "name": "2-р баг, Хармагт",
+    "name_en": "2 bag, Kharmagt"
+  },
+  {
+    "parent": 8513,
+    "id": 851355,
+    "name": "3-р баг, Хяргас нуур",
+    "name_en": "3 bag, Khyrgas nuur"
+  },
+  {
+    "parent": 8513,
+    "id": 851357,
+    "name": "4-р баг, Шар булаг",
+    "name_en": "4 bag, Shar bulag"
+  },
+  {
+    "parent": 8516,
+    "id": 851651,
+    "name": "1-р баг, Баяннуур",
+    "name_en": "1 bag, Baynnuur"
+  },
+  {
+    "parent": 8516,
+    "id": 851653,
+    "name": "2-р баг, Өгөөмөр",
+    "name_en": "2 bag, Uguumur"
+  },
+  {
+    "parent": 8516,
+    "id": 851655,
+    "name": "3-р баг, Суврага",
+    "name_en": "3 bag, Suvraga"
+  },
+  {
+    "parent": 8516,
+    "id": 851657,
+    "name": "4-р баг, Тохой",
+    "name_en": "4 bag, Tokhoi"
+  },
+  {
+    "parent": 8516,
+    "id": 851659,
+    "name": "5-р баг, Зэлийн гол",
+    "name_en": "5 bag, Zeliin gol"
+  },
+  {
+    "parent": 8519,
+    "id": 851951,
+    "name": "1-р баг, Даланбулаг",
+    "name_en": "1 bag, Dalanbulag"
+  },
+  {
+    "parent": 8519,
+    "id": 851953,
+    "name": "2-р баг, Баянгол",
+    "name_en": "2 bag, Bayngol"
+  },
+  {
+    "parent": 8519,
+    "id": 851955,
+    "name": "3-р баг, Жаргалант",
+    "name_en": "3 bag, Jargalant"
+  },
+  {
+    "parent": 8519,
+    "id": 851957,
+    "name": "4-р баг, Хайрхан",
+    "name_en": "4 bag, Khairkhan"
+  },
+  {
+    "parent": 8522,
+    "id": 852251,
+    "name": "1-р баг, Баянмандал",
+    "name_en": "1 bag, Baynmandal"
+  },
+  {
+    "parent": 8522,
+    "id": 852253,
+    "name": "2-р баг, Цалгар",
+    "name_en": "2 bag, Tsalgar"
+  },
+  {
+    "parent": 8522,
+    "id": 852255,
+    "name": "3-р баг, Баянхайрхан",
+    "name_en": "3 bag, Baynkhairkhan"
+  },
+  {
+    "parent": 8522,
+    "id": 852257,
+    "name": "4-р баг, Баян-Эрдэнэ",
+    "name_en": "4 bag, Bayn-Erdene"
+  },
+  {
+    "parent": 8525,
+    "id": 852551,
+    "name": "1-р баг, Гүн бүрд",
+    "name_en": "1 bag, Gun burd"
+  },
+  {
+    "parent": 8525,
+    "id": 852553,
+    "name": "2-р баг, Алдар",
+    "name_en": "2 bag, Aldar"
+  },
+  {
+    "parent": 8525,
+    "id": 852555,
+    "name": "3-р баг, Хужирт",
+    "name_en": "3 bag, Khujirt"
+  },
+  {
+    "parent": 8525,
+    "id": 852557,
+    "name": "4-р баг, Улаан-Үзүүр",
+    "name_en": "4 bag, Ulaan-Uzuur"
+  },
+  {
+    "parent": 8528,
+    "id": 852851,
+    "name": "1-р баг, Чаргат",
+    "name_en": "1 bag, Chargat"
+  },
+  {
+    "parent": 8528,
+    "id": 852853,
+    "name": "2-р баг, Өлгий нуур",
+    "name_en": "2 bag, Ulgii nuur"
+  },
+  {
+    "parent": 8528,
+    "id": 852855,
+    "name": "3-р баг, Хулст нуур",
+    "name_en": "3 bag, Khulst nuur"
+  },
+  {
+    "parent": 8528,
+    "id": 852857,
+    "name": "4-р баг, Хөдөлмөр",
+    "name_en": "4 bag, Khudulmur"
+  },
+  {
+    "parent": 8531,
+    "id": 853151,
+    "name": "1-р баг, Холбоо",
+    "name_en": "1 bag, Kholboo"
+  },
+  {
+    "parent": 8531,
+    "id": 853153,
+    "name": "2-р баг, Улиаст",
+    "name_en": "2 bag, Uliast"
+  },
+  {
+    "parent": 8531,
+    "id": 853155,
+    "name": "3-р баг, Орлого",
+    "name_en": "3 bag, Orlogo"
+  },
+  {
+    "parent": 8531,
+    "id": 853157,
+    "name": "4-р баг, Баянгол",
+    "name_en": "4 bag, Bayngol"
+  },
+  {
+    "parent": 8531,
+    "id": 853159,
+    "name": "5-р баг, Намир",
+    "name_en": "5 bag, Namir"
+  },
+  {
+    "parent": 8534,
+    "id": 853451,
+    "name": "1-р баг, Цалуу",
+    "name_en": "1 bag, Tsaluu"
+  },
+  {
+    "parent": 8534,
+    "id": 853453,
+    "name": "2-р баг, Батсайхан",
+    "name_en": "2 bag, Batsaikhan"
+  },
+  {
+    "parent": 8534,
+    "id": 853455,
+    "name": "3-р баг, Цагааннуур",
+    "name_en": "3 bag, Tsagaannuur"
+  },
+  {
+    "parent": 8534,
+    "id": 853457,
+    "name": "4-р баг, Жаргалант",
+    "name_en": "4 bag, Jargalant"
+  },
+  {
+    "parent": 8534,
+    "id": 853459,
+    "name": "5-р баг, Цэцэрлэг",
+    "name_en": "5 bag, Tsetseleg"
+  },
+  {
+    "parent": 8537,
+    "id": 853751,
+    "name": "1-р баг, Баянзүрх",
+    "name_en": "1 bag, Baynzurkh"
+  },
+  {
+    "parent": 8537,
+    "id": 853753,
+    "name": "2-р баг, Боршоо",
+    "name_en": "2 bag, Borshoo"
+  },
+  {
+    "parent": 8537,
+    "id": 853755,
+    "name": "3-р баг, Өндөр мод",
+    "name_en": "3 bag, Undur mod"
+  },
+  {
+    "parent": 8537,
+    "id": 853757,
+    "name": "4-р баг, Үүрэг нуур",
+    "name_en": "4 bag, Uureg nuur"
+  },
+  {
+    "parent": 8537,
+    "id": 853759,
+    "name": "5-р баг, Хар мод",
+    "name_en": "5 bag, Khar mod"
+  },
+  {
+    "parent": 8540,
+    "id": 854051,
+    "name": "1-р баг, Бургастай",
+    "name_en": "1 bag, Burgastai"
+  },
+  {
+    "parent": 8540,
+    "id": 854053,
+    "name": "2-р баг, Тарвагатай",
+    "name_en": "2 bag, Tarvagatai"
+  },
+  {
+    "parent": 8540,
+    "id": 854055,
+    "name": "3-р баг, Мянган",
+    "name_en": "3 bag, Myngan"
+  },
+  {
+    "parent": 8540,
+    "id": 854057,
+    "name": "4-р баг, Толь",
+    "name_en": "4 bag, Toli"
+  },
+  {
+    "parent": 8540,
+    "id": 854059,
+    "name": "5-р баг, Хөхөө",
+    "name_en": "5 bag, Khukhuu"
+  },
+  {
+    "parent": 8540,
+    "id": 854061,
+    "name": "6-р баг, Хархираа",
+    "name_en": "6 bag, Kharkhiraa"
+  },
+  {
+    "parent": 8543,
+    "id": 854351,
+    "name": "1-р баг, Баянхайрхан",
+    "name_en": "1 bag, Baynkhairkhan"
+  },
+  {
+    "parent": 8543,
+    "id": 854353,
+    "name": "2-р баг, Аршаант",
+    "name_en": "2 bag, Arshaant"
+  },
+  {
+    "parent": 8543,
+    "id": 854355,
+    "name": "3-р баг, Эрдэнэхайрхан",
+    "name_en": "3 bag, Erdenekhairkhan"
+  },
+  {
+    "parent": 8546,
+    "id": 854651,
+    "name": "1-р баг"
+  },
+  {
+    "parent": 8546,
+    "id": 854653,
+    "name": "2-р баг"
+  },
+  {
+    "parent": 8546,
+    "id": 854655,
+    "name": "3-р баг"
+  },
+  {
+    "parent": 8546,
+    "id": 854657,
+    "name": "4-р баг"
+  },
+  {
+    "parent": 8546,
+    "id": 854659,
+    "name": "5-р баг"
+  },
+  {
+    "parent": 8546,
+    "id": 854661,
+    "name": "6-р баг"
+  },
+  {
+    "parent": 8546,
+    "id": 854663,
+    "name": "8-р баг"
+  },
+  {
+    "parent": 8546,
+    "id": 854665,
+    "name": "9-р баг"
+  },
+  {
+    "parent": 8546,
+    "id": 854667,
+    "name": "10-р баг"
+  },
+  {
+    "parent": 8546,
+    "id": 854669,
+    "name": "11-р баг"
+  },
+  {
+    "parent": 8549,
+    "id": 854951,
+    "name": "1-р баг, Ховд",
+    "name_en": "1 bag, Khovd"
+  },
+  {
+    "parent": 8549,
+    "id": 854953,
+    "name": "2-р баг, Шивэр",
+    "name_en": "2 bag, Shiver"
+  },
+  {
+    "parent": 8549,
+    "id": 854955,
+    "name": "3-р баг, Ачит",
+    "name_en": "3 bag, Achit"
+  },
+  {
+    "parent": 8549,
+    "id": 854957,
+    "name": "4-р баг, Халиунбулаг",
+    "name_en": "4 bag, Khaliunbulag"
+  },
+  {
+    "parent": 8552,
+    "id": 855251,
+    "name": "1-р баг, Хангай",
+    "name_en": "1 bag, Khangai"
+  },
+  {
+    "parent": 8552,
+    "id": 855253,
+    "name": "2-р баг, Бугат",
+    "name_en": "2 bag, Bugat"
+  },
+  {
+    "parent": 8552,
+    "id": 855255,
+    "name": "3-р баг, Хайрхан",
+    "name_en": "3 bag, Khairkhan"
+  },
+  {
+    "parent": 8552,
+    "id": 855257,
+    "name": "4-р баг, Дэлгэр",
+    "name_en": "4 bag, Delger"
+  },
+  {
+    "parent": 8555,
+    "id": 855551,
+    "name": "1-р баг, Хунт",
+    "name_en": "1 bag, Khunt"
+  },
+  {
+    "parent": 8555,
+    "id": 855553,
+    "name": "2-р баг, Хулж",
+    "name_en": "2 bag, Khulj"
+  },
+  {
+    "parent": 8555,
+    "id": 855555,
+    "name": "3-р баг, Арбулаг",
+    "name_en": "3 bag, Arbulag"
+  },
+  {
+    "parent": 8555,
+    "id": 855557,
+    "name": "4-р баг, Даланхуруу",
+    "name_en": "4 bag, Dalankhuruu"
+  },
+  {
+    "parent": 8401,
+    "id": 840151,
+    "name": "1-р баг, Алагтолгой",
+    "name_en": "1 bag, Alagtolgoi"
+  },
+  {
+    "parent": 8401,
+    "id": 840153,
+    "name": "2-р баг, Баатархайрхан",
+    "name_en": "1 bag, Baatarkhairkhan"
+  },
+  {
+    "parent": 8401,
+    "id": 840155,
+    "name": "3-р баг, Бичигт",
+    "name_en": "3 bag, Bichigt"
+  },
+  {
+    "parent": 8401,
+    "id": 840157,
+    "name": "4-р баг, Бугат",
+    "name_en": "4 bag, Bugat"
+  },
+  {
+    "parent": 8401,
+    "id": 840159,
+    "name": "5-р баг, Буянт",
+    "name_en": "5 bag, Buynt"
+  },
+  {
+    "parent": 8401,
+    "id": 840161,
+    "name": "6-р баг, Жаргалан",
+    "name_en": "6 bag, Jargalan"
+  },
+  {
+    "parent": 8401,
+    "id": 840163,
+    "name": "7-р баг, Магсаржав",
+    "name_en": "7 bag, Magsarjav"
+  },
+  {
+    "parent": 8401,
+    "id": 840165,
+    "name": "8-р баг, Наран",
+    "name_en": "8 bag, Naran"
+  },
+  {
+    "parent": 8401,
+    "id": 840167,
+    "name": "9-р баг, Рашаант",
+    "name_en": "9 bag, Rashaant"
+  },
+  {
+    "parent": 8401,
+    "id": 840169,
+    "name": "10-р баг, Тахилт",
+    "name_en": "10 bag, Takhilt"
+  },
+  {
+    "parent": 8401,
+    "id": 840171,
+    "name": "11-р баг, Хайрхан",
+    "name_en": "11 bag, Khairkhan"
+  },
+  {
+    "parent": 8401,
+    "id": 840173,
+    "name": "12-р баг, Цамбагарав",
+    "name_en": "12 bag, Tsambagarav"
+  },
+  {
+    "parent": 8404,
+    "id": 840451,
+    "name": "1-р баг, Бодонч",
+    "name_en": "1 bag, Bodonch"
+  },
+  {
+    "parent": 8404,
+    "id": 840453,
+    "name": "2-р баг, Алтангадас",
+    "name_en": "2 bag, Altangadas"
+  },
+  {
+    "parent": 8404,
+    "id": 840455,
+    "name": "3-р баг, Барлаг",
+    "name_en": "3 bag, Badlag"
+  },
+  {
+    "parent": 8404,
+    "id": 840457,
+    "name": "4-р баг, Тахилт",
+    "name_en": "4 bag, Takhilt"
+  },
+  {
+    "parent": 8407,
+    "id": 840751,
+    "name": "1-р баг, Баянгол",
+    "name_en": "1 bag, Bayngol"
+  },
+  {
+    "parent": 8407,
+    "id": 840753,
+    "name": "2-р баг, Баянсудал",
+    "name_en": "2 bag, Baynsudal"
+  },
+  {
+    "parent": 8407,
+    "id": 840755,
+    "name": "3-р баг, Байтаг",
+    "name_en": "3 bag, Baitag"
+  },
+  {
+    "parent": 8407,
+    "id": 840757,
+    "name": "4-р баг, Алагтолгой",
+    "name_en": "4 bag, Alagtolgoi"
+  },
+  {
+    "parent": 8407,
+    "id": 840759,
+    "name": "5-р баг, Далт",
+    "name_en": "5 bag, Dalt"
+  },
+  {
+    "parent": 8407,
+    "id": 840761,
+    "name": "6-р баг, Бүрэнхайрхан",
+    "name_en": "6 bag, Burenkhairkhan"
+  },
+  {
+    "parent": 8410,
+    "id": 841051,
+    "name": "1-р баг, Нарийн гол",
+    "name_en": "1 bag, Nariin gol"
+  },
+  {
+    "parent": 8410,
+    "id": 841053,
+    "name": "2-р баг, Цагаанбургас",
+    "name_en": "2 bag, Tsagaanburgas"
+  },
+  {
+    "parent": 8410,
+    "id": 841055,
+    "name": "3-р баг, Наранхайрхан",
+    "name_en": "3 bag, Narankhairkhan"
+  },
+  {
+    "parent": 8410,
+    "id": 841057,
+    "name": "4-р баг, Цагаан-Эрэг",
+    "name_en": "4 bag, Tsagaan-Ereg"
+  },
+  {
+    "parent": 8410,
+    "id": 841059,
+    "name": "5-р баг, Норжинхайрхан",
+    "name_en": "5 bag, Norjinkhairkhan"
+  },
+  {
+    "parent": 8413,
+    "id": 841351,
+    "name": "1-р баг, Булаг",
+    "name_en": "1 bag, Bulag"
+  },
+  {
+    "parent": 8413,
+    "id": 841353,
+    "name": "2-р баг, Дэлгэр",
+    "name_en": "2 bag, Delger"
+  },
+  {
+    "parent": 8413,
+    "id": 841355,
+    "name": "3-р баг, Мөрөн",
+    "name_en": "3 bag, Murun"
+  },
+  {
+    "parent": 8413,
+    "id": 841357,
+    "name": "4-р баг, Мөнгөн аяга",
+    "name_en": "4 bag, Mungun ayga"
+  },
+  {
+    "parent": 8413,
+    "id": 841359,
+    "name": "5-р баг, Булган",
+    "name_en": "5 bag, Bulgan"
+  },
+  {
+    "parent": 8416,
+    "id": 841651,
+    "name": "1-р баг, Агваш",
+    "name_en": "1 bag, Arvash"
+  },
+  {
+    "parent": 8416,
+    "id": 841653,
+    "name": "2-р баг, Сээр",
+    "name_en": "2 bag, Seer"
+  },
+  {
+    "parent": 8416,
+    "id": 841655,
+    "name": "3-р баг, Аргалант",
+    "name_en": "3 bag, Argalant"
+  },
+  {
+    "parent": 8416,
+    "id": 841657,
+    "name": "4-р баг, Өгөөмөр",
+    "name_en": "4 bag, Uguumur"
+  },
+  {
+    "parent": 8419,
+    "id": 841951,
+    "name": "1-р баг, Шивэр",
+    "name_en": "1 bag, Shiver"
+  },
+  {
+    "parent": 8419,
+    "id": 841953,
+    "name": "2-р баг, Хөх бэлчир",
+    "name_en": "2 bag, Khukh belchir"
+  },
+  {
+    "parent": 8419,
+    "id": 841955,
+    "name": "3-р баг, Цагаан бургас",
+    "name_en": "3 bag, Tsagaan burgas"
+  },
+  {
+    "parent": 8419,
+    "id": 841957,
+    "name": "4-р баг, Босго",
+    "name_en": "4 bag, Bosgo"
+  },
+  {
+    "parent": 8422,
+    "id": 842251,
+    "name": "1-р баг, Гүвээ",
+    "name_en": "1 bag, Guvee"
+  },
+  {
+    "parent": 8422,
+    "id": 842253,
+    "name": "2-р баг, Бургасан",
+    "name_en": "2 bag, Burgasan"
+  },
+  {
+    "parent": 8422,
+    "id": 842255,
+    "name": "3-р баг, Бураа",
+    "name_en": "3 bag, Buraa"
+  },
+  {
+    "parent": 8422,
+    "id": 842257,
+    "name": "4-р баг, Эхэн",
+    "name_en": "4 bag, Ekhen"
+  },
+  {
+    "parent": 8422,
+    "id": 842259,
+    "name": "5-р баг, Хөндлөн",
+    "name_en": "5 bag, Khundlun"
+  },
+  {
+    "parent": 8425,
+    "id": 842551,
+    "name": "1-р баг, Тахилт",
+    "name_en": "1 bag, Takhilt"
+  },
+  {
+    "parent": 8425,
+    "id": 842553,
+    "name": "2-р баг, Зэрэг гол",
+    "name_en": "2 bag, Zereg gol"
+  },
+  {
+    "parent": 8425,
+    "id": 842555,
+    "name": "3-р баг, Улаан хүрээ",
+    "name_en": "3 bag, Ulaan khuree"
+  },
+  {
+    "parent": 8425,
+    "id": 842557,
+    "name": "4-р баг, Баянгол",
+    "name_en": "4 bag, Bayngol"
+  },
+  {
+    "parent": 8425,
+    "id": 842559,
+    "name": "5-р баг, Ботгон",
+    "name_en": "5 bag, Botgon"
+  },
+  {
+    "parent": 8425,
+    "id": 842561,
+    "name": "6-р баг, Төгрөг гол",
+    "name_en": "6 bag, Tugrug gol"
+  },
+  {
+    "parent": 8428,
+    "id": 842851,
+    "name": "1-р баг, Алаг",
+    "name_en": "1 bag, Alag"
+  },
+  {
+    "parent": 8428,
+    "id": 842853,
+    "name": "2-р баг, Борт",
+    "name_en": "2 bag, Bort"
+  },
+  {
+    "parent": 8428,
+    "id": 842855,
+    "name": "3-р баг, Хаг",
+    "name_en": "3 bag, Khag"
+  },
+  {
+    "parent": 8428,
+    "id": 842857,
+    "name": "4-р баг, Сэнхэр",
+    "name_en": "4 bag, Senkher"
+  },
+  {
+    "parent": 8431,
+    "id": 843151,
+    "name": "1-р баг, Цэцэг гол",
+    "name_en": "1 bag, Tsetseg gol"
+  },
+  {
+    "parent": 8431,
+    "id": 843153,
+    "name": "2-р баг, Хужирт",
+    "name_en": "12bag, Khujirt"
+  },
+  {
+    "parent": 8431,
+    "id": 843155,
+    "name": "3-р баг, Баянхайрхан",
+    "name_en": "3 bag, Baynkhairkhan"
+  },
+  {
+    "parent": 8431,
+    "id": 843157,
+    "name": "4-р баг, Давст",
+    "name_en": "4 bag, Davst"
+  },
+  {
+    "parent": 8431,
+    "id": 843159,
+    "name": "5-р баг, Улаантолгой",
+    "name_en": "6 bag, Ulaantolgoi"
+  },
+  {
+    "parent": 8434,
+    "id": 843451,
+    "name": "1-р баг, Чацаргант",
+    "name_en": "1 bag, Chatsargant"
+  },
+  {
+    "parent": 8434,
+    "id": 843453,
+    "name": "2-р баг, Баянбулаг",
+    "name_en": "2 bag, Baynbulag"
+  },
+  {
+    "parent": 8434,
+    "id": 843455,
+    "name": "3-р баг, Гахайт",
+    "name_en": "3 bag, Gakhait"
+  },
+  {
+    "parent": 8434,
+    "id": 843457,
+    "name": "4-р баг, Цагаанбулан",
+    "name_en": "4 bag, Tsagaanbulan"
+  },
+  {
+    "parent": 8434,
+    "id": 843459,
+    "name": "5-р баг, Баянхошуу",
+    "name_en": "5 bag, Baynkhoshuu"
+  },
+  {
+    "parent": 8437,
+    "id": 843751,
+    "name": "1-р баг, Цагаантүнгэ",
+    "name_en": "1 bag, Tsagaantunge"
+  },
+  {
+    "parent": 8437,
+    "id": 843753,
+    "name": "2-р баг, Нарийн гол",
+    "name_en": "2 bag, Nariin gol"
+  },
+  {
+    "parent": 8437,
+    "id": 843755,
+    "name": "3-р баг, Жаргалан",
+    "name_en": "3 bag, Jargalan"
+  },
+  {
+    "parent": 8437,
+    "id": 843757,
+    "name": "4-р баг, Улиаст",
+    "name_en": "4 bag, Uliast"
+  },
+  {
+    "parent": 8437,
+    "id": 843759,
+    "name": "5-р баг, Хөх үзүүр",
+    "name_en": "5 bag, Khukh uzuur"
+  },
+  {
+    "parent": 8440,
+    "id": 844051,
+    "name": "1-р баг, Баянбулаг",
+    "name_en": "1 bag, Baynbulag"
+  },
+  {
+    "parent": 8440,
+    "id": 844053,
+    "name": "2-р баг, Цагаанбургас",
+    "name_en": "2 bag, Tsagaanburgas"
+  },
+  {
+    "parent": 8440,
+    "id": 844055,
+    "name": "3-р баг, Баруун салаа",
+    "name_en": "3 bag, Baruun salaa"
+  },
+  {
+    "parent": 8440,
+    "id": 844057,
+    "name": "4-р баг, Улаанбураа",
+    "name_en": "4 bag, Ulaanburaa"
+  },
+  {
+    "parent": 8440,
+    "id": 844059,
+    "name": "5-р баг, Дунд ус",
+    "name_en": "5 bag, Dund us"
+  },
+  {
+    "parent": 8443,
+    "id": 844351,
+    "name": "1-р баг, Хажинга",
+    "name_en": "1 bag, Khajinga"
+  },
+  {
+    "parent": 8443,
+    "id": 844353,
+    "name": "2-р баг, Баянгол",
+    "name_en": "2 bag, Bayngol"
+  },
+  {
+    "parent": 8443,
+    "id": 844355,
+    "name": "3-р баг, Баян-Овоо",
+    "name_en": "3 bag, Bayn-Ovoo"
+  },
+  {
+    "parent": 8443,
+    "id": 844357,
+    "name": "4-р баг, Цэцэг нуур",
+    "name_en": "4 bag, Tsetseg nuur"
+  },
+  {
+    "parent": 8443,
+    "id": 844359,
+    "name": "5-р баг, Хөшөөт",
+    "name_en": "5 bag, Khushuut"
+  },
+  {
+    "parent": 8446,
+    "id": 844651,
+    "name": "1-р баг, Талын булаг",
+    "name_en": "1 bag, Taliin bulag"
+  },
+  {
+    "parent": 8446,
+    "id": 844653,
+    "name": "2-р баг, Тахилт",
+    "name_en": "2 bag, Takhilt"
+  },
+  {
+    "parent": 8446,
+    "id": 844655,
+    "name": "3-р баг, Баянхайрхан",
+    "name_en": "3 bag, Baynkhairkhan"
+  },
+  {
+    "parent": 8446,
+    "id": 844657,
+    "name": "4-р баг, Сүлжээ",
+    "name_en": "4 bag, Suljee"
+  },
+  {
+    "parent": 8446,
+    "id": 844659,
+    "name": "5-р баг, Урд гол",
+    "name_en": "5 bag, Urd gol"
+  },
+  {
+    "parent": 8446,
+    "id": 844661,
+    "name": "6-р баг, Жаргалант",
+    "name_en": "6 bag, Jargalant"
+  },
+  {
+    "parent": 8449,
+    "id": 844951,
+    "name": "1-р баг, Баянгол",
+    "name_en": "1 bag, Bayngol"
+  },
+  {
+    "parent": 8449,
+    "id": 844953,
+    "name": "2-р баг, Намаржин",
+    "name_en": "2 bag, Namarjin"
+  },
+  {
+    "parent": 8449,
+    "id": 844955,
+    "name": "3-р баг, Хонгио",
+    "name_en": "3 bag, Khongio"
+  },
+  {
+    "parent": 8449,
+    "id": 844957,
+    "name": "4-р баг, Шураг",
+    "name_en": "4 bag, Shurag"
+  },
+  {
+    "parent": 8449,
+    "id": 844959,
+    "name": "5-р баг, Хар ус",
+    "name_en": "5 bag, Khar us"
+  },
+  {
+    "parent": 6701,
+    "id": 670151,
+    "name": "1-р баг"
+  },
+  {
+    "parent": 6701,
+    "id": 670153,
+    "name": "2-р баг"
+  },
+  {
+    "parent": 6701,
+    "id": 670155,
+    "name": "3-р баг"
+  },
+  {
+    "parent": 6701,
+    "id": 670157,
+    "name": "4-р баг"
+  },
+  {
+    "parent": 6701,
+    "id": 670159,
+    "name": "5-р баг"
+  },
+  {
+    "parent": 6701,
+    "id": 670161,
+    "name": "6-р баг"
+  },
+  {
+    "parent": 6701,
+    "id": 670163,
+    "name": "7-р баг"
+  },
+  {
+    "parent": 6701,
+    "id": 670165,
+    "name": "8-р баг"
+  },
+  {
+    "parent": 6701,
+    "id": 670167,
+    "name": "9-р баг"
+  },
+  {
+    "parent": 6701,
+    "id": 670169,
+    "name": "10-р баг"
+  },
+  {
+    "parent": 6701,
+    "id": 670171,
+    "name": "11-р баг"
+  },
+  {
+    "parent": 6701,
+    "id": 670173,
+    "name": "12-р баг"
+  },
+  {
+    "parent": 6701,
+    "id": 670175,
+    "name": "13-р баг"
+  },
+  {
+    "parent": 6704,
+    "id": 670451,
+    "name": "1-р баг, Шувуут",
+    "name_en": "1 bag, Shuvuut"
+  },
+  {
+    "parent": 6704,
+    "id": 670453,
+    "name": "2-р баг, Ужиг /Цагаан бэлчир/",
+    "name_en": "2 bag, Ujig"
+  },
+  {
+    "parent": 6704,
+    "id": 670455,
+    "name": "3-р баг, Яргис",
+    "name_en": "3 bag, Yrgis"
+  },
+  {
+    "parent": 6704,
+    "id": 670457,
+    "name": "4-р баг, Цагаан бургас",
+    "name_en": "4 bag, Tsagaan burgas"
+  },
+  {
+    "parent": 6704,
+    "id": 670459,
+    "name": "5-р баг, Манхан",
+    "name_en": "5 bag, Mankhan"
+  },
+  {
+    "parent": 6704,
+    "id": 670461,
+    "name": "6-р баг, Хатгал тосон",
+    "name_en": "6 bag, Khatgal toson"
+  },
+  {
+    "parent": 6707,
+    "id": 670751,
+    "name": "1-р баг, Хавтага",
+    "name_en": "1 bag, Khavtaga"
+  },
+  {
+    "parent": 6707,
+    "id": 670753,
+    "name": "2-р баг, Бор гол",
+    "name_en": "2 bag, Bor gol"
+  },
+  {
+    "parent": 6707,
+    "id": 670755,
+    "name": "3-р баг, Бэл булаг",
+    "name_en": "3 bag, Bel bulag"
+  },
+  {
+    "parent": 6707,
+    "id": 670757,
+    "name": "4-р баг, Сүмбэр",
+    "name_en": "4 bag, Sumber"
+  },
+  {
+    "parent": 6707,
+    "id": 670759,
+    "name": "5-р баг, Тарган нуур",
+    "name_en": "5 bag, Targan nuur"
+  },
+  {
+    "parent": 6707,
+    "id": 670761,
+    "name": "6-р баг, Урт булаг",
+    "name_en": "6 bag, Urt bulag"
+  },
+  {
+    "parent": 6710,
+    "id": 671051,
+    "name": "1-р баг, Эмт",
+    "name_en": "1 bag, Emt"
+  },
+  {
+    "parent": 6710,
+    "id": 671053,
+    "name": "2-р баг, Хайс",
+    "name_en": "2 bag, Khais"
+  },
+  {
+    "parent": 6710,
+    "id": 671055,
+    "name": "3-р баг, Тоом",
+    "name_en": "3 bag, Toom"
+  },
+  {
+    "parent": 6710,
+    "id": 671057,
+    "name": "4-р баг, Агар",
+    "name_en": "4 bag, Agar"
+  },
+  {
+    "parent": 6710,
+    "id": 671059,
+    "name": "5-р баг, Бэлтэс",
+    "name_en": "5 bag, Beltes"
+  },
+  {
+    "parent": 6713,
+    "id": 671351,
+    "name": "1-р баг, Сангийн далай",
+    "name_en": "1 bag, Sangiin dalai"
+  },
+  {
+    "parent": 6713,
+    "id": 671353,
+    "name": "2-р баг, Их-Уул",
+    "name_en": "2 bag, Ikh-Uul"
+  },
+  {
+    "parent": 6713,
+    "id": 671355,
+    "name": "3-р баг, Бүрэнхаан",
+    "name_en": "3 bag, Burenkhaan"
+  },
+  {
+    "parent": 6713,
+    "id": 671357,
+    "name": "4-р баг, Туяа",
+    "name_en": "4 bag, Tuya"
+  },
+  {
+    "parent": 6713,
+    "id": 671359,
+    "name": "5-р баг, Эрчим",
+    "name_en": "5 bag, Erchim"
+  },
+  {
+    "parent": 6713,
+    "id": 671361,
+    "name": "6-р баг, Баянхошуу",
+    "name_en": "6 bag, Baynkhoshuu"
+  },
+  {
+    "parent": 6716,
+    "id": 671651,
+    "name": "1-р баг, Нүхт",
+    "name_en": "1 bag, Nukht"
+  },
+  {
+    "parent": 6716,
+    "id": 671653,
+    "name": "2-р баг, Зүрх",
+    "name_en": "2 bag, Zurkh"
+  },
+  {
+    "parent": 6716,
+    "id": 671655,
+    "name": "3-р баг, Хужирт",
+    "name_en": "3 bag, Khujirt"
+  },
+  {
+    "parent": 6716,
+    "id": 671657,
+    "name": "4-р баг, Рашаант",
+    "name_en": "4 bag, Rashaant"
+  },
+  {
+    "parent": 6716,
+    "id": 671659,
+    "name": "5-р баг, Галт",
+    "name_en": "5 bag, Galt"
+  },
+  {
+    "parent": 6719,
+    "id": 671951,
+    "name": "1-р баг, Хөнжил",
+    "name_en": "1 bag, Khunjil"
+  },
+  {
+    "parent": 6719,
+    "id": 671953,
+    "name": "2-р баг, Цэцүүх",
+    "name_en": "2 bag, Tsetsuukh"
+  },
+  {
+    "parent": 6719,
+    "id": 671955,
+    "name": "3-р баг, Цагаан бургас",
+    "name_en": "3 bag, Tsagaan burgas"
+  },
+  {
+    "parent": 6719,
+    "id": 671957,
+    "name": "4-р баг, Харгана",
+    "name_en": "4 bag, Khargana"
+  },
+  {
+    "parent": 6719,
+    "id": 671959,
+    "name": "5-р баг, Төвийн",
+    "name_en": "5 bag, Tuviin"
+  },
+  {
+    "parent": 6722,
+    "id": 672251,
+    "name": "1-р баг, Шивээ",
+    "name_en": "1 bag, Shivee"
+  },
+  {
+    "parent": 6722,
+    "id": 672253,
+    "name": "2-р баг, Асгат",
+    "name_en": "2 bag, Asgat"
+  },
+  {
+    "parent": 6722,
+    "id": 672255,
+    "name": "3-р баг, Их-Уул",
+    "name_en": "3 bag, Ikh-Uul"
+  },
+  {
+    "parent": 6722,
+    "id": 672257,
+    "name": "4-р баг, Мандал",
+    "name_en": "4 bag, Mandal"
+  },
+  {
+    "parent": 6722,
+    "id": 672259,
+    "name": "5-р баг, Сэлэнгэ",
+    "name_en": "5 bag, Selenge"
+  },
+  {
+    "parent": 6725,
+    "id": 672551,
+    "name": "1-р баг, Тээл",
+    "name_en": "1 bag, Teel"
+  },
+  {
+    "parent": 6725,
+    "id": 672553,
+    "name": "2-р баг, Талын ус",
+    "name_en": "2 bag, Taliin us"
+  },
+  {
+    "parent": 6725,
+    "id": 672555,
+    "name": "3-р баг, Энх тал",
+    "name_en": "3 bag, Enkh tal"
+  },
+  {
+    "parent": 6725,
+    "id": 672557,
+    "name": "4-р баг, Цэнгэл",
+    "name_en": "4 bag, Tsengel"
+  },
+  {
+    "parent": 6725,
+    "id": 672559,
+    "name": "5-р баг, Их ац",
+    "name_en": "5 bag, Ikh ats"
+  },
+  {
+    "parent": 6728,
+    "id": 672851,
+    "name": "1-р баг, Хөндий",
+    "name_en": "1 bag, Khundii"
+  },
+  {
+    "parent": 6728,
+    "id": 672853,
+    "name": "2-р баг, Хоолойн зах",
+    "name_en": "2 bag, Khooloin zakh"
+  },
+  {
+    "parent": 6728,
+    "id": 672855,
+    "name": "3-р баг, Ходон",
+    "name_en": "3 bag, Khodon"
+  },
+  {
+    "parent": 6728,
+    "id": 672857,
+    "name": "4-р баг, Далайн зах",
+    "name_en": "4 bag, Dalain zakh"
+  },
+  {
+    "parent": 6728,
+    "id": 672859,
+    "name": "5-р баг, Ёлт",
+    "name_en": "5 bag, Ylt"
+  },
+  {
+    "parent": 6728,
+    "id": 672861,
+    "name": "6-р баг, Зөөлөн",
+    "name_en": "6 bag, Zuulun"
+  },
+  {
+    "parent": 6731,
+    "id": 673151,
+    "name": "1-р баг, Мандал",
+    "name_en": "1 bag, Mandal"
+  },
+  {
+    "parent": 6731,
+    "id": 673153,
+    "name": "2-р баг, Ар тархи",
+    "name_en": "2 bag, Ar tarkhi"
+  },
+  {
+    "parent": 6731,
+    "id": 673155,
+    "name": "3-р баг, Таван толгой",
+    "name_en": "3 bag, Tavan tolgoi"
+  },
+  {
+    "parent": 6731,
+    "id": 673157,
+    "name": "4-р баг, Сэлэнгэ",
+    "name_en": "4 bag, Selenge"
+  },
+  {
+    "parent": 6731,
+    "id": 673159,
+    "name": "5-р баг, Баянхошуу",
+    "name_en": "5 bag, Baynkhoshuu"
+  },
+  {
+    "parent": 6731,
+    "id": 673161,
+    "name": "6-р баг, Давааны ар",
+    "name_en": "6 bag, Davaanii ar"
+  },
+  {
+    "parent": 6734,
+    "id": 673451,
+    "name": "1-р баг, Мухар хөндий",
+    "name_en": "1 bag, Mukhar khundii"
+  },
+  {
+    "parent": 6734,
+    "id": 673453,
+    "name": "2-р баг, Сэлэнгэ",
+    "name_en": "2 bag, Selenge"
+  },
+  {
+    "parent": 6734,
+    "id": 673455,
+    "name": "3-р баг, Тээл",
+    "name_en": "3 bag, Teel"
+  },
+  {
+    "parent": 6734,
+    "id": 673457,
+    "name": "4-р баг, Сүүл Улаан",
+    "name_en": "4 bag, Suul Ulaan"
+  },
+  {
+    "parent": 6734,
+    "id": 673459,
+    "name": "5-р баг, Цэнгэл",
+    "name_en": "5 bag, Tsengel"
+  },
+  {
+    "parent": 6737,
+    "id": 673751,
+    "name": "1-р баг, Жаргалант",
+    "name_en": "1 bag, Jargalant"
+  },
+  {
+    "parent": 6737,
+    "id": 673753,
+    "name": "2-р баг, Нарийн",
+    "name_en": "2 bag, Nariin"
+  },
+  {
+    "parent": 6737,
+    "id": 673755,
+    "name": "3-р баг, Тариат",
+    "name_en": "3 bag, Tariat"
+  },
+  {
+    "parent": 6737,
+    "id": 673757,
+    "name": "4-р баг, Тээл",
+    "name_en": "4 bag, Teel"
+  },
+  {
+    "parent": 6737,
+    "id": 673759,
+    "name": "5-р баг, Сумын төв",
+    "name_en": "5 bag, Sumiin tuv"
+  },
+  {
+    "parent": 6740,
+    "id": 674051,
+    "name": "1-р баг, Зуны гол",
+    "name_en": "1 bag, Zunii gol"
+  },
+  {
+    "parent": 6740,
+    "id": 674053,
+    "name": "2-р баг, Навчилтай",
+    "name_en": "2 bag, Navchiltai"
+  },
+  {
+    "parent": 6740,
+    "id": 674055,
+    "name": "3-р баг, Баян-Эрхэт",
+    "name_en": "3 bag, Bayn-Erkhet"
+  },
+  {
+    "parent": 6740,
+    "id": 674057,
+    "name": "4-р баг, Алтгана",
+    "name_en": "4 bag, Altgana"
+  },
+  {
+    "parent": 6740,
+    "id": 674059,
+    "name": "5-р баг, Бийж",
+    "name_en": "5 bag, Biij"
+  },
+  {
+    "parent": 6740,
+    "id": 674061,
+    "name": "6-р баг, Сумын төв",
+    "name_en": "6 bag, Tuv"
+  },
+  {
+    "parent": 6743,
+    "id": 674351,
+    "name": "1-р баг, Шивлэг",
+    "name_en": "1 bag, Shivleg"
+  },
+  {
+    "parent": 6743,
+    "id": 674353,
+    "name": "2-р баг, Тоом",
+    "name_en": "2 bag, Toom"
+  },
+  {
+    "parent": 6743,
+    "id": 674355,
+    "name": "3-р баг, Мунгараг",
+    "name_en": "3 bag, Mungarag"
+  },
+  {
+    "parent": 6743,
+    "id": 674357,
+    "name": "4-р баг, Соёо",
+    "name_en": "4 bag, Soyo"
+  },
+  {
+    "parent": 6743,
+    "id": 674359,
+    "name": "5-р баг, Төгөл",
+    "name_en": "5 bag, Tugul"
+  },
+  {
+    "parent": 6746,
+    "id": 674651,
+    "name": "1-р баг, Тураг",
+    "name_en": "1 bag, Turag"
+  },
+  {
+    "parent": 6746,
+    "id": 674653,
+    "name": "2-р баг, Хороо",
+    "name_en": "2 bag, Khoroo"
+  },
+  {
+    "parent": 6746,
+    "id": 674655,
+    "name": "3-р баг, Турт /төвийн баг/",
+    "name_en": "3 bag, Turt"
+  },
+  {
+    "parent": 6749,
+    "id": 674951,
+    "name": "1-р баг, Төвийн",
+    "name_en": "1 bag, Tuviin"
+  },
+  {
+    "parent": 6749,
+    "id": 674953,
+    "name": "2-р баг, Тайга",
+    "name_en": "2 bag, Taiga"
+  },
+  {
+    "parent": 6752,
+    "id": 675251,
+    "name": "1-р баг, Агар",
+    "name_en": "1 bag, Agar"
+  },
+  {
+    "parent": 6752,
+    "id": 675253,
+    "name": "2-р баг, Өвгөд",
+    "name_en": "2 bag, Uvgud"
+  },
+  {
+    "parent": 6752,
+    "id": 675255,
+    "name": "3-р баг, Тосон",
+    "name_en": "3 bag, Toson"
+  },
+  {
+    "parent": 6752,
+    "id": 675257,
+    "name": "4-р баг, Хужирт",
+    "name_en": "4 bag, Khujirt"
+  },
+  {
+    "parent": 6752,
+    "id": 675259,
+    "name": "5-р баг, Шарга",
+    "name_en": "5 bag, Sharga"
+  },
+  {
+    "parent": 6752,
+    "id": 675261,
+    "name": "6-р баг, Жаргалант",
+    "name_en": "6 bag, Jargalant"
+  },
+  {
+    "parent": 6755,
+    "id": 675551,
+    "name": "1-р баг, Уйлган",
+    "name_en": "1 bag, Uilgan"
+  },
+  {
+    "parent": 6755,
+    "id": 675553,
+    "name": "2-р баг, Үүр",
+    "name_en": "2 bag, Uur"
+  },
+  {
+    "parent": 6755,
+    "id": 675555,
+    "name": "3-р баг, Дархит",
+    "name_en": "3 bag, Darkhit"
+  },
+  {
+    "parent": 6755,
+    "id": 675557,
+    "name": "4-р баг, Булган",
+    "name_en": "4 bag, Bulgan"
+  },
+  {
+    "parent": 6758,
+    "id": 675851,
+    "name": "1-р баг, Дэлгэрхаан",
+    "name_en": "1 bag, Delgerkhaan"
+  },
+  {
+    "parent": 6758,
+    "id": 675853,
+    "name": "2-р баг, Зуун мод",
+    "name_en": "2 bag, Zuun mod"
+  },
+  {
+    "parent": 6758,
+    "id": 675855,
+    "name": "3-р баг, Могой /Рэнчинжугнай/",
+    "name_en": "3 bag, Mogoi"
+  },
+  {
+    "parent": 6758,
+    "id": 675857,
+    "name": "4-р баг, Согоот",
+    "name_en": "4 bag, Sogoot"
+  },
+  {
+    "parent": 6758,
+    "id": 675859,
+    "name": "5-р баг, Халбан",
+    "name_en": "5 bag, Khalban"
+  },
+  {
+    "parent": 6758,
+    "id": 675861,
+    "name": "6-р баг, Жаргалант",
+    "name_en": "6 bag, Jargalant"
+  },
+  {
+    "parent": 6758,
+    "id": 675863,
+    "name": "7-р баг, Бүрхээр",
+    "name_en": "7 bag, Burkheer"
+  },
+  {
+    "parent": 6761,
+    "id": 676151,
+    "name": "1-р баг, Шивэрт",
+    "name_en": "1 bag, Shivert"
+  },
+  {
+    "parent": 6761,
+    "id": 676153,
+    "name": "2-р баг, Ёлгос",
+    "name_en": "2 bag, Yltos"
+  },
+  {
+    "parent": 6761,
+    "id": 676155,
+    "name": "3-р баг, Улаан асга",
+    "name_en": "3 bag, Ulaan asga"
+  },
+  {
+    "parent": 6761,
+    "id": 676157,
+    "name": "4-р баг, Хөхөө",
+    "name_en": "4 bag, Khukhuu"
+  },
+  {
+    "parent": 6761,
+    "id": 676159,
+    "name": "5-р баг, Хайрхан толгой",
+    "name_en": "5 bag, Khairkhan tolgoi"
+  },
+  {
+    "parent": 6764,
+    "id": 676451,
+    "name": "1-р баг, Сангийн далай",
+    "name_en": "1 bag, Sangiin dalai"
+  },
+  {
+    "parent": 6764,
+    "id": 676453,
+    "name": "2-р баг, Баяннуур",
+    "name_en": "2 bag, Baynnuur"
+  },
+  {
+    "parent": 6764,
+    "id": 676455,
+    "name": "3-р баг, Баянзүрх",
+    "name_en": "3 bag, Baynzurkh"
+  },
+  {
+    "parent": 6764,
+    "id": 676457,
+    "name": "4-р баг, Нүхт",
+    "name_en": "4 bag, Nukht"
+  },
+  {
+    "parent": 6767,
+    "id": 676751,
+    "name": "1-р баг, Бөөрөлж",
+    "name_en": "1 bag, Buurulj"
+  },
+  {
+    "parent": 6767,
+    "id": 676753,
+    "name": "2-р баг, Булган тал",
+    "name_en": "2 bag, Bulgan tal"
+  },
+  {
+    "parent": 6767,
+    "id": 676755,
+    "name": "3-р баг, Зэрлэг",
+    "name_en": "3 bag, Zerleg"
+  },
+  {
+    "parent": 6767,
+    "id": 676757,
+    "name": "4-р баг, Дуурга",
+    "name_en": "4 bag, Duurga"
+  },
+  {
+    "parent": 6767,
+    "id": 676759,
+    "name": "5-р баг, Удган",
+    "name_en": "5 bag, Udgan"
+  },
+  {
+    "parent": 2301,
+    "id": 230151,
+    "name": "1-р баг, Хэрлэн",
+    "name_en": "1 bag, Kherlen"
+  },
+  {
+    "parent": 2301,
+    "id": 230153,
+    "name": "2-р баг, Булаг",
+    "name_en": "2 bag, Bulag"
+  },
+  {
+    "parent": 2301,
+    "id": 230155,
+    "name": "3-р баг, Баянмөнх",
+    "name_en": "3 bag, Baynmunkh"
+  },
+  {
+    "parent": 2301,
+    "id": 230157,
+    "name": "4-р баг, Сариг",
+    "name_en": "4 bag, Sarig"
+  },
+  {
+    "parent": 2301,
+    "id": 230159,
+    "name": "5-р баг, Өндөрхаан",
+    "name_en": "5 bag, Undurkhaan"
+  },
+  {
+    "parent": 2301,
+    "id": 230161,
+    "name": "6-р баг, Цогт-Өндөр",
+    "name_en": "6 bag, Tsogt-Undur"
+  },
+  {
+    "parent": 2301,
+    "id": 230163,
+    "name": "7-р баг, Номгон",
+    "name_en": "7 bag, Nomgon"
+  },
+  {
+    "parent": 2301,
+    "id": 230165,
+    "name": "8-р баг, Ишгэн толгой",
+    "name_en": "8 bag, Ishgen tolgoi"
+  },
+  {
+    "parent": 2304,
+    "id": 230451,
+    "name": "1-р баг, Эрдэнэчандмань",
+    "name_en": "1 bag, Erdenechandmani"
+  },
+  {
+    "parent": 2304,
+    "id": 230453,
+    "name": "2-р баг, Эхэнбүрд",
+    "name_en": "2 bag, Ekhenburd"
+  },
+  {
+    "parent": 2304,
+    "id": 230455,
+    "name": "3-р баг, Баян",
+    "name_en": "3 bag, Bayn"
+  },
+  {
+    "parent": 2304,
+    "id": 230457,
+    "name": "4-р баг, Баянбулаг",
+    "name_en": "4 bag, Baynbulag"
+  },
+  {
+    "parent": 2304,
+    "id": 230459,
+    "name": "5-р баг, Идэрмэг",
+    "name_en": "5 bag, Idermeg"
+  },
+  {
+    "parent": 2304,
+    "id": 230461,
+    "name": "6-р баг, Дундбүрд",
+    "name_en": "6 bag, Dundburd"
+  },
+  {
+    "parent": 2304,
+    "id": 230463,
+    "name": "7-р баг, Бэрх",
+    "name_en": "7 bag, Berkh"
+  },
+  {
+    "parent": 2307,
+    "id": 230751,
+    "name": "1-р баг, Хурх",
+    "name_en": "1 bag, Khurkh"
+  },
+  {
+    "parent": 2307,
+    "id": 230753,
+    "name": "2-р баг, Барх",
+    "name_en": "2 bag, Barkh"
+  },
+  {
+    "parent": 2307,
+    "id": 230755,
+    "name": "3-р баг, Онон",
+    "name_en": "3 bag, Onon"
+  },
+  {
+    "parent": 2307,
+    "id": 230757,
+    "name": "4-р баг, Норовлин",
+    "name_en": "4 bag, Norovlin"
+  },
+  {
+    "parent": 2310,
+    "id": 231051,
+    "name": "1-р баг, Сайхан",
+    "name_en": "1 bag, Saikhan"
+  },
+  {
+    "parent": 2310,
+    "id": 231053,
+    "name": "2-р баг, Жаргалант",
+    "name_en": "2 bag, Jargalant"
+  },
+  {
+    "parent": 2310,
+    "id": 231055,
+    "name": "3-р баг, Адарга",
+    "name_en": "3 bag, Adarga"
+  },
+  {
+    "parent": 2310,
+    "id": 231057,
+    "name": "4-р баг, Дуурлиг",
+    "name_en": "4 bag, Duulig"
+  },
+  {
+    "parent": 2313,
+    "id": 231351,
+    "name": "1-р баг, Баянбулаг",
+    "name_en": "1 bag, Baynbulag"
+  },
+  {
+    "parent": 2313,
+    "id": 231353,
+    "name": "2-р баг, Хэрлэн",
+    "name_en": "2 bag, Kherlen"
+  },
+  {
+    "parent": 2313,
+    "id": 231355,
+    "name": "3-р баг, Дулаан",
+    "name_en": "3 bag, Dulaan"
+  },
+  {
+    "parent": 2313,
+    "id": 231357,
+    "name": "4-р баг, Улаан-Эрэг",
+    "name_en": "4 bag, Ulaan-Ereg"
+  },
+  {
+    "parent": 2316,
+    "id": 231651,
+    "name": "1-р баг, Дэлгэрхаан",
+    "name_en": "1 bag, Delgerkhaan"
+  },
+  {
+    "parent": 2316,
+    "id": 231653,
+    "name": "2-р баг, Наран",
+    "name_en": "2 bag, Naran"
+  },
+  {
+    "parent": 2316,
+    "id": 231655,
+    "name": "3-р баг, Сүмбэр",
+    "name_en": "3 bag, Sumber"
+  },
+  {
+    "parent": 2316,
+    "id": 231657,
+    "name": "4-р баг, Жавхлант",
+    "name_en": "4 bag, Javkhlant"
+  },
+  {
+    "parent": 2319,
+    "id": 231951,
+    "name": "1-р баг, Жаргалант",
+    "name_en": "1 bag, Jargalant"
+  },
+  {
+    "parent": 2319,
+    "id": 231953,
+    "name": "2-р баг, Улаан-Өндөр",
+    "name_en": "2 bag, Ulaan-Undur"
+  },
+  {
+    "parent": 2319,
+    "id": 231955,
+    "name": "3-р баг, Цантын хоолой",
+    "name_en": "3 bag, Tsantiin khooloi"
+  },
+  {
+    "parent": 2322,
+    "id": 232251,
+    "name": "1-р баг, Баян-Өндөр",
+    "name_en": "1 bag, Bayn-Undur"
+  },
+  {
+    "parent": 2322,
+    "id": 232253,
+    "name": "2-р баг, Мандалхаан",
+    "name_en": "2 bag, Mandalkhaan"
+  },
+  {
+    "parent": 2322,
+    "id": 232255,
+    "name": "3-р баг, Баянгол",
+    "name_en": "3 bag, Bayngol"
+  },
+  {
+    "parent": 2322,
+    "id": 232257,
+    "name": "4-р баг, Дэлгэрхаан",
+    "name_en": "4 bag, Delgerkhaan"
+  },
+  {
+    "parent": 2322,
+    "id": 232259,
+    "name": "5-р баг, Онон",
+    "name_en": "5 bag, Onon"
+  },
+  {
+    "parent": 2325,
+    "id": 232551,
+    "name": "1-р баг, Арвин",
+    "name_en": "1 bag, Arvin"
+  },
+  {
+    "parent": 2325,
+    "id": 232553,
+    "name": "2-р баг,  Буянтбулаг",
+    "name_en": "1 bag, Bayntbulag"
+  },
+  {
+    "parent": 2325,
+    "id": 232555,
+    "name": "3-р баг, Жаргалант",
+    "name_en": "3 bag, Jargalant"
+  },
+  {
+    "parent": 2325,
+    "id": 232557,
+    "name": "4-р баг, Баянбадрал",
+    "name_en": "4 bag, Baynbadral"
+  },
+  {
+    "parent": 2325,
+    "id": 232559,
+    "name": "5-р баг, Сангийн далай",
+    "name_en": "5 bag, Sangiin dalai"
+  },
+  {
+    "parent": 2325,
+    "id": 232561,
+    "name": "6-р баг, Оч",
+    "name_en": "6 bag, Och"
+  },
+  {
+    "parent": 2328,
+    "id": 232851,
+    "name": "1-р баг, Баян-Овоо",
+    "name_en": "1 bag, Bayn-Ovoo"
+  },
+  {
+    "parent": 2328,
+    "id": 232853,
+    "name": "2-р баг, Балж",
+    "name_en": "2 bag, Balj"
+  },
+  {
+    "parent": 2328,
+    "id": 232855,
+    "name": "3-р баг, Агац",
+    "name_en": "3 bag, Agats"
+  },
+  {
+    "parent": 2328,
+    "id": 232857,
+    "name": "4-р баг, Онон",
+    "name_en": "4 bag, Onon"
+  },
+  {
+    "parent": 2331,
+    "id": 233151,
+    "name": "1-р баг, Дотуур булаг",
+    "name_en": "1 bag, Dotuur bulag"
+  },
+  {
+    "parent": 2331,
+    "id": 233153,
+    "name": "2-р баг, Хараат",
+    "name_en": "2 bag, Kharaat"
+  },
+  {
+    "parent": 2331,
+    "id": 233155,
+    "name": "3-р баг, Шажин",
+    "name_en": "3 bag, Shajin"
+  },
+  {
+    "parent": 2331,
+    "id": 233157,
+    "name": "4-р баг, Мэргэн хошуу",
+    "name_en": "4 bag, Mergen khoshuu"
+  },
+  {
+    "parent": 2331,
+    "id": 233159,
+    "name": "5-р баг, Бор-Өндөр",
+    "name_en": "5 bag, Bor-Undur"
+  },
+  {
+    "parent": 2334,
+    "id": 233451,
+    "name": "1-р баг, Хэрлэнбаян улаан",
+    "name_en": "1 bag, Kherlenbayn ulaan"
+  },
+  {
+    "parent": 2334,
+    "id": 233453,
+    "name": "2-р баг, Долоод",
+    "name_en": "2 bag, Dolood"
+  },
+  {
+    "parent": 2334,
+    "id": 233455,
+    "name": "3-р баг, Аварга",
+    "name_en": "3 bag, Avarga"
+  },
+  {
+    "parent": 2334,
+    "id": 233457,
+    "name": "4-р баг, Хэрлэн тооно",
+    "name_en": "4 bag, Kherlen toono"
+  },
+  {
+    "parent": 2337,
+    "id": 233751,
+    "name": "1-р баг, Гичгэнэ",
+    "name_en": "1 bag, Gichgene"
+  },
+  {
+    "parent": 2337,
+    "id": 233753,
+    "name": "2-р баг, Баянцогт",
+    "name_en": "2 bag, Bayntsogt"
+  },
+  {
+    "parent": 2337,
+    "id": 233755,
+    "name": "3-р баг, Баян-Эрдэнэ",
+    "name_en": "3 bag, Bayn-Erdene"
+  },
+  {
+    "parent": 2337,
+    "id": 233757,
+    "name": "4-р баг, Чулуут",
+    "name_en": "4 bag, Chuluut"
+  },
+  {
+    "parent": 2337,
+    "id": 233759,
+    "name": "5-р баг, Төвийн",
+    "name_en": "5 bag, Tuviin"
+  },
+  {
+    "parent": 2340,
+    "id": 234051,
+    "name": "1-р баг, Зөөлөн",
+    "name_en": "1 bag, Zuulun"
+  },
+  {
+    "parent": 2340,
+    "id": 234053,
+    "name": "2-р баг, Өлзийт",
+    "name_en": "2 bag, Ulziit"
+  },
+  {
+    "parent": 2340,
+    "id": 234055,
+    "name": "3-р баг, Бүрээт",
+    "name_en": "3 bag, Bureet"
+  },
+  {
+    "parent": 2340,
+    "id": 234057,
+    "name": "4-р баг, Цагаан толгой",
+    "name_en": "4 bag, Tsagaan tolgoi"
+  },
+  {
+    "parent": 2340,
+    "id": 234059,
+    "name": "5-р баг, Чандган",
+    "name_en": "5 bag, Chandgan"
+  },
+  {
+    "parent": 2343,
+    "id": 234351,
+    "name": "1-р баг, Баян-Өлзийт",
+    "name_en": "1 bag, Bayn-Ulziit"
+  },
+  {
+    "parent": 2343,
+    "id": 234353,
+    "name": "2-р баг, Ангирт",
+    "name_en": "2 bag, Angirt"
+  },
+  {
+    "parent": 2343,
+    "id": 234355,
+    "name": "3-р баг, Онон",
+    "name_en": "3 bag, Onon"
+  },
+  {
+    "parent": 2343,
+    "id": 234357,
+    "name": "4-р баг, Төвийн",
+    "name_en": "4 bag, Tuviin"
+  },
+  {
+    "parent": 2346,
+    "id": 234651,
+    "name": "1-р баг, Наран",
+    "name_en": "1 bag, Naran"
+  },
+  {
+    "parent": 2346,
+    "id": 234653,
+    "name": "2-р баг, Баянзүрх",
+    "name_en": "2 bag, Baynzurkh"
+  },
+  {
+    "parent": 2346,
+    "id": 234655,
+    "name": "3-р баг, Хэнтий",
+    "name_en": "3 bag, Khentii"
+  },
+  {
+    "parent": 2346,
+    "id": 234657,
+    "name": "4-р баг, Талын булаг",
+    "name_en": "4 bag, Taliin bulag"
+  },
+  {
+    "parent": 2346,
+    "id": 234659,
+    "name": "5-р баг, Чандган",
+    "name_en": "5 bag, Chandgan"
+  },
+  {
+    "parent": 2346,
+    "id": 234661,
+    "name": "6-р баг, Төвийн",
+    "name_en": "6 bag, Tuviin"
+  },
+  {
+    "parent": 2346,
+    "id": 234663,
+    "name": "7-р баг, Гурванбаян",
+    "name_en": "7 bag, Gurvanbayn"
+  },
+  {
+    "parent": 2349,
+    "id": 234951,
+    "name": "1-р баг, Нугаар",
+    "name_en": "1 bag, Nugaar"
+  },
+  {
+    "parent": 2349,
+    "id": 234953,
+    "name": "2-р баг, Согоот",
+    "name_en": "2 bag, Sogoot"
+  },
+  {
+    "parent": 2349,
+    "id": 234955,
+    "name": "3-р баг, Хужхан",
+    "name_en": "3 bag, Khujkhan"
+  },
+  {
+    "parent": 2349,
+    "id": 234957,
+    "name": "4-р баг, Баянмод",
+    "name_en": "4 bag, Baynmod"
+  },
+  {
+    "parent": 4501,
+    "id": 450151,
+    "name": "1-р баг"
+  },
+  {
+    "parent": 4501,
+    "id": 450153,
+    "name": "2-р баг"
+  },
+  {
+    "parent": 4501,
+    "id": 450155,
+    "name": "3-р баг"
+  },
+  {
+    "parent": 4501,
+    "id": 450157,
+    "name": "4-р баг"
+  },
+  {
+    "parent": 4501,
+    "id": 450159,
+    "name": "5-р баг"
+  },
+  {
+    "parent": 4501,
+    "id": 450161,
+    "name": "6-р баг"
+  },
+  {
+    "parent": 4501,
+    "id": 450163,
+    "name": "7-р баг"
+  },
+  {
+    "parent": 4501,
+    "id": 450165,
+    "name": "8-р баг"
+  },
+  {
+    "parent": 4501,
+    "id": 450167,
+    "name": "9-р баг"
+  },
+  {
+    "parent": 4501,
+    "id": 450169,
+    "name": "10-р баг"
+  },
+  {
+    "parent": 4501,
+    "id": 450171,
+    "name": "11-р баг"
+  },
+  {
+    "parent": 4501,
+    "id": 450173,
+    "name": "12-р баг"
+  },
+  {
+    "parent": 4501,
+    "id": 450175,
+    "name": "13-р баг"
+  },
+  {
+    "parent": 4501,
+    "id": 450177,
+    "name": "14-р баг"
+  },
+  {
+    "parent": 4501,
+    "id": 450179,
+    "name": "15-р баг"
+  },
+  {
+    "parent": 4501,
+    "id": 450181,
+    "name": "16-р баг"
+  },
+  {
+    "parent": 4504,
+    "id": 450451,
+    "name": "1-р баг, Баян-Өлзийт",
+    "name_en": "1 bag, Bayn-Ulziit"
+  },
+  {
+    "parent": 4504,
+    "id": 450453,
+    "name": "2-р баг, Энхтал",
+    "name_en": "2 bag, Enkhtal"
+  },
+  {
+    "parent": 4507,
+    "id": 450751,
+    "name": "1-р баг"
+  },
+  {
+    "parent": 4507,
+    "id": 450753,
+    "name": "2-р баг"
+  },
+  {
+    "parent": 4507,
+    "id": 450755,
+    "name": "3-р баг, Салхит баг",
+    "name_en": "3 bag, Salkhit bag"
+  },
+  {
+    "parent": 4510,
+    "id": 451051,
+    "name": "1-р баг, Хайрхан",
+    "name_en": "1 bag, Khairkhan"
+  },
+  {
+    "parent": 4510,
+    "id": 451053,
+    "name": "2-р баг, Дархан",
+    "name_en": "2 bag, Darkhan"
+  },
+  {
+    "parent": 4510,
+    "id": 451055,
+    "name": "3-р баг, Санжинт",
+    "name_en": "3 bag, Sanjint"
+  },
+  {
+    "parent": 6101,
+    "id": 610151,
+    "name": "1-р баг, Зэст",
+    "name_en": "1 bag, Zest"
+  },
+  {
+    "parent": 6101,
+    "id": 610153,
+    "name": "2-р баг, Оюут",
+    "name_en": "2 bag, Oyut"
+  },
+  {
+    "parent": 6101,
+    "id": 610155,
+    "name": "3-р баг, Уурхайчин",
+    "name_en": "3 bag, Uurkhaichin"
+  },
+  {
+    "parent": 6101,
+    "id": 610157,
+    "name": "4-р баг, Хүрэнбулаг",
+    "name_en": "4 bag, Khurenbulag"
+  },
+  {
+    "parent": 6101,
+    "id": 610159,
+    "name": "5-р баг, Уртбулаг",
+    "name_en": "5 bag, Urtbulag"
+  },
+  {
+    "parent": 6101,
+    "id": 610161,
+    "name": "6-р баг, Согоот",
+    "name_en": "6 bag, Sogoot"
+  },
+  {
+    "parent": 6101,
+    "id": 610163,
+    "name": "7-р баг, Дэнж",
+    "name_en": "7 bag, Denj"
+  },
+  {
+    "parent": 6101,
+    "id": 610165,
+    "name": "8-р баг, Бүрэнбүст",
+    "name_en": "8 bag, Burenbust"
+  },
+  {
+    "parent": 6101,
+    "id": 610167,
+    "name": "9-р баг, Шанд",
+    "name_en": "9 bag, Shand"
+  },
+  {
+    "parent": 6101,
+    "id": 610169,
+    "name": "10-р баг, Наран",
+    "name_en": "10 bag, Naran"
+  },
+  {
+    "parent": 6101,
+    "id": 610171,
+    "name": "11-р баг, Цагаанчулуут",
+    "name_en": "11 bag, Tsagaanchuluut"
+  },
+  {
+    "parent": 6101,
+    "id": 610173,
+    "name": "12-р баг, Булаг",
+    "name_en": "12 bag, Bulag"
+  },
+  {
+    "parent": 6101,
+    "id": 610175,
+    "name": "13-р баг, Баянцагаан",
+    "name_en": "13 bag, Bayntsagaan"
+  },
+  {
+    "parent": 6101,
+    "id": 610177,
+    "name": "14-р баг, Говил",
+    "name_en": "14 bag, Govil"
+  },
+  {
+    "parent": 6101,
+    "id": 610179,
+    "name": "15-р баг, Рашаант",
+    "name_en": "15 bag, Rashaant"
+  },
+  {
+    "parent": 6101,
+    "id": 610181,
+    "name": "16-р баг, Малчин",
+    "name_en": "16 bag, Malchin"
+  },
+  {
+    "parent": 6101,
+    "id": 610183,
+    "name": "17-р баг, Эрдэнэ",
+    "name_en": "17 bag, Erdene"
+  },
+  {
+    "parent": 6101,
+    "id": 610185,
+    "name": "18-р баг, Баянбулаг",
+    "name_en": "18 bag, Baynbulag"
+  },
+  {
+    "parent": 6101,
+    "id": 610187,
+    "name": "19-р баг, Их залуу",
+    "name_en": "19 bag, Ikh zaluu"
+  },
+  {
+    "parent": 6104,
+    "id": 610451,
+    "name": "1-р баг, Улаантолгой",
+    "name_en": "1 bag, Ulaantolgoi"
+  },
+  {
+    "parent": 6104,
+    "id": 610453,
+    "name": "2-р баг, Жаргалант",
+    "name_en": "2 bag, Jargalant"
+  },
+  {
+    "parent": 6104,
+    "id": 610455,
+    "name": "3-р баг, Дулаан-Уул",
+    "name_en": "3 bag, Dulaan-Uul"
+  },
+  {
+    "parent": 4201,
+    "id": 420151,
+    "name": "1-р баг"
+  },
+  {
+    "parent": 4201,
+    "id": 420153,
+    "name": "2-р баг"
+  },
+  {
+    "parent": 4201,
+    "id": 420155,
+    "name": "3-р баг"
+  },
+  {
+    "parent": 4201,
+    "id": 420157,
+    "name": "4-р баг"
+  },
+  {
+    "parent": 4201,
+    "id": 420159,
+    "name": "5-р баг"
+  },
+  {
+    "parent": 4201,
+    "id": 420161,
+    "name": "6-р баг"
+  },
+  {
+    "parent": 4204,
+    "id": 420451,
+    "name": "1-р баг"
+  },
+  {
+    "parent": 4204,
+    "id": 420453,
+    "name": "2-р баг"
+  },
+  {
+    "parent": 4207,
+    "id": 420751,
+    "name": "1-р баг"
+  },
+  {
+    "parent": 4207,
+    "id": 420753,
+    "name": "2-р баг"
+  },
+  {
+    "parent": 1101,
+    "id": 110151,
+    "name": "1-р хороо",
+    "name_en": "1 khoroo"
+  },
+  {
+    "parent": 1101,
+    "id": 110153,
+    "name": "2-р хороо",
+    "name_en": "2 khoroo"
+  },
+  {
+    "parent": 1101,
+    "id": 110155,
+    "name": "3-р хороо",
+    "name_en": "3 khoroo"
+  },
+  {
+    "parent": 1101,
+    "id": 110157,
+    "name": "4-р хороо",
+    "name_en": "4 khoroo"
+  },
+  {
+    "parent": 1101,
+    "id": 110159,
+    "name": "5-р хороо",
+    "name_en": "5 khoroo"
+  },
+  {
+    "parent": 1104,
+    "id": 110451,
+    "name": "1-р хороо",
+    "name_en": "1 khoroo"
+  },
+  {
+    "parent": 1104,
+    "id": 110453,
+    "name": "2-р хороо",
+    "name_en": "2 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110751,
+    "name": "1-р хороо",
+    "name_en": "1 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110753,
+    "name": "2-р хороо",
+    "name_en": "2 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110755,
+    "name": "3-р хороо",
+    "name_en": "3 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110757,
+    "name": "4-р хороо",
+    "name_en": "4 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110759,
+    "name": "5-р хороо",
+    "name_en": "5 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110761,
+    "name": "6-р хороо",
+    "name_en": "6 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110763,
+    "name": "7-р хороо",
+    "name_en": "7 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110765,
+    "name": "8-р хороо",
+    "name_en": "8 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110767,
+    "name": "9-р хороо",
+    "name_en": "9 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110769,
+    "name": "10-р хороо",
+    "name_en": "10 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110771,
+    "name": "11-р хороо",
+    "name_en": "11 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110773,
+    "name": "12-р хороо",
+    "name_en": "12 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110775,
+    "name": "13-р хороо",
+    "name_en": "13 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110777,
+    "name": "14-р хороо",
+    "name_en": "14 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110779,
+    "name": "15-р хороо",
+    "name_en": "15 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110781,
+    "name": "16-р хороо",
+    "name_en": "16 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110783,
+    "name": "17-р хороо",
+    "name_en": "17 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110785,
+    "name": "18-р хороо",
+    "name_en": "18 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110787,
+    "name": "19-р хороо",
+    "name_en": "19 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110789,
+    "name": "20-р хороо",
+    "name_en": "20 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110791,
+    "name": "21-р хороо",
+    "name_en": "21 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110793,
+    "name": "22-р хороо",
+    "name_en": "22 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110795,
+    "name": "23-р хороо",
+    "name_en": "23 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110797,
+    "name": "24-р хороо",
+    "name_en": "24 khoroo"
+  },
+  {
+    "parent": 1107,
+    "id": 110799,
+    "name": "25-р хороо",
+    "name_en": "25 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111051,
+    "name": "1-р хороо",
+    "name_en": "1 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111053,
+    "name": "2-р хороо",
+    "name_en": "2 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111055,
+    "name": "3-р хороо",
+    "name_en": "3 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111057,
+    "name": "4-р хороо",
+    "name_en": "4 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111059,
+    "name": "5-р хороо",
+    "name_en": "5 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111061,
+    "name": "6-р хороо",
+    "name_en": "6 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111063,
+    "name": "7-р хороо",
+    "name_en": "7 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111065,
+    "name": "8-р хороо",
+    "name_en": "8 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111067,
+    "name": "9-р хороо",
+    "name_en": "9 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111069,
+    "name": "10-р хороо",
+    "name_en": "10 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111071,
+    "name": "11-р хороо",
+    "name_en": "11 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111073,
+    "name": "12-р хороо",
+    "name_en": "12 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111075,
+    "name": "13-р хороо",
+    "name_en": "13 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111077,
+    "name": "14-р хороо",
+    "name_en": "14 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111079,
+    "name": "15-р хороо",
+    "name_en": "15 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111081,
+    "name": "16-р хороо",
+    "name_en": "16 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111083,
+    "name": "17-р хороо",
+    "name_en": "17 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111085,
+    "name": "18-р хороо",
+    "name_en": "18 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111087,
+    "name": "19-р хороо",
+    "name_en": "19 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111089,
+    "name": "20-р хороо",
+    "name_en": "20 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111091,
+    "name": "21-р хороо",
+    "name_en": "21 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111093,
+    "name": "22-р хороо",
+    "name_en": "22 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111095,
+    "name": "23-р хороо",
+    "name_en": "23 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111097,
+    "name": "24-р хороо",
+    "name_en": "24 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111099,
+    "name": "25-р хороо",
+    "name_en": "25 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111052,
+    "name": "26-р хороо",
+    "name_en": "26 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111054,
+    "name": "27-р хороо",
+    "name_en": "27 khoroo"
+  },
+  {
+    "parent": 1110,
+    "id": 111056,
+    "name": "28-р хороо",
+    "name_en": "28 khoroo"
+  },
+  {
+    "parent": 1113,
+    "id": 111351,
+    "name": "1-р хороо",
+    "name_en": "1 khoroo"
+  },
+  {
+    "parent": 1113,
+    "id": 111353,
+    "name": "2-р хороо",
+    "name_en": "2 khoroo"
+  },
+  {
+    "parent": 1113,
+    "id": 111355,
+    "name": "3-р хороо",
+    "name_en": "3 khoroo"
+  },
+  {
+    "parent": 1113,
+    "id": 111357,
+    "name": "4-р хороо",
+    "name_en": "4 khoroo"
+  },
+  {
+    "parent": 1113,
+    "id": 111359,
+    "name": "5-р хороо",
+    "name_en": "5 khoroo"
+  },
+  {
+    "parent": 1113,
+    "id": 111361,
+    "name": "6-р хороо",
+    "name_en": "6 khoroo"
+  },
+  {
+    "parent": 1113,
+    "id": 111363,
+    "name": "7-р хороо",
+    "name_en": "7 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111651,
+    "name": "1-р хороо",
+    "name_en": "1 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111653,
+    "name": "2-р хороо",
+    "name_en": "2 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111655,
+    "name": "3-р хороо",
+    "name_en": "3 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111657,
+    "name": "4-р хороо",
+    "name_en": "4 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111659,
+    "name": "5-р хороо",
+    "name_en": "5 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111661,
+    "name": "6-р хороо",
+    "name_en": "6 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111663,
+    "name": "7-р хороо",
+    "name_en": "7 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111665,
+    "name": "8-р хороо",
+    "name_en": "8 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111667,
+    "name": "9-р хороо",
+    "name_en": "9 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111669,
+    "name": "10-р хороо",
+    "name_en": "10 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111671,
+    "name": "11-р хороо",
+    "name_en": "11 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111673,
+    "name": "12-р хороо",
+    "name_en": "12 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111675,
+    "name": "13-р хороо",
+    "name_en": "13 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111677,
+    "name": "14-р хороо",
+    "name_en": "14 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111679,
+    "name": "15-р хороо",
+    "name_en": "15 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111681,
+    "name": "16-р хороо",
+    "name_en": "16 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111683,
+    "name": "17-р хороо",
+    "name_en": "17 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111685,
+    "name": "18-р хороо",
+    "name_en": "18 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111687,
+    "name": "19-р хороо",
+    "name_en": "19 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111689,
+    "name": "20-р хороо",
+    "name_en": "20 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111691,
+    "name": "21-р хороо",
+    "name_en": "21 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111693,
+    "name": "22-р хороо",
+    "name_en": "22 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111695,
+    "name": "23-р хороо",
+    "name_en": "23 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111697,
+    "name": "24-р хороо",
+    "name_en": "24 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111699,
+    "name": "25-р хороо",
+    "name_en": "25 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111652,
+    "name": "26-р хороо",
+    "name_en": "26 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111654,
+    "name": "27-р хороо",
+    "name_en": "27 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111656,
+    "name": "28-р хороо",
+    "name_en": "28 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111658,
+    "name": "29-р хороо",
+    "name_en": "29 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111660,
+    "name": "30-р хороо",
+    "name_en": "30 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111662,
+    "name": "31-р хороо",
+    "name_en": "31 khoroo"
+  },
+  {
+    "parent": 1116,
+    "id": 111664,
+    "name": "32-р хороо",
+    "name_en": "32 khoroo"
+  },
+  {
+    "id": 111666,
+    "parent": 1116,
+    "name": "33-р хороо",
+    "name_en": "33 khoroo"
+  },
+  {
+    "id": 111668,
+    "parent": 1116,
+    "name": "34-р хороо",
+    "name_en": "34 khoroo"
+  },
+  {
+    "id": 111670,
+    "parent": 1116,
+    "name": "35-р хороо",
+    "name_en": "35 khoroo"
+  },
+  {
+    "id": 111672,
+    "parent": 1116,
+    "name": "36-р хороо",
+    "name_en": "36 khoroo"
+  },
+  {
+    "id": 111674,
+    "parent": 1116,
+    "name": "37-р хороо",
+    "name_en": "37 khoroo"
+  },
+  {
+    "id": 111676,
+    "parent": 1116,
+    "name": "38-р хороо",
+    "name_en": "38 khoroo"
+  },
+  {
+    "id": 111678,
+    "parent": 1116,
+    "name": "39-р хороо",
+    "name_en": "39 khoroo"
+  },
+  {
+    "id": 111680,
+    "parent": 1116,
+    "name": "40-р хороо",
+    "name_en": "40 khoroo"
+  },
+  {
+    "id": 111682,
+    "parent": 1116,
+    "name": "41-р хороо",
+    "name_en": "41 khoroo"
+  },
+  {
+    "id": 111684,
+    "parent": 1116,
+    "name": "42-р хороо",
+    "name_en": "42 khoroo"
+  },
+  {
+    "id": 111686,
+    "parent": 1116,
+    "name": "43-р хороо",
+    "name_en": "43 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111951,
+    "name": "1-р хороо",
+    "name_en": "1 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111953,
+    "name": "2-р хороо",
+    "name_en": "2 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111955,
+    "name": "3-р хороо",
+    "name_en": "3 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111957,
+    "name": "4-р хороо",
+    "name_en": "4 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111959,
+    "name": "5-р хороо",
+    "name_en": "5 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111961,
+    "name": "6-р хороо",
+    "name_en": "6 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111963,
+    "name": "7-р хороо",
+    "name_en": "7 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111965,
+    "name": "8-р хороо",
+    "name_en": "8 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111967,
+    "name": "9-р хороо",
+    "name_en": "9 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111969,
+    "name": "10-р хороо",
+    "name_en": "10 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111971,
+    "name": "11-р хороо",
+    "name_en": "11 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111973,
+    "name": "12-р хороо",
+    "name_en": "12 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111975,
+    "name": "13-р хороо",
+    "name_en": "13 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111977,
+    "name": "14-р хороо",
+    "name_en": "14 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111979,
+    "name": "15-р хороо",
+    "name_en": "15 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111981,
+    "name": "16-р хороо",
+    "name_en": "16 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111983,
+    "name": "17-р хороо",
+    "name_en": "17 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111985,
+    "name": "18-р хороо",
+    "name_en": "18 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111987,
+    "name": "19-р хороо",
+    "name_en": "19 khoroo"
+  },
+  {
+    "parent": 1119,
+    "id": 111989,
+    "name": "20-р хороо",
+    "name_en": "20 khoroo"
+  },
+  {
+    "parent": 1121,
+    "id": 112151,
+    "name": "1-р хороо",
+    "name_en": "1 khoroo"
+  },
+  {
+    "parent": 1121,
+    "id": 112153,
+    "name": "2-р хороо",
+    "name_en": "2 khoroo"
+  },
+  {
+    "parent": 1121,
+    "id": 112155,
+    "name": "3-р хороо",
+    "name_en": "3 khoroo"
+  },
+  {
+    "parent": 1121,
+    "id": 112157,
+    "name": "4-р хороо",
+    "name_en": "4 khoroo"
+  },
+  {
+    "parent": 1121,
+    "id": 112159,
+    "name": "5-р хороо",
+    "name_en": "5 khoroo"
+  },
+  {
+    "parent": 1121,
+    "id": 112161,
+    "name": "6-р хороо",
+    "name_en": "6 khoroo"
+  },
+  {
+    "parent": 1121,
+    "id": 112163,
+    "name": "7-р хороо",
+    "name_en": "7 khoroo"
+  },
+  {
+    "parent": 1121,
+    "id": 112165,
+    "name": "8-р хороо",
+    "name_en": "8 khoroo"
+  },
+  {
+    "parent": 1121,
+    "id": 112167,
+    "name": "9-р хороо",
+    "name_en": "9 khoroo"
+  },
+  {
+    "parent": 1121,
+    "id": 112169,
+    "name": "10-р хороо",
+    "name_en": "10 khoroo"
+  },
+  {
+    "parent": 1121,
+    "id": 112171,
+    "name": "11-р хороо",
+    "name_en": "11 khoroo"
+  },
+  {
+    "parent": 1121,
+    "id": 112173,
+    "name": "12-р хороо",
+    "name_en": "12 khoroo"
+  },
+  {
+    "parent": 1121,
+    "id": 112175,
+    "name": "13-р хороо",
+    "name_en": "13 khoroo"
+  },
+  {
+    "parent": 1121,
+    "id": 112177,
+    "name": "14-р хороо",
+    "name_en": "14 khoroo"
+  },
+  {
+    "parent": 1121,
+    "id": 112179,
+    "name": "15-р хороо",
+    "name_en": "15 khoroo"
+  },
+  {
+    "parent": 1121,
+    "id": 112181,
+    "name": "16-р хороо",
+    "name_en": "16 khoroo"
+  },
+  {
+    "id": 112183,
+    "parent": 1121,
+    "name": "17-р хороо",
+    "name_en": "17 khoroo"
+  },
+  {
+    "id": 112185,
+    "parent": 1121,
+    "name": "18-р хороо",
+    "name_en": "18 khoroo"
+  },
+  {
+    "id": 112187,
+    "parent": 1121,
+    "name": "19-р хороо",
+    "name_en": "19 khoroo"
+  },
+  {
+    "id": 112189,
+    "parent": 1121,
+    "name": "20-р хороо",
+    "name_en": "20 khoroo"
+  },
+  {
+    "id": 112191,
+    "parent": 1121,
+    "name": "21-р хороо",
+    "name_en": "21 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112551,
+    "name": "1-р хороо",
+    "name_en": "1 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112553,
+    "name": "2-р хороо",
+    "name_en": "2 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112555,
+    "name": "3-р хороо",
+    "name_en": "3 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112557,
+    "name": "4-р хороо",
+    "name_en": "4 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112559,
+    "name": "5-р хороо",
+    "name_en": "5 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112561,
+    "name": "6-р хороо",
+    "name_en": "6 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112563,
+    "name": "7-р хороо",
+    "name_en": "7 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112565,
+    "name": "8-р хороо",
+    "name_en": "8 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112567,
+    "name": "9-р хороо",
+    "name_en": "9 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112569,
+    "name": "10-р хороо",
+    "name_en": "10 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112571,
+    "name": "11-р хороо",
+    "name_en": "11 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112573,
+    "name": "12-р хороо",
+    "name_en": "12 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112575,
+    "name": "13-р хороо",
+    "name_en": "13 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112577,
+    "name": "14-р хороо",
+    "name_en": "14 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112579,
+    "name": "15-р хороо",
+    "name_en": "15 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112581,
+    "name": "16-р хороо",
+    "name_en": "16 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112583,
+    "name": "17-р хороо",
+    "name_en": "17 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112585,
+    "name": "18-р хороо",
+    "name_en": "18 khoroo"
+  },
+  {
+    "parent": 1125,
+    "id": 112587,
+    "name": "19-р хороо",
+    "name_en": "19 khoroo"
+  }
+]

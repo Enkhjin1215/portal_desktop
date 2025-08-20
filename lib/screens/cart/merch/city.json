@@ -1,0 +1,112 @@
+[
+  {
+    "id": 2124,
+    "name": "Улаанбаатар хот",
+    "name_en": "Ulaanbaatar city"
+  },
+  {
+    "id": 2123,
+    "name": "Архангай аймаг",
+    "name_en": "Arkhangai province"
+  },
+  {
+    "id": 2122,
+    "name": "Баян-Өлгий аймаг",
+    "name_en": "Bayn-ulgii province"
+  },
+  {
+    "id": 2121,
+    "name": "Баянхонгор аймаг",
+    "name_en": "Baynkhongor province"
+  },
+  {
+    "id": 2120,
+    "name": "Булган аймаг",
+    "name_en": "Bulgan province"
+  },
+  {
+    "id": 2119,
+    "name": "Говь-Алтай аймаг",
+    "name_en": "Gobi-Altai province"
+  },
+  {
+    "id": 2117,
+    "name": "Дорноговь аймаг",
+    "name_en": "Dorno-Gobi province"
+  },
+  {
+    "id": 2116,
+    "name": "Дорнод аймаг",
+    "name_en": "Dornod province"
+  },
+  {
+    "id": 2115,
+    "name": "Дундговь аймаг",
+    "name_en": "Dund-Gobi province"
+  },
+  {
+    "id": 2114,
+    "name": "Завхан аймаг",
+    "name_en": "Zavkhan province"
+  },
+  {
+    "id": 2113,
+    "name": "Өвөрхангай аймаг",
+    "name_en": "OvorKhangai province"
+  },
+  {
+    "id": 2112,
+    "name": "Өмнөговь аймаг",
+    "name_en": "Umnu-Gobi province"
+  },
+  {
+    "id": 2111,
+    "name": "Сүхбаатар аймаг",
+    "name_en": "Sukhbaatar province"
+  },
+  {
+    "id": 2110,
+    "name": "Сэлэнгэ аймаг",
+    "name_en": "Selenge province"
+  },
+  {
+    "id": 2109,
+    "name": "Төв аймаг",
+    "name_en": "Tuv province"
+  },
+  {
+    "id": 2108,
+    "name": "Увс аймаг",
+    "name_en": "Uvs province"
+  },
+  {
+    "id": 2107,
+    "name": "Ховд аймаг",
+    "name_en": "Khovd province"
+  },
+  {
+    "id": 2106,
+    "name": "Хөвсгөл аймаг",
+    "name_en": "Huvsgul province"
+  },
+  {
+    "id": 2105,
+    "name": "Хэнтий аймаг",
+    "name_en": "Khentii province"
+  },
+  {
+    "id": 2104,
+    "name": "Дархан-Уул аймаг",
+    "name_en": "Darkhan-Uul province"
+  },
+  {
+    "id": 2103,
+    "name": "Орхон аймаг",
+    "name_en": "Orkhon province"
+  },
+  {
+    "id": 2118,
+    "name": "Говьсүмбэр аймаг",
+    "name_en": "Gobi-Sumber province"
+  }
+]

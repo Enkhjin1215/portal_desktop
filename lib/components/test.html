@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket API Test Client</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .panel {
+            flex: 1;
+            min-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .connection-status {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .connected {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .disconnected {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .response {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+        .tab-buttons {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        .tab-button {
+            padding: 10px 15px;
+            background-color: #f1f1f1;
+            border: none;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .tab-button.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>WebSocket API Test Client</h1>
+    
+    <div class="panel">
+        <h2>Connection</h2>
+        <div id="connectionStatus" class="connection-status disconnected">
+            Disconnected
+        </div>
+        <div>
+            <label for="websocketUrl">WebSocket URL:</label>
+            <input type="text" id="websocketUrl" value="ws://15.165.242.28:8000/socket/">
+        </div>
+        <div>
+            <button id="connectBtn">Connect</button>
+            <button id="disconnectBtn" disabled>Disconnect</button>
+        </div>
+        <div>
+            <h3>Authentication</h3>
+            <div>
+                <label for="userEmail">Email:</label>
+                <input type="text" id="userEmail" placeholder="user@example.com">
+            </div>
+            <div>
+                <label for="userPassword">Password:</label>
+                <input type="password" id="userPassword">
+            </div>
+            <button id="loginBtn" disabled>Login</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="panel">
+            <h2>API Testing</h2>
+            
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="myProjects">My Projects</button>
+                <button class="tab-button" data-tab="contactRoles">Project Contact Roles</button>
+            </div>
+            
+            <div id="myProjects" class="tab-content active">
+                <h3>My Projects</h3>
+                <div>
+                    <label for="projectsCommand">Command:</label>
+                    <select id="projectsCommand">
+                        <option value="get_my_projects">Get My Projects</option>
+                        <option value="get_project_details">Get Project Details</option>
+                        <option value="get_project_tasks">Get Project Tasks</option>
+                        <option value="get_project_team">Get Project Team</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="projectsParams">Parameters (JSON):</label>
+                    <textarea id="projectsParams">{
+    "status": "active"
+}</textarea>
+                </div>
+                <button id="sendProjectsBtn" disabled>Send Request</button>
+                <div>
+                    <h4>Response</h4>
+                    <div id="projectsResponse" class="response">No response yet</div>
+                </div>
+            </div>
+            
+            <div id="contactRoles" class="tab-content">
+                <h3>Project Contact Roles</h3>
+                <div>
+                    <label for="contactsCommand">Command:</label>
+                    <select id="contactsCommand">
+                        <option value="get_project_contact_roles">Get Project Contact Roles</option>
+                        <option value="get_project_contact_role">Get Project Contact Role</option>
+                        <option value="create_project_contact_role">Create Project Contact Role</option>
+                        <option value="update_project_contact_role">Update Project Contact Role</option>
+                        <option value="delete_project_contact_role">Delete Project Contact Role</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="contactsParams">Parameters (JSON):</label>
+                    <textarea id="contactsParams">{
+    "project_id": 1
+}</textarea>
+                </div>
+                <button id="sendContactsBtn" disabled>Send Request</button>
+                <div>
+                    <h4>Response</h4>
+                    <div id="contactsResponse" class="response">No response yet</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="panel">
+            <h2>WebSocket Communication Log</h2>
+            <div id="communicationLog" class="response" style="max-height: 600px;"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Variables
+        let socket = null;
+        let accessToken = null;
+        
+        // DOM Elements
+        const connectBtn = document.getElementById('connectBtn');
+        const disconnectBtn = document.getElementById('disconnectBtn');
+        const loginBtn = document.getElementById('loginBtn');
+        const sendProjectsBtn = document.getElementById('sendProjectsBtn');
+        const sendContactsBtn = document.getElementById('sendContactsBtn');
+        const connectionStatus = document.getElementById('connectionStatus');
+        const communicationLog = document.getElementById('communicationLog');
+        const projectsResponse = document.getElementById('projectsResponse');
+        const contactsResponse = document.getElementById('contactsResponse');
+        
+        // Tab Functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabName = button.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and tabs
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(tab => tab.classList.remove('active'));
+                
+                // Add active class to current button and tab
+                button.classList.add('active');
+                document.getElementById(tabName).classList.add('active');
+            });
+        });
+        
+        // WebSocket Connection
+        connectBtn.addEventListener('click', () => {
+            const url = document.getElementById('websocketUrl').value;
+            
+            try {
+                socket = new WebSocket(url);
+                
+                socket.onopen = (event) => {
+                    connectionStatus.textContent = 'Connected';
+                    connectionStatus.classList.remove('disconnected');
+                    connectionStatus.classList.add('connected');
+                    
+                    connectBtn.disabled = true;
+                    disconnectBtn.disabled = false;
+                    loginBtn.disabled = false;
+                    
+                    log('WebSocket connection established');
+                };
+                
+                socket.onmessage = (event) => {
+                    const data = JSON.parse(event.data);
+                    log('Received:', data);
+                    
+                    // Handle login response
+                    if (data.command === 'login' && !data.error) {
+                        accessToken = data.data.access_token;
+                        sendProjectsBtn.disabled = false;
+                        sendContactsBtn.disabled = false;
+                        log('Login successful, access token received');
+                    }
+                    
+                    // Handle project responses
+                    if (data.command === 'get_my_projects' || data.command === 'get_project_details' ||
+                        data.command === 'get_project_tasks' || data.command === 'get_project_team') {
+                        projectsResponse.textContent = JSON.stringify(data, null, 2);
+                    }
+                    
+                    // Handle contact role responses
+                    if (data.command === 'get_project_contact_roles' || data.command === 'get_project_contact_role' ||
+                        data.command === 'create_project_contact_role' || data.command === 'update_project_contact_role' ||
+                        data.command === 'delete_project_contact_role') {
+                        contactsResponse.textContent = JSON.stringify(data, null, 2);
+                    }
+                };
+                
+                socket.onclose = (event) => {
+                    connectionStatus.textContent = 'Disconnected';
+                    connectionStatus.classList.remove('connected');
+                    connectionStatus.classList.add('disconnected');
+                    
+                    connectBtn.disabled = false;
+                    disconnectBtn.disabled = true;
+                    loginBtn.disabled = true;
+                    sendProjectsBtn.disabled = true;
+                    sendContactsBtn.disabled = true;
+                    
+                    log('WebSocket connection closed');
+                    socket = null;
+                    accessToken = null;
+                };
+                
+                socket.onerror = (error) => {
+                    log('WebSocket error:', error);
+                };
+                
+            } catch (error) {
+                log('Error connecting to WebSocket:', error);
+            }
+        });
+        
+        disconnectBtn.addEventListener('click', () => {
+            if (socket) {
+                socket.close();
+            }
+        });
+        
+        // Login
+        loginBtn.addEventListener('click', () => {
+            if (!socket) {
+                return;
+            }
+            
+            const email = document.getElementById('userEmail').value;
+            const password = document.getElementById('userPassword').value;
+            
+            const loginData = {
+                command: 'login',
+                data: {
+                    email: email,
+                    password: password
+                }
+            };
+            
+            socket.send(JSON.stringify(loginData));
+            log('Sent:', loginData);
+        });
+        
+        // Send Projects Request
+        sendProjectsBtn.addEventListener('click', () => {
+            if (!socket || !accessToken) {
+                return;
+            }
+            
+            const command = document.getElementById('projectsCommand').value;
+            let params;
+            
+            try {
+                params = JSON.parse(document.getElementById('projectsParams').value);
+            } catch (error) {
+                alert('Invalid JSON in parameters');
+                return;
+            }
+            
+            const requestData = {
+                command: command,
+                data: {
+                    ...params,
+                    access_token: accessToken
+                }
+            };
+            
+            socket.send(JSON.stringify(requestData));
+            log('Sent:', requestData);
+        });
+        
+        // Send Contact Roles Request
+        sendContactsBtn.addEventListener('click', () => {
+            if (!socket || !accessToken) {
+                return;
+            }
+            
+            const command = document.getElementById('contactsCommand').value;
+            let params;
+            
+            try {
+                params = JSON.parse(document.getElementById('contactsParams').value);
+            } catch (error) {
+                alert('Invalid JSON in parameters');
+                return;
+            }
+            
+            const requestData = {
+                command: command,
+                data: {
+                    ...params,
+                    access_token: accessToken
+                }
+            };
+            
+            socket.send(JSON.stringify(requestData));
+            log('Sent:', requestData);
+        });
+        
+        // Helper Functions
+        function log(message, data) {
+            const timestamp = new Date().toISOString();
+            let logMessage = `[${timestamp}] ${message}`;
+            
+            if (data) {
+                if (typeof data === 'object') {
+                    logMessage += '\n' + JSON.stringify(data, null, 2);
+                } else {
+                    logMessage += ' ' + data;
+                }
+            }
+            
+            const logEntry = document.createElement('div');
+            logEntry.textContent = logMessage;
+            communicationLog.appendChild(logEntry);
+            communicationLog.scrollTop = communicationLog.scrollHeight;
+        }
+        
+        // Update parameters templates when command changes
+        document.getElementById('projectsCommand').addEventListener('change', function() {
+            const command = this.value;
+            let template = {};
+            
+            switch (command) {
+                case 'get_my_projects':
+                    template = { 
+                        "status": "active" 
+                    };
+                    break;
+                case 'get_project_details':
+                    template = { 
+                        "project_id": 1 
+                    };
+                    break;
+                case 'get_project_tasks':
+                    template = { 
+                        "project_id": 1 
+                    };
+                    break;
+                case 'get_project_team':
+                    template = { 
+                        "project_id": 1 
+                    };
+                    break;
+            }
+            
+            document.getElementById('projectsParams').value = JSON.stringify(template, null, 4);
+        });
+        
+        document.getElementById('contactsCommand').addEventListener('change', function() {
+            const command = this.value;
+            let template = {};
+            
+            switch (command) {
+                case 'get_project_contact_roles':
+                    template = { 
+                        "project_id": 1 
+                    };
+                    break;
+                case 'get_project_contact_role':
+                    template = { 
+                        "id": 1 
+                    };
+                    break;
+                case 'create_project_contact_role':
+                    template = { 
+                        "project_id": 1,
+                        "contact_id": 1,
+                        "role": "primary",
+                        "is_primary": true,
+                        "notes": "Primary project contact"
+                    };
+                    break;
+                case 'update_project_contact_role':
+                    template = { 
+                        "id": 1,
+                        "role": "technical",
+                        "is_primary": false,
+                        "notes": "Technical contact"
+                    };
+                    break;
+                case 'delete_project_contact_role':
+                    template = { 
+                        "id": 1 
+                    };
+                    break;
+            }
+            
+            document.getElementById('contactsParams').value = JSON.stringify(template, null, 4);
+        });
+    </script>
+</body>
+</html>

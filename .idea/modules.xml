@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/portal_desktop.iml" filepath="$PROJECT_DIR$/portal_desktop.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/portal_desktop_android.iml" filepath="$PROJECT_DIR$/android/portal_desktop_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/portal.iml" filepath="$PROJECT_DIR$/.idea/portal.iml" />
     </modules>
   </component>
 </project>

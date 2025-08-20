@@ -1,122 +1,222 @@
+import 'dart:async';
+
+import 'package:app_links/app_links.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:overlay_support/overlay_support.dart';
+import 'package:portal/helper/application.dart';
+import 'package:portal/helper/constant.dart';
+import 'package:portal/helper/nav_observer.dart';
+import 'package:portal/language/app_localization.dart';
+import 'package:portal/language/language_constant.dart';
+import 'package:portal/provider/provider_cart.dart';
+import 'package:portal/provider/provider_core.dart';
+import 'package:portal/provider/provider_xo.dart';
+import 'package:portal/provider/theme_notifier.dart';
+import 'package:portal/router/app_router.dart';
+import 'package:portal/router/route_path.dart';
+import 'package:portal/screens/cart/popup/TicketPopup.dart';
+import 'package:portal/service/firebase_notification.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  GestureBinding.instance.resamplingEnabled = true;
+  bool isDark = await application.getThemeType();
+  final core = ProviderCoreModel();
+  final List<Map<String, dynamic>> body = [];
+  final cart = ProviderCart(body);
+  final xo = ProviderXO([]);
 
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+  TicketPopup();
+
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider<ThemeNotifier>(
+        create: (_) => ThemeNotifier(isDark),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
+      ChangeNotifierProvider<ProviderCoreModel>(
+        create: (_) => core,
+      ),
+      ChangeNotifierProvider<ProviderCart>(
+        create: (_) => cart,
+      ),
+      ChangeNotifierProvider<ProviderXO>(
+        create: (_) => xo,
+      ),
+    ],
+    child: const MyHomePage(),
+  ));
+  configLoading();
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+  const MyHomePage({super.key});
+  static void setLocale(BuildContext context, Locale newLocale) {
+    _MyHomePageState? state = context.findAncestorStateOfType<_MyHomePageState>();
+    state?.setLocale(newLocale);
+  }
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  late bool sawBoarding;
+  Locale _locale = const Locale('en', 'EN');
+  final ScreenTimeObserver screenTimeObserver = ScreenTimeObserver();
+  var theme = ValueNotifier(ThemeMode.dark);
+  StreamSubscription<Uri>? _linkSubscription;
+  // PushNotifManager pushNotifManager = PushNotifManager();
 
-  void _incrementCounter() {
+  @override
+  void initState() {
+    super.initState();
+    // firebase();
+    initDeepLinks();
+  }
+
+  setLocale(Locale locale) {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
+      _locale = locale;
     });
   }
 
+  // firebase() async {
+  //   var firebaseInit = await pushNotifManager.init();
+  //   debugPrint('-------------------->MAIN:$firebaseInit -----------------------------------------------');
+  // }
+
+  Future<void> initDeepLinks() async {
+    // Handle links
+    _linkSubscription = AppLinks().uriLinkStream.listen((uri) {
+      debugPrint('onAppLink: $uri');
+      openAppLink(uri);
+    });
+  }
+
+  void openAppLink(Uri uri) {
+    if (uri.toString().contains("callback")) {
+      // Handle sign-in redirect
+      print("User signed in, handling callback...");
+    } else if (uri.toString().contains("signout")) {
+      // Handle sign-out redirect
+      print("User signed out, handling signout...");
+    }
+  }
+
+  void handleDeepLink(String link) {
+    if (link.contains("callback")) {
+      // Handle sign-in redirect
+      print("User signed in, handling callback...");
+    } else if (link.contains("signout")) {
+      // Handle sign-out redirect
+      print("User signed out, handling signout...");
+    }
+  }
+
+  @override
+  void dispose() {
+    _linkSubscription?.cancel();
+    super.dispose();
+  }
+
+  @override
+  void didChangeDependencies() {
+    getLocale().then((locale) {
+      setState(() {
+        _locale = locale;
+      });
+    });
+    super.didChangeDependencies();
+  }
+
+  // Widget build(BuildContext context) {
+  //   const appTitle = 'Flutter Speed Dial Example';
+  //   return ValueListenableBuilder<ThemeMode>(
+  //       valueListenable: theme,
+  //       builder: (context, value, child) => MaterialApp(
+  //             title: appTitle,
+  //             home: MyPage(theme: theme),
+  //             debugShowCheckedModeBanner: false,
+  //             theme: ThemeData(
+  //               brightness: Brightness.light,
+  //               primaryColor: Colors.blue,
+  //             ),
+  //             darkTheme: ThemeData(
+  //               brightness: Brightness.dark,
+  //               primaryColor: Colors.lightBlue[900],
+  //             ),
+  //             themeMode: value,
+  //           ));
+  // }
+
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+
+    return DecoratedBox(
+      decoration: const BoxDecoration(
+          // image: DecorationImage(image: AssetImage(Assets.background), fit: BoxFit.cover),
+          ),
+      child: OverlaySupport(
+          child: MaterialApp(
+        // navigatorObservers: [screenTimeObserver],
+        navigatorKey: NavKey.navKey,
+        debugShowCheckedModeBanner: false,
+        title: "Portal",
+        theme: Provider.of<ThemeNotifier>(context, listen: true).getTheme(),
+        locale: _locale,
+        supportedLocales: const [
+          Locale("en", "US"),
+          Locale("mn", "MN"),
+        ],
+        localizationsDelegates: const [
+          AppLocalization.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        onGenerateRoute: AppRouter.generatedRoute,
+        initialRoute: onboardLogoRoute,
+        localeResolutionCallback: (locale, supportedLocales) {
+          for (var supportedLocale in supportedLocales) {
+            if (supportedLocale.languageCode == locale!.languageCode && supportedLocale.countryCode == locale.countryCode) {
+              return supportedLocale;
+            }
+          }
+          return supportedLocales.first;
+        },
+        builder: (BuildContext? context, Widget? child) {
+          return FlutterEasyLoading(child: child);
+        },
+      )),
     );
   }
+}
+
+void configLoading() {
+  EasyLoading.instance
+    ..displayDuration = const Duration(milliseconds: 2000)
+    ..indicatorType = EasyLoadingIndicatorType.spinningCircle
+    ..loadingStyle = EasyLoadingStyle.light
+    ..indicatorSize = 45.0
+    ..radius = 45.0
+    ..progressColor = Colors.transparent
+    ..backgroundColor = Colors.white.withValues(alpha: 0.1)
+    ..indicatorColor = Colors.orangeAccent
+    ..textColor = Colors.transparent
+    ..maskColor = Colors.transparent.withValues(alpha: 0.01)
+    ..contentPadding = EdgeInsets.zero
+    ..textPadding = EdgeInsets.zero
+    ..userInteractions = true;
+
+  //..customAnimation = CustomAnimation();
 }

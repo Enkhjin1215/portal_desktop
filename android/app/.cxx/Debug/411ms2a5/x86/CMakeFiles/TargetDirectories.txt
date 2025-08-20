@@ -1,0 +1,2 @@
+/Users/enkhjin/Projects/ticketX/android/app/.cxx/Debug/411ms2a5/x86/CMakeFiles/edit_cache.dir
+/Users/enkhjin/Projects/ticketX/android/app/.cxx/Debug/411ms2a5/x86/CMakeFiles/rebuild_cache.dir

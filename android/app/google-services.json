@@ -1,0 +1,29 @@
+{
+    "project_info": {
+      "project_number": "535210539211",
+      "project_id": "portal-notif-d3985",
+      "storage_bucket": "portal-notif-d3985.firebasestorage.app"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:535210539211:android:e6af310e0851935d0f434e",
+          "android_client_info": {
+            "package_name": "portal.mn.ticket"
+          }
+        },
+        "oauth_client": [],
+        "api_key": [
+          {
+            "current_key": "AIzaSyC3AJ018wHkryWCZiks_MC9R2EMsluaT8E"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": []
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }
