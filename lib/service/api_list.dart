@@ -1,7 +1,7 @@
 class APILIST {
   // development
-  // static const baseUrl = 'http://192.168.1.15:3030/v1';
-  // static const authService = 'http://192.168.1.15:3030/v1';
+  // static const baseUrl = 'http://192.168.0.50:3030/v1';
+  // static const authService = 'http://192.168.0.50:3030/v1';
 
   static const baseUrl = 'https://client.portal.mn/v1';
 
@@ -13,11 +13,11 @@ class APILIST {
 
   static const webUrl = 'https://www.portal.mn/';
 
-  static const refreshToken = 'https://st-admin.portal.mn/v1/auth/loginWithRefreshToken';
+  static const refreshToken = 'https://admin.portal.mn/v1/auth/loginWithRefreshToken';
 
   static const authcheckMail = '$authService/auth/check';
 
-  static const authLogin = 'https://st-admin.portal.mn/v1/auth/login';
+  static const authLogin = 'https://admin.portal.mn/v1/auth/login';
 
   static const authCheckUsername = '$baseUrl/user/check-username';
 
