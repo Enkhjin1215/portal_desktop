@@ -31,7 +31,6 @@ import 'package:portal/screens/payment_section/ticket_summary_item.dart';
 import 'package:portal/service/web_service.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 import 'package:textstyle_extensions/textstyle_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -165,9 +164,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
         SizedBox(
             width: double.maxFinite,
             height: 110,
-            child: Skeletonizer(
-              enabled: payList.isEmpty,
-              child: ListView.builder(
+            child:ListView.builder(
                   itemCount: payList.length,
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
@@ -180,7 +177,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
                       totalAmt: _totalAmtCalc(coupon: promoNo),
                     );
                   }),
-            )),
+            ),
       ],
     );
   }
@@ -202,9 +199,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
         SizedBox(
             width: double.maxFinite,
             height: 105,
-            child: Skeletonizer(
-              enabled: payMethodsList.isEmpty,
-              child: ListView.builder(
+            child: ListView.builder(
                   itemCount: payMethodsList.length,
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
@@ -221,7 +216,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
                       totalAmt: _totalAmtCalc(coupon: promoNo),
                     );
                   }),
-            )),
+            ),
       ],
     );
   }
