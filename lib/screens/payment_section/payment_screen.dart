@@ -28,6 +28,7 @@ import 'package:portal/screens/payment_section/payment_method_item.dart';
 import 'package:portal/screens/payment_section/payment_services.dart';
 import 'package:portal/screens/payment_section/promo_code_field.dart';
 import 'package:portal/screens/payment_section/ticket_summary_item.dart';
+import 'package:portal/service/response.dart';
 import 'package:portal/service/web_service.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
@@ -77,6 +78,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
   final PaymentService _paymentService = PaymentService();
 
   bool isReady = false;
+  dynamic ebarimtResult;
 
   @override
   void initState() {
@@ -229,44 +231,61 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
         const SizedBox(
           width: 100,
         ),
-        Container(
-          width: 400,
-          height: 400,
-          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(16)),
-          child: Center(
-            child: QrImageView(
-              data: invoice?.qpay?.qrText ?? '',
-              version: QrVersions.auto,
-              size: 400.0, // Size of QR image
+        Column(
+          children: [
+            Text(
+              ebarimtResult != null ? 'EBARIMT ' : '',
+              style: TextStyles.textFt20Bold.textColor(Colors.white),
             ),
-          ),
+            Container(
+              width: 400,
+              height: 400,
+              decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(16)),
+              child: Center(
+                child: QrImageView(
+                  data: ebarimtResult != null ? ebarimtResult['qrData'] : invoice?.qpay?.qrText ?? '',
+                  version: QrVersions.auto,
+                  size: 400.0, // Size of QR image
+                ),
+              ),
+            ),
+          ],
         ),
         const SizedBox(
           width: 16,
         ),
-        Column(
-          children: [
-            CustomButton(
-              onTap: () {
-                _checkPayment();
-              },
-              text: 'Төлбөр шалгах',
-            ),
-            InkWell(
-                onTap: () async {
-                  await _deleteInvoice();
+        ebarimtResult != null
+            ? CustomButton(
+                onTap: () {
+                  NavKey.navKey.currentState!.pushNamedAndRemoveUntil(homeRoute, (route) => false);
                 },
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 12),
-                  decoration: BoxDecoration(
-                      color: Colors.red.withValues(alpha: 0.7), borderRadius: BorderRadius.circular(16), border: Border.all(color: Colors.white)),
-                  child: Text(
-                    'Цуцлах',
-                    style: TextStyles.textFt16Med.textColor(Colors.white),
+                text: 'Дуусгах',
+              )
+            : Column(
+                children: [
+                  CustomButton(
+                    onTap: () {
+                      _checkPayment();
+                    },
+                    text: 'Төлбөр шалгах',
                   ),
-                ))
-          ],
-        )
+                  InkWell(
+                      onTap: () async {
+                        await _deleteInvoice();
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 12),
+                        decoration: BoxDecoration(
+                            color: Colors.red.withValues(alpha: 0.7),
+                            borderRadius: BorderRadius.circular(16),
+                            border: Border.all(color: Colors.white)),
+                        child: Text(
+                          'Цуцлах',
+                          style: TextStyles.textFt16Med.textColor(Colors.white),
+                        ),
+                      ))
+                ],
+              )
       ],
     );
   }
@@ -333,7 +352,8 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
 
     if (result) {
       application.showToast('Амжилттай');
-      NavKey.navKey.currentState!.pushNamedAndRemoveUntil(homeRoute, (route) => false);
+      getEbarimt();
+      // NavKey.navKey.currentState!.pushNamedAndRemoveUntil(homeRoute, (route) => false);
     } else {
       // Payment unsuccessful
       application.showToastAlert('Төлбөр төлөгдөөгүй байна');
@@ -341,6 +361,15 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
         _deleteInvoice();
       }
     }
+  }
+
+  getEbarimt() async {
+    Map<String, dynamic> data = {};
+    await Webservice().loadPost(Response.ebarimtget, context, data, parameter: '${invoice?.id}').then((response) {
+      setState(() {
+        ebarimtResult = response;
+      });
+    });
   }
 
   Future<void> _createInvoice(String paymentType) async {

@@ -8,7 +8,6 @@ import 'package:portal/provider/theme_notifier.dart';
 import 'package:portal/router/route_path.dart';
 import 'package:portal/screens/cart/ticket/ticketShape/gradient_text.dart';
 import 'package:provider/provider.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 import 'package:textstyle_extensions/textstyle_extensions.dart';
 import 'package:zo_animated_border/widget/zo_track_border.dart';
 
@@ -32,9 +31,7 @@ class _EventState extends State<Event> {
   @override
   Widget build(BuildContext context) {
     List<EventModel> list = Provider.of<ProviderCoreModel>(context, listen: true).getEventList();
-    return Skeletonizer(
-        enabled: list.isEmpty,
-        child: GridView.builder(
+    return  GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 2, crossAxisSpacing: 20),
           padding: EdgeInsets.zero,
           physics: const BouncingScrollPhysics(),
@@ -43,7 +40,7 @@ class _EventState extends State<Event> {
           itemBuilder: (context, index) {
             return _item(list[index], index);
           },
-        ));
+        );
   }
 
   String emoji(String tag) {

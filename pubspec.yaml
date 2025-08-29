@@ -2,7 +2,7 @@ name: portal
 description: "TicketX mobile application"
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
+#flutter: Request Body: {"email":"batkhuunomindari@gmail.com","password":"Nasanjargal85@"}
 # flutter run -d macos
 version: 1.0.19+1
 

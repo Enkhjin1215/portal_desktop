@@ -55,7 +55,7 @@ class _PaymentCartState extends State<PaymentCart> with WidgetsBindingObserver {
   List<PaymentItem> paymentItems = [];
   dynamic payResult;
   TextEditingController orgRegNo = TextEditingController();
-
+  dynamic ebarimtResult;
   //0-Bar
   //1-Merch
   @override
@@ -201,12 +201,21 @@ class _PaymentCartState extends State<PaymentCart> with WidgetsBindingObserver {
     } else {
       await Webservice().loadGet(Response.checkInvoice, context, parameter: invoice?.id ?? '').then((response) {
         if (response['status'] == 'success') {
-          NavKey.navKey.currentState!.pushNamedAndRemoveUntil(paymentSuccessRoute, arguments: {'event': detail}, (route) => false);
+          getEbarimt();
+          // NavKey.navKey.currentState!.pushNamedAndRemoveUntil(paymentSuccessRoute, arguments: {'event': detail}, (route) => false);
         } else {
           application.showToastAlert('Төлбөр төлөгдөөгүй байна');
         }
       });
     }
+  }
+
+  getEbarimt() async {
+    await Webservice().loadGet(Response.ebarimtget, context, parameter: '${invoice?.id}').then((response) {
+      setState(() {
+        ebarimtResult = response;
+      });
+    });
   }
 
   @override

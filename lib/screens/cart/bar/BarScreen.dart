@@ -11,7 +11,6 @@ import 'package:portal/provider/provider_core.dart';
 import 'package:portal/provider/theme_notifier.dart';
 import 'package:portal/service/order_list_requests.dart';
 import 'package:provider/provider.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 import 'package:textstyle_extensions/textstyle_extensions.dart';
 
 import 'EventItem.dart';
@@ -81,9 +80,7 @@ class _BarScreenState extends State<BarScreen> {
               )
             ],
           )
-        : Skeletonizer(
-            enabled: eventList.isEmpty,
-            child: SingleChildScrollView(
+        : SingleChildScrollView(
               child: Stack(
                 children: [
                   if (mActiveEventList.isNotEmpty == true)
@@ -160,7 +157,7 @@ class _BarScreenState extends State<BarScreen> {
                     ),
                 ],
               ),
-            ),
+            
           );
   }
 

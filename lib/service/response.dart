@@ -170,6 +170,15 @@ class Response {
         });
   }
 
+  static Resource<dynamic> get ebarimtget {
+    return Resource(
+        url: APILIST.ebarimtget,
+        parse: (response) {
+          final result = json.decode(utf8.decode(response.bodyBytes));
+          return result;
+        });
+  }
+
   static Resource<dynamic> get verifyAcnt {
     return Resource(
         url: APILIST.userbankVerifyAccnt,
