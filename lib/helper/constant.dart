@@ -14,8 +14,8 @@ class Constants {
   static const appVersion = 'app_version';
   static const ip = 'ip';
   static const deviceBiometricType = 'device_biometric_type';
-  static const accessToken = 'accessToken';
-  static const refreshToken = 'refreshToken';
+  static const accessToken = 'access_token';
+  static const refreshToken = 'refresh_token';
   static const idToken = 'idToken';
   static const languageCode = 'lan_code';
   static const userType = 'user_type';

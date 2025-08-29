@@ -5,6 +5,7 @@ import 'package:portal/models/event_model.dart';
 import 'package:portal/models/wallet/wallet_history_model.dart';
 import 'package:portal/models/wallet/wallet_list_model.dart';
 import 'package:portal/provider/provider_core.dart';
+import 'package:portal/screens/dashboard/purchase_model.dart';
 import 'package:portal/service/response.dart';
 import 'package:portal/service/web_service.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +13,7 @@ import 'package:provider/provider.dart';
 class CoreRequests {
   getEventList(BuildContext context, {bool dataRefresh = false, bool only = false}) async {
     if (context.mounted) {
-      await Webservice().loadGet(Events.eventList, context).then((response) {
+      await Webservice().loadGet(EventModel.eventList, context).then((response) {
         if (context.mounted) {
           Provider.of<ProviderCoreModel>(context, listen: false).setEventList(response);
         }
@@ -51,10 +52,16 @@ class CoreRequests {
     });
   }
 
-  Future<List<WalletHistory>> getHistory(BuildContext context, int page, int pageSize) async {
-    List<WalletHistory> history = [];
-    history = await Webservice().loadGet(WalletHistory.getWalletHistory, context, parameter: '?page=$page&limit=$pageSize&sort=desc');
+  Future<List<TicketItem2>> getPurchaseHistory(BuildContext context, int page, int pageSize) async {
+    List<TicketItem2> history = [];
+    history = await Webservice().loadGet(TicketListResponse.purchaseList, context, parameter: '?page=$page&limit=$pageSize&sort=desc');
     return history;
+  }
+
+  Future<List<WalletHistory>> getHistory(BuildContext context, int page, int pageSize) async {
+    List<WalletHistory> purchaseHistory = [];
+    purchaseHistory = await Webservice().loadGet(WalletHistory.getWalletHistory, context, parameter: '?page=$page&limit=$pageSize&sort=desc');
+    return purchaseHistory;
   }
 
   getUserBankAccount(BuildContext context) async {

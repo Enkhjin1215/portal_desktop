@@ -61,10 +61,10 @@ class _SteamMainScreenState extends State<SteamMainScreen> {
     } else if (_amountController.text == '' || double.parse(_amountController.text.trim()) <= 0) {
       application.showToastAlert('Үнийн дүнгээ зөв оруулна уу');
     } else {
-      String idToken = await application.getIdToken();
+      // String idToken = await application.getIdToken();
       data['accountId'] = _accountIdController.text.trim();
       data['amount'] = double.parse(_amountController.text.trim());
-      data['idToken'] = idToken;
+      // data['idToken'] = idToken;
 
       print('----------->$data');
 

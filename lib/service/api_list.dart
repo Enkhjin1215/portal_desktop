@@ -3,21 +3,21 @@ class APILIST {
   // static const baseUrl = 'http://192.168.1.15:3030/v1';
   // static const authService = 'http://192.168.1.15:3030/v1';
 
-  static const baseUrl = 'https://client.portal.mn/v1';
+  // static const baseUrl = 'https://client.portal.mn/v1';
 
-  static const authService = 'https://client.portal.mn/v1';
+  // static const authService = 'https://client.portal.mn/v1';
 
-  // static const authService = 'https://st-client.portal.mn/v1';
+  static const authService = 'https://st-client.portal.mn/v1';
 
-  // static const baseUrl = 'https://st-client.portal.mn/v1';
+  static const baseUrl = 'https://st-client.portal.mn/v1';
 
   static const webUrl = 'https://www.portal.mn/';
 
-  static const refreshToken = '$authService/auth/loginWithRefreshToken';
+  static const refreshToken = 'https://st-admin.portal.mn/v1/auth/loginWithRefreshToken';
 
   static const authcheckMail = '$authService/auth/check';
 
-  static const authLogin = '$authService/auth/login';
+  static const authLogin = 'https://st-admin.portal.mn/v1/auth/login';
 
   static const authCheckUsername = '$baseUrl/user/check-username';
 
@@ -35,11 +35,11 @@ class APILIST {
 
   static const deleteAcc = '$authService/user/delete-account';
 
-  static const eventList = '$baseUrl/event/group';
+  static const eventList = '$baseUrl/kass/events';
 
   static const eventDetail = '$baseUrl/event/';
 
-  static const createInvoice = '$baseUrl/payment/invoice';
+  static const createInvoice = '$baseUrl/kass/invoice';
 
   static const changeInvoice = '$baseUrl/payment/invoice/change-method/';
 
@@ -69,11 +69,13 @@ class APILIST {
 
   static const eventChooseSeat = 'https://portal.mn/seat-picker/';
 
-  static const deleteInvoice = '$baseUrl/payment/discard/';
+  static const deleteInvoice = '$baseUrl/kass/discard/';
 
-  static const pendingInvoice = '$baseUrl/payment/pending';
+  static const purchaseList = '$baseUrl/kass/tickets';
 
-  static const checkInvoice = '$baseUrl/payment/check-invoice/';
+  // static const pendingInvoice = '$baseUrl/payment/pending';
+
+  static const checkInvoice = '$baseUrl/kass/check-invoice';
 
   static const checkAppleInvoice = '$baseUrl/applepay/process/';
 
@@ -86,6 +88,8 @@ class APILIST {
   static const appleWallet = '$baseUrl/ticket/';
 
   static const ebarimtCheck = 'https://ebarimt.portal.mn/v1/ebarimt/info/';
+
+  static const ebarimtget = '$baseUrl/kass/ebarimt/';
 
   static const promoCheck = '$baseUrl/promo/validate';
 

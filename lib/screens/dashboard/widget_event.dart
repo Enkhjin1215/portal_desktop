@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portal/helper/constant.dart';
 import 'package:portal/helper/text_styles.dart';
-import 'package:portal/helper/utils.dart';
 import 'package:portal/language/language_constant.dart';
 import 'package:portal/models/event_model.dart';
 import 'package:portal/provider/provider_core.dart';
@@ -13,7 +12,6 @@ import 'package:skeletonizer/skeletonizer.dart';
 import 'package:textstyle_extensions/textstyle_extensions.dart';
 import 'package:zo_animated_border/widget/zo_track_border.dart';
 
-import '../../components/DottedLinePainter.dart';
 import '../../helper/responsive_flutter.dart';
 
 class Event extends StatefulWidget {
@@ -33,11 +31,11 @@ class _EventState extends State<Event> {
 
   @override
   Widget build(BuildContext context) {
-    List<EventModel> list = Provider.of<ProviderCoreModel>(context, listen: true).getAllEvents();
+    List<EventModel> list = Provider.of<ProviderCoreModel>(context, listen: true).getEventList();
     return Skeletonizer(
         enabled: list.isEmpty,
         child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 3, crossAxisSpacing: 20),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 2, crossAxisSpacing: 20),
           padding: EdgeInsets.zero,
           physics: const BouncingScrollPhysics(),
           shrinkWrap: true,
@@ -65,7 +63,6 @@ class _EventState extends State<Event> {
 
   Widget _item(EventModel item, int index) {
     ThemeData theme = Provider.of<ThemeNotifier>(context, listen: true).getTheme();
-    bool isEnglish = Provider.of<ProviderCoreModel>(context, listen: true).isEnglish;
     return GestureDetector(
         onTap: () {
           NavKey.navKey.currentState!.pushNamed(eventRoute, arguments: {'id': item.id, 'from': 0});

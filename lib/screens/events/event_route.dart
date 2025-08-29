@@ -48,7 +48,7 @@ class _EventRouteState extends State<EventRoute> with SingleTickerProviderStateM
 
   int userType = -1;
   int from = 1;
-  late TicketPendingInvoiceService _pendingInvoiceService;
+  // late TicketPendingInvoiceService _pendingInvoiceService;
 
   @override
   void initState() {
@@ -60,7 +60,7 @@ class _EventRouteState extends State<EventRoute> with SingleTickerProviderStateM
       print('from:$from');
 
       if (from == 0) {
-        _pendingInvoiceService = TicketPendingInvoiceService();
+        // _pendingInvoiceService = TicketPendingInvoiceService();
 
         init();
         getDetail(id);
@@ -77,7 +77,7 @@ class _EventRouteState extends State<EventRoute> with SingleTickerProviderStateM
 
   @override
   void dispose() {
-    _pendingInvoiceService.dispose();
+    // _pendingInvoiceService.dispose();
     super.dispose();
   }
 
@@ -102,35 +102,23 @@ class _EventRouteState extends State<EventRoute> with SingleTickerProviderStateM
     await _updatePalette();
   }
 
-  Map<String, dynamic> simplifyPendingInvoice(PendingInvoiceModel? model) {
-    if (model == null) {
-      return {};
-    }
-    final List<Map<String, dynamic>> simplifiedTemplates = model.templates?.map((template) {
-          return {
-            'templateId': template.templateId?.id,
-            'seats': template.seats,
-          };
-        }).toList() ??
-        [];
+  // Map<String, dynamic> simplifyPendingInvoice(PendingInvoiceModel? model) {
+  //   if (model == null) {
+  //     return {};
+  //   }
+  //   final List<Map<String, dynamic>> simplifiedTemplates = model.templates?.map((template) {
+  //         return {
+  //           'templateId': template.templateId?.id,
+  //           'seats': template.seats,
+  //         };
+  //       }).toList() ??
+  //       [];
 
-    return {
-      'templates': simplifiedTemplates,
-      'eventId': model.eventId?.id,
-    };
-  }
-
-  Future<PendingInvoiceModel?> checkInvoice() async {
-    late PendingInvoiceModel pendingInvoice;
-    try {
-      await Webservice().loadGet(PendingInvoiceModel.getPendingInvoice, context).then((response) {
-        pendingInvoice = response;
-      });
-    } catch (e) {
-      return null;
-    }
-    return pendingInvoice;
-  }
+  //   return {
+  //     'templates': simplifiedTemplates,
+  //     'eventId': model.eventId?.id,
+  //   };
+  // }
 
   Future<void> _updatePalette() async {
     final PaletteGenerator paletteGenerator = await PaletteGenerator.fromImageProvider(NetworkImage(detail!.coverImage!));
@@ -293,30 +281,23 @@ class _EventRouteState extends State<EventRoute> with SingleTickerProviderStateM
               );
             } else {
               //to do pending invoice oo chirne;
-              bool hasPendingInvoice = await _pendingInvoiceService.handlePendingInvoice(
-                context: context,
-                theme: theme,
-                currentEventDetail: detail,
-              );
 
-              if (!hasPendingInvoice) {
-                if (_currentIndex == 0) {
-                  if ((childrenList.isNotEmpty && selectedChild != null)) {
-                    await getDetail(selectedChild!.id!, noNeed: true);
-                  }
-                  NavKey.navKey.currentState?.pushNamed(eventTicketRoute, arguments: {"detail": detail});
-                } else if (_currentIndex == 1) {
-                  Map<String, dynamic> body = {};
-                  if (barList.isEmpty) {
-                  } else {
-                    body = Provider.of<ProviderCart>(context, listen: false).getCart(bar!.id!) ?? {};
-                  }
-                  if (body.isNotEmpty) {
-                    NavKey.navKey.currentState?.pushNamed(paymentCartRoute, arguments: {"detail": detail, 'data': body, 'from': 0, 'bar': bar});
-                  }
-                } else {
-                  print('sss');
+              if (_currentIndex == 0) {
+                if ((childrenList.isNotEmpty && selectedChild != null)) {
+                  await getDetail(selectedChild!.id!, noNeed: true);
                 }
+                NavKey.navKey.currentState?.pushNamed(eventTicketRoute, arguments: {"detail": detail});
+              } else if (_currentIndex == 1) {
+                Map<String, dynamic> body = {};
+                if (barList.isEmpty) {
+                } else {
+                  body = Provider.of<ProviderCart>(context, listen: false).getCart(bar!.id!) ?? {};
+                }
+                if (body.isNotEmpty) {
+                  NavKey.navKey.currentState?.pushNamed(paymentCartRoute, arguments: {"detail": detail, 'data': body, 'from': 0, 'bar': bar});
+                }
+              } else {
+                print('sss');
               }
             }
           },

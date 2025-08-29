@@ -12,7 +12,9 @@ class Application implements Constants {
   getHeaders() async {
     // device token, platform , lang, token if
     Map<String, String> header;
-    if (await application.getAccessToken() != '') {
+    String token = await application.getAccessToken();
+    print("--------------------token:$token");
+    if (token != '') {
       // UserModel user = await application.getUserInfo();
       header = {
         "Content-Type": "application/json",
@@ -21,7 +23,7 @@ class Application implements Constants {
         "deviceToken": await getDeviceToken() ?? '',
         "merchant": "portal",
         // "company": "test",
-        "Authorization": "Bearer ${await application.getAccessToken()}"
+        "Authorization": "Bearer $token"
       };
     } else {
       header = {
@@ -152,6 +154,7 @@ class Application implements Constants {
 
   setAccessToken(String token) async {
     final SharedPreferences sharedPref = await _sharedPref;
+    print('----------------->ene bol baij bolohgui zuil: $token');
     sharedPref.setString(Constants.storageKey + Constants.accessToken, token);
   }
 
@@ -166,16 +169,16 @@ class Application implements Constants {
     sharedPref.setString(Constants.storageKey + Constants.refreshToken, token);
   }
 
-  getIdToken() async {
-    final SharedPreferences sharedPref = await _sharedPref;
-    return sharedPref.getString(Constants.storageKey + Constants.idToken) ?? '';
-    // return accessToken;
-  }
+  // getIdToken() async {
+  //   final SharedPreferences sharedPref = await _sharedPref;
+  //   return sharedPref.getString(Constants.storageKey + Constants.idToken) ?? '';
+  //   // return accessToken;
+  // }
 
-  setIdToken(String token) async {
-    final SharedPreferences sharedPref = await _sharedPref;
-    sharedPref.setString(Constants.storageKey + Constants.idToken, token);
-  }
+  // setIdToken(String token) async {
+  //   final SharedPreferences sharedPref = await _sharedPref;
+  //   sharedPref.setString(Constants.storageKey + Constants.idToken, token);
+  // }
 
   getPushNotifToken() async {
     final SharedPreferences sharedPref = await _sharedPref;

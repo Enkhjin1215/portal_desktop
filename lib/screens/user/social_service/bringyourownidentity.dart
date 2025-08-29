@@ -67,14 +67,14 @@ class BringYourOwnIdentityService {
       if (response.statusCode == 200) {
         final Map<String, dynamic> data = jsonDecode(response.body);
 
-        if (!data.containsKey('accessToken') || !data.containsKey('idToken') || !data.containsKey('refreshToken')) {
+        if (!data.containsKey('access_token') || !data.containsKey('idToken') || !data.containsKey('refresh_token')) {
           return BYOIAuthResult.error('Invalid response from server');
         }
 
         return BYOIAuthResult.success(
-          accessToken: data['accessToken'],
+          accessToken: data['access_token'],
           idToken: data['idToken'],
-          refreshToken: data['refreshToken'],
+          refreshToken: data['refresh_token'],
         );
       } else {
         debugPrint('Error exchanging token: ${response.statusCode}, ${response.body}');

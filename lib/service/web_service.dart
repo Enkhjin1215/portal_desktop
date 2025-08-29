@@ -207,15 +207,12 @@ class Webservice {
   /// Refreshes the authentication token.
   Future<dynamic> loadRefreshToken<T>(Resource<T> resource, BuildContext context) async {
     final Map<String, dynamic> body = <String, dynamic>{
-      'idToken': await application.getIdToken(),
-      'refreshToken': await application.getRefreshToken()
+      // 'idToken': await application.getIdToken(),
+      'refresh_token': await application.getRefreshToken()
     };
 
     try {
-      final headers = {
-        "Content-Type": "application/json",
-        "charset": "UTF-8",
-      };
+      final headers = {"Content-Type": "application/json", "charset": "UTF-8", "merchange": "portal"};
 
       final url = Uri.parse(resource.url);
 
@@ -254,7 +251,7 @@ class Webservice {
 
         if (response.token != '') {
           await application.setAccessToken(response.token);
-          await application.setIdToken(response.idToken);
+          // await application.setIdToken(response.idToken);
         }
       } catch (e) {
         if (context.mounted) {

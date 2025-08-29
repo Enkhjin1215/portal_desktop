@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart' as cup;
 import 'package:flutter/material.dart';
 import 'package:portal/components/container_transparent.dart';
+import 'package:portal/components/custom_button.dart';
 import 'package:portal/components/custom_scaffold.dart';
 import 'package:portal/components/custom_text_input.dart';
 import 'package:portal/helper/application.dart';
@@ -29,6 +30,7 @@ import 'package:portal/screens/payment_section/promo_code_field.dart';
 import 'package:portal/screens/payment_section/ticket_summary_item.dart';
 import 'package:portal/service/web_service.dart';
 import 'package:provider/provider.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:textstyle_extensions/textstyle_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -225,48 +227,51 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
   }
 
   Widget _buildBankSelectionGrid(ThemeData theme) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          getTranslated(context, 'bankApp'),
-          style: TextStyles.textFt16Med.textColor(theme.colorScheme.ticketDescColor.withOpacity(0.7)),
+        const SizedBox(
+          width: 100,
         ),
-        const SizedBox(height: 20),
-        GridView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            padding: EdgeInsets.zero,
-            shrinkWrap: true,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
-              childAspectRatio: 1 / 1.3,
+        Container(
+          width: 400,
+          height: 400,
+          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(16)),
+          child: Center(
+            child: QrImageView(
+              data: invoice?.qpay?.qrText ?? '',
+              version: QrVersions.auto,
+              size: 400.0, // Size of QR image
             ),
-            itemCount: banks.length,
-            itemBuilder: (context, index) {
-              return InkWell(
-                onTap: () => _handleBankPress(banks[index]),
-                child: Column(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16),
-                      child: Image.network(
-                        width: 80,
-                        height: 80,
-                        banks[index].logo!,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      banks[index].name!,
-                      textAlign: TextAlign.center,
-                      style: TextStyles.textFt12Med.textColor(theme.colorScheme.whiteColor),
-                      maxLines: 1,
-                    )
-                  ],
-                ),
-              );
-            })
+          ),
+        ),
+        const SizedBox(
+          width: 16,
+        ),
+        Column(
+          children: [
+            CustomButton(
+              onTap: () {
+                _checkPayment();
+              },
+              text: 'Төлбөр шалгах',
+            ),
+            InkWell(
+                onTap: () async {
+                  await _deleteInvoice();
+                },
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 12),
+                  decoration: BoxDecoration(
+                      color: Colors.red.withValues(alpha: 0.7), borderRadius: BorderRadius.circular(16), border: Border.all(color: Colors.white)),
+                  child: Text(
+                    'Цуцлах',
+                    style: TextStyles.textFt16Med.textColor(Colors.white),
+                  ),
+                ))
+          ],
+        )
       ],
     );
   }
@@ -332,12 +337,8 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
     final result = await _paymentService.checkPayment(context: context, invoiceId: invoice?.id ?? '');
 
     if (result) {
-      if (isQuizNight) {
-        _paymentService.quizNight(context: context, tableNo: data!['templates'].first['seats'].first, date: detail!.startDate ?? '');
-      }
-
-      NavKey.navKey.currentState!
-          .pushNamedAndRemoveUntil(paymentSuccessRoute, arguments: {'event': detail, 'invoice_id': invoice?.id ?? ''}, (route) => false);
+      application.showToast('Амжилттай');
+      NavKey.navKey.currentState!.pushNamedAndRemoveUntil(homeRoute, (route) => false);
     } else {
       // Payment unsuccessful
       application.showToastAlert('Төлбөр төлөгдөөгүй байна');
@@ -728,7 +729,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
     }
 
     return Container(
-      width: ResponsiveFlutter.of(context).wp(100),
+      // width: ResponsiveFlutter.of(context).wp(100),
       height: ResponsiveFlutter.of(context).hp(130),
       color: theme.colorScheme.blackColor,
       child: Stack(
@@ -755,7 +756,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
 
   Widget _buildBackgroundImage() {
     return SizedBox(
-      width: ResponsiveFlutter.of(context).wp(100),
+      // width: ResponsiveFlutter.of(context).wp(100),
       height: ResponsiveFlutter.of(context).hp(130),
       child: ImageFiltered(
         imageFilter: ImageFilter.blur(sigmaX: 60, sigmaY: 60),
@@ -802,7 +803,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
 
             if (choosePaymentMethod && selectedPaymentMethod?.type == 'qpay') _buildBankSelectionGrid(theme),
 
-            _halveWidget(theme),
+            // _halveWidget(theme),
             const SizedBox(height: 60),
           ],
         ),

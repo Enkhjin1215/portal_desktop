@@ -4,6 +4,7 @@ import 'package:portal/router/route_path.dart';
 import 'package:portal/screens/cart/payment_cart.dart';
 import 'package:portal/screens/dashboard/home_screen.dart';
 import 'package:portal/screens/dashboard/notif_permission.dart';
+import 'package:portal/screens/dashboard/purchase_screen.dart';
 import 'package:portal/screens/events/event_route.dart';
 import 'package:portal/screens/events/event_webview_screen.dart';
 import 'package:portal/screens/events/merch_detail_screen.dart';
@@ -261,6 +262,10 @@ class AppRouter {
       case profileRoute:
         return PageTransition(
             child: const ProfileScreen(), type: PageTransitionType.fade, duration: const Duration(milliseconds: 0), settings: settings);
+      case purchaseRoute:
+        return PageTransition(
+            child: const PurchaseScreen(), type: PageTransitionType.fade, duration: const Duration(milliseconds: 0), settings: settings);
+
       case profileEditRoute:
         return SwipeablePageRoute(
           builder: (_) => const ProfileEditScreen(),

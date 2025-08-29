@@ -75,10 +75,10 @@ class _OnboardLogoScreenState extends State<OnboardLogoScreen> with TickerProvid
     // NavKey.navKey.currentState!.pushNamedAndRemoveUntil(onboardRoute, (route) => false);
 
     String accessToken = await application.getAccessToken();
-    String idToken = await application.getIdToken();
+    // String idToken = await application.getIdToken();
     String refreshToken = await application.getRefreshToken();
 
-    if (accessToken != '' && idToken != '' && refreshToken != '') {
+    if (accessToken != '' && refreshToken != '') {
       application.setUserType(2);
       NavKey.navKey.currentState!.pushNamedAndRemoveUntil(homeRoute, (route) => false);
     } else {

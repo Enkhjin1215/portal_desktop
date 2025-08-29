@@ -9,7 +9,7 @@ class RefreshModel extends ChangeNotifier {
   String? idToken;
   RefreshModel({required this.token, this.idToken});
   factory RefreshModel.fromJson(Map<String, dynamic> json) {
-    return RefreshModel(token: json['accessToken'] ?? '', idToken: json['idToken'] ?? '');
+    return RefreshModel(token: json['access_token'] ?? '', idToken: json['idToken'] ?? '');
   }
   static Resource<RefreshModel> get refreshTkn {
     return Resource(

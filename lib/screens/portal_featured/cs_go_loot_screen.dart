@@ -379,12 +379,12 @@ class _CSGOLootScreenState extends State<CSGOLootScreen> with SingleTickerProvid
   }
 
   buyChance(int count) async {
-    String idToken = await application.getIdToken();
+    // String idToken = await application.getIdToken();
     Map<String, dynamic> data = {};
     data['eventId'] = eventID;
     data['qty'] = count;
     data['lang'] = Provider.of<ProviderCoreModel>(context, listen: false).isEnglish ? 'en' : 'mn';
-    data['idToken'] = idToken;
+    // data['idToken'] = idToken;
 
     EventDetail dumpDetail = await getEvent('683d7c8588eb132b61d2e6dc');
 

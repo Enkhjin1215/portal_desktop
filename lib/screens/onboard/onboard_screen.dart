@@ -123,18 +123,18 @@ class _OnboardScreenState extends State<OnboardScreen> {
           const SizedBox(
             height: 8,
           ),
-          CustomButton(
-            textColor: theme.colorScheme.whiteColor,
-            backgroundColor: theme.colorScheme.backgroundColor,
-            width: 332,
-            alignment: Alignment.bottomCenter,
-            // margin: EdgeInsets.zero,
-            text: getTranslated(context, 'skip'),
-            onTap: () async {
-              await application.setUserType(1);
-              NavKey.navKey.currentState!.pushNamed(onboardHomeJoinedRoute);
-            },
-          ),
+          // CustomButton(
+          //   textColor: theme.colorScheme.whiteColor,
+          //   backgroundColor: theme.colorScheme.backgroundColor,
+          //   width: 332,
+          //   alignment: Alignment.bottomCenter,
+          //   // margin: EdgeInsets.zero,
+          //   text: getTranslated(context, 'skip'),
+          //   onTap: () async {
+          //     await application.setUserType(1);
+          //     NavKey.navKey.currentState!.pushNamed(onboardHomeJoinedRoute);
+          //   },
+          // ),
         ],
       ),
     );

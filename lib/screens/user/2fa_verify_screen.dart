@@ -60,9 +60,9 @@ class _TwoFAVerifyScreenState extends State<TwoFAVerifyScreen> {
             .pushNamed(twoFaRoute, arguments: {'name': response['ChallengeParameters']['USER_ID_FOR_SRP'], 'session': response['Session']});
       } else {
         await application.setUserType(2);
-        application.setAccessToken(response['accessToken']);
-        application.setRefreshToken(response['refreshToken']);
-        application.setIdToken(response['idToken']);
+        application.setAccessToken(response['access_token']);
+        application.setRefreshToken(response['refresh_token']);
+        // application.setIdToken(response['idToken']);
 
         // var status = await Permission.notification.status;
         // if (status == PermissionStatus.granted) {

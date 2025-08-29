@@ -48,29 +48,29 @@ class EventModel {
         tags: json['tags'],
         date: dateTime);
   }
-}
-
-class Events {
-  String? id;
-  List<EventModel>? events;
-  int? count;
-
-  Events({this.id, this.count, this.events});
-
-  factory Events.fromJson(Map<String, dynamic> json) {
-    Iterable rawList = json['events'];
-    List<EventModel> list = rawList.map((data) => EventModel.fromJson(data)).toList();
-    return Events(id: json['_id'], count: json['count'], events: list);
-  }
-
-  static Resource<List<Events>> get eventList {
+  static Resource<List<EventModel>> get eventList {
     return Resource(
         url: APILIST.eventList,
         parse: (response) {
           final result = json.decode(utf8.decode(response.bodyBytes));
           Iterable list = result;
-          List<Events> eventList = list.map((data) => Events.fromJson(data)).toList();
+          List<EventModel> eventList = list.map((data) => EventModel.fromJson(data)).toList();
           return eventList;
         });
   }
 }
+
+// class Events {
+//   String? id;
+//   List<EventModel>? events;
+//   int? count;
+
+//   Events({this.id, this.count, this.events});
+
+//   factory Events.fromJson(Map<String, dynamic> json) {
+//     Iterable rawList = json['events'];
+//     List<EventModel> list = rawList.map((data) => EventModel.fromJson(data)).toList();
+//     return Events(id: json['_id'], count: json['count'], events: list);
+//   }
+
+// }
