@@ -90,6 +90,7 @@ dependencies:
 #   flutter_facebook_auth: ^7.1.1
 
   app_links: ^6.4.0
+  msix: ^3.16.12
 
 dev_dependencies:
   flutter_test:
