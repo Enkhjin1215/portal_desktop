@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_quill/flutter_quill.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:portal/helper/application.dart';
 import 'package:portal/helper/constant.dart';
@@ -183,6 +184,7 @@ class _MyHomePageState extends State<MyHomePage> {
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
+          FlutterQuillLocalizations.delegate,
         ],
         onGenerateRoute: AppRouter.generatedRoute,
         initialRoute: onboardLogoRoute,

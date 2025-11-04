@@ -94,8 +94,8 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                     ignoring: true,
                     child: QuillEditor.basic(
                       controller: _controller,
-                      configurations: QuillEditorConfigurations(
-                        scrollPhysics: NeverScrollableScrollPhysics(),
+                      config: QuillEditorConfig(
+                        scrollPhysics: const NeverScrollableScrollPhysics(),
                         scrollable: false,
                         customStyleBuilder: getStyle,
                       ),

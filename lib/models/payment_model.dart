@@ -34,10 +34,13 @@ class PaymentModel {
     List<PaymentModel> payMethodList = [
       PaymentModel(name: 'QPay', isSvg: false, image: Assets.qpay, type: 'qpay', isQr: false, min: 0),
       PaymentModel(name: 'SocialPay', isSvg: true, image: Assets.socialpay, type: 'socialpay', isQr: true, min: 0),
-      PaymentModel(name: 'Apple Pay', isSvg: false, image: Assets.applePay, type: 'applepay', isQr: false, min: 0),
+      // PaymentModel(name: 'Apple Pay', isSvg: false, image: Assets.applePay, type: 'applepay', isQr: false, min: 0),
+      PaymentModel(name: 'POS', isSvg: true, image: Assets.pos, type: 'pos', isQr: false, min: 0),
+      PaymentModel(name: 'CASH', isSvg: true, image: Assets.cash, type: 'wire', isQr: false, min: 0),
+
       // PaymentModel(name: 'QPos', isSvg: false, image: Assets.qpos, type: 'qpos', isQr: true),
       // PaymentModel(name: 'Digipay', isSvg: false, image: Assets.digipay, type: 'digipay_m', isQr: true, min: 0),
-      PaymentModel(name: 'Pocket', isSvg: false, image: Assets.pocket, type: 'pocket', isQr: false, min: 50000),
+      // PaymentModel(name: 'Pocket', isSvg: false, image: Assets.pocket, type: 'pocket', isQr: false, min: 50000),
     ];
     return payMethodList;
   }

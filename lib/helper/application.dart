@@ -21,7 +21,7 @@ class Application implements Constants {
         "charset": "UTF-8",
         "project-type": await getPlatform() ?? 'ANDROID',
         "deviceToken": await getDeviceToken() ?? '',
-        "merchant": "ubcomedy",
+        "merchant": "portal",
         // "company": "test",
         "Authorization": "Bearer $token"
       };
@@ -29,7 +29,7 @@ class Application implements Constants {
       header = {
         "Content-Type": "application/json",
         "charset": "UTF-8",
-        "merchant": "ubcomedy",
+        "merchant": "portal",
         "project-type": await getPlatform() ?? 'ANDROID',
         "deviceToken": await getDeviceToken() ?? '',
 

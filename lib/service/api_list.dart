@@ -1,23 +1,23 @@
 class APILIST {
   // development
-  // static const baseUrl = 'http://192.168.0.50:3030/v1';
-  // static const authService = 'http://192.168.0.50:3030/v1';
-
-  static const baseUrl = 'https://client.portal.mn/v1';
-
-  static const authService = 'https://client.portal.mn/v1';
-
-  // static const authService = 'https://st-client.portal.mn/v1';
+  // static const baseUrl = 'http://192.168.1.33:3030/v1';
+  // static const authService = 'http://192.168.1.33:3030/v1';
 
   // static const baseUrl = 'https://st-client.portal.mn/v1';
 
+  // static const authService = 'https://client.portal.mn/v1';
+
+  static const authService = 'https://st-client.portal.mn/v1';
+
+  static const baseUrl = 'https://st-client.portal.mn/v1';
+
   static const webUrl = 'https://www.portal.mn/';
 
-  static const refreshToken = 'https://admin.portal.mn/v1/auth/loginWithRefreshToken';
+  static const refreshToken = 'https://st-admin.portal.mn/v1/auth/loginWithRefreshToken';
 
   static const authcheckMail = '$authService/auth/check';
 
-  static const authLogin = 'https://admin.portal.mn/v1/auth/login';
+  static const authLogin = 'https://st-admin.portal.mn/v1/auth/login';
 
   static const authCheckUsername = '$baseUrl/user/check-username';
 
@@ -67,7 +67,7 @@ class APILIST {
 
   static const userbankWithdraw = '$baseUrl/user-bank/withdraw';
 
-  static const eventChooseSeat = 'https://portal.mn/seat-picker/';
+  static const eventChooseSeat = 'https://stage.portal.mn/seat-picker/';
 
   static const deleteInvoice = '$baseUrl/kass/discard/';
 

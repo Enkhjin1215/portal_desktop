@@ -78,67 +78,64 @@ class _EventState extends State<Event> {
                 cornerRadius: 8.0,
                 borderStyle: ZoMonoCromeBorderStyle.mirror,
                 borderWidth: 2.5,
-                child: Stack(
-                  // alignment: Alignment.bottomCenter,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(12),
-                      child:
-                          // child: Stack(
-                          //   children: [
-                          Image.network(
-                        '${item.coverImage}',
-                        width: double.maxFinite,
-                        height: ResponsiveFlutter.of(context).hp(15),
-                        fit: BoxFit.fill,
-                      ),
-                      // Align(
-                      //   alignment: Alignment.bottomCenter,
-                      //   child: ImageFiltered(
-                      //       imageFilter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                      //       child: ShaderMask(
-                      //         shaderCallback: (rect) {
-                      //           return LinearGradient(
-                      //               begin: Alignment.topCenter,
-                      //               end: Alignment.bottomCenter,
-                      //               colors: [Colors.black, Colors.white.withValues(alpha:0.1)],
-                      //               stops: const [0.7, 0.75]).createShader(rect);
-                      //         },
-                      //         blendMode: BlendMode.dstOut,
-                      //         child: Image.network('${item.coverImage}',
-                      //             fit: BoxFit.cover, alignment: Alignment.bottomCenter),
-                      //       )),
-                      // )
-                      // ],
-                    ),
-                    Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Container(
+                child: Container(
+                    height: ResponsiveFlutter.of(context).hp(15),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12), image: DecorationImage(image: NetworkImage(item.coverImage!), fit: BoxFit.fill)),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(right: ResponsiveFlutter.of(context).wp(2), top: ResponsiveFlutter.of(context).hp(0.5)),
+                              decoration: const BoxDecoration(
+                                  color: Colors.white, borderRadius: BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8))),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                                    decoration: const BoxDecoration(
+                                        color: Colors.red,
+                                        borderRadius: BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8))),
+                                    child: Center(
+                                      child: Text(
+                                        DateTime.parse(item.startDate ?? DateTime.now().toString()).month.toString() +
+                                            getTranslated(context, 'month'),
+                                        style: TextStyles.textFt14Reg.textColor(Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    DateTime.parse(item.startDate ?? DateTime.now().toString()).day.toString(),
+                                    style: TextStyles.textFt18Bold,
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                        const Expanded(
+                          flex: 2,
+                          child: SizedBox(),
+                        ),
+                        Container(
                           padding: const EdgeInsets.symmetric(vertical: 8),
                           margin: const EdgeInsets.only(top: 10),
-                          height: 180,
+                          height: 100,
                           width: double.maxFinite,
-                          decoration: BoxDecoration(
-                              gradient: LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [
-                                Colors.black.withValues(alpha: 0.1),
-                                Colors.black.withValues(alpha: 0.2),
-                                Colors.black.withValues(alpha: 0.3),
-                                Colors.black.withValues(alpha: 0.9),
-                                Colors.black.withValues(alpha: 0.99),
-                                Colors.black.withValues(alpha: 0.99),
-                                Colors.black,
-                                Colors.black
-                              ], stops: const [
-                                0.5,
-                                0.55,
-                                0.6,
-                                0.75,
-                                0.8,
-                                0.85,
-                                0.9,
-                                1.0
-                              ]),
-                              borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(8), bottomRight: Radius.circular(8))),
+                          decoration:
+                              const BoxDecoration(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(8), bottomRight: Radius.circular(8))),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,38 +163,34 @@ class _EventState extends State<Event> {
                                             ));
                                       }),
                                 ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 20),
-                                child: Text(
-                                  item.name?.toUpperCase() ?? '',
-                                  style: TextStyles.textFt15Bold.textColor(theme.colorScheme.neutral200),
-                                ),
+                              Row(
+                                children: [
+                                  const SizedBox(width: 20),
+                                  Text(
+                                    item.name?.toUpperCase() ?? '',
+                                    style: TextStyles.textFt15Bold.textColor(theme.colorScheme.neutral200),
+                                  ),
+                                  const Expanded(
+                                    child: SizedBox(),
+                                  ),
+                                  Container(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: ResponsiveFlutter.of(context).wp(2), vertical: ResponsiveFlutter.of(context).hp(0.5)),
+                                      decoration: BoxDecoration(boxShadow: <BoxShadow>[
+                                        BoxShadow(
+                                            color: Colors.orange.withValues(alpha: 0.05), spreadRadius: 1, blurRadius: 2, offset: const Offset(0, 1))
+                                      ], borderRadius: BorderRadius.circular(12), color: theme.colorScheme.whiteColor.withValues(alpha: 0.2)),
+                                      child: GradientText(getTranslated(context, 'buy'), style: TextStyles.textFt18Reg)),
+                                  const SizedBox(width: 20),
+                                ],
                               ),
                               const SizedBox(
                                 height: 4,
                               ),
-                              // Padding(
-                              //   padding: const EdgeInsets.only(left: 15),
-                              //   child: Row(children: [
-                              //     Icon(
-                              //       Icons.location_pin,
-                              //       color: theme.colorScheme.fadedWhite,
-                              //     ),
-                              //     const SizedBox(
-                              //       width: 4,
-                              //     ),
-                              //     Expanded(
-                              //       child: Text(item.location!.name!.capitalize(),
-                              //           overflow: TextOverflow.clip,
-                              //           maxLines: 1,
-                              //           style: TextStyles.textFt14Reg.textColor(theme.colorScheme.fadedWhite)),
-                              //     )
-                              //   ]),
-                              // ),
                             ],
                           ),
-                        )),
-                  ],
-                ))));
+                        )
+                      ],
+                    )))));
   }
 }

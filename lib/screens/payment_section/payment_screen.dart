@@ -71,6 +71,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
   bool isCSOX = false;
   bool isSteamTopUp = false;
 
+  bool isCash = false;
   // Controllers
   final TextEditingController orgRegNo = TextEditingController();
   final TextEditingController promoCode = TextEditingController();
@@ -191,6 +192,80 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+          decoration: BoxDecoration(
+            color: Colors.white.withValues(alpha: 0.1),
+            border: Border.all(color: Colors.white),
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: data!['seats'] is List
+              ? ListView.builder(
+                  itemCount: data!['templates'].length,
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    // safely get the seats list
+                    final seats = data!['templates'][index]['seats'] as List<dynamic>;
+
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: seats.asMap().entries.map((entry) {
+                        // entry.key = index, entry.value = seat
+                        return Container(
+                            margin: const EdgeInsets.only(bottom: 8),
+                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                            decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.05)),
+                            child: Row(
+                              children: [
+                                Text(
+                                  'Давхар:  ',
+                                  style: TextStyles.textFt16Bold.textColor(Colors.white),
+                                ),
+                                Text(
+                                  Utils.formatSeatCode(entry.value.toString(), 'floor'),
+                                  style: TextStyles.textFt16Bold.textColor(Colors.white),
+                                ),
+                                const Expanded(
+                                  child: SizedBox(),
+                                ),
+                                Text(
+                                  'Сектор:  ',
+                                  style: TextStyles.textFt16Bold.textColor(Colors.white),
+                                ),
+                                Text(
+                                  Utils.formatSeatCode(entry.value.toString(), 'sector'),
+                                  style: TextStyles.textFt16Bold.textColor(Colors.white),
+                                ),
+                                const Expanded(
+                                  child: SizedBox(),
+                                ),
+                                Text(
+                                  'Эгнээ:  ',
+                                  style: TextStyles.textFt16Bold.textColor(Colors.white),
+                                ),
+                                Text(
+                                  Utils.formatSeatCode(entry.value.toString(), 'row'),
+                                  style: TextStyles.textFt16Bold.textColor(Colors.white),
+                                ),
+                                const Expanded(
+                                  child: SizedBox(),
+                                ),
+                                Text(
+                                  'Суудал:  ',
+                                  style: TextStyles.textFt16Bold.textColor(Colors.white),
+                                ),
+                                Text(
+                                  Utils.formatSeatCode(entry.value.toString(), 'seat'),
+                                  style: TextStyles.textFt16Bold.textColor(Colors.white),
+                                ),
+                              ],
+                            ));
+                      }).toList(),
+                    );
+                  },
+                )
+              : Text(data.toString()),
+        ),
         Text(
           getTranslated(context, 'paymentMethod'),
           style: TextStyles.textFt16Med.textColor(theme.colorScheme.ticketDescColor.withOpacity(0.7)),
@@ -269,6 +344,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
             : Column(
                 children: [
                   CustomButton(
+                    width: 250,
                     onTap: () {
                       _checkPayment();
                     },
@@ -279,14 +355,16 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
                         await _deleteInvoice();
                       },
                       child: Container(
+                        width: 250,
                         padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 12),
                         decoration: BoxDecoration(
                             color: Colors.red.withValues(alpha: 0.7),
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(24),
                             border: Border.all(color: Colors.white)),
                         child: Text(
                           'Цуцлах',
                           style: TextStyles.textFt16Med.textColor(Colors.white),
+                          textAlign: TextAlign.center,
                         ),
                       ))
                 ],
@@ -395,8 +473,11 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
     final ThemeData theme = Provider.of<ThemeNotifier>(context, listen: false).getTheme();
 
     // Handle non-Apple Pay / non-QPay methods that need webview
-
-    if (selectedPaymentMethod!.type == 'mcredit') {
+    if (selectedPaymentMethod!.type == 'wire' || selectedPaymentMethod!.type == 'pos') {
+      setState(() {
+        isCash = true;
+      });
+    } else if (selectedPaymentMethod!.type == 'mcredit') {
       TicketPopup.showCustomDialog(context,
           dismissType: true,
           title: "Дараах QR-г ${selectedPaymentMethod!.name}-р \n уншуулан төлнө үү.",
@@ -829,6 +910,38 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
 
             const SizedBox(height: 16),
             _buildPaymentMethodsSection(theme),
+
+            if ((selectedPaymentMethod?.type == 'pos' || selectedPaymentMethod?.type == 'wire') && invoice != null)
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomButton(
+                    width: 500,
+                    onTap: () {
+                      _checkPayment();
+                    },
+                    text: 'Төлбөр баталгаажуулах',
+                  ),
+                  InkWell(
+                      onTap: () async {
+                        await _deleteInvoice();
+                      },
+                      child: Container(
+                        width: 500,
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+                        decoration: BoxDecoration(
+                            color: Colors.red.withValues(alpha: 0.7),
+                            borderRadius: BorderRadius.circular(24),
+                            border: Border.all(color: Colors.white)),
+                        child: Text(
+                          'Цуцлах',
+                          style: TextStyles.textFt16Med.textColor(Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
+                      ))
+                ],
+              ),
 
             if (choosePaymentMethod && selectedPaymentMethod?.type == 'qpay') _buildBankSelectionGrid(theme),
 

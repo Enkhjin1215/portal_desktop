@@ -244,6 +244,10 @@ class Webservice {
   /// Checks if the token is expired and refreshes it if needed.
   Future<void> _checkTokenExpiration(BuildContext context) async {
     final jwtToken = await application.getAccessToken();
+    debugPrint('JWT TOKEN: $jwtToken');
+    if (jwtToken.isNotEmpty) {
+      debugPrint('JWT TOKEN expired: ${JwtDecoder.isExpired(jwtToken)}');
+    }
 
     if (jwtToken.isNotEmpty && JwtDecoder.isExpired(jwtToken)) {
       try {

@@ -50,6 +50,8 @@ class Assets {
 
   static const String qpay = 'assets/images/app/qpay.png';
   static const String applePay = 'assets/images/component/apple_pay.png';
+  static const String pos = 'assets/images/component/pos.svg';
+  static const String cash = 'assets/images/component/cash.svg';
 
   static const String appleWallet = 'assets/images/app/apple-wallet.svg';
 
