@@ -118,7 +118,7 @@ class PaymentMethodItem extends StatelessWidget {
                 Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
-                      // color: Colors.white,
+                      color: Colors.white.withValues(alpha: 0.9),
                     ),
                     margin: const EdgeInsets.symmetric(horizontal: 8),
                     width: 80,

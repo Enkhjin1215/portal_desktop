@@ -165,37 +165,21 @@ class AppRouter {
             settings: settings,
             reverseDuration: const Duration(milliseconds: 300),
             duration: const Duration(milliseconds: 300));
-      // case walletRoute:
-      //   return SwipeablePageRoute(
-      //     builder: (_) => const WalletScreen(),
-      //     settings: settings,
-      //     canOnlySwipeFromEdge: false,
-      //     transitionDuration: const Duration(milliseconds: 300),
-      //   );
+      case walletRoute:
+        return PageTransition(
+            child: const WalletScreen(), type: PageTransitionType.rightToLeft, duration: const Duration(milliseconds: 300), settings: settings);
 
-      // case supportRoute:
-      //   return SwipeablePageRoute(
-      //     builder: (_) => const SupportScreen(),
-      //     settings: settings,
-      //     canOnlySwipeFromEdge: false,
-      //     transitionDuration: const Duration(milliseconds: 300),
-      //   );
+      case supportRoute:
+        return PageTransition(
+            child: const SupportScreen(), type: PageTransitionType.rightToLeft, duration: const Duration(milliseconds: 300), settings: settings);
 
-      // case walletAddRoute:
-      //   return SwipeablePageRoute(
-      //     builder: (_) => const WalletAddScreen(),
-      //     settings: settings,
-      //     canOnlySwipeFromEdge: false,
-      //     transitionDuration: const Duration(milliseconds: 300),
-      //   );
+      case walletAddRoute:
+        return PageTransition(
+            child: const WalletAddScreen(), type: PageTransitionType.rightToLeft, duration: const Duration(milliseconds: 300), settings: settings);
 
-      // case walletVerifyRoute:
-      //   return SwipeablePageRoute(
-      //     builder: (_) => const WalletVerify(),
-      //     settings: settings,
-      //     canOnlySwipeFromEdge: false,
-      //     transitionDuration: const Duration(milliseconds: 300),
-      //   );
+      case walletVerifyRoute:
+        return PageTransition(
+            child: const WalletVerify(), type: PageTransitionType.rightToLeft, duration: const Duration(milliseconds: 300), settings: settings);
 
       case eventTabtRoute:
         return PageTransition(
@@ -265,29 +249,18 @@ class AppRouter {
         return PageTransition(
             child: const PurchaseScreen(), type: PageTransitionType.fade, duration: const Duration(milliseconds: 0), settings: settings);
 
-      // case profileEditRoute:
-      //   return SwipeablePageRoute(
-      //     builder: (_) => const ProfileEditScreen(),
-      //     settings: settings,
-      //     canOnlySwipeFromEdge: false,
-      //     transitionDuration: const Duration(milliseconds: 300),
-      //   );
+      case profileEditRoute:
+        return PageTransition(
+            child: const ProfileEditScreen(), type: PageTransitionType.rightToLeft, duration: const Duration(milliseconds: 300), settings: settings);
 
-      // case myNFTRoute:
-      //   return SwipeablePageRoute(
-      //     builder: (_) => const MyNftScreen(),
-      //     settings: settings,
-      //     canOnlySwipeFromEdge: false,
-      //     transitionDuration: const Duration(milliseconds: 300),
-      //   );
+      case myNFTRoute:
+        return PageTransition(
+            child: const MyNftScreen(), type: PageTransitionType.rightToLeft, duration: const Duration(milliseconds: 300), settings: settings);
 
-      // case profileDeleteRoute:
-      //   return SwipeablePageRoute(
-      //     builder: (_) => const ProfileDelete(),
-      //     settings: settings,
-      //     canOnlySwipeFromEdge: false,
-      //     transitionDuration: const Duration(milliseconds: 300),
-      //   );
+      case profileDeleteRoute:
+        return PageTransition(
+            child: const ProfileDelete(), type: PageTransitionType.rightToLeft, duration: const Duration(milliseconds: 300), settings: settings);
+
       case portalMainRoute:
         return PageTransition(
             child: const PortalMainScreen(), type: PageTransitionType.fade, duration: const Duration(milliseconds: 0), settings: settings);

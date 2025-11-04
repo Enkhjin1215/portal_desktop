@@ -6,12 +6,13 @@ class GradientText extends StatelessWidget {
     this.style,
     Key? key,
     this.type,
+    this.align,
   }) : super(key: key);
 
   final String text;
   final TextStyle? style;
   final int? type;
-
+  final TextAlign? align;
   @override
   Widget build(BuildContext context) {
     return ShaderMask(
@@ -46,7 +47,11 @@ class GradientText extends StatelessWidget {
             ).createShader(
               Rect.fromLTWH(0, 0, bounds.width, bounds.height),
             ),
-      child: Text(text, style: style),
+      child: Text(
+        text,
+        style: style,
+        textAlign: align,
+      ),
     );
   }
 }

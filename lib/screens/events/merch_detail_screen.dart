@@ -629,7 +629,11 @@ class _MerchDetailState extends State<MerchDetail> {
                           ignoring: true,
                           child: QuillEditor.basic(
                             controller: _controller,
-                            
+                            config: QuillEditorConfig(
+                              scrollPhysics: const NeverScrollableScrollPhysics(),
+                              scrollable: false,
+                              customStyleBuilder: getStyle,
+                            ),
                           )),
                     ),
                     const SizedBox(

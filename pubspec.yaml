@@ -27,7 +27,7 @@ dependencies:
   cached_network_image: ^3.3.1
   flutter_svg: ^2.0.0+1
   pinput: ^4.0.0
-  # skeletonizer: ^1.1.2+1
+  skeletonizer: ^2.1.0+1
   flutter_animate: ^4.5.0
   flutter_gallery_3d: ^1.1.1
   weather: ^3.1.1

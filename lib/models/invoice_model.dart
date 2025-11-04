@@ -38,6 +38,7 @@ class QpayInvoice {
   String? method;
   QpayInvoice({this.userId, this.eventId, this.amt, this.invoicedesc, this.id, this.qpay, this.createdAt, this.method});
   factory QpayInvoice.fromJson(Map<String, dynamic> json) {
+    print('-------->${json['paymentResult']}');
     Qpay qpay = Qpay.fromJson(json['paymentResult']);
     return QpayInvoice(
         userId: json['userId'],

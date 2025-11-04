@@ -94,7 +94,11 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                     ignoring: true,
                     child: QuillEditor.basic(
                       controller: _controller,
-                      
+                      config: QuillEditorConfig(
+                        scrollPhysics: const NeverScrollableScrollPhysics(),
+                        scrollable: false,
+                        customStyleBuilder: getStyle,
+                      ),
                     ))
                 : html.Html(shrinkWrap: true, anchorKey: staticAnchorKeyPlace, data: widget.detail.description ?? "", style: {
                     'body': html.Style(

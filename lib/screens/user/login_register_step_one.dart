@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:local_auth/local_auth.dart';
 import 'package:portal/components/custom_button.dart';
 import 'package:portal/components/custom_scaffold.dart';
 import 'package:portal/components/custom_text_input.dart';
@@ -9,7 +7,6 @@ import 'package:portal/helper/application.dart';
 import 'package:portal/helper/constant.dart';
 import 'package:portal/helper/responsive_flutter.dart';
 import 'package:portal/helper/text_styles.dart';
-import 'package:portal/helper/utils.dart';
 import 'package:portal/language/language_constant.dart';
 import 'package:portal/provider/provider_core.dart';
 import 'package:portal/provider/theme_notifier.dart';
@@ -28,8 +25,8 @@ class LogRegStepOne extends StatefulWidget {
 }
 
 class _LogRegStepOneState extends State<LogRegStepOne> {
-  final TextEditingController _mailController = TextEditingController();
-  final TextEditingController _pwdController = TextEditingController();
+  final TextEditingController _mailController = TextEditingController(text: "renchinochir.u@gmail.com");
+  final TextEditingController _pwdController = TextEditingController(text: "G9Jqv+U_");
 
   int userType = 0;
   bool canBack = false;
