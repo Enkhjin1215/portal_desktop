@@ -58,12 +58,12 @@ class _UsbPrinterScreenState extends State<UsbPrinterScreen> {
   }
 
   Future<void> _connectAndPrint() async {
-    // if (selectedPrinter == null) {
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     const SnackBar(content: Text("Please select a printer first.")),
-    //   );
-    //   return;
-    // }
+    if (selectedPrinter == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Please select a printer first.")),
+      );
+      return;
+    }
 
     try {
       await printerPlugin.connect(selectedPrinter!);
