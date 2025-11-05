@@ -21,6 +21,7 @@ import 'package:portal/screens/portal_featured/portal_featured_screen.dart';
 import 'package:portal/screens/portal_featured/portal_main_screen.dart';
 import 'package:portal/screens/portal_featured/steam/steam_main_screen.dart';
 import 'package:portal/screens/portal_featured/x_o_screen.dart';
+import 'package:portal/screens/printer/test_print_screen.dart';
 import 'package:portal/screens/profile/my_nft_screen.dart';
 import 'package:portal/screens/profile/profile_delete_screen.dart';
 import 'package:portal/screens/profile/profile_edit_screen.dart';
@@ -248,6 +249,10 @@ class AppRouter {
       case purchaseRoute:
         return PageTransition(
             child: const PurchaseScreen(), type: PageTransitionType.fade, duration: const Duration(milliseconds: 0), settings: settings);
+
+      case testPrintRoute:
+        return PageTransition(
+            child: const UsbPrinterScreen(), type: PageTransitionType.fade, duration: const Duration(milliseconds: 0), settings: settings);
 
       case profileEditRoute:
         return PageTransition(

@@ -58,3 +58,6 @@ const String steamMainRoute = 'steam_main_Route';
 
 //market
 const String marketRoute = 'market_route';
+
+//print
+const String testPrintRoute = 'print_route';

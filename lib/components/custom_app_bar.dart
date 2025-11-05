@@ -224,6 +224,21 @@ PreferredSize homeAppBar({
           Expanded(
             child: SizedBox(),
           ),
+          InkWell(
+                  onTap: () async {
+                    await Provider.of<ProviderCoreModel>(context, listen: false).clearUser();
+                    NavKey.navKey.currentState!.pushNamedAndRemoveUntil(logRegStepOneRoute, (route) => false);
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 7),
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.12), shape: BoxShape.circle),
+                    child: Icon(Icons.offline_bolt),
+                  ),
+                ),   const SizedBox(
+            width: 20,
+          ),
           Text(getTranslated(context, 'en'),
               style: TextStyles.textFt15Bold.textColor(isEnglish ? theme.colorScheme.whiteColor : theme.colorScheme.fadedWhite)),
           const SizedBox(

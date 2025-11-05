@@ -62,6 +62,7 @@ class _EventState extends State<Event> {
     ThemeData theme = Provider.of<ThemeNotifier>(context, listen: true).getTheme();
     return GestureDetector(
         onTap: () {
+          // NavKey.navKey.currentState!.pushNamed(testPrintRoute);
           NavKey.navKey.currentState!.pushNamed(eventRoute, arguments: {'id': item.id, 'from': 0});
         },
         child: Container(

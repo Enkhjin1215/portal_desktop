@@ -188,81 +188,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
   Widget _buildPaymentMethodsSection(ThemeData theme) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-          decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.1),
-            border: Border.all(color: Colors.white),
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: data!['seats'] is List
-              ? ListView.builder(
-                  itemCount: data!['templates'].length,
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    // safely get the seats list
-                    final seats = data!['templates'][index]['seats'] as List<dynamic>;
-
-                    return Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: seats.asMap().entries.map((entry) {
-                        // entry.key = index, entry.value = seat
-                        return Container(
-                            margin: const EdgeInsets.only(bottom: 8),
-                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                            decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.05)),
-                            child: Row(
-                              children: [
-                                Text(
-                                  'Давхар:  ',
-                                  style: TextStyles.textFt16Bold.textColor(Colors.white),
-                                ),
-                                Text(
-                                  Utils.formatSeatCode(entry.value.toString(), 'floor'),
-                                  style: TextStyles.textFt16Bold.textColor(Colors.white),
-                                ),
-                                const Expanded(
-                                  child: SizedBox(),
-                                ),
-                                Text(
-                                  'Сектор:  ',
-                                  style: TextStyles.textFt16Bold.textColor(Colors.white),
-                                ),
-                                Text(
-                                  Utils.formatSeatCode(entry.value.toString(), 'sector'),
-                                  style: TextStyles.textFt16Bold.textColor(Colors.white),
-                                ),
-                                const Expanded(
-                                  child: SizedBox(),
-                                ),
-                                Text(
-                                  'Эгнээ:  ',
-                                  style: TextStyles.textFt16Bold.textColor(Colors.white),
-                                ),
-                                Text(
-                                  Utils.formatSeatCode(entry.value.toString(), 'row'),
-                                  style: TextStyles.textFt16Bold.textColor(Colors.white),
-                                ),
-                                const Expanded(
-                                  child: SizedBox(),
-                                ),
-                                Text(
-                                  'Суудал:  ',
-                                  style: TextStyles.textFt16Bold.textColor(Colors.white),
-                                ),
-                                Text(
-                                  Utils.formatSeatCode(entry.value.toString(), 'seat'),
-                                  style: TextStyles.textFt16Bold.textColor(Colors.white),
-                                ),
-                              ],
-                            ));
-                      }).toList(),
-                    );
-                  },
-                )
-              : Text(data.toString()),
-        ),
+    children: [
         Text(
           getTranslated(context, 'paymentMethod'),
           style: TextStyles.textFt16Med.textColor(theme.colorScheme.ticketDescColor.withOpacity(0.7)),
@@ -361,6 +287,23 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
                           style: TextStyles.textFt16Med.textColor(Colors.white),
                           textAlign: TextAlign.center,
                         ),
+                      )),
+                      InkWell(
+                      onTap: () async {
+                        // await _deleteInvoice();
+                      },
+                      child: Container(
+                        width: 250,
+                        padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 12),
+                        decoration: BoxDecoration(
+                            color: Colors.red.withValues(alpha: 0.7),
+                            borderRadius: BorderRadius.circular(24),
+                            border: Border.all(color: Colors.white)),
+                        child: Text(
+                          'Хэвлэх',
+                          style: TextStyles.textFt16Med.textColor(Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
                       ))
                 ],
               )
@@ -419,9 +362,9 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.resumed) {
-      if (invoice != null) {
-        _checkPayment();
-      }
+      // if (invoice != null) {
+      //   _checkPayment();
+      // }
     }
   }
 
@@ -430,7 +373,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
 
     if (result) {
       application.showToast('Амжилттай');
-      getEbarimt();
+      // getEbarimt();
       // NavKey.navKey.currentState!.pushNamedAndRemoveUntil(homeRoute, (route) => false);
     } else {
       // Payment unsuccessful
@@ -931,6 +874,25 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
                             border: Border.all(color: Colors.white)),
                         child: Text(
                           'Цуцлах',
+                          style: TextStyles.textFt16Med.textColor(Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
+                      )),
+                         InkWell(
+                      onTap: () async {
+                        NavKey.navKey.currentState!.pushNamed(testPrintRoute, arguments: {"name":detail?.name??'', "seats":data!['templates'].first['seats'], "date":Func.toDateStr(detail?.startDate??DateTime.now().toString())});
+                        // await _deleteInvoice();
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(top: 24),
+                        width: 500,
+                        padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 12),
+                        decoration: BoxDecoration(
+                            color: Colors.blue.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(24),
+                            border: Border.all(color: Colors.white)),
+                        child: Text(
+                          'Хэвлэх',
                           style: TextStyles.textFt16Med.textColor(Colors.white),
                           textAlign: TextAlign.center,
                         ),

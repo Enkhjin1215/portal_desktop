@@ -1,4 +1,8 @@
+import 'dart:collection';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:portal/components/bottom_sheet.dart';
 import 'package:portal/components/custom_button.dart';
@@ -18,7 +22,9 @@ import 'package:portal/router/route_path.dart';
 import 'package:portal/service/api_list.dart';
 import 'package:provider/provider.dart';
 import 'package:textstyle_extensions/textstyle_extensions.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
+// import 'package:flutter_inappwebview_windows/flutter_inappwebview_windows.dart';
+
 
 class EventChooseSeatScreen extends StatefulWidget {
   const EventChooseSeatScreen({super.key});
@@ -30,7 +36,8 @@ class EventChooseSeatScreen extends StatefulWidget {
 class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with SingleTickerProviderStateMixin {
   bool isReady = false;
   late EventDetail detail;
-  late final WebViewController _controller;
+  final GlobalKey webViewKey = GlobalKey();
+
   List<String> selectedSeats = [];
   List<Map<String, dynamic>> body = [];
   List<Map<String, dynamic>> rawBody = [];
@@ -41,6 +48,20 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
   int prog = 0;
   TextEditingController teamNameController = TextEditingController();
   TextEditingController contactNumberController = TextEditingController();
+  WebViewEnvironment? webViewEnvironment;
+    InAppWebViewController? webViewController;
+  InAppWebViewSettings settings = InAppWebViewSettings(
+      isInspectable: kDebugMode,
+      mediaPlaybackRequiresUserGesture: false,
+      allowsInlineMediaPlayback: true,
+      iframeAllow: "camera; microphone",
+      iframeAllowFullscreen: true);
+
+  String url = "";
+  double progress = 0;
+  final urlController = TextEditingController();
+
+
   @override
   void initState() {
     super.initState();
@@ -52,11 +73,24 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
       if (detail.name!.contains('Quiz')) {
         isQuizNight = true;
       }
+
       teamNameController.text = await application.getQuizName();
       contactNumberController.text = await application.getQuizNumber();
       setState(() {});
       Provider.of<ProviderCoreModel>(context, listen: false).setSelectedSeat([]);
-      init(detail.id!);
+        if (!kIsWeb && defaultTargetPlatform == TargetPlatform.windows) {
+    final availableVersion = await WebViewEnvironment.getAvailableVersion();
+    assert(availableVersion != null,
+        'Failed to find an installed WebView2 runtime or non-stable Microsoft Edge installation.');
+
+    webViewEnvironment = await WebViewEnvironment.create(
+        settings: WebViewEnvironmentSettings(userDataFolder: 'custom_path'));
+  }
+
+  if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
+    await InAppWebViewController.setWebContentsDebuggingEnabled(kDebugMode);
+  }
+      // init(detail.id!);
       // init();
     }));
     _animationController = AnimationController(
@@ -71,6 +105,9 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
       parent: _animationController,
       curve: Curves.easeOut,
     ));
+    setState(() {
+      isReady = true;
+    });
   }
 
   @override
@@ -78,52 +115,51 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
     body = [];
     rawBody = [];
 
-    _controller.clearCache();
-    _controller.clearLocalStorage();
+
     _animationController.dispose();
     teamNameController.dispose();
     contactNumberController.dispose();
     super.dispose();
   }
 
-  init(String url) async {
-    final WebViewController controller = WebViewController();
-    controller
-      ..enableZoom(true)
-      ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setNavigationDelegate(
-        NavigationDelegate(
-          onProgress: (int progress) async {
-            print('progress:$progress');
-            if (progress != 100) {
-              setState(() {
-                isReady = false;
-                prog = progress;
-              });
-            } else {
-              setState(() {
-                isReady = true;
-              });
-            }
-          },
-          onUrlChange: (change) {
-            debugPrint("CHANGED URL------------> loading:${change.url}");
-            if (change.url!.length >= 65) {
-              Uri uri = Uri.parse(change.url!);
-              String? seatsParam = uri.queryParameters['seats'];
+  // init(String url) async {
+  //   final WebViewController controller = WebViewController();
+  //   controller
+  //     ..enableZoom(true)
+  //     ..setJavaScriptMode(JavaScriptMode.unrestricted)
+  //     ..setNavigationDelegate(
+  //       NavigationDelegate(
+  //         onProgress: (int progress) async {
+  //           print('progress:$progress');
+  //           if (progress != 100) {
+  //             setState(() {
+  //               isReady = false;
+  //               prog = progress;
+  //             });
+  //           } else {
+  //             setState(() {
+  //               isReady = true;
+  //             });
+  //           }
+  //         },
+  //         onUrlChange: (change) {
+  //           debugPrint("CHANGED URL------------> loading:${change.url}");
+  //           if (change.url!.length >= 65) {
+  //             Uri uri = Uri.parse(change.url!);
+  //             String? seatsParam = uri.queryParameters['seats'];
 
-              // Split the seats string into a List<String>
-              List<String> seats = seatsParam != null && seatsParam.isNotEmpty ? seatsParam.split(',') : [];
-              debugPrint('seats:$seats');
-              Provider.of<ProviderCoreModel>(context, listen: false).setSelectedSeat(seats);
-            }
-          },
-        ),
-      )
-      ..loadRequest(Uri.parse('${APILIST.eventChooseSeat}$url'));
+  //             // Split the seats string into a List<String>
+  //             List<String> seats = seatsParam != null && seatsParam.isNotEmpty ? seatsParam.split(',') : [];
+  //             debugPrint('seats:$seats');
+  //             Provider.of<ProviderCoreModel>(context, listen: false).setSelectedSeat(seats);
+  //           }
+  //         },
+  //       ),
+  //     )
+  //     ..loadRequest(Uri.parse('${APILIST.eventChooseSeat}$url'));
 
-    _controller = controller;
-  }
+  //   _controller = controller;
+  // }
 
   void _toggleDropdown() {
     setState(() {
@@ -241,12 +277,46 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
                     )
                   ]))
                 : Stack(
-                    children: [
-                      Container(
-                        width: double.maxFinite,
-                        color: Colors.red,
-                        child: WebViewWidget(controller: _controller),
-                      ),
+                   
+              children: [
+                InAppWebView(
+                  key: webViewKey,
+                  webViewEnvironment: webViewEnvironment,
+                  initialUrlRequest:
+                      URLRequest(url: WebUri.uri(Uri.parse('${APILIST.eventChooseSeat}${detail.id}'))),
+      
+                  initialUserScripts: UnmodifiableListView<UserScript>([]),
+                  initialSettings: settings,
+                 
+                  onWebViewCreated: (controller) async {
+                    webViewController = controller;
+                  },
+                  onLoadStart: (controller, url) {
+                    setState(() {
+                      this.url = url.toString();
+                      urlController.text = this.url;
+                    });
+                  },
+                  onUpdateVisitedHistory: (controller, url, isReload) {
+                                if (url.toString().length >= 65) {
+              Uri uri = Uri.parse(url.toString());
+              String? seatsParam = uri.queryParameters['seats'];
+
+              // Split the seats string into a List<String>
+              List<String> seats = seatsParam != null && seatsParam.isNotEmpty ? seatsParam.split(',') : [];
+              debugPrint('seats:$seats');
+              Provider.of<ProviderCoreModel>(context, listen: false).setSelectedSeat(seats);
+            }
+                  },
+             
+             
+      
+        
+            
+                ),
+               
+              
+            
                       Container(
                           margin: EdgeInsets.symmetric(vertical: ResponsiveFlutter.of(context).hp(2), horizontal: 16),
                           child: Row(

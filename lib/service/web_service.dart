@@ -206,11 +206,11 @@ class Webservice {
 
   /// Refreshes the authentication token.
   Future<dynamic> loadRefreshToken<T>(Resource<T> resource, BuildContext context) async {
+    String token = await application.getAccessToken();
     final Map<String, dynamic> body = <String, dynamic>{
-      // 'idToken': await application.getIdToken(),
+      'access_token': token,
       'refresh_token': await application.getRefreshToken()
     };
-
     try {
       final headers = {"Content-Type": "application/json", "charset": "UTF-8", "merchange": "portal"};
 

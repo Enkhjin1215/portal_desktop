@@ -33,7 +33,7 @@ class PaymentModel {
   List<PaymentModel> getPaymentMethods() {
     List<PaymentModel> payMethodList = [
       PaymentModel(name: 'QPay', isSvg: false, image: Assets.qpay, type: 'qpay', isQr: false, min: 0),
-      PaymentModel(name: 'SocialPay', isSvg: true, image: Assets.socialpay, type: 'socialpay', isQr: true, min: 0),
+      // PaymentModel(name: 'SocialPay', isSvg: true, image: Assets.socialpay, type: 'socialpay', isQr: true, min: 0),
       // PaymentModel(name: 'Apple Pay', isSvg: false, image: Assets.applePay, type: 'applepay', isQr: false, min: 0),
       PaymentModel(name: 'POS', isSvg: true, image: Assets.pos, type: 'pos', isQr: false, min: 0),
       PaymentModel(name: 'CASH', isSvg: true, image: Assets.cash, type: 'wire', isQr: false, min: 0),

@@ -50,9 +50,9 @@ dependencies:
   qr_flutter: ^4.1.0
   path_provider: ^2.0.11
   permission_handler: ^12.0.0
-  webview_flutter_android: ^4.3.4
-  webview_flutter_wkwebview: ^3.18.5
-  webview_flutter: ^4.10.0
+  # webview_flutter_android: ^4.3.4
+  # webview_flutter_wkwebview: ^3.18.5
+  # webview_flutter: ^4.10.0
   app_settings: ^5.1.1
   carousel_slider: ^5.0.0
   freezed: ^2.5.7
@@ -72,6 +72,9 @@ dependencies:
   package_info_plus: ^8.3.0
   zo_animated_border: ^0.0.6
   audioplayers: ^6.4.0
+  flutter_thermal_printer: ^1.2.4
+  flutter_inappwebview: ^6.1.5
+  
 
   # firebase_core: ^3.13.0
   # firebase_messaging: ^15.2.5
