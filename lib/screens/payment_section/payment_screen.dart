@@ -680,35 +680,17 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
     //   debugPrint('exception digipay:$e');
     // }
     //Validate requirements first
-    if (selectedVatType == -1 && (detail?.ebarimt?.isNotEmpty ?? false)) {
-      application.showToastAlert('НӨАТ сонгоно уу');
-      return;
-    }
-
-    if (selectedVatType == 1 && ebarimtOrgName.isEmpty) {
-      application.showToastAlert('Байгууллагын регистер ээ оруулна уу.');
-      return;
-    }
 
     if (invoice != null) {
-      if (invoice?.method != paymentMethod.type) {
-        print('go change method');
-        setState(() {
-          choosePaymentMethod = true;
-          selectedPaymentMethod = paymentMethod;
-        });
-        changeMethod(paymentMethod.type!);
-        // selectedPaymentMethod = paymentMethod;
-      }
-    } else {
-      // Set selected payment method
-      setState(() {
-        choosePaymentMethod = true;
-        selectedPaymentMethod = paymentMethod;
-      });
-      // Create new invoice
-      await _createInvoice(paymentMethod.type!);
+      await _deleteInvoice();
     }
+    // Set selected payment method
+    setState(() {
+      choosePaymentMethod = true;
+      selectedPaymentMethod = paymentMethod;
+    });
+    // Create new invoice
+    await _createInvoice(paymentMethod.type!);
   }
 
   changeMethod(String type) async {

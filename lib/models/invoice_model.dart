@@ -70,13 +70,13 @@ class QpayInvoice {
         });
   }
 
-  // static Resource<QpayInvoice> get getPendingInvoice {
-  //   return Resource(
-  //       url: APILIST.pendingInvoice,
-  //       parse: (response) {
-  //         final result = json.decode(utf8.decode(response.bodyBytes));
-  //         QpayInvoice detail = QpayInvoice.fromJson(result);
-  //         return detail;
-  //       });
-  // }
+  static Resource<QpayInvoice> get getPendingInvoice {
+    return Resource(
+        url: APILIST.pendingInvoice,
+        parse: (response) {
+          final result = json.decode(utf8.decode(response.bodyBytes));
+          QpayInvoice detail = QpayInvoice.fromJson(result);
+          return detail;
+        });
+  }
 }

@@ -73,7 +73,7 @@ class APILIST {
 
   static const purchaseList = '$baseUrl/kass/tickets';
 
-  // static const pendingInvoice = '$baseUrl/payment/pending';
+  static const pendingInvoice = '$baseUrl/payment/pending';
 
   static const checkInvoice = '$baseUrl/kass/check-invoice';
 

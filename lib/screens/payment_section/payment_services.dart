@@ -8,25 +8,25 @@ import 'package:url_launcher/url_launcher.dart';
 
 class PaymentService {
   // Check and delete any pending invoices
-  // Future<void> checkAndDeletePendingInvoice(BuildContext context) async {
-  //   QpayInvoice? pendingInv = await checkInvoice(context);
-  //   if (pendingInv != null) {
-  //     await deleteInvoice(context: context, invoiceId: pendingInv.id ?? '');
-  //   }
-  // }
+  Future<void> checkAndDeletePendingInvoice(BuildContext context) async {
+    QpayInvoice? pendingInv = await checkInvoice(context);
+    if (pendingInv != null) {
+      await deleteInvoice(context: context, invoiceId: pendingInv.id ?? '');
+    }
+  }
 
   // Check for pending invoices
-  // Future<QpayInvoice?> checkInvoice(BuildContext context) async {
-  //   try {
-  //     QpayInvoice? inv;
-  //     await Webservice().loadGet(QpayInvoice.getPendingInvoice, context).then((response) {
-  //       inv = response;
-  //     });
-  //     return inv;
-  //   } catch (e) {
-  //     return null;
-  //   }
-  // }
+  Future<QpayInvoice?> checkInvoice(BuildContext context) async {
+    try {
+      QpayInvoice? inv;
+      await Webservice().loadGet(QpayInvoice.getPendingInvoice, context).then((response) {
+        inv = response;
+      });
+      return inv;
+    } catch (e) {
+      return null;
+    }
+  }
 
   // Check payment status
   Future<bool> checkPayment({required BuildContext context, required String invoiceId}) async {
