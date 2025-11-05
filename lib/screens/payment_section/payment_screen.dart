@@ -165,22 +165,22 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
         const SizedBox(height: 16),
 
         SizedBox(
-            width: double.maxFinite,
-            height: 110,
-            child:ListView.builder(
-                  itemCount: payList.length,
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return PaymentMethodItem(
-                      paymentMethod: payList[index],
-                      onTap: () => _handlePaymentMethodSelection(payList[index]),
-                      textColor: theme.colorScheme.ticketDescColor,
-                      useBlackIconColor: true,
-                      totalAmt: _totalAmtCalc(coupon: promoNo),
-                    );
-                  }),
-            ),
+          width: double.maxFinite,
+          height: 110,
+          child: ListView.builder(
+              itemCount: payList.length,
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return PaymentMethodItem(
+                  paymentMethod: payList[index],
+                  onTap: () => _handlePaymentMethodSelection(payList[index]),
+                  textColor: theme.colorScheme.ticketDescColor,
+                  useBlackIconColor: true,
+                  totalAmt: _totalAmtCalc(coupon: promoNo),
+                );
+              }),
+        ),
       ],
     );
   }
@@ -188,7 +188,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
   Widget _buildPaymentMethodsSection(ThemeData theme) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
+      children: [
         Text(
           getTranslated(context, 'paymentMethod'),
           style: TextStyles.textFt16Med.textColor(theme.colorScheme.ticketDescColor.withOpacity(0.7)),
@@ -200,26 +200,26 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
 
         // Other payment methods grid
         SizedBox(
-            width: double.maxFinite,
-            height: 105,
-            child: ListView.builder(
-                  itemCount: payMethodsList.length,
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    // Skip Apple Pay as it has its own button
-                    if (payMethodsList[index].type == 'applepay') {
-                      return const SizedBox();
-                    }
+          width: double.maxFinite,
+          height: 105,
+          child: ListView.builder(
+              itemCount: payMethodsList.length,
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                // Skip Apple Pay as it has its own button
+                if (payMethodsList[index].type == 'applepay') {
+                  return const SizedBox();
+                }
 
-                    return PaymentMethodItem(
-                      paymentMethod: payMethodsList[index],
-                      onTap: () => _handlePaymentMethodSelection(payMethodsList[index]),
-                      textColor: theme.colorScheme.ticketDescColor,
-                      totalAmt: _totalAmtCalc(coupon: promoNo),
-                    );
-                  }),
-            ),
+                return PaymentMethodItem(
+                  paymentMethod: payMethodsList[index],
+                  onTap: () => _handlePaymentMethodSelection(payMethodsList[index]),
+                  textColor: theme.colorScheme.ticketDescColor,
+                  totalAmt: _totalAmtCalc(coupon: promoNo),
+                );
+              }),
+        ),
       ],
     );
   }
@@ -288,15 +288,21 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
                           textAlign: TextAlign.center,
                         ),
                       )),
-                      InkWell(
+                  InkWell(
                       onTap: () async {
+                        NavKey.navKey.currentState!.pushNamed(testPrintRoute, arguments: {
+                          "name": detail?.name ?? '',
+                          "seats": data!['templates'].first['seats'],
+                          "date": Func.toDateStr(detail?.startDate ?? DateTime.now().toString())
+                        });
                         // await _deleteInvoice();
                       },
                       child: Container(
+                        margin: const EdgeInsets.only(top: 24),
                         width: 250,
                         padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 12),
                         decoration: BoxDecoration(
-                            color: Colors.red.withValues(alpha: 0.7),
+                            color: Colors.blue.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(24),
                             border: Border.all(color: Colors.white)),
                         child: Text(
@@ -878,9 +884,13 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
                           textAlign: TextAlign.center,
                         ),
                       )),
-                         InkWell(
+                  InkWell(
                       onTap: () async {
-                        NavKey.navKey.currentState!.pushNamed(testPrintRoute, arguments: {"name":detail?.name??'', "seats":data!['templates'].first['seats'], "date":Func.toDateStr(detail?.startDate??DateTime.now().toString())});
+                        NavKey.navKey.currentState!.pushNamed(testPrintRoute, arguments: {
+                          "name": detail?.name ?? '',
+                          "seats": data!['templates'].first['seats'],
+                          "date": Func.toDateStr(detail?.startDate ?? DateTime.now().toString())
+                        });
                         // await _deleteInvoice();
                       },
                       child: Container(

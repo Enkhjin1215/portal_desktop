@@ -7,8 +7,6 @@ import 'package:flutter_thermal_printer/flutter_thermal_printer.dart';
 import 'package:flutter_thermal_printer/utils/printer.dart';
 import 'package:esc_pos_utils_plus/esc_pos_utils_plus.dart';
 
-
-
 class UsbPrinterScreen extends StatefulWidget {
   const UsbPrinterScreen({super.key});
 
@@ -27,13 +25,12 @@ class _UsbPrinterScreenState extends State<UsbPrinterScreen> {
   @override
   void initState() {
     super.initState();
-       Future.delayed(Duration.zero, (() {
+    Future.delayed(Duration.zero, (() {
       dynamic args = ModalRoute.of(context)?.settings.arguments;
-          _scanPrinters();
-          seats = args['seats'];
-          eventName = args['name'];
-          eventDate = args['date'];
-
+      _scanPrinters();
+      seats = args['seats'] is int ? [] : args['seats'];
+      eventName = args['name'] ?? 'null';
+      eventDate = args['date'] ?? DateTime.now().toString();
 
       setState(() {});
       // init();
@@ -48,8 +45,8 @@ class _UsbPrinterScreenState extends State<UsbPrinterScreen> {
     await printerPlugin.getPrinters(connectionTypes: [ConnectionType.USB]);
 
     // Listen to printer updates
-    _printerStreamSubscription =
-        printerPlugin.devicesStream.listen((List<Printer> devices) {
+    _printerStreamSubscription = printerPlugin.devicesStream.listen((List<Printer> devices) {
+      print('devices:${devices}');
       setState(() {
         printers = devices;
       });
@@ -71,65 +68,65 @@ class _UsbPrinterScreenState extends State<UsbPrinterScreen> {
       final generator = Generator(PaperSize.mm80, profile);
 
       List<int> bytes = [];
-  bytes += generator.text(
-    'PORTAL.MN',
-    styles: const PosStyles(
-      align: PosAlign.center,
-      bold: true,
-      height: PosTextSize.size2,
-      width: PosTextSize.size2,
-    ),
-  );
+      bytes += generator.text(
+        'PORTAL.MN',
+        styles: const PosStyles(
+          align: PosAlign.center,
+          bold: true,
+          height: PosTextSize.size2,
+          width: PosTextSize.size2,
+        ),
+      );
 
-  bytes += generator.feed(1);
+      bytes += generator.feed(1);
 
-  // Event name
-  bytes += generator.text(
-    eventName,
-    styles: const PosStyles(align: PosAlign.center, bold: true),
-  );
+      // Event name
+      bytes += generator.text(
+        eventName,
+        styles: const PosStyles(align: PosAlign.center, bold: true),
+      );
 
-  bytes += generator.feed(1);
-    bytes += generator.text(
-    eventDate,
-    styles: const PosStyles(align: PosAlign.center, bold: true),
-  );
+      bytes += generator.feed(1);
+      bytes += generator.text(
+        eventDate,
+        styles: const PosStyles(align: PosAlign.center, bold: true),
+      );
 
-  bytes += generator.feed(1);
+      bytes += generator.feed(1);
 
-  for (int i = 0; i < seats.length; i++) {
-    final seat = seats[i];
+      for (int i = 0; i < seats.length; i++) {
+        final seat = seats[i];
 
-    // Split by "-" first
-    final parts = seat.split('-'); // e.g., ["F1", "SG1", "R2", "S7"]
+        // Split by "-" first
+        final parts = seat.split('-'); // e.g., ["F1", "SG1", "R2", "S7"]
 
-    List<String> formattedParts = [];
+        List<String> formattedParts = [];
 
-    for (var part in parts) {
-      // Separate letters from numbers
-      final match = RegExp(r'([A-Za-z]+)([0-9]+)').firstMatch(part);
-      if (match != null) {
-        final letter = match.group(1);
-        final number = match.group(2);
-        formattedParts.add('$letter - $number');
-      } else {
-        // If no match, just add part as-is
-        formattedParts.add(part);
+        for (var part in parts) {
+          // Separate letters from numbers
+          final match = RegExp(r'([A-Za-z]+)([0-9]+)').firstMatch(part);
+          if (match != null) {
+            final letter = match.group(1);
+            final number = match.group(2);
+            formattedParts.add('$letter - $number');
+          } else {
+            // If no match, just add part as-is
+            formattedParts.add(part);
+          }
+        }
+
+        // Join parts with comma
+        final seatLine = 'Seat ${i + 1}: ${formattedParts.join(', ')}';
+
+        bytes += generator.text(
+          seatLine,
+          styles: const PosStyles(align: PosAlign.left),
+        );
       }
-    }
-
-    // Join parts with comma
-    final seatLine = 'Seat ${i + 1}: ${formattedParts.join(', ')}';
-
-    bytes += generator.text(
-      seatLine,
-      styles: const PosStyles(align: PosAlign.left),
-    );
-  }
-  bytes += generator.feed(2);
-  bytes += generator.text('Thank You', styles: const PosStyles(align: PosAlign.center));
-  bytes += generator.hr();
-  bytes += generator.cut();
+      bytes += generator.feed(2);
+      bytes += generator.text('Thank You', styles: const PosStyles(align: PosAlign.center));
+      bytes += generator.hr();
+      bytes += generator.cut();
 
       await printerPlugin.printData(selectedPrinter!, bytes);
       await printerPlugin.disconnect(selectedPrinter!);
@@ -183,8 +180,7 @@ class _UsbPrinterScreenState extends State<UsbPrinterScreen> {
                         final p = printers[index];
                         return ListTile(
                           title: Text(p.name ?? "Unknown"),
-                          subtitle:
-                              Text("Connected: ${p.isConnected ?? false}"),
+                          subtitle: Text("Connected: ${p.isConnected ?? false}"),
                           leading: Radio<Printer>(
                             value: p,
                             groupValue: selectedPrinter,

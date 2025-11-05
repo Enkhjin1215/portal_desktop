@@ -158,13 +158,15 @@ class Application implements Constants {
     sharedPref.setString(Constants.storageKey + Constants.accessToken, token);
   }
 
-  getRefreshToken() async {
+  Future<String> getRefreshToken() async {
     final SharedPreferences sharedPref = await _sharedPref;
     return sharedPref.getString(Constants.storageKey + Constants.refreshToken) ?? '';
     // return accessToken;
   }
 
   setRefreshToken(String token) async {
+    print('----------------->ene bol baij bolohgui zui 2l: $token');
+
     final SharedPreferences sharedPref = await _sharedPref;
     sharedPref.setString(Constants.storageKey + Constants.refreshToken, token);
   }
