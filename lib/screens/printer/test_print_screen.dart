@@ -24,6 +24,8 @@ class _UsbPrinterScreenState extends State<UsbPrinterScreen> {
   List<dynamic> seats = [];
   String eventName = '';
   String eventDate = '';
+  String texs = '';
+
   @override
   void initState() {
     super.initState();
@@ -56,12 +58,12 @@ class _UsbPrinterScreenState extends State<UsbPrinterScreen> {
   }
 
   Future<void> _connectAndPrint() async {
-    if (selectedPrinter == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Please select a printer first.")),
-      );
-      return;
-    }
+    // if (selectedPrinter == null) {
+    //   ScaffoldMessenger.of(context).showSnackBar(
+    //     const SnackBar(content: Text("Please select a printer first.")),
+    //   );
+    //   return;
+    // }
 
     try {
       await printerPlugin.connect(selectedPrinter!);
@@ -129,6 +131,8 @@ class _UsbPrinterScreenState extends State<UsbPrinterScreen> {
       bytes += generator.text('Thank You', styles: const PosStyles(align: PosAlign.center));
       bytes += generator.hr();
       bytes += generator.cut();
+      print('bytes:${bytes.toString()}');
+
 
       await printerPlugin.printData(selectedPrinter!, bytes);
       await printerPlugin.disconnect(selectedPrinter!);
