@@ -99,32 +99,70 @@ class _UsbPrinterScreenState extends State<UsbPrinterScreen> {
       for (int i = 0; i < seats.length; i++) {
         final seat = seats[i];
 
-        // Split by "-" first
-        final parts = seat.split('-'); // e.g., ["F1", "SG1", "R2", "S7"]
-
-        List<String> formattedParts = [];
+        // Split by '-'
+        final parts = seat.split('-');
+        Map<String, String> data = {};
 
         for (var part in parts) {
-          // Separate letters from numbers
-          final match = RegExp(r'([A-Za-z]+)([0-9]+)').firstMatch(part);
+          // Match pattern like F1, S2, R3, s5, SG, etc.
+          final match = RegExp(r'([A-Za-z]+)([0-9]*)').firstMatch(part);
           if (match != null) {
-            final letter = match.group(1);
-            final number = match.group(2);
-            formattedParts.add('$letter - $number');
-          } else {
-            // If no match, just add part as-is
-            formattedParts.add(part);
+            final letter = match.group(1) ?? '';
+            final number = match.group(2) ?? '';
+
+            // Save parsed parts by their type
+            data[letter] = number;
           }
         }
 
-        // Join parts with comma
-        final seatLine = 'Seat ${i + 1}: ${formattedParts.join(', ')}';
+        // Detect whether it’s the full format or short format
+        bool hasFloor = data.keys.any((key) => key.toUpperCase().startsWith('F'));
+        bool hasSmallS = data.keys.any((key) => key == 's');
+        bool hasSector = data.keys.any((key) => key.toUpperCase().startsWith('S') && key != 's');
 
+        // Print Seat number
         bytes += generator.text(
-          seatLine,
-          styles: const PosStyles(align: PosAlign.left),
+          'Seat ${i + 1}:',
+          styles: const PosStyles(align: PosAlign.left, bold: true),
         );
+
+        if (hasFloor && hasSmallS && hasSector) {
+          // Format: F*-S*-R*-s*
+          // Example: F1-SA-R1-s6
+          final floorNum = data.entries.firstWhere((e) => e.key.toUpperCase().startsWith('F'), orElse: () => const MapEntry('', '')).value;
+          final sectorLetter =
+              data.entries.firstWhere((e) => e.key.toUpperCase().startsWith('S') && e.key != 's', orElse: () => const MapEntry('', '')).key;
+          final sectorValue =
+              data.entries.firstWhere((e) => e.key.toUpperCase().startsWith('S') && e.key != 's', orElse: () => const MapEntry('', '')).value;
+          final rowNum = data['R'] ?? '';
+          final seatNum = data['s'] ?? '';
+
+          final sectorLabel = sectorValue.isNotEmpty ? '$sectorLetter$sectorValue' : sectorLetter!.substring(1);
+
+          bytes += generator.text('   Davhar - $floorNum');
+          bytes += generator.text('   Sector - ${sectorLabel.substring(sectorLabel.length - 1)}');
+          bytes += generator.text('   Egnee - $rowNum');
+          bytes += generator.text('   Suudal - $seatNum');
+        } else {
+          // Short format like V1-R2-S14 or SG-R3-S15
+          final keys = data.keys.toList();
+
+          for (var key in keys) {
+            if (key.toUpperCase().startsWith('V')) {
+              bytes += generator.text('   VIP - ${data[key]}');
+            } else if (key.toUpperCase().startsWith('SG') || (key.toUpperCase().startsWith('S') && !key.contains(RegExp(r'[0-9]')))) {
+              bytes += generator.text('   Sector - ${key.replaceAll("S", "")}');
+            } else if (key.toUpperCase().startsWith('R')) {
+              bytes += generator.text('   Egnee - ${data[key]}');
+            } else if (key.toUpperCase().startsWith('s')) {
+              bytes += generator.text('   Suudal - ${data[key]}');
+            }
+          }
+        }
+
+        bytes += generator.text(''); // Add spacing
       }
+
       bytes += generator.feed(2);
       bytes += generator.text('Thank You', styles: const PosStyles(align: PosAlign.center));
       bytes += generator.hr();
@@ -137,7 +175,7 @@ class _UsbPrinterScreenState extends State<UsbPrinterScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text("Printed successfully!")),
         );
-        NavKey.navKey.currentState!.pushNamedAndRemoveUntil(homeRoute, (route)=>false);
+        NavKey.navKey.currentState!.pushNamedAndRemoveUntil(homeRoute, (route) => false);
       }
     } catch (e) {
       if (mounted) {
