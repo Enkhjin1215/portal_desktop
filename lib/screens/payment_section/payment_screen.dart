@@ -34,6 +34,8 @@ import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:textstyle_extensions/textstyle_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:cyrtranslit/cyrtranslit.dart' as cyrtranslit;
+
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
@@ -290,9 +292,12 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
                       )),
                   InkWell(
                       onTap: () async {
+                                   final allSeats = (data!["templates"] as List)
+      .expand((template) => template["seats"] as List)
+      .toList();
                         NavKey.navKey.currentState!.pushNamed(testPrintRoute, arguments: {
-                          "name": detail?.name ?? '',
-                          "seats": data!['templates'].first['seats'],
+                          "name":cyrtranslit.cyr2Lat( detail?.name ?? '',langCode: "mn"),
+                          "seats": allSeats,
                           "date": Func.toDateStr(detail?.startDate ?? DateTime.now().toString())
                         });
                         // await _deleteInvoice();
@@ -886,9 +891,12 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
                       )),
                   InkWell(
                       onTap: () async {
+                        final allSeats = (data!["templates"] as List)
+      .expand((template) => template["seats"] as List)
+      .toList();
                         NavKey.navKey.currentState!.pushNamed(testPrintRoute, arguments: {
-                          "name": detail?.name ?? '',
-                          "seats": data!['templates'].first['seats'],
+                          "name":cyrtranslit.cyr2Lat( detail?.name ?? '',langCode: "mn"),
+                          "seats": allSeats,
                           "date": Func.toDateStr(detail?.startDate ?? DateTime.now().toString())
                         });
                         // await _deleteInvoice();

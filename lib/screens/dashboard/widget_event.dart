@@ -164,7 +164,7 @@ class _EventState extends State<Event> {
                               Row(
                                 children: [
                                   const SizedBox(width: 20),
-                                  Text(
+                              Text(
                                     item.name?.toUpperCase() ?? '',
                                     style: TextStyles.textFt15Bold.textColor(theme.colorScheme.neutral200),
                                   ),

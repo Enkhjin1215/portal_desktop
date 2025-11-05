@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_thermal_printer/flutter_thermal_printer.dart';
 import 'package:flutter_thermal_printer/utils/printer.dart';
 import 'package:esc_pos_utils_plus/esc_pos_utils_plus.dart';
+import 'package:portal/helper/constant.dart';
+import 'package:portal/router/route_path.dart';
 
 class UsbPrinterScreen extends StatefulWidget {
   const UsbPrinterScreen({super.key});
@@ -135,6 +137,7 @@ class _UsbPrinterScreenState extends State<UsbPrinterScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text("Printed successfully!")),
         );
+        NavKey.navKey.currentState!.pushNamedAndRemoveUntil(homeRoute, (route)=>false);
       }
     } catch (e) {
       if (mounted) {
