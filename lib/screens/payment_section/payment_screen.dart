@@ -291,11 +291,11 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
                       )),
                   InkWell(
                       onTap: () async {
-                        // final allSeats = (data!["templates"] as List).expand((template) => template["seats"] as List).toList();
+                        final allSeats = (data!["templates"] as List).expand((template) => template["seats"] as List).toList();
                         NavKey.navKey.currentState!.pushNamed(testPrintRoute, arguments: {
                           "name": cyrtranslit.cyr2Lat(detail?.name ?? '', langCode: "mn"),
-                          // "seats": allSeats,
-                          "seats": ["F1-SG-R2-s10", "F2-SB-R1-s11"],
+                          "seats": allSeats,
+                          // "seats": ["F1-SG-R2-s10", "F2-SB-R1-s11"],
                           "date": Func.toDateStr(detail?.startDate ?? DateTime.now().toString())
                         });
                         // await _deleteInvoice();
@@ -871,10 +871,10 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
                       )),
                   InkWell(
                       onTap: () async {
-                        // final allSeats = (data!["templates"] as List).expand((template) => template["seats"] as List).toList();
+                        final allSeats = (data!["templates"] as List).expand((template) => template["seats"] as List).toList();
                         NavKey.navKey.currentState!.pushNamed(testPrintRoute, arguments: {
                           "name": cyrtranslit.cyr2Lat(detail?.name ?? '', langCode: "mn"),
-                          "seats": ["F1-SG-R2-s10", "F2-SB-R1-s11"],
+                          "seats": allSeats,
                           "date": Func.toDateStr(detail?.startDate ?? DateTime.now().toString())
                         });
                         // await _deleteInvoice();
