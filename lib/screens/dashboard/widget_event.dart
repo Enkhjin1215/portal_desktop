@@ -1,5 +1,7 @@
+import 'package:cyrtranslit/cyrtranslit.dart' as cyrtranslit;
 import 'package:flutter/material.dart';
 import 'package:portal/helper/constant.dart';
+import 'package:portal/helper/func.dart';
 import 'package:portal/helper/text_styles.dart';
 import 'package:portal/language/language_constant.dart';
 import 'package:portal/models/event_model.dart';
@@ -31,16 +33,16 @@ class _EventState extends State<Event> {
   @override
   Widget build(BuildContext context) {
     List<EventModel> list = Provider.of<ProviderCoreModel>(context, listen: true).getEventList();
-    return  GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 2, crossAxisSpacing: 20),
-          padding: EdgeInsets.zero,
-          physics: const BouncingScrollPhysics(),
-          shrinkWrap: true,
-          itemCount: list.length,
-          itemBuilder: (context, index) {
-            return _item(list[index], index);
-          },
-        );
+    return GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 2, crossAxisSpacing: 20),
+      padding: EdgeInsets.zero,
+      physics: const BouncingScrollPhysics(),
+      shrinkWrap: true,
+      itemCount: list.length,
+      itemBuilder: (context, index) {
+        return _item(list[index], index);
+      },
+    );
   }
 
   String emoji(String tag) {
@@ -62,7 +64,12 @@ class _EventState extends State<Event> {
     ThemeData theme = Provider.of<ThemeNotifier>(context, listen: true).getTheme();
     return GestureDetector(
         onTap: () {
-          // NavKey.navKey.currentState!.pushNamed(testPrintRoute);
+          // NavKey.navKey.currentState!.pushNamed(testPrintRoute, arguments: {
+          //   "name": cyrtranslit.cyr2Lat('Comeback is Real', langCode: "mn"),
+          //   // "seats": allSeats,
+          //   "seats": ["F1-SA2-R7-s4", "F1-SC1-R8-s6"],
+          //   "date": Func.toDateStr(DateTime.now().toString())
+          // });
           NavKey.navKey.currentState!.pushNamed(eventRoute, arguments: {'id': item.id, 'from': 0});
         },
         child: Container(
@@ -164,7 +171,7 @@ class _EventState extends State<Event> {
                               Row(
                                 children: [
                                   const SizedBox(width: 20),
-                              Text(
+                                  Text(
                                     item.name?.toUpperCase() ?? '',
                                     style: TextStyles.textFt15Bold.textColor(theme.colorScheme.neutral200),
                                   ),

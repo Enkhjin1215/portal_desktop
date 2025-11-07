@@ -7,17 +7,21 @@ class APILIST {
 
   static const authService = 'https://client.portal.mn/v1';
 
+  static const adminUrl = 'https://admin.portal.mn/v1';
+
   // static const authService = 'https://st-client.portal.mn/v1';
 
   // static const baseUrl = 'https://st-client.portal.mn/v1';
 
+  // static const adminUrl = 'https://st-admin.portal.mn/v1';
+
   static const webUrl = 'https://www.portal.mn/';
 
-  static const refreshToken = 'https://admin.portal.mn/v1/auth/loginWithRefreshToken';
+  static const refreshToken = '$adminUrl/auth/loginWithRefreshToken';
 
   static const authcheckMail = '$authService/auth/check';
 
-  static const authLogin = 'https://admin.portal.mn/v1/auth/login';
+  static const authLogin = '$adminUrl/auth/login';
 
   static const authCheckUsername = '$baseUrl/user/check-username';
 

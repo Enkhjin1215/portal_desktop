@@ -48,7 +48,7 @@ dependencies:
   xml: ^6.5.0
   interactable_svg: ^0.0.7
   qr_flutter: ^4.1.0
-  path_provider: ^2.0.11
+  path_provider: ^2.1.5
   permission_handler: ^12.0.0
   # webview_flutter_android: ^4.3.4
   # webview_flutter_wkwebview: ^3.18.5
@@ -74,6 +74,7 @@ dependencies:
   audioplayers: ^6.4.0
   flutter_thermal_printer: ^1.2.4
   flutter_inappwebview: ^6.1.5
+  image: ^4.5.4
   
 
   # firebase_core: ^3.13.0

@@ -120,4 +120,7 @@ class Assets {
   static const String button1Svg = 'assets/images/component/Button1.svg';
   static const String button2Svg = 'assets/images/component/Button2.svg';
   static const String button3Svg = 'assets/images/component/Button3.svg';
+
+  static const String logoPng = 'assets/images/dump/logo.png';
+  static const String logoPng2 = 'assets/images/dump/output.png';
 }
