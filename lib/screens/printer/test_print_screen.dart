@@ -300,10 +300,10 @@ class _UsbPrinterScreenState extends State<UsbPrinterScreen> {
           // Write the print data
           await printFile.writeAsBytes(bytes);
 
-          print('Printing to CUPS printer: $selectedMacOSPrinter');
-          print('Print file created: ${printFile.path}');
-          print('File exists: ${await printFile.exists()}');
-          print('File size: ${await printFile.length()} bytes');
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Printing to CUPS printer: $selectedMacOSPrinter')));
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(('Print file created: ${printFile.path}'))));
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(('File exists: ${await printFile.exists()}'))));
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(('File size: ${await printFile.length()} bytes'))));
 
           // Print using lp command
           final result = await Process.run(
@@ -311,22 +311,22 @@ class _UsbPrinterScreenState extends State<UsbPrinterScreen> {
             ['-c', '/usr/bin/lp -d "${selectedMacOSPrinter!}" -o raw "${printFile.path}"'],
           );
 
-          print('lp exit code: ${result.exitCode}');
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(('lp exit code: ${result.exitCode}'))));
           if (result.stdout.toString().isNotEmpty) {
-            print('lp stdout: ${result.stdout}');
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(('lp stdout: ${result.stdout}'))));
           }
           if (result.stderr.toString().isNotEmpty) {
-            print('lp stderr: ${result.stderr}');
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(('lp stderr: ${result.stderr}'))));
           }
 
           // Clean up
           try {
             if (await printFile.exists()) {
               await printFile.delete();
-              print('Print file cleaned up');
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(('Print file cleaned up'))));
             }
           } catch (e) {
-            print('Cleanup error: $e');
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(('Cleanup error: $e'))));
           }
 
           if (mounted) {
@@ -334,7 +334,7 @@ class _UsbPrinterScreenState extends State<UsbPrinterScreen> {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text("Printed via macOS CUPS successfully!")),
               );
-              NavKey.navKey.currentState!.pushNamedAndRemoveUntil(homeRoute, (route) => false);
+              // NavKey.navKey.currentState!.pushNamedAndRemoveUntil(homeRoute, (route) => false);
             } else {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text("Print error: ${result.stderr}")),

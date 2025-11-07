@@ -15,6 +15,8 @@ class APILIST {
 
   // static const adminUrl = 'https://st-admin.portal.mn/v1';
 
+  static const eventChooseSeat = 'https://portal.mn/seat-picker/';
+
   static const webUrl = 'https://www.portal.mn/';
 
   static const refreshToken = '$adminUrl/auth/loginWithRefreshToken';
@@ -70,8 +72,6 @@ class APILIST {
   static const userbankVerifyAccnt = '$baseUrl/user-bank/verify-bank-account';
 
   static const userbankWithdraw = '$baseUrl/user-bank/withdraw';
-
-  static const eventChooseSeat = 'https://portal.mn/seat-picker/';
 
   static const deleteInvoice = '$baseUrl/kass/discard/';
 
