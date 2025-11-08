@@ -1,4 +1,5 @@
 import 'dart:collection';
+import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +24,9 @@ import 'package:portal/service/api_list.dart';
 import 'package:provider/provider.dart';
 import 'package:textstyle_extensions/textstyle_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:flutter_inappwebview_windows/flutter_inappwebview_windows.dart';
+import 'package:path/path.dart' as path;
 
+// import 'package:flutter_inappwebview_windows/flutter_inappwebview_windows.dart';
 
 class EventChooseSeatScreen extends StatefulWidget {
   const EventChooseSeatScreen({super.key});
@@ -33,7 +35,8 @@ class EventChooseSeatScreen extends StatefulWidget {
   State<EventChooseSeatScreen> createState() => _EventChooseSeatScreenState();
 }
 
-class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with SingleTickerProviderStateMixin {
+class _EventChooseSeatScreenState extends State<EventChooseSeatScreen>
+    with SingleTickerProviderStateMixin {
   bool isReady = false;
   late EventDetail detail;
   final GlobalKey webViewKey = GlobalKey();
@@ -49,7 +52,7 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
   TextEditingController teamNameController = TextEditingController();
   TextEditingController contactNumberController = TextEditingController();
   WebViewEnvironment? webViewEnvironment;
-    InAppWebViewController? webViewController;
+  InAppWebViewController? webViewController;
   InAppWebViewSettings settings = InAppWebViewSettings(
       isInspectable: kDebugMode,
       mediaPlaybackRequiresUserGesture: false,
@@ -60,7 +63,6 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
   String url = "";
   double progress = 0;
   final urlController = TextEditingController();
-
 
   @override
   void initState() {
@@ -76,20 +78,26 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
 
       teamNameController.text = await application.getQuizName();
       contactNumberController.text = await application.getQuizNumber();
+      var userDataPath = path.join(
+          Platform.environment['APPDATA']!, // C:\Users\<User>\AppData\Roaming
+          'PortalDesktop',
+          'EBWebView');
       setState(() {});
-      Provider.of<ProviderCoreModel>(context, listen: false).setSelectedSeat([]);
-        if (!kIsWeb && defaultTargetPlatform == TargetPlatform.windows) {
-    final availableVersion = await WebViewEnvironment.getAvailableVersion();
-    assert(availableVersion != null,
-        'Failed to find an installed WebView2 runtime or non-stable Microsoft Edge installation.');
+      Provider.of<ProviderCoreModel>(context, listen: false)
+          .setSelectedSeat([]);
+      if (!kIsWeb && defaultTargetPlatform == TargetPlatform.windows) {
+        final availableVersion = await WebViewEnvironment.getAvailableVersion();
+        assert(availableVersion != null,
+            'Failed to find an installed WebView2 runtime or non-stable Microsoft Edge installation.');
 
-    webViewEnvironment = await WebViewEnvironment.create(
-        settings: WebViewEnvironmentSettings(userDataFolder: 'custom_path'));
-  }
+        webViewEnvironment = await WebViewEnvironment.create(
+          settings: WebViewEnvironmentSettings(userDataFolder: userDataPath),
+        );
+      }
 
-  if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
-    await InAppWebViewController.setWebContentsDebuggingEnabled(kDebugMode);
-  }
+      if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
+        await InAppWebViewController.setWebContentsDebuggingEnabled(kDebugMode);
+      }
       // init(detail.id!);
       // init();
     }));
@@ -114,7 +122,6 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
   void dispose() {
     body = [];
     rawBody = [];
-
 
     _animationController.dispose();
     teamNameController.dispose();
@@ -177,7 +184,8 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
     // body = rawBody;
 
     for (int j = 0; j < selectedSeats.length; j++) {
-      Ticket ticket = Utils.getTicketTemplateBySeat(detail.tickets!, selectedSeats[j]);
+      Ticket ticket =
+          Utils.getTicketTemplateBySeat(detail.tickets!, selectedSeats[j]);
       Map<String, dynamic> item = {};
       item['templateId'] = ticket.id;
       item['seats'] = selectedSeats[j];
@@ -211,7 +219,8 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
     data['templates'] = result;
     data['eventId'] = detail.id;
     print('data:$data');
-    NavKey.navKey.currentState!.pushNamed(paymentRoute, arguments: {'data': data, 'event': detail, 'promo': '', 'ebarimt': ''});
+    NavKey.navKey.currentState!.pushNamed(paymentRoute,
+        arguments: {'data': data, 'event': detail, 'promo': '', 'ebarimt': ''});
   }
 
   Widget _buildBulletPoint(String? color, String? text) {
@@ -231,7 +240,8 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
                       color: Utils.hexToColor(color),
                       borderRadius: BorderRadius.circular(60),
                     )),
-                const Text(' - ', style: TextStyle(fontWeight: FontWeight.bold)),
+                const Text(' - ',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
                 Expanded(child: Text(Func.toMoneyStr(text ?? ''))),
               ],
             ),
@@ -241,15 +251,19 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
   totalCal(List<String> seats) {
     num amt = 0;
     for (int i = 0; i < seats.length; i++) {
-      amt += Utils.getTicketTemplateBySeat(detail.tickets!, seats[i]).sellPrice!.amt!;
+      amt += Utils.getTicketTemplateBySeat(detail.tickets!, seats[i])
+          .sellPrice!
+          .amt!;
     }
     return amt.toString();
   }
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Provider.of<ThemeNotifier>(context, listen: true).getTheme();
-    selectedSeats = Provider.of<ProviderCoreModel>(context, listen: true).getSelectedSeat();
+    ThemeData theme =
+        Provider.of<ThemeNotifier>(context, listen: true).getTheme();
+    selectedSeats =
+        Provider.of<ProviderCoreModel>(context, listen: true).getSelectedSeat();
     return CustomScaffold(
         appBar: EmptyAppBar(context: context),
         padding: EdgeInsets.zero,
@@ -259,66 +273,68 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
             color: theme.colorScheme.backgroundColor,
             child: !isReady
                 ? Center(
-                    child: Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center, children: [
-                    SizedBox(
-                      height: 16,
-                      width: 16,
-                      child: CircularProgressIndicator(
-                        strokeWidth: 3,
-                        color: theme.colorScheme.whiteColor,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      '$prog/100',
-                      style: TextStyles.textFt16Bold.textColor(Colors.white),
-                    )
-                  ]))
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                        SizedBox(
+                          height: 16,
+                          width: 16,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 3,
+                            color: theme.colorScheme.whiteColor,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          '$prog/100',
+                          style:
+                              TextStyles.textFt16Bold.textColor(Colors.white),
+                        )
+                      ]))
                 : Stack(
-                   
-              children: [
-                InAppWebView(
-                  key: webViewKey,
-                  webViewEnvironment: webViewEnvironment,
-                  initialUrlRequest:
-                      URLRequest(url: WebUri.uri(Uri.parse('${APILIST.eventChooseSeat}${detail.id}'))),
-      
-                  initialUserScripts: UnmodifiableListView<UserScript>([]),
-                  initialSettings: settings,
-                 
-                  onWebViewCreated: (controller) async {
-                    webViewController = controller;
-                  },
-                  onLoadStart: (controller, url) {
-                    setState(() {
-                      this.url = url.toString();
-                      urlController.text = this.url;
-                    });
-                  },
-                  onUpdateVisitedHistory: (controller, url, isReload) {
-                                if (url.toString().length >= 65) {
-              Uri uri = Uri.parse(url.toString());
-              String? seatsParam = uri.queryParameters['seats'];
+                    children: [
+                      InAppWebView(
+                        key: webViewKey,
+                        webViewEnvironment: webViewEnvironment,
+                        initialUrlRequest: URLRequest(
+                            url: WebUri.uri(Uri.parse(
+                                '${APILIST.eventChooseSeat}${detail.id}'))),
+                        initialUserScripts:
+                            UnmodifiableListView<UserScript>([]),
+                        initialSettings: settings,
+                        onWebViewCreated: (controller) async {
+                          webViewController = controller;
+                        },
+                        onLoadStart: (controller, url) {
+                          setState(() {
+                            this.url = url.toString();
+                            urlController.text = this.url;
+                          });
+                        },
+                        onUpdateVisitedHistory: (controller, url, isReload) {
+                          if (url.toString().length >= 65) {
+                            Uri uri = Uri.parse(url.toString());
+                            String? seatsParam = uri.queryParameters['seats'];
 
-              // Split the seats string into a List<String>
-              List<String> seats = seatsParam != null && seatsParam.isNotEmpty ? seatsParam.split(',') : [];
-              debugPrint('seats:$seats');
-              Provider.of<ProviderCoreModel>(context, listen: false).setSelectedSeat(seats);
-            }
-                  },
-             
-             
-      
-        
-            
-                ),
-               
-              
-            
+                            // Split the seats string into a List<String>
+                            List<String> seats =
+                                seatsParam != null && seatsParam.isNotEmpty
+                                    ? seatsParam.split(',')
+                                    : [];
+                            debugPrint('seats:$seats');
+                            Provider.of<ProviderCoreModel>(context,
+                                    listen: false)
+                                .setSelectedSeat(seats);
+                          }
+                        },
+                      ),
                       Container(
-                          margin: EdgeInsets.symmetric(vertical: ResponsiveFlutter.of(context).hp(2), horizontal: 16),
+                          margin: EdgeInsets.symmetric(
+                              vertical: ResponsiveFlutter.of(context).hp(2),
+                              horizontal: 16),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -327,10 +343,14 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
                                   NavKey.navKey.currentState!.pop();
                                 },
                                 child: Container(
-                                  padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 4),
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 2, horizontal: 4),
                                   width: 50,
                                   height: 50,
-                                  decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.12), borderRadius: BorderRadius.circular(60)),
+                                  decoration: BoxDecoration(
+                                      color:
+                                          Colors.white.withValues(alpha: 0.12),
+                                      borderRadius: BorderRadius.circular(60)),
                                   child: SvgPicture.asset(
                                     Assets.backButton,
                                     color: Colors.white,
@@ -340,10 +360,15 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
                               GestureDetector(
                                   onTap: _toggleDropdown,
                                   child: Container(
-                                    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 12, horizontal: 8),
                                     width: 50,
                                     height: 50,
-                                    decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.12), borderRadius: BorderRadius.circular(60)),
+                                    decoration: BoxDecoration(
+                                        color: Colors.white
+                                            .withValues(alpha: 0.12),
+                                        borderRadius:
+                                            BorderRadius.circular(60)),
                                     child: SvgPicture.asset(
                                       Assets.tabDetail,
                                       color: Colors.white,
@@ -352,13 +377,16 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
                             ],
                           )),
                       Positioned(
-                        top: MediaQuery.of(context).size.height * 0.15, // Aligned with the trigger
+                        top: MediaQuery.of(context).size.height *
+                            0.15, // Aligned with the trigger
                         right: 0,
                         child: SlideTransition(
                           position: _slideAnimation,
                           child: Container(
                               width: 200,
-                              height: (detail.tickets!.length * 20 + 80) > 400 ? 400 : (detail.tickets!.length * 20 + 80),
+                              height: (detail.tickets!.length * 20 + 80) > 400
+                                  ? 400
+                                  : (detail.tickets!.length * 20 + 80),
                               padding: const EdgeInsets.all(16),
                               decoration: BoxDecoration(
                                 color: theme.colorScheme.weekDayColor,
@@ -380,7 +408,8 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
                                           getTranslated(context, 'ticket'),
@@ -401,7 +430,11 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
                                         itemCount: detail.tickets!.length,
                                         physics: NeverScrollableScrollPhysics(),
                                         itemBuilder: (context, index) {
-                                          return _buildBulletPoint(detail.tickets?[index].color, detail.tickets?[index].sellPrice?.amt.toString());
+                                          return _buildBulletPoint(
+                                              detail.tickets?[index].color,
+                                              detail.tickets?[index].sellPrice
+                                                  ?.amt
+                                                  .toString());
                                         })
                                   ],
                                 ),
@@ -420,7 +453,11 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
                               InkWell(
                                 onTap: () {
                                   ModalAlert().showBottomSheet(
-                                      context: context, theme: theme, child: tickets(theme), height: selectedSeats.length * 90 + 150, isSeat: true);
+                                      context: context,
+                                      theme: theme,
+                                      child: tickets(theme),
+                                      height: selectedSeats.length * 90 + 150,
+                                      isSeat: true);
                                 },
                                 child: Container(
                                   padding: const EdgeInsets.symmetric(
@@ -430,14 +467,19 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
                                   decoration: BoxDecoration(
                                       color: theme.colorScheme.bgDark,
                                       borderRadius: BorderRadius.circular(40),
-                                      border: Border.all(color: theme.colorScheme.darkGrey, width: 0.5)),
+                                      border: Border.all(
+                                          color: theme.colorScheme.darkGrey,
+                                          width: 0.5)),
                                   child: IntrinsicWidth(
                                     child: Row(
                                       children: [
-                                        const Icon(Icons.arrow_upward_sharp, color: Color(0xFFd79d58)),
+                                        const Icon(Icons.arrow_upward_sharp,
+                                            color: Color(0xFFd79d58)),
                                         Text(
                                           '${selectedSeats.length}ш',
-                                          style: TextStyles.textFt16Bold.textColor(const Color(0xFFd79d58)),
+                                          style: TextStyles.textFt16Bold
+                                              .textColor(
+                                                  const Color(0xFFd79d58)),
                                         ),
                                         const SizedBox(
                                           width: 4,
@@ -451,87 +493,168 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
                                 height: 12,
                               ),
                               CustomButton(
-                                margin: const EdgeInsets.only(bottom: 30, left: 20, right: 20),
+                                margin: const EdgeInsets.only(
+                                    bottom: 30, left: 20, right: 20),
                                 width: double.maxFinite,
                                 onTap: () {
                                   if (isQuizNight) {
                                     if (selectedSeats.isEmpty) {
-                                      application.showToastAlert('Та ширээгээ сонгоно уу');
+                                      application.showToastAlert(
+                                          'Та ширээгээ сонгоно уу');
                                     } else if (selectedSeats.length >= 2) {
-                                      application.showToastAlert('Нэгээс илүү ширээ сонгож болохгүй');
+                                      application.showToastAlert(
+                                          'Нэгээс илүү ширээ сонгож болохгүй');
                                     } else {
                                       showDialog(
                                         context: context,
                                         barrierDismissible: true,
                                         builder: (BuildContext context) {
                                           return AlertDialog(
-                                            backgroundColor: theme.colorScheme.bottomNavigationColor,
+                                            backgroundColor: theme.colorScheme
+                                                .bottomNavigationColor,
                                             shape: RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(20),
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
                                             ),
                                             title: Text(
                                               detail.name ?? '',
-                                              style: TextStyles.textFt16Bold.textColor(theme.colorScheme.whiteColor),
+                                              style: TextStyles.textFt16Bold
+                                                  .textColor(theme
+                                                      .colorScheme.whiteColor),
                                               textAlign: TextAlign.center,
                                             ),
                                             content: SingleChildScrollView(
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.min,
-                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    getTranslated(context, 'teamName'),
-                                                    style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor),
+                                                    getTranslated(
+                                                        context, 'teamName'),
+                                                    style: TextStyles
+                                                        .textFt14Med
+                                                        .textColor(theme
+                                                            .colorScheme
+                                                            .whiteColor),
                                                   ),
                                                   const SizedBox(height: 8),
                                                   TextField(
-                                                    controller: teamNameController,
-                                                    style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor),
+                                                    controller:
+                                                        teamNameController,
+                                                    style: TextStyles
+                                                        .textFt14Med
+                                                        .textColor(theme
+                                                            .colorScheme
+                                                            .whiteColor),
                                                     decoration: InputDecoration(
-                                                      hintText: getTranslated(context, 'insertTeamName'),
-                                                      hintStyle: TextStyles.textFt14Med.textColor(theme.colorScheme.hintColor),
+                                                      hintText: getTranslated(
+                                                          context,
+                                                          'insertTeamName'),
+                                                      hintStyle: TextStyles
+                                                          .textFt14Med
+                                                          .textColor(theme
+                                                              .colorScheme
+                                                              .hintColor),
                                                       filled: true,
-                                                      fillColor: theme.colorScheme.inputBackground,
-                                                      border: OutlineInputBorder(
-                                                        borderRadius: BorderRadius.circular(8),
-                                                        borderSide: BorderSide(color: theme.colorScheme.darkGrey),
+                                                      fillColor: theme
+                                                          .colorScheme
+                                                          .inputBackground,
+                                                      border:
+                                                          OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8),
+                                                        borderSide: BorderSide(
+                                                            color: theme
+                                                                .colorScheme
+                                                                .darkGrey),
                                                       ),
-                                                      enabledBorder: OutlineInputBorder(
-                                                        borderRadius: BorderRadius.circular(8),
-                                                        borderSide: BorderSide(color: theme.colorScheme.darkGrey),
+                                                      enabledBorder:
+                                                          OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8),
+                                                        borderSide: BorderSide(
+                                                            color: theme
+                                                                .colorScheme
+                                                                .darkGrey),
                                                       ),
-                                                      focusedBorder: OutlineInputBorder(
-                                                        borderRadius: BorderRadius.circular(8),
-                                                        borderSide: BorderSide(color: theme.colorScheme.darkGrey),
+                                                      focusedBorder:
+                                                          OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8),
+                                                        borderSide: BorderSide(
+                                                            color: theme
+                                                                .colorScheme
+                                                                .darkGrey),
                                                       ),
                                                     ),
                                                   ),
                                                   const SizedBox(height: 16),
                                                   Text(
-                                                    getTranslated(context, 'contactNumber'),
-                                                    style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor),
+                                                    getTranslated(context,
+                                                        'contactNumber'),
+                                                    style: TextStyles
+                                                        .textFt14Med
+                                                        .textColor(theme
+                                                            .colorScheme
+                                                            .whiteColor),
                                                   ),
                                                   const SizedBox(height: 8),
                                                   TextField(
-                                                    controller: contactNumberController,
-                                                    keyboardType: TextInputType.phone,
-                                                    style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor),
+                                                    controller:
+                                                        contactNumberController,
+                                                    keyboardType:
+                                                        TextInputType.phone,
+                                                    style: TextStyles
+                                                        .textFt14Med
+                                                        .textColor(theme
+                                                            .colorScheme
+                                                            .whiteColor),
                                                     decoration: InputDecoration(
-                                                      hintText: getTranslated(context, 'insertContactNumber'),
-                                                      hintStyle: TextStyles.textFt14Med.textColor(theme.colorScheme.hintColor),
+                                                      hintText: getTranslated(
+                                                          context,
+                                                          'insertContactNumber'),
+                                                      hintStyle: TextStyles
+                                                          .textFt14Med
+                                                          .textColor(theme
+                                                              .colorScheme
+                                                              .hintColor),
                                                       filled: true,
-                                                      fillColor: theme.colorScheme.inputBackground,
-                                                      border: OutlineInputBorder(
-                                                        borderRadius: BorderRadius.circular(8),
-                                                        borderSide: BorderSide(color: theme.colorScheme.darkGrey),
+                                                      fillColor: theme
+                                                          .colorScheme
+                                                          .inputBackground,
+                                                      border:
+                                                          OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8),
+                                                        borderSide: BorderSide(
+                                                            color: theme
+                                                                .colorScheme
+                                                                .darkGrey),
                                                       ),
-                                                      enabledBorder: OutlineInputBorder(
-                                                        borderRadius: BorderRadius.circular(8),
-                                                        borderSide: BorderSide(color: theme.colorScheme.darkGrey),
+                                                      enabledBorder:
+                                                          OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8),
+                                                        borderSide: BorderSide(
+                                                            color: theme
+                                                                .colorScheme
+                                                                .darkGrey),
                                                       ),
-                                                      focusedBorder: OutlineInputBorder(
-                                                        borderRadius: BorderRadius.circular(8),
-                                                        borderSide: BorderSide(color: theme.colorScheme.darkGrey),
+                                                      focusedBorder:
+                                                          OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8),
+                                                        borderSide: BorderSide(
+                                                            color: theme
+                                                                .colorScheme
+                                                                .darkGrey),
                                                       ),
                                                     ),
                                                   ),
@@ -543,31 +666,56 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
                                                 width: double.infinity,
                                                 child: TextButton(
                                                   style: TextButton.styleFrom(
-                                                    backgroundColor: theme.colorScheme.whiteColor,
-                                                    shape: RoundedRectangleBorder(
-                                                      borderRadius: BorderRadius.circular(8),
+                                                    backgroundColor: theme
+                                                        .colorScheme.whiteColor,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8),
                                                     ),
-                                                    padding: const EdgeInsets.symmetric(vertical: 12),
+                                                    padding: const EdgeInsets
+                                                        .symmetric(
+                                                        vertical: 12),
                                                   ),
                                                   onPressed: () async {
-                                                    if (teamNameController.text.isEmpty) {
-                                                      application.showToastAlert(getTranslated(context, 'needName'));
+                                                    if (teamNameController
+                                                        .text.isEmpty) {
+                                                      application
+                                                          .showToastAlert(
+                                                              getTranslated(
+                                                                  context,
+                                                                  'needName'));
                                                       return;
                                                     }
 
-                                                    if (contactNumberController.text.isEmpty) {
-                                                      application.showToastAlert(getTranslated(context, 'needNumber'));
+                                                    if (contactNumberController
+                                                        .text.isEmpty) {
+                                                      application.showToastAlert(
+                                                          getTranslated(context,
+                                                              'needNumber'));
                                                       return;
                                                     }
-                                                    await application.setQuizName(teamNameController.text);
-                                                    await application.setQuizNumber(contactNumberController.text);
+                                                    await application
+                                                        .setQuizName(
+                                                            teamNameController
+                                                                .text);
+                                                    await application
+                                                        .setQuizNumber(
+                                                            contactNumberController
+                                                                .text);
 
                                                     body = [];
                                                     buildBody();
                                                   },
                                                   child: Text(
-                                                    getTranslated(context, 'continuePayment'),
-                                                    style: TextStyles.textFt14Bold.textColor(theme.colorScheme.blackColor),
+                                                    getTranslated(context,
+                                                        'continuePayment'),
+                                                    style: TextStyles
+                                                        .textFt14Bold
+                                                        .textColor(theme
+                                                            .colorScheme
+                                                            .blackColor),
                                                   ),
                                                 ),
                                               ),
@@ -581,7 +729,8 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
                                     buildBody();
                                   }
                                 },
-                                text: '${getTranslated(context, 'buy')} /${Func.toMoneyStr(totalCal(selectedSeats))}/',
+                                text:
+                                    '${getTranslated(context, 'buy')} /${Func.toMoneyStr(totalCal(selectedSeats))}/',
                               )
                             ],
                           ),
@@ -604,26 +753,45 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
               decoration: BoxDecoration(
                 color: theme.colorScheme.mattBlack,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: theme.colorScheme.whiteColor.withValues(alpha: 0.4), width: 0.3),
+                border: Border.all(
+                    color: theme.colorScheme.whiteColor.withValues(alpha: 0.4),
+                    width: 0.3),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'VIP',
-                    style: TextStyles.textFt14Bold.textColor(theme.colorScheme.fadedWhite),
+                    style: TextStyles.textFt14Bold
+                        .textColor(theme.colorScheme.fadedWhite),
                   ),
                   Text(
-                    Func.toMoneyComma(Utils.getTicketTemplateBySeat(detail.tickets!, selectedSeats[index]).sellPrice!.amt!),
-                    style: TextStyles.textFt18Bold.textColor(theme.colorScheme.whiteColor),
+                    Func.toMoneyComma(Utils.getTicketTemplateBySeat(
+                            detail.tickets!, selectedSeats[index])
+                        .sellPrice!
+                        .amt!),
+                    style: TextStyles.textFt18Bold
+                        .textColor(theme.colorScheme.whiteColor),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      item('Давхар', Utils.formatSeatCode(selectedSeats[index], 'floor'), theme),
-                      item('Сектор', Utils.formatSeatCode(selectedSeats[index], 'sector'), theme),
-                      item('Эгнээ', Utils.formatSeatCode(selectedSeats[index], 'row'), theme),
-                      item('Суудал', Utils.formatSeatCode(selectedSeats[index], 'seat'), theme),
+                      item(
+                          'Давхар',
+                          Utils.formatSeatCode(selectedSeats[index], 'floor'),
+                          theme),
+                      item(
+                          'Сектор',
+                          Utils.formatSeatCode(selectedSeats[index], 'sector'),
+                          theme),
+                      item(
+                          'Эгнээ',
+                          Utils.formatSeatCode(selectedSeats[index], 'row'),
+                          theme),
+                      item(
+                          'Суудал',
+                          Utils.formatSeatCode(selectedSeats[index], 'seat'),
+                          theme),
                     ],
                   )
                 ],
@@ -635,15 +803,21 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
       padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 6),
-      decoration: BoxDecoration(color: theme.colorScheme.greyText.withValues(alpha: 0.4), borderRadius: BorderRadius.circular(8)),
+      decoration: BoxDecoration(
+          color: theme.colorScheme.greyText.withValues(alpha: 0.4),
+          borderRadius: BorderRadius.circular(8)),
       child: Center(
           child: Column(
         children: [
-          Text(a, style: TextStyles.textFt12Med.textColor(theme.colorScheme.whiteColor)),
+          Text(a,
+              style: TextStyles.textFt12Med
+                  .textColor(theme.colorScheme.whiteColor)),
           const SizedBox(
             height: 1,
           ),
-          Text(b, style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor))
+          Text(b,
+              style: TextStyles.textFt14Med
+                  .textColor(theme.colorScheme.whiteColor))
         ],
       )
 
