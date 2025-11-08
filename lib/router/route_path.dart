@@ -26,6 +26,8 @@ const String registerStepThreeRoute = 'regiseter_step_three';
 const String twoFaRoute = 'two_fa_route';
 const String biometricVerifyRoute = 'biometric_verift_route';
 
+const String purchaseRoute = 'purchase_Route';
+
 // const String notifPermissionRoute = 'notif_permission';
 const String eventDetailRoute = 'event_detail';
 const String eventRoute = 'event_route';
@@ -56,3 +58,6 @@ const String steamMainRoute = 'steam_main_Route';
 
 //market
 const String marketRoute = 'market_route';
+
+//print
+const String testPrintRoute = 'print_route';

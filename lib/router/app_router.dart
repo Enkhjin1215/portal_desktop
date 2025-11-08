@@ -4,6 +4,7 @@ import 'package:portal/router/route_path.dart';
 import 'package:portal/screens/cart/payment_cart.dart';
 import 'package:portal/screens/dashboard/home_screen.dart';
 import 'package:portal/screens/dashboard/notif_permission.dart';
+import 'package:portal/screens/dashboard/purchase_screen.dart';
 import 'package:portal/screens/events/event_route.dart';
 import 'package:portal/screens/events/event_webview_screen.dart';
 import 'package:portal/screens/events/merch_detail_screen.dart';
@@ -20,6 +21,7 @@ import 'package:portal/screens/portal_featured/portal_featured_screen.dart';
 import 'package:portal/screens/portal_featured/portal_main_screen.dart';
 import 'package:portal/screens/portal_featured/steam/steam_main_screen.dart';
 import 'package:portal/screens/portal_featured/x_o_screen.dart';
+import 'package:portal/screens/printer/test_print_screen.dart';
 import 'package:portal/screens/profile/my_nft_screen.dart';
 import 'package:portal/screens/profile/profile_delete_screen.dart';
 import 'package:portal/screens/profile/profile_edit_screen.dart';
@@ -40,7 +42,6 @@ import 'package:portal/screens/user/register_step_one.dart';
 import 'package:portal/screens/user/register_step_three.dart';
 import 'package:portal/screens/user/register_step_two.dart';
 import 'package:portal/screens/user/splash_screen.dart';
-import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 import '../screens/cart/CartTab.dart';
 
@@ -166,36 +167,20 @@ class AppRouter {
             reverseDuration: const Duration(milliseconds: 300),
             duration: const Duration(milliseconds: 300));
       case walletRoute:
-        return SwipeablePageRoute(
-          builder: (_) => const WalletScreen(),
-          settings: settings,
-          canOnlySwipeFromEdge: false,
-          transitionDuration: const Duration(milliseconds: 300),
-        );
+        return PageTransition(
+            child: const WalletScreen(), type: PageTransitionType.rightToLeft, duration: const Duration(milliseconds: 300), settings: settings);
 
       case supportRoute:
-        return SwipeablePageRoute(
-          builder: (_) => const SupportScreen(),
-          settings: settings,
-          canOnlySwipeFromEdge: false,
-          transitionDuration: const Duration(milliseconds: 300),
-        );
+        return PageTransition(
+            child: const SupportScreen(), type: PageTransitionType.rightToLeft, duration: const Duration(milliseconds: 300), settings: settings);
 
       case walletAddRoute:
-        return SwipeablePageRoute(
-          builder: (_) => const WalletAddScreen(),
-          settings: settings,
-          canOnlySwipeFromEdge: false,
-          transitionDuration: const Duration(milliseconds: 300),
-        );
+        return PageTransition(
+            child: const WalletAddScreen(), type: PageTransitionType.rightToLeft, duration: const Duration(milliseconds: 300), settings: settings);
 
       case walletVerifyRoute:
-        return SwipeablePageRoute(
-          builder: (_) => const WalletVerify(),
-          settings: settings,
-          canOnlySwipeFromEdge: false,
-          transitionDuration: const Duration(milliseconds: 300),
-        );
+        return PageTransition(
+            child: const WalletVerify(), type: PageTransitionType.rightToLeft, duration: const Duration(milliseconds: 300), settings: settings);
 
       case eventTabtRoute:
         return PageTransition(
@@ -261,29 +246,26 @@ class AppRouter {
       case profileRoute:
         return PageTransition(
             child: const ProfileScreen(), type: PageTransitionType.fade, duration: const Duration(milliseconds: 0), settings: settings);
+      case purchaseRoute:
+        return PageTransition(
+            child: const PurchaseScreen(), type: PageTransitionType.fade, duration: const Duration(milliseconds: 0), settings: settings);
+
+      case testPrintRoute:
+        return PageTransition(
+            child: const UsbPrinterScreen(), type: PageTransitionType.fade, duration: const Duration(milliseconds: 0), settings: settings);
+
       case profileEditRoute:
-        return SwipeablePageRoute(
-          builder: (_) => const ProfileEditScreen(),
-          settings: settings,
-          canOnlySwipeFromEdge: false,
-          transitionDuration: const Duration(milliseconds: 300),
-        );
+        return PageTransition(
+            child: const ProfileEditScreen(), type: PageTransitionType.rightToLeft, duration: const Duration(milliseconds: 300), settings: settings);
 
       case myNFTRoute:
-        return SwipeablePageRoute(
-          builder: (_) => const MyNftScreen(),
-          settings: settings,
-          canOnlySwipeFromEdge: false,
-          transitionDuration: const Duration(milliseconds: 300),
-        );
+        return PageTransition(
+            child: const MyNftScreen(), type: PageTransitionType.rightToLeft, duration: const Duration(milliseconds: 300), settings: settings);
 
       case profileDeleteRoute:
-        return SwipeablePageRoute(
-          builder: (_) => const ProfileDelete(),
-          settings: settings,
-          canOnlySwipeFromEdge: false,
-          transitionDuration: const Duration(milliseconds: 300),
-        );
+        return PageTransition(
+            child: const ProfileDelete(), type: PageTransitionType.rightToLeft, duration: const Duration(milliseconds: 300), settings: settings);
+
       case portalMainRoute:
         return PageTransition(
             child: const PortalMainScreen(), type: PageTransitionType.fade, duration: const Duration(milliseconds: 0), settings: settings);

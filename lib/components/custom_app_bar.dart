@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:portal/helper/assets.dart';
+import 'package:portal/language/language.dart';
+import 'package:portal/provider/provider_core.dart';
 import 'package:portal/provider/provider_xo.dart';
 import 'package:portal/router/route_path.dart';
 import 'package:provider/provider.dart';
@@ -208,32 +210,56 @@ PreferredSize homeAppBar({
   required BuildContext context,
 }) {
   ThemeData theme = Provider.of<ThemeNotifier>(context, listen: true).getTheme();
-  bool isUnread = Provider.of<ProviderXO>(context, listen: true).getUnreadNotif();
+  bool isEnglish = Provider.of<ProviderCoreModel>(context, listen: true).isEnglish;
+
   return PreferredSize(
-    preferredSize: const Size.fromHeight(80), // here the desired height
+    preferredSize: Size.fromHeight(ResponsiveFlutter.of(context).hp(5.5)), // here the desired height
     child: Container(
       color: theme.colorScheme.blackColor,
       padding: const EdgeInsets.only(left: 20, right: 20, top: 55, bottom: 12),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset(Assets.portalAppBar, height: 35),
-          InkWell(
-            onTap: () {
-              NavKey.navKey.currentState!.pushNamed(notifRoute);
-            },
-            child: isUnread
-                ? const Icon(
-                    Icons.notifications_active_outlined,
-                    size: 35,
-                    color: Colors.white,
-                  )
-                : SvgPicture.asset(
-                    Assets.notifAppBar,
-                    height: 35,
-                    color: Colors.white,
-                  ),
+          Image.asset(Assets.portalAppBar),
+          Expanded(
+            child: SizedBox(),
           ),
+          InkWell(
+                  onTap: () async {
+                    await Provider.of<ProviderCoreModel>(context, listen: false).clearUser();
+                    NavKey.navKey.currentState!.pushNamedAndRemoveUntil(logRegStepOneRoute, (route) => false);
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 7),
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.12), shape: BoxShape.circle),
+                    child: Icon(Icons.offline_bolt),
+                  ),
+                ),   const SizedBox(
+            width: 20,
+          ),
+          Text(getTranslated(context, 'en'),
+              style: TextStyles.textFt15Bold.textColor(isEnglish ? theme.colorScheme.whiteColor : theme.colorScheme.fadedWhite)),
+          const SizedBox(
+            width: 8,
+          ),
+          Switch(
+            value: !isEnglish,
+            activeColor: theme.colorScheme.fadedWhite,
+            onChanged: (bool value) {
+              if (value) {
+                Provider.of<ProviderCoreModel>(context, listen: false).changeLanguage(Language(2, "mn", "Mongolia", "mn"), context);
+              } else {
+                Provider.of<ProviderCoreModel>(context, listen: false).changeLanguage(Language(1, "us", "English", "en"), context);
+              }
+            },
+          ),
+          const SizedBox(
+            width: 8,
+          ),
+          Text(getTranslated(context, 'mn'),
+              style: TextStyles.textFt15Bold.textColor(!isEnglish ? theme.colorScheme.whiteColor : theme.colorScheme.fadedWhite))
         ],
       ),
     ),

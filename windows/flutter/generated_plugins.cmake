@@ -6,9 +6,12 @@ list(APPEND FLUTTER_PLUGIN_LIST
   app_links
   audioplayers_windows
   file_selector_windows
+  flutter_inappwebview_windows
+  flutter_thermal_printer
   local_auth_windows
   permission_handler_windows
   smart_auth
+  universal_ble
   url_launcher_windows
 )
 

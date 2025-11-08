@@ -55,7 +55,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       // appBar: tittledAppBar(context: context, tittle: ''),
       resizeToAvoidBottomInset: false,
       body: Container(
-        width: ResponsiveFlutter.of(context).wp(100),
+        // width: ResponsiveFlutter.of(context).wp(100),
         height: ResponsiveFlutter.of(context).hp(100),
         color: theme.colorScheme.blackColor,
         padding: const EdgeInsets.symmetric(horizontal: 20),

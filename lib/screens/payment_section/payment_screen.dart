@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart' as cup;
 import 'package:flutter/material.dart';
 import 'package:portal/components/container_transparent.dart';
+import 'package:portal/components/custom_button.dart';
 import 'package:portal/components/custom_scaffold.dart';
 import 'package:portal/components/custom_text_input.dart';
 import 'package:portal/helper/application.dart';
@@ -27,11 +28,13 @@ import 'package:portal/screens/payment_section/payment_method_item.dart';
 import 'package:portal/screens/payment_section/payment_services.dart';
 import 'package:portal/screens/payment_section/promo_code_field.dart';
 import 'package:portal/screens/payment_section/ticket_summary_item.dart';
+import 'package:portal/service/response.dart';
 import 'package:portal/service/web_service.dart';
 import 'package:provider/provider.dart';
-import 'package:skeletonizer/skeletonizer.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 import 'package:textstyle_extensions/textstyle_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:cyrtranslit/cyrtranslit.dart' as cyrtranslit;
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
@@ -68,6 +71,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
   bool isCSOX = false;
   bool isSteamTopUp = false;
 
+  bool isCash = false;
   // Controllers
   final TextEditingController orgRegNo = TextEditingController();
   final TextEditingController promoCode = TextEditingController();
@@ -76,6 +80,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
   final PaymentService _paymentService = PaymentService();
 
   bool isReady = false;
+  dynamic ebarimtResult;
 
   @override
   void initState() {
@@ -161,24 +166,22 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
         const SizedBox(height: 16),
 
         SizedBox(
-            width: double.maxFinite,
-            height: 110,
-            child: Skeletonizer(
-              enabled: payList.isEmpty,
-              child: ListView.builder(
-                  itemCount: payList.length,
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return PaymentMethodItem(
-                      paymentMethod: payList[index],
-                      onTap: () => _handlePaymentMethodSelection(payList[index]),
-                      textColor: theme.colorScheme.ticketDescColor,
-                      useBlackIconColor: true,
-                      totalAmt: _totalAmtCalc(coupon: promoNo),
-                    );
-                  }),
-            )),
+          width: double.maxFinite,
+          height: 110,
+          child: ListView.builder(
+              itemCount: payList.length,
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return PaymentMethodItem(
+                  paymentMethod: payList[index],
+                  onTap: () => _handlePaymentMethodSelection(payList[index]),
+                  textColor: theme.colorScheme.ticketDescColor,
+                  useBlackIconColor: true,
+                  totalAmt: _totalAmtCalc(coupon: promoNo),
+                );
+              }),
+        ),
       ],
     );
   }
@@ -198,75 +201,121 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
 
         // Other payment methods grid
         SizedBox(
-            width: double.maxFinite,
-            height: 105,
-            child: Skeletonizer(
-              enabled: payMethodsList.isEmpty,
-              child: ListView.builder(
-                  itemCount: payMethodsList.length,
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    // Skip Apple Pay as it has its own button
-                    if (payMethodsList[index].type == 'applepay') {
-                      return const SizedBox();
-                    }
+          width: double.maxFinite,
+          height: 105,
+          child: ListView.builder(
+              itemCount: payMethodsList.length,
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                // Skip Apple Pay as it has its own button
+                if (payMethodsList[index].type == 'applepay') {
+                  return const SizedBox();
+                }
 
-                    return PaymentMethodItem(
-                      paymentMethod: payMethodsList[index],
-                      onTap: () => _handlePaymentMethodSelection(payMethodsList[index]),
-                      textColor: theme.colorScheme.ticketDescColor,
-                      totalAmt: _totalAmtCalc(coupon: promoNo),
-                    );
-                  }),
-            )),
+                return PaymentMethodItem(
+                  paymentMethod: payMethodsList[index],
+                  onTap: () => _handlePaymentMethodSelection(payMethodsList[index]),
+                  textColor: theme.colorScheme.ticketDescColor,
+                  totalAmt: _totalAmtCalc(coupon: promoNo),
+                );
+              }),
+        ),
       ],
     );
   }
 
   Widget _buildBankSelectionGrid(ThemeData theme) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          getTranslated(context, 'bankApp'),
-          style: TextStyles.textFt16Med.textColor(theme.colorScheme.ticketDescColor.withOpacity(0.7)),
+        const SizedBox(
+          width: 100,
         ),
-        const SizedBox(height: 20),
-        GridView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            padding: EdgeInsets.zero,
-            shrinkWrap: true,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
-              childAspectRatio: 1 / 1.3,
+        Column(
+          children: [
+            Text(
+              ebarimtResult != null ? 'EBARIMT ' : '',
+              style: TextStyles.textFt20Bold.textColor(Colors.white),
             ),
-            itemCount: banks.length,
-            itemBuilder: (context, index) {
-              return InkWell(
-                onTap: () => _handleBankPress(banks[index]),
-                child: Column(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16),
-                      child: Image.network(
-                        width: 80,
-                        height: 80,
-                        banks[index].logo!,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      banks[index].name!,
-                      textAlign: TextAlign.center,
-                      style: TextStyles.textFt12Med.textColor(theme.colorScheme.whiteColor),
-                      maxLines: 1,
-                    )
-                  ],
+            Container(
+              width: 400,
+              height: 400,
+              decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(16)),
+              child: Center(
+                child: QrImageView(
+                  data: ebarimtResult != null ? ebarimtResult['qrData'] : invoice?.qpay?.qrText ?? '',
+                  version: QrVersions.auto,
+                  size: 400.0, // Size of QR image
                 ),
-              );
-            })
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(
+          width: 16,
+        ),
+        ebarimtResult != null
+            ? CustomButton(
+                onTap: () {
+                  NavKey.navKey.currentState!.pushNamedAndRemoveUntil(homeRoute, (route) => false);
+                },
+                text: 'Дуусгах',
+              )
+            : Column(
+                children: [
+                  CustomButton(
+                    width: 250,
+                    onTap: () {
+                      _checkPayment();
+                    },
+                    text: 'Төлбөр шалгах',
+                  ),
+                  InkWell(
+                      onTap: () async {
+                        await _deleteInvoice();
+                      },
+                      child: Container(
+                        width: 250,
+                        padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 12),
+                        decoration: BoxDecoration(
+                            color: Colors.red.withValues(alpha: 0.7),
+                            borderRadius: BorderRadius.circular(24),
+                            border: Border.all(color: Colors.white)),
+                        child: Text(
+                          'Цуцлах',
+                          style: TextStyles.textFt16Med.textColor(Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
+                      )),
+                  InkWell(
+                      onTap: () async {
+                        final allSeats = (data!["templates"] as List).expand((template) => template["seats"] as List).toList();
+                        NavKey.navKey.currentState!.pushNamed(testPrintRoute, arguments: {
+                          "name": cyrtranslit.cyr2Lat(detail?.name ?? '', langCode: "mn"),
+                          "seats": allSeats,
+                          // "seats": ["F1-SG-R2-s10", "F2-SB-R1-s11"],
+                          "date": Func.toDateStr(detail?.startDate ?? DateTime.now().toString())
+                        });
+                        // await _deleteInvoice();
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.only(top: 24),
+                        width: 250,
+                        padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 12),
+                        decoration: BoxDecoration(
+                            color: Colors.blue.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(24),
+                            border: Border.all(color: Colors.white)),
+                        child: Text(
+                          'Хэвлэх',
+                          style: TextStyles.textFt16Med.textColor(Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
+                      ))
+                ],
+              )
       ],
     );
   }
@@ -322,9 +371,9 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.resumed) {
-      if (invoice != null) {
-        _checkPayment();
-      }
+      // if (invoice != null) {
+      //   _checkPayment();
+      // }
     }
   }
 
@@ -332,12 +381,9 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
     final result = await _paymentService.checkPayment(context: context, invoiceId: invoice?.id ?? '');
 
     if (result) {
-      if (isQuizNight) {
-        _paymentService.quizNight(context: context, tableNo: data!['templates'].first['seats'].first, date: detail!.startDate ?? '');
-      }
-
-      NavKey.navKey.currentState!
-          .pushNamedAndRemoveUntil(paymentSuccessRoute, arguments: {'event': detail, 'invoice_id': invoice?.id ?? ''}, (route) => false);
+      application.showToast('Амжилттай');
+      // getEbarimt();
+      // NavKey.navKey.currentState!.pushNamedAndRemoveUntil(homeRoute, (route) => false);
     } else {
       // Payment unsuccessful
       application.showToastAlert('Төлбөр төлөгдөөгүй байна');
@@ -345,6 +391,15 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
         _deleteInvoice();
       }
     }
+  }
+
+  getEbarimt() async {
+    Map<String, dynamic> data = {};
+    await Webservice().loadPost(Response.ebarimtget, context, data, parameter: '${invoice?.id}').then((response) {
+      setState(() {
+        ebarimtResult = response;
+      });
+    });
   }
 
   Future<void> _createInvoice(String paymentType) async {
@@ -365,8 +420,11 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
     final ThemeData theme = Provider.of<ThemeNotifier>(context, listen: false).getTheme();
 
     // Handle non-Apple Pay / non-QPay methods that need webview
-
-    if (selectedPaymentMethod!.type == 'mcredit') {
+    if (selectedPaymentMethod!.type == 'wire' || selectedPaymentMethod!.type == 'pos') {
+      setState(() {
+        isCash = true;
+      });
+    } else if (selectedPaymentMethod!.type == 'mcredit') {
       TicketPopup.showCustomDialog(context,
           dismissType: true,
           title: "Дараах QR-г ${selectedPaymentMethod!.name}-р \n уншуулан төлнө үү.",
@@ -620,35 +678,17 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
     //   debugPrint('exception digipay:$e');
     // }
     //Validate requirements first
-    if (selectedVatType == -1 && (detail?.ebarimt?.isNotEmpty ?? false)) {
-      application.showToastAlert('НӨАТ сонгоно уу');
-      return;
-    }
-
-    if (selectedVatType == 1 && ebarimtOrgName.isEmpty) {
-      application.showToastAlert('Байгууллагын регистер ээ оруулна уу.');
-      return;
-    }
 
     if (invoice != null) {
-      if (invoice?.method != paymentMethod.type) {
-        print('go change method');
-        setState(() {
-          choosePaymentMethod = true;
-          selectedPaymentMethod = paymentMethod;
-        });
-        changeMethod(paymentMethod.type!);
-        // selectedPaymentMethod = paymentMethod;
-      }
-    } else {
-      // Set selected payment method
-      setState(() {
-        choosePaymentMethod = true;
-        selectedPaymentMethod = paymentMethod;
-      });
-      // Create new invoice
-      await _createInvoice(paymentMethod.type!);
+      await _deleteInvoice();
     }
+    // Set selected payment method
+    setState(() {
+      choosePaymentMethod = true;
+      selectedPaymentMethod = paymentMethod;
+    });
+    // Create new invoice
+    await _createInvoice(paymentMethod.type!);
   }
 
   changeMethod(String type) async {
@@ -728,7 +768,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
     }
 
     return Container(
-      width: ResponsiveFlutter.of(context).wp(100),
+      // width: ResponsiveFlutter.of(context).wp(100),
       height: ResponsiveFlutter.of(context).hp(130),
       color: theme.colorScheme.blackColor,
       child: Stack(
@@ -755,7 +795,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
 
   Widget _buildBackgroundImage() {
     return SizedBox(
-      width: ResponsiveFlutter.of(context).wp(100),
+      // width: ResponsiveFlutter.of(context).wp(100),
       height: ResponsiveFlutter.of(context).hp(130),
       child: ImageFiltered(
         imageFilter: ImageFilter.blur(sigmaX: 60, sigmaY: 60),
@@ -800,9 +840,65 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
             const SizedBox(height: 16),
             _buildPaymentMethodsSection(theme),
 
+            if ((selectedPaymentMethod?.type == 'pos' || selectedPaymentMethod?.type == 'wire') && invoice != null)
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomButton(
+                    width: 500,
+                    onTap: () {
+                      _checkPayment();
+                    },
+                    text: 'Төлбөр баталгаажуулах',
+                  ),
+                  InkWell(
+                      onTap: () async {
+                        await _deleteInvoice();
+                      },
+                      child: Container(
+                        width: 500,
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+                        decoration: BoxDecoration(
+                            color: Colors.red.withValues(alpha: 0.7),
+                            borderRadius: BorderRadius.circular(24),
+                            border: Border.all(color: Colors.white)),
+                        child: Text(
+                          'Цуцлах',
+                          style: TextStyles.textFt16Med.textColor(Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
+                      )),
+                  InkWell(
+                      onTap: () async {
+                        final allSeats = (data!["templates"] as List).expand((template) => template["seats"] as List).toList();
+                        NavKey.navKey.currentState!.pushNamed(testPrintRoute, arguments: {
+                          "name": cyrtranslit.cyr2Lat(detail?.name ?? '', langCode: "mn"),
+                          "seats": allSeats,
+                          "date": Func.toDateStr(detail?.startDate ?? DateTime.now().toString())
+                        });
+                        // await _deleteInvoice();
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(top: 24),
+                        width: 500,
+                        padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 12),
+                        decoration: BoxDecoration(
+                            color: Colors.blue.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(24),
+                            border: Border.all(color: Colors.white)),
+                        child: Text(
+                          'Хэвлэх',
+                          style: TextStyles.textFt16Med.textColor(Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
+                      ))
+                ],
+              ),
+
             if (choosePaymentMethod && selectedPaymentMethod?.type == 'qpay') _buildBankSelectionGrid(theme),
 
-            _halveWidget(theme),
+            // _halveWidget(theme),
             const SizedBox(height: 60),
           ],
         ),

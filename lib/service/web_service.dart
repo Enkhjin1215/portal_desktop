@@ -206,16 +206,10 @@ class Webservice {
 
   /// Refreshes the authentication token.
   Future<dynamic> loadRefreshToken<T>(Resource<T> resource, BuildContext context) async {
-    final Map<String, dynamic> body = <String, dynamic>{
-      'idToken': await application.getIdToken(),
-      'refreshToken': await application.getRefreshToken()
-    };
-
+    String token = await application.getRefreshToken();
+    final Map<String, dynamic> body = <String, dynamic>{'refreshToken': token};
     try {
-      final headers = {
-        "Content-Type": "application/json",
-        "charset": "UTF-8",
-      };
+      final headers = {"Content-Type": "application/json", "charset": "UTF-8", "merchange": "portal"};
 
       final url = Uri.parse(resource.url);
 
@@ -247,6 +241,10 @@ class Webservice {
   /// Checks if the token is expired and refreshes it if needed.
   Future<void> _checkTokenExpiration(BuildContext context) async {
     final jwtToken = await application.getAccessToken();
+    debugPrint('JWT TOKEN: $jwtToken');
+    if (jwtToken.isNotEmpty) {
+      debugPrint('JWT TOKEN expired: ${JwtDecoder.isExpired(jwtToken)}');
+    }
 
     if (jwtToken.isNotEmpty && JwtDecoder.isExpired(jwtToken)) {
       try {
@@ -254,7 +252,8 @@ class Webservice {
 
         if (response.token != '') {
           await application.setAccessToken(response.token);
-          await application.setIdToken(response.idToken);
+          await application.setRefreshToken(response.refreshToken);
+          // await application.setIdToken(response.idToken);
         }
       } catch (e) {
         if (context.mounted) {

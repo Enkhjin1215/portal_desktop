@@ -6,10 +6,10 @@ import 'package:portal/service/web_service.dart';
 
 class RefreshModel extends ChangeNotifier {
   String? token;
-  String? idToken;
-  RefreshModel({required this.token, this.idToken});
+  String? refreshToken;
+  RefreshModel({required this.token, this.refreshToken});
   factory RefreshModel.fromJson(Map<String, dynamic> json) {
-    return RefreshModel(token: json['accessToken'] ?? '', idToken: json['idToken'] ?? '');
+    return RefreshModel(token: json['access_token'] ?? '', refreshToken: json['refresh_token'] ?? '');
   }
   static Resource<RefreshModel> get refreshTkn {
     return Resource(

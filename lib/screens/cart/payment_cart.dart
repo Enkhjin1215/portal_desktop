@@ -26,7 +26,6 @@ import 'package:portal/router/route_path.dart';
 import 'package:portal/service/response.dart';
 import 'package:portal/service/web_service.dart';
 import 'package:provider/provider.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 import 'package:textstyle_extensions/textstyle_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../payment_section/payment_config.dart' as payment_configurations;
@@ -56,7 +55,7 @@ class _PaymentCartState extends State<PaymentCart> with WidgetsBindingObserver {
   List<PaymentItem> paymentItems = [];
   dynamic payResult;
   TextEditingController orgRegNo = TextEditingController();
-
+  dynamic ebarimtResult;
   //0-Bar
   //1-Merch
   @override
@@ -202,12 +201,21 @@ class _PaymentCartState extends State<PaymentCart> with WidgetsBindingObserver {
     } else {
       await Webservice().loadGet(Response.checkInvoice, context, parameter: invoice?.id ?? '').then((response) {
         if (response['status'] == 'success') {
-          NavKey.navKey.currentState!.pushNamedAndRemoveUntil(paymentSuccessRoute, arguments: {'event': detail}, (route) => false);
+          getEbarimt();
+          // NavKey.navKey.currentState!.pushNamedAndRemoveUntil(paymentSuccessRoute, arguments: {'event': detail}, (route) => false);
         } else {
           application.showToastAlert('Төлбөр төлөгдөөгүй байна');
         }
       });
     }
+  }
+
+  getEbarimt() async {
+    await Webservice().loadGet(Response.ebarimtget, context, parameter: '${invoice?.id}').then((response) {
+      setState(() {
+        ebarimtResult = response;
+      });
+    });
   }
 
   @override
@@ -630,9 +638,7 @@ class _PaymentCartState extends State<PaymentCart> with WidgetsBindingObserver {
                             SizedBox(
                                 width: double.maxFinite,
                                 height: 105,
-                                child: Skeletonizer(
-                                  enabled: payList.isEmpty ? true : false,
-                                  child: ListView.builder(
+                                child:  ListView.builder(
                                       itemCount: payMethodsList.length,
                                       shrinkWrap: true,
                                       scrollDirection: Axis.horizontal,
@@ -680,7 +686,7 @@ class _PaymentCartState extends State<PaymentCart> with WidgetsBindingObserver {
                                                   ],
                                                 ));
                                       }),
-                                )),
+                                ),
                             const SizedBox(
                               height: 16,
                             ),
@@ -694,9 +700,7 @@ class _PaymentCartState extends State<PaymentCart> with WidgetsBindingObserver {
                             SizedBox(
                                 width: double.maxFinite,
                                 height: 105,
-                                child: Skeletonizer(
-                                  enabled: payList.isEmpty ? true : false,
-                                  child: ListView.builder(
+                                child: ListView.builder(
                                       itemCount: payList.length,
                                       shrinkWrap: true,
                                       scrollDirection: Axis.horizontal,
@@ -745,7 +749,7 @@ class _PaymentCartState extends State<PaymentCart> with WidgetsBindingObserver {
                                               ],
                                             ));
                                       }),
-                                )),
+                                ),
                           ],
                         )),
                     const SizedBox(

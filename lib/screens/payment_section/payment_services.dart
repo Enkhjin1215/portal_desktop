@@ -31,7 +31,9 @@ class PaymentService {
   // Check payment status
   Future<bool> checkPayment({required BuildContext context, required String invoiceId}) async {
     try {
-      final response = await Webservice().loadGet(Response.checkInvoice, context, parameter: invoiceId);
+      Map<String, dynamic> body = {};
+      body['invoiceId'] = invoiceId;
+      final response = await Webservice().loadPost(Response.checkInvoice, context, body);
 
       return response['status'] == 'success';
     } catch (e) {

@@ -2,7 +2,7 @@ name: portal
 description: "TicketX mobile application"
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
+#flutter: Request Body: {"email":"batkhuunomindari@gmail.com","password":"Nasanjargal85@"}
 # flutter run -d macos
 version: 1.0.19+1
 
@@ -27,7 +27,7 @@ dependencies:
   cached_network_image: ^3.3.1
   flutter_svg: ^2.0.0+1
   pinput: ^4.0.0
-  skeletonizer: ^1.1.2+1
+  # skeletonizer: ^2.1.0+1
   flutter_animate: ^4.5.0
   flutter_gallery_3d: ^1.1.1
   weather: ^3.1.1
@@ -38,7 +38,7 @@ dependencies:
   pull_to_refresh: ^2.0.0
   zoom_tap_animation: ^1.1.0
   # share_plus: ^10.1.4
-  swipeable_page_route: ^0.4.3
+  # swipeable_page_route: ^0.4.3
   animated_icon: ^0.0.9
   palette_generator: ^0.3.3+3
   loading_animation_widget: ^1.2.1
@@ -48,11 +48,11 @@ dependencies:
   xml: ^6.5.0
   interactable_svg: ^0.0.7
   qr_flutter: ^4.1.0
-  path_provider: ^2.0.11
+  path_provider: ^2.1.5
   permission_handler: ^12.0.0
-  webview_flutter_android: ^4.3.4
-  webview_flutter_wkwebview: ^3.18.5
-  webview_flutter: ^4.10.0
+  # webview_flutter_android: ^4.3.4
+  # webview_flutter_wkwebview: ^3.18.5
+  # webview_flutter: ^4.10.0
   app_settings: ^5.1.1
   carousel_slider: ^5.0.0
   freezed: ^2.5.7
@@ -65,13 +65,17 @@ dependencies:
   supercharged: any
   simple_animations: ^3.1.1
   confetti: ^0.8.0
-  flutter_quill: ^10.8.2
+  flutter_quill: ^11.4.2
   snow_fall_animation: ^0.0.1+2
   pay: ^3.1.0
   local_auth: ^2.3.0
   package_info_plus: ^8.3.0
   zo_animated_border: ^0.0.6
   audioplayers: ^6.4.0
+  flutter_thermal_printer: ^1.2.4
+  flutter_inappwebview: ^6.1.5
+  image: ^4.5.4
+  
 
   # firebase_core: ^3.13.0
   # firebase_messaging: ^15.2.5
@@ -90,6 +94,8 @@ dependencies:
 #   flutter_facebook_auth: ^7.1.1
 
   app_links: ^6.4.0
+  msix: ^3.16.12
+  cyrtranslit: ^1.0.1
 
 dev_dependencies:
   flutter_test:

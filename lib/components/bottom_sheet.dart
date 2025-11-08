@@ -11,15 +11,12 @@ import 'package:portal/helper/application.dart';
 import 'package:portal/helper/assets.dart';
 import 'package:portal/helper/constant.dart';
 import 'package:portal/helper/func.dart';
-import 'package:portal/helper/responsive_flutter.dart';
 import 'package:portal/helper/text_styles.dart';
 import 'package:portal/helper/utils.dart';
 import 'package:portal/language/language_constant.dart';
 import 'package:portal/models/account_model.dart';
 import 'package:portal/models/bank_model.dart';
 import 'package:portal/models/bar_item_model.dart';
-import 'package:portal/models/invoice_model.dart';
-import 'package:portal/models/pending_invoice_model.dart';
 import 'package:portal/provider/provider_cart.dart';
 import 'package:portal/provider/theme_notifier.dart';
 import 'package:portal/router/route_path.dart';
@@ -713,223 +710,223 @@ class ModalAlert {
   //       });
   // }
 
-  void pendingInvoice(
-      {required BuildContext context,
-      required ThemeData theme,
-      double? height,
-      Function()? onTap,
-      Function()? onSecondTap,
-      String? title,
-      String? firstButtonText,
-      String? secondButtonText,
-      Color? firstButtonBgColor,
-      Color? firstTextColor,
-      Color? secondTextColor,
-      Color? secondButtonBgColor,
-      PendingInvoiceModel? invoice,
-      StreamController<Duration>? timeController,
-      DateTime? endTime,
-      Function? whenComplete}) {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      builder: (BuildContext context) {
-        double stdCutoutWidthDown = MediaQuery.of(context).viewPadding.bottom;
+  // void pendingInvoice(
+  //     {required BuildContext context,
+  //     required ThemeData theme,
+  //     double? height,
+  //     Function()? onTap,
+  //     Function()? onSecondTap,
+  //     String? title,
+  //     String? firstButtonText,
+  //     String? secondButtonText,
+  //     Color? firstButtonBgColor,
+  //     Color? firstTextColor,
+  //     Color? secondTextColor,
+  //     Color? secondButtonBgColor,
+  //     PendingInvoiceModel? invoice,
+  //     StreamController<Duration>? timeController,
+  //     DateTime? endTime,
+  //     Function? whenComplete}) {
+  //   showModalBottomSheet(
+  //     context: context,
+  //     backgroundColor: Colors.transparent,
+  //     builder: (BuildContext context) {
+  //       double stdCutoutWidthDown = MediaQuery.of(context).viewPadding.bottom;
 
-        return StreamBuilder<Duration>(
-          stream: timeController?.stream,
-          initialData: endTime?.difference(DateTime.now()),
-          builder: (context, snapshot) {
-            final remainingTime = snapshot.data ?? Duration.zero;
-            final minutes = remainingTime.inMinutes.remainder(60).toString().padLeft(2, '0');
-            final seconds = remainingTime.inSeconds.remainder(60).toString().padLeft(2, '0');
+  //       return StreamBuilder<Duration>(
+  //         stream: timeController?.stream,
+  //         initialData: endTime?.difference(DateTime.now()),
+  //         builder: (context, snapshot) {
+  //           final remainingTime = snapshot.data ?? Duration.zero;
+  //           final minutes = remainingTime.inMinutes.remainder(60).toString().padLeft(2, '0');
+  //           final seconds = remainingTime.inSeconds.remainder(60).toString().padLeft(2, '0');
 
-            return Container(
-              width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.fromLTRB(32, 8, 32, stdCutoutWidthDown * 1.2),
-              // margin: EdgeInsets.only(bottom: ResponsiveFlutter.of(context).hp(1)),
-              decoration: BoxDecoration(
-                color: theme.colorScheme.softBlack,
-                borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(16.0),
-                    topRight: Radius.circular(16.0),
-                    bottomLeft: Radius.circular(16.0),
-                    bottomRight: Radius.circular(16.0)),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      getTranslated(
-                        context,
-                        'pendingOrder',
-                      ),
-                      style: TextStyles.textFt16Bold.textColor(theme.colorScheme.whiteColor),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      if (invoice?.eventId?.coverImageV != null)
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.network(
-                            invoice!.eventId!.coverImageV!,
-                            width: 50,
-                            height: 50,
-                          ),
-                        ),
-                      const SizedBox(
-                        width: 16,
-                      ),
-                      Expanded(
-                        child: Text(
-                          invoice!.eventId!.name ?? '',
-                          style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor),
-                          textAlign: TextAlign.center,
-                        ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        getTranslated(context, 'orderCancel'),
-                        style: TextStyles.textFt14Med.textColor(const Color(0xFFd79d58)),
-                      ),
-                      Container(
-                        width: 70,
-                        margin: const EdgeInsets.only(left: 8),
-                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                        decoration: BoxDecoration(color: const Color(0xFFd79d58), borderRadius: BorderRadius.circular(8)),
-                        child: Text(
-                          "$minutes:$seconds",
-                          style: TextStyles.textFt18Bold.textColor(theme.colorScheme.whiteColor),
-                        ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  ListView.builder(
-                      shrinkWrap: true,
-                      padding: EdgeInsets.zero,
-                      itemCount: invoice.templates?.length,
-                      itemBuilder: (context, index) {
-                        bool isSeat = invoice.templates?[index].seats is String;
+  //           return Container(
+  //             width: MediaQuery.of(context).size.width,
+  //             padding: EdgeInsets.fromLTRB(32, 8, 32, stdCutoutWidthDown * 1.2),
+  //             // margin: EdgeInsets.only(bottom: ResponsiveFlutter.of(context).hp(1)),
+  //             decoration: BoxDecoration(
+  //               color: theme.colorScheme.softBlack,
+  //               borderRadius: const BorderRadius.only(
+  //                   topLeft: Radius.circular(16.0),
+  //                   topRight: Radius.circular(16.0),
+  //                   bottomLeft: Radius.circular(16.0),
+  //                   bottomRight: Radius.circular(16.0)),
+  //             ),
+  //             child: Column(
+  //               mainAxisSize: MainAxisSize.min,
+  //               children: [
+  //                 const SizedBox(
+  //                   height: 8,
+  //                 ),
+  //                 Align(
+  //                   alignment: Alignment.center,
+  //                   child: Text(
+  //                     getTranslated(
+  //                       context,
+  //                       'pendingOrder',
+  //                     ),
+  //                     style: TextStyles.textFt16Bold.textColor(theme.colorScheme.whiteColor),
+  //                   ),
+  //                 ),
+  //                 const SizedBox(
+  //                   height: 16,
+  //                 ),
+  //                 Row(
+  //                   mainAxisAlignment: MainAxisAlignment.start,
+  //                   children: [
+  //                     if (invoice?.eventId?.coverImageV != null)
+  //                       ClipRRect(
+  //                         borderRadius: BorderRadius.circular(8),
+  //                         child: Image.network(
+  //                           invoice!.eventId!.coverImageV!,
+  //                           width: 50,
+  //                           height: 50,
+  //                         ),
+  //                       ),
+  //                     const SizedBox(
+  //                       width: 16,
+  //                     ),
+  //                     Expanded(
+  //                       child: Text(
+  //                         invoice!.eventId!.name ?? '',
+  //                         style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor),
+  //                         textAlign: TextAlign.center,
+  //                       ),
+  //                     )
+  //                   ],
+  //                 ),
+  //                 const SizedBox(
+  //                   height: 8,
+  //                 ),
+  //                 Row(
+  //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //                   children: [
+  //                     Text(
+  //                       getTranslated(context, 'orderCancel'),
+  //                       style: TextStyles.textFt14Med.textColor(const Color(0xFFd79d58)),
+  //                     ),
+  //                     Container(
+  //                       width: 70,
+  //                       margin: const EdgeInsets.only(left: 8),
+  //                       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+  //                       decoration: BoxDecoration(color: const Color(0xFFd79d58), borderRadius: BorderRadius.circular(8)),
+  //                       child: Text(
+  //                         "$minutes:$seconds",
+  //                         style: TextStyles.textFt18Bold.textColor(theme.colorScheme.whiteColor),
+  //                       ),
+  //                     )
+  //                   ],
+  //                 ),
+  //                 const SizedBox(
+  //                   height: 8,
+  //                 ),
+  //                 ListView.builder(
+  //                     shrinkWrap: true,
+  //                     padding: EdgeInsets.zero,
+  //                     itemCount: invoice.templates?.length,
+  //                     itemBuilder: (context, index) {
+  //                       bool isSeat = invoice.templates?[index].seats is String;
 
-                        return Container(
-                            margin: const EdgeInsets.only(bottom: 4),
-                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: Colors.black.withValues(alpha: 0.3)),
-                            child: Row(
-                              children: [
-                                Text(
-                                  invoice.templates?[index].templateId?.name ?? '',
-                                  style: TextStyles.textFt15Reg.textColor(theme.colorScheme.greyText),
-                                ),
-                                Text(
-                                  " x${isSeat ? invoice.templates![index].seats.length : invoice.templates?[index].seats}",
-                                  style: TextStyles.textFt15Reg.textColor(theme.colorScheme.whiteColor),
-                                ),
-                                const Expanded(
-                                  child: SizedBox(),
-                                ),
-                                isSeat
-                                    ? Text(
-                                        " ${Func.toMoneyStr(invoice.templates![index].sellPrice!.amount! * invoice.templates![index].seats!.length!)}",
-                                        style: TextStyles.textFt15Reg.textColor(theme.colorScheme.whiteColor),
-                                      )
-                                    : Text(
-                                        " ${Func.toMoneyStr(invoice.templates![index].sellPrice!.amount! * invoice.templates![index].seats)}",
-                                        style: TextStyles.textFt15Reg.textColor(theme.colorScheme.whiteColor),
-                                      ),
-                              ],
-                            ));
-                      }),
-                  Divider(
-                    color: theme.colorScheme.greyText,
-                  ),
-                  SizedBox(
-                    height: ResponsiveFlutter.of(context).hp(1),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        getTranslated(context, 'total'),
-                        style: TextStyles.textFt16Bold.textColor(theme.colorScheme.whiteColor),
-                      ),
-                      Text(
-                        Func.toMoneyStr(invoice.amount ?? '0'),
-                        style: TextStyles.textFt18Bold.textColor(theme.colorScheme.whiteColor),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: ResponsiveFlutter.of(context).hp(1),
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: CustomButton(
-                          margin: EdgeInsets.zero,
-                          text: firstButtonText ?? '',
-                          height: 48,
-                          width: MediaQuery.of(context).size.width,
-                          backgroundColor: secondButtonBgColor ?? theme.colorScheme.whiteColor,
-                          textColor: secondTextColor ?? theme.colorScheme.blackColor,
-                          onTap: () {
-                            onTap!();
-                          },
-                        ),
-                      ),
-                      SizedBox(width: ResponsiveFlutter.of(context).wp(5)),
-                      Expanded(
-                        child: InkWell(
-                          onTap: () {
-                            onSecondTap!();
-                          },
-                          child: Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: 48,
-                            decoration: BoxDecoration(
-                                color: firstButtonBgColor ?? theme.colorScheme.hintColor.withValues(alpha: 0.2),
-                                borderRadius: BorderRadius.circular(28)),
-                            child: CustomText(
-                              secondButtonText ?? '',
-                              color: theme.colorScheme.whiteColor.withValues(alpha: 0.8),
-                              alignment: Alignment.center,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.w700,
-                              lineSpace: 0,
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  )
-                ],
-              ),
-            );
-          },
-        );
-      },
-    );
-  }
+  //                       return Container(
+  //                           margin: const EdgeInsets.only(bottom: 4),
+  //                           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+  //                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: Colors.black.withValues(alpha: 0.3)),
+  //                           child: Row(
+  //                             children: [
+  //                               Text(
+  //                                 invoice.templates?[index].templateId?.name ?? '',
+  //                                 style: TextStyles.textFt15Reg.textColor(theme.colorScheme.greyText),
+  //                               ),
+  //                               Text(
+  //                                 " x${isSeat ? invoice.templates![index].seats.length : invoice.templates?[index].seats}",
+  //                                 style: TextStyles.textFt15Reg.textColor(theme.colorScheme.whiteColor),
+  //                               ),
+  //                               const Expanded(
+  //                                 child: SizedBox(),
+  //                               ),
+  //                               isSeat
+  //                                   ? Text(
+  //                                       " ${Func.toMoneyStr(invoice.templates![index].sellPrice!.amount! * invoice.templates![index].seats!.length!)}",
+  //                                       style: TextStyles.textFt15Reg.textColor(theme.colorScheme.whiteColor),
+  //                                     )
+  //                                   : Text(
+  //                                       " ${Func.toMoneyStr(invoice.templates![index].sellPrice!.amount! * invoice.templates![index].seats)}",
+  //                                       style: TextStyles.textFt15Reg.textColor(theme.colorScheme.whiteColor),
+  //                                     ),
+  //                             ],
+  //                           ));
+  //                     }),
+  //                 Divider(
+  //                   color: theme.colorScheme.greyText,
+  //                 ),
+  //                 SizedBox(
+  //                   height: ResponsiveFlutter.of(context).hp(1),
+  //                 ),
+  //                 Row(
+  //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //                   children: [
+  //                     Text(
+  //                       getTranslated(context, 'total'),
+  //                       style: TextStyles.textFt16Bold.textColor(theme.colorScheme.whiteColor),
+  //                     ),
+  //                     Text(
+  //                       Func.toMoneyStr(invoice.amount ?? '0'),
+  //                       style: TextStyles.textFt18Bold.textColor(theme.colorScheme.whiteColor),
+  //                     )
+  //                   ],
+  //                 ),
+  //                 SizedBox(
+  //                   height: ResponsiveFlutter.of(context).hp(1),
+  //                 ),
+  //                 Row(
+  //                   children: [
+  //                     Expanded(
+  //                       child: CustomButton(
+  //                         margin: EdgeInsets.zero,
+  //                         text: firstButtonText ?? '',
+  //                         height: 48,
+  //                         width: MediaQuery.of(context).size.width,
+  //                         backgroundColor: secondButtonBgColor ?? theme.colorScheme.whiteColor,
+  //                         textColor: secondTextColor ?? theme.colorScheme.blackColor,
+  //                         onTap: () {
+  //                           onTap!();
+  //                         },
+  //                       ),
+  //                     ),
+  //                     SizedBox(width: ResponsiveFlutter.of(context).wp(5)),
+  //                     Expanded(
+  //                       child: InkWell(
+  //                         onTap: () {
+  //                           onSecondTap!();
+  //                         },
+  //                         child: Container(
+  //                           width: MediaQuery.of(context).size.width,
+  //                           height: 48,
+  //                           decoration: BoxDecoration(
+  //                               color: firstButtonBgColor ?? theme.colorScheme.hintColor.withValues(alpha: 0.2),
+  //                               borderRadius: BorderRadius.circular(28)),
+  //                           child: CustomText(
+  //                             secondButtonText ?? '',
+  //                             color: theme.colorScheme.whiteColor.withValues(alpha: 0.8),
+  //                             alignment: Alignment.center,
+  //                             fontSize: 16.0,
+  //                             fontWeight: FontWeight.w700,
+  //                             lineSpace: 0,
+  //                           ),
+  //                         ),
+  //                       ),
+  //                     )
+  //                   ],
+  //                 )
+  //               ],
+  //             ),
+  //           );
+  //         },
+  //       );
+  //     },
+  //   );
+  // }
 
   claimItem(
     BuildContext context,

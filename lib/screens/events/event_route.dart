@@ -16,14 +16,13 @@ import 'package:portal/language/language_constant.dart';
 import 'package:portal/models/bar_item_model.dart';
 import 'package:portal/models/event_children_model.dart';
 import 'package:portal/models/event_detail_model.dart';
-import 'package:portal/models/pending_invoice_model.dart';
 import 'package:portal/provider/provider_cart.dart';
 import 'package:portal/provider/theme_notifier.dart';
 import 'package:portal/router/route_path.dart';
+import 'package:portal/screens/cart/ticket/ticketShape/gradient_text.dart';
 import 'package:portal/screens/events/event_bar_screen.dart';
 import 'package:portal/screens/events/event_detail_screen.dart';
 import 'package:portal/screens/events/event_merch_screen.dart';
-import 'package:portal/screens/ticket/ticket_pending_invoice_service.dart';
 import 'package:portal/service/response.dart';
 import 'package:portal/service/web_service.dart';
 import 'package:provider/provider.dart';
@@ -48,7 +47,7 @@ class _EventRouteState extends State<EventRoute> with SingleTickerProviderStateM
 
   int userType = -1;
   int from = 1;
-  late TicketPendingInvoiceService _pendingInvoiceService;
+  // late TicketPendingInvoiceService _pendingInvoiceService;
 
   @override
   void initState() {
@@ -60,7 +59,7 @@ class _EventRouteState extends State<EventRoute> with SingleTickerProviderStateM
       print('from:$from');
 
       if (from == 0) {
-        _pendingInvoiceService = TicketPendingInvoiceService();
+        // _pendingInvoiceService = TicketPendingInvoiceService();
 
         init();
         getDetail(id);
@@ -77,7 +76,7 @@ class _EventRouteState extends State<EventRoute> with SingleTickerProviderStateM
 
   @override
   void dispose() {
-    _pendingInvoiceService.dispose();
+    // _pendingInvoiceService.dispose();
     super.dispose();
   }
 
@@ -102,35 +101,23 @@ class _EventRouteState extends State<EventRoute> with SingleTickerProviderStateM
     await _updatePalette();
   }
 
-  Map<String, dynamic> simplifyPendingInvoice(PendingInvoiceModel? model) {
-    if (model == null) {
-      return {};
-    }
-    final List<Map<String, dynamic>> simplifiedTemplates = model.templates?.map((template) {
-          return {
-            'templateId': template.templateId?.id,
-            'seats': template.seats,
-          };
-        }).toList() ??
-        [];
+  // Map<String, dynamic> simplifyPendingInvoice(PendingInvoiceModel? model) {
+  //   if (model == null) {
+  //     return {};
+  //   }
+  //   final List<Map<String, dynamic>> simplifiedTemplates = model.templates?.map((template) {
+  //         return {
+  //           'templateId': template.templateId?.id,
+  //           'seats': template.seats,
+  //         };
+  //       }).toList() ??
+  //       [];
 
-    return {
-      'templates': simplifiedTemplates,
-      'eventId': model.eventId?.id,
-    };
-  }
-
-  Future<PendingInvoiceModel?> checkInvoice() async {
-    late PendingInvoiceModel pendingInvoice;
-    try {
-      await Webservice().loadGet(PendingInvoiceModel.getPendingInvoice, context).then((response) {
-        pendingInvoice = response;
-      });
-    } catch (e) {
-      return null;
-    }
-    return pendingInvoice;
-  }
+  //   return {
+  //     'templates': simplifiedTemplates,
+  //     'eventId': model.eventId?.id,
+  //   };
+  // }
 
   Future<void> _updatePalette() async {
     final PaletteGenerator paletteGenerator = await PaletteGenerator.fromImageProvider(NetworkImage(detail!.coverImage!));
@@ -218,23 +205,12 @@ class _EventRouteState extends State<EventRoute> with SingleTickerProviderStateM
 
                             // Event image and title
                             const SizedBox(height: 20),
-                            Center(
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(16),
-                                child: Image.network(
-                                  detail!.featurePhoto ?? detail!.coverImage!,
-                                  width: ResponsiveFlutter.of(context).wp(55),
-                                  height: ResponsiveFlutter.of(context).hp(25),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 12),
+
                             Text(
                               detail!.name!,
                               style: TextStyles.textFt22Bold.textColor(theme.colorScheme.whiteColor),
                             ),
-                            const SizedBox(height: 12),
+                            const SizedBox(height: 20),
                             if (from == 0) tabBar(theme),
                             const SizedBox(height: 12),
                           ],
@@ -293,30 +269,23 @@ class _EventRouteState extends State<EventRoute> with SingleTickerProviderStateM
               );
             } else {
               //to do pending invoice oo chirne;
-              bool hasPendingInvoice = await _pendingInvoiceService.handlePendingInvoice(
-                context: context,
-                theme: theme,
-                currentEventDetail: detail,
-              );
 
-              if (!hasPendingInvoice) {
-                if (_currentIndex == 0) {
-                  if ((childrenList.isNotEmpty && selectedChild != null)) {
-                    await getDetail(selectedChild!.id!, noNeed: true);
-                  }
-                  NavKey.navKey.currentState?.pushNamed(eventTicketRoute, arguments: {"detail": detail});
-                } else if (_currentIndex == 1) {
-                  Map<String, dynamic> body = {};
-                  if (barList.isEmpty) {
-                  } else {
-                    body = Provider.of<ProviderCart>(context, listen: false).getCart(bar!.id!) ?? {};
-                  }
-                  if (body.isNotEmpty) {
-                    NavKey.navKey.currentState?.pushNamed(paymentCartRoute, arguments: {"detail": detail, 'data': body, 'from': 0, 'bar': bar});
-                  }
-                } else {
-                  print('sss');
+              if (_currentIndex == 0) {
+                if ((childrenList.isNotEmpty && selectedChild != null)) {
+                  await getDetail(selectedChild!.id!, noNeed: true);
                 }
+                NavKey.navKey.currentState?.pushNamed(eventTicketRoute, arguments: {"detail": detail});
+              } else if (_currentIndex == 1) {
+                Map<String, dynamic> body = {};
+                if (barList.isEmpty) {
+                } else {
+                  body = Provider.of<ProviderCart>(context, listen: false).getCart(bar!.id!) ?? {};
+                }
+                if (body.isNotEmpty) {
+                  NavKey.navKey.currentState?.pushNamed(paymentCartRoute, arguments: {"detail": detail, 'data': body, 'from': 0, 'bar': bar});
+                }
+              } else {
+                print('sss');
               }
             }
           },
@@ -349,7 +318,7 @@ class _EventRouteState extends State<EventRoute> with SingleTickerProviderStateM
   Widget _tabButtonItem({required int index, required String text, required ThemeData theme}) {
     return InkWell(
       onTap: () {
-        if (index == _currentIndex || index == 3) {
+        if (index == _currentIndex) {
         } else {
           _controller.animateToPage(index, duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
         }
@@ -359,17 +328,19 @@ class _EventRouteState extends State<EventRoute> with SingleTickerProviderStateM
         padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: _currentIndex == index ? theme.colorScheme.whiteColor : Colors.transparent.withOpacity(0.1),
+          color: _currentIndex == index ? theme.colorScheme.whiteColor.withValues(alpha: 0.2) : Colors.transparent.withOpacity(0.1),
         ),
-        child: Text(
-          getTranslated(context, text),
-          style: TextStyles.textFt12Bold.textColor(_currentIndex == index
-              ? theme.colorScheme.blackColor
-              : index == 3
-                  ? theme.colorScheme.greyText
-                  : theme.colorScheme.whiteColor),
-          textAlign: TextAlign.center,
-        ),
+        child: _currentIndex == index
+            ? Center(
+                child: GradientText(
+                getTranslated(context, text),
+                style: TextStyles.textFt12Bold,
+              ))
+            : Text(
+                getTranslated(context, text),
+                style: TextStyles.textFt12Bold.textColor(_currentIndex == index ? theme.colorScheme.blackColor : theme.colorScheme.whiteColor),
+                textAlign: TextAlign.center,
+              ),
       ),
     );
   }

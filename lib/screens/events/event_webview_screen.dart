@@ -13,7 +13,6 @@ import 'package:portal/service/web_service.dart';
 import 'package:provider/provider.dart';
 import 'package:textstyle_extensions/textstyle_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class EventWebviewScreen extends StatefulWidget {
   const EventWebviewScreen({super.key});
@@ -23,7 +22,7 @@ class EventWebviewScreen extends StatefulWidget {
 }
 
 class _EventWebviewScreenState extends State<EventWebviewScreen> with WidgetsBindingObserver {
-  late final WebViewController _controller;
+  // late final WebViewController _controller;
   String? document;
   String name = '';
   QpayInvoice? inv;
@@ -51,7 +50,7 @@ class _EventWebviewScreenState extends State<EventWebviewScreen> with WidgetsBin
       }
 
       print('document:$document');
-      init(document!);
+      // init(document!);
       // init();
     }));
     super.initState();
@@ -61,7 +60,7 @@ class _EventWebviewScreenState extends State<EventWebviewScreen> with WidgetsBin
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
 
-    _controller.clearCache();
+    // _controller.clearCache();
 
     super.dispose();
   }
@@ -89,45 +88,45 @@ class _EventWebviewScreenState extends State<EventWebviewScreen> with WidgetsBin
     });
   }
 
-  init(String url) async {
-    final WebViewController controller = WebViewController();
-    controller
-      ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setBackgroundColor(const Color(0x00000000))
-      ..setNavigationDelegate(NavigationDelegate(
-        onProgress: (int progress) async {
-          //debugPrint("URL------------> loading:$urla");
-        },
-        onUrlChange: (change) {
-          debugPrint("CHANGED URL------------> loading: ${change.url}");
-          if (change.url!.startsWith('socialpay-payment://key=')) {
-            launchUrl(Uri.parse(change.url!));
-          } else if (change.url!.contains('https://portal.mn/')) {
-            checkPayment();
-          } else if (change.url!.contains('https://stage.portal.mn/')) {
-            checkPayment();
-          } else if (change.url!.contains('mn.moco.candy:')) {
-            try {
-              launchUrl(Uri.parse(change.url!));
-            } catch (e) {
-              print('exceptionssss:$e');
-            }
-          }
-        },
-      ))
-      ..addJavaScriptChannel(
-        'Toaster',
-        onMessageReceived: (JavaScriptMessage message) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(message.message)),
-          );
-        },
-      )
-      ..loadRequest(Uri.parse(url));
+  // init(String url) async {
+  //   final WebViewController controller = WebViewController();
+  //   controller
+  //     ..setJavaScriptMode(JavaScriptMode.unrestricted)
+  //     ..setBackgroundColor(const Color(0x00000000))
+  //     ..setNavigationDelegate(NavigationDelegate(
+  //       onProgress: (int progress) async {
+  //         //debugPrint("URL------------> loading:$urla");
+  //       },
+  //       onUrlChange: (change) {
+  //         debugPrint("CHANGED URL------------> loading: ${change.url}");
+  //         if (change.url!.startsWith('socialpay-payment://key=')) {
+  //           launchUrl(Uri.parse(change.url!));
+  //         } else if (change.url!.contains('https://portal.mn/')) {
+  //           checkPayment();
+  //         } else if (change.url!.contains('https://stage.portal.mn/')) {
+  //           checkPayment();
+  //         } else if (change.url!.contains('mn.moco.candy:')) {
+  //           try {
+  //             launchUrl(Uri.parse(change.url!));
+  //           } catch (e) {
+  //             print('exceptionssss:$e');
+  //           }
+  //         }
+  //       },
+  //     ))
+  //     ..addJavaScriptChannel(
+  //       'Toaster',
+  //       onMessageReceived: (JavaScriptMessage message) {
+  //         ScaffoldMessenger.of(context).showSnackBar(
+  //           SnackBar(content: Text(message.message)),
+  //         );
+  //       },
+  //     )
+  //     ..loadRequest(Uri.parse(url));
 
-    _controller = controller;
-    setState(() {});
-  }
+  //   _controller = controller;
+  //   setState(() {});
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -192,8 +191,8 @@ class _EventWebviewScreenState extends State<EventWebviewScreen> with WidgetsBin
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: WebViewWidget(controller: _controller),
+             const     Expanded(
+                    child:SizedBox(),
                   ),
                   const SizedBox(
                     height: 60,

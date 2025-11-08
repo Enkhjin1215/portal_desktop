@@ -28,9 +28,9 @@ class AuthTokenManager {
     final prefs = await SharedPreferences.getInstance();
 
     return {
-      'accessToken': prefs.getString(_accessTokenKey),
+      'access_token': prefs.getString(_accessTokenKey),
       'idToken': prefs.getString(_idTokenKey),
-      'refreshToken': prefs.getString(_refreshTokenKey),
+      'refresh_token': prefs.getString(_refreshTokenKey),
     };
   }
 
@@ -49,7 +49,7 @@ class AuthTokenManager {
   static Future<bool> hasValidTokens() async {
     try {
       final tokens = await getTokens();
-      final accessToken = tokens['accessToken'];
+      final accessToken = tokens['access_token'];
 
       if (accessToken == null) {
         return false;

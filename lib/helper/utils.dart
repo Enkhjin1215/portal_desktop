@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:local_auth/local_auth.dart';
-import 'package:portal/helper/func.dart';
 import 'package:portal/helper/text_styles.dart';
-import 'package:portal/models/coupon_model.dart';
 import 'package:portal/models/event_detail_model.dart';
 import 'package:textstyle_extensions/textstyle_extensions.dart';
 
@@ -130,7 +128,7 @@ class Utils {
   }
 
   static String formatSeatCode(String seatCode, String type) {
-    RegExp regExp = RegExp(r'F(\d+)-S([A-Z]+)-R(\d+)-s(\d+)');
+    RegExp regExp = RegExp(r'(?:F(\d+)-S([A-Z0-9]+)-)?R(\d+)-s(\d+)');
     Match? match = regExp.firstMatch(seatCode);
     if (match != null) {
       String floor = match.group(1) ?? '';
@@ -148,7 +146,7 @@ class Utils {
         case 'row':
           return row;
         default:
-          return '';
+          return '*';
       }
       // return 'Floor: $floor, Sector: $sector, Seat: $seat';
     } else {

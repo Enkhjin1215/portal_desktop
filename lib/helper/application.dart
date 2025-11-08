@@ -12,7 +12,9 @@ class Application implements Constants {
   getHeaders() async {
     // device token, platform , lang, token if
     Map<String, String> header;
-    if (await application.getAccessToken() != '') {
+    String token = await application.getAccessToken();
+    print("--------------------token:$token");
+    if (token != '') {
       // UserModel user = await application.getUserInfo();
       header = {
         "Content-Type": "application/json",
@@ -21,7 +23,7 @@ class Application implements Constants {
         "deviceToken": await getDeviceToken() ?? '',
         "merchant": "portal",
         // "company": "test",
-        "Authorization": "Bearer ${await application.getAccessToken()}"
+        "Authorization": "Bearer $token"
       };
     } else {
       header = {
@@ -144,7 +146,7 @@ class Application implements Constants {
   // String accessToken =
   //     'eyJraWQiOiIrMitxSHc3QVJYQnFURGNVR3dBTkZ1NkZ2SlM1cTRaVUZJRzFUYW9XZm9zPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI2ZWVkOTMxNC1lZmMzLTQ2MDgtYmY5Ni03YTY0MDRiNmE3N2YiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0yLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMl9PUEw1NnVOQUsiLCJjbGllbnRfaWQiOiI2aWsyYmNlNzJwdTZrbGczMjJqdWxmc2U1bCIsIm9yaWdpbl9qdGkiOiI4NDFkNDU2Ni01YjNkLTQ3N2EtOWYyOC02Y2Y3MDViNGJlY2IiLCJldmVudF9pZCI6IjE4NmU3MmJiLWU4ZDUtNDIwMC04MTEzLTU0MTg3YzJmM2EyYyIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE3NTA5MDk0OTQsImV4cCI6MTc1MTI3NjI3NSwiaWF0IjoxNzUxMjcyNjc1LCJqdGkiOiI5YzRmYmQwNy0yMTI4LTQxZTEtYjE0OS00ZDlhZGM0ZjhjMWMiLCJ1c2VybmFtZSI6ImVua2hqaW5nZyJ9.nsnfrSdikswa_LppPhXdcBSRM5kgDhYCC6rQJrU6x30WvAe3rKiBB8UdX54WY8gHG8xrAAps5VAC5SBmloW9QyHl3724UAjlEqFF2GdQfYvLgjqQPlbRza6O71qMczxqxooeBFTktRYoh9OhFDC1lnNTdPbUAmm5xuszxYv5qjEsLPLCCuXMckgBCmt0qwe_HGjWMJXbhBxDlpp1v7_Xw2grNkBQeZXERK7gQLo9Wm4hqTMPuSqNqfUrrc4R6lhYN3KItBaRXxvfDJagNLPFVQoHeL2Q8HayfvjFZQQZIscAUnBsKL_v4EEQIZUcG-8gmEmDuqir8mfbwt69GFK4ew';
 
-  getAccessToken() async {
+  Future<String> getAccessToken() async {
     final SharedPreferences sharedPref = await _sharedPref;
     return sharedPref.getString(Constants.storageKey + Constants.accessToken) ?? '';
     // return accessToken;
@@ -152,30 +154,33 @@ class Application implements Constants {
 
   setAccessToken(String token) async {
     final SharedPreferences sharedPref = await _sharedPref;
+    print('----------------->ene bol baij bolohgui zuil: $token');
     sharedPref.setString(Constants.storageKey + Constants.accessToken, token);
   }
 
-  getRefreshToken() async {
+  Future<String> getRefreshToken() async {
     final SharedPreferences sharedPref = await _sharedPref;
     return sharedPref.getString(Constants.storageKey + Constants.refreshToken) ?? '';
     // return accessToken;
   }
 
   setRefreshToken(String token) async {
+    print('----------------->ene bol baij bolohgui zui 2l: $token');
+
     final SharedPreferences sharedPref = await _sharedPref;
     sharedPref.setString(Constants.storageKey + Constants.refreshToken, token);
   }
 
-  getIdToken() async {
-    final SharedPreferences sharedPref = await _sharedPref;
-    return sharedPref.getString(Constants.storageKey + Constants.idToken) ?? '';
-    // return accessToken;
-  }
+  // getIdToken() async {
+  //   final SharedPreferences sharedPref = await _sharedPref;
+  //   return sharedPref.getString(Constants.storageKey + Constants.idToken) ?? '';
+  //   // return accessToken;
+  // }
 
-  setIdToken(String token) async {
-    final SharedPreferences sharedPref = await _sharedPref;
-    sharedPref.setString(Constants.storageKey + Constants.idToken, token);
-  }
+  // setIdToken(String token) async {
+  //   final SharedPreferences sharedPref = await _sharedPref;
+  //   sharedPref.setString(Constants.storageKey + Constants.idToken, token);
+  // }
 
   getPushNotifToken() async {
     final SharedPreferences sharedPref = await _sharedPref;

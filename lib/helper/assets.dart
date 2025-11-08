@@ -50,6 +50,8 @@ class Assets {
 
   static const String qpay = 'assets/images/app/qpay.png';
   static const String applePay = 'assets/images/component/apple_pay.png';
+  static const String pos = 'assets/images/component/pos.svg';
+  static const String cash = 'assets/images/component/cash.svg';
 
   static const String appleWallet = 'assets/images/app/apple-wallet.svg';
 
@@ -118,4 +120,7 @@ class Assets {
   static const String button1Svg = 'assets/images/component/Button1.svg';
   static const String button2Svg = 'assets/images/component/Button2.svg';
   static const String button3Svg = 'assets/images/component/Button3.svg';
+
+  static const String logoPng = 'assets/images/dump/logo.png';
+  static const String logoPng2 = 'assets/images/dump/output.png';
 }

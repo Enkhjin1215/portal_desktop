@@ -17,7 +17,7 @@ class ProviderCoreModel extends ChangeNotifier {
   String? username;
   String? password;
   bool isEnglish = false;
-  List<Events> eventList = [];
+  List<EventModel> eventList = [];
   bool loading = false; //------Хүсэлт дуудах үед button-г ачааллаж байна state рүү харуулна
   TicketList? mTicketList;
   OrderList? mOrderList;
@@ -79,19 +79,11 @@ class ProviderCoreModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<Events> getEventList() {
+  List<EventModel> getEventList() {
     return eventList;
   }
 
-  List<EventModel> getAllEvents() {
-    List<EventModel> list = [];
-    for (int i = 0; i < eventList.length; i++) {
-      list.addAll(eventList[i].events ?? []);
-    }
-    return list;
-  }
-
-  setEventList(List<Events> list) {
+  setEventList(List<EventModel> list) {
     eventList = list;
     notifyListeners();
   }
@@ -259,7 +251,7 @@ class ProviderCoreModel extends ChangeNotifier {
     application.setUserType(1);
     application.setAccessToken('');
     application.setRefreshToken('');
-    application.setIdToken('');
+    // application.setIdToken('');
     loading = false;
   }
 }

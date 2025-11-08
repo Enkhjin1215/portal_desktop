@@ -44,7 +44,6 @@ class _EventTicketScreenState extends State<EventTicketScreen> with SingleTicker
   double _dragDistance = 0.0;
 
   int from = 0;
-  late TicketPendingInvoiceService _pendingInvoiceService;
 
   @override
   void initState() {
@@ -56,7 +55,6 @@ class _EventTicketScreenState extends State<EventTicketScreen> with SingleTicker
       detail = args['detail'];
       startDate = DateTime.parse(detail!.startDate!).toLocal();
       ticketList = detail!.tickets!;
-      _pendingInvoiceService = TicketPendingInvoiceService();
 
       Provider.of<ProviderCoreModel>(context, listen: false).setSelectedSeat([]);
       isChooseSeatVisible();
@@ -168,18 +166,6 @@ class _EventTicketScreenState extends State<EventTicketScreen> with SingleTicker
 
     isReady = true;
     setState(() {});
-  }
-
-  Future<QpayInvoice?> checkInvoice() async {
-    QpayInvoice? inv;
-    try {
-      await Webservice().loadGet(QpayInvoice.getPendingInvoice, context).then((response) {
-        inv = response;
-      });
-    } catch (e) {
-      return null;
-    }
-    return inv;
   }
 
   deleteInvoice(String id) async {
@@ -398,15 +384,7 @@ class _EventTicketScreenState extends State<EventTicketScreen> with SingleTicker
           onTap: body.isEmpty
               ? null
               : () async {
-                  bool hasPendingInvoice = await _pendingInvoiceService.handlePendingInvoice(
-                    context: context,
-                    theme: theme,
-                    currentEventDetail: detail,
-                  );
-
-                  if (!hasPendingInvoice) {
-                    createInvoice();
-                  }
+                  createInvoice();
                 },
         ),
       ),
