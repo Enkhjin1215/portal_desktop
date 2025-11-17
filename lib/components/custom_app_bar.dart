@@ -225,18 +225,23 @@ PreferredSize homeAppBar({
             child: SizedBox(),
           ),
           InkWell(
-                  onTap: () async {
-                    await Provider.of<ProviderCoreModel>(context, listen: false).clearUser();
-                    NavKey.navKey.currentState!.pushNamedAndRemoveUntil(logRegStepOneRoute, (route) => false);
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 7),
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.12), shape: BoxShape.circle),
-                    child: Icon(Icons.offline_bolt),
+              onTap: () async {
+                await Provider.of<ProviderCoreModel>(context, listen: false).clearUser();
+                NavKey.navKey.currentState!.pushNamedAndRemoveUntil(logRegStepOneRoute, (route) => false);
+              },
+              child: Center(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 7),
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.12), shape: BoxShape.circle),
+                  child: const Icon(
+                    Icons.offline_bolt,
+                    color: Colors.white,
                   ),
-                ),   const SizedBox(
+                ),
+              )),
+          const SizedBox(
             width: 20,
           ),
           Text(getTranslated(context, 'en'),
