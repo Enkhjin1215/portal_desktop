@@ -40,6 +40,7 @@ class _UsbPrinterScreenState extends State<UsbPrinterScreen> {
       _scanPrinters();
       seats = args['seats'] is int ? [] : args['seats'];
       eventName = args['name'] ?? 'null';
+      print("event Name: $eventName");
       eventDate = args['date'] ?? DateTime.now().toString();
 
       setState(() {});
@@ -220,7 +221,9 @@ class _UsbPrinterScreenState extends State<UsbPrinterScreen> {
       );
 
       bytes += generator.feed(1);
-      bytes += generator.text(eventName, styles: const PosStyles(align: PosAlign.center, bold: true));
+      // eventName = 'MNVL'
+
+      bytes += generator.text("MNVL", styles: const PosStyles(align: PosAlign.center, bold: true));
       bytes += generator.feed(1);
       bytes += generator.text(eventDate, styles: const PosStyles(align: PosAlign.center, bold: true));
       bytes += generator.feed(1);
@@ -334,7 +337,7 @@ class _UsbPrinterScreenState extends State<UsbPrinterScreen> {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text("Printed via macOS CUPS successfully!")),
               );
-              // NavKey.navKey.currentState!.pushNamedAndRemoveUntil(homeRoute, (route) => false);
+              NavKey.navKey.currentState!.pushNamedAndRemoveUntil(homeRoute, (route) => false);
             } else {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text("Print error: ${result.stderr}")),

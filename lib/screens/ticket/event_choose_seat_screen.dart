@@ -1,4 +1,5 @@
 import 'dart:collection';
+import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +24,7 @@ import 'package:portal/service/api_list.dart';
 import 'package:provider/provider.dart';
 import 'package:textstyle_extensions/textstyle_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:flutter_inappwebview_windows/flutter_inappwebview_windows.dart';
-
+import 'package:path/path.dart' as path;
 
 class EventChooseSeatScreen extends StatefulWidget {
   const EventChooseSeatScreen({super.key});
@@ -49,7 +49,7 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
   TextEditingController teamNameController = TextEditingController();
   TextEditingController contactNumberController = TextEditingController();
   WebViewEnvironment? webViewEnvironment;
-    InAppWebViewController? webViewController;
+  InAppWebViewController? webViewController;
   InAppWebViewSettings settings = InAppWebViewSettings(
       isInspectable: kDebugMode,
       mediaPlaybackRequiresUserGesture: false,
@@ -60,7 +60,6 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
   String url = "";
   double progress = 0;
   final urlController = TextEditingController();
-
 
   @override
   void initState() {
@@ -76,20 +75,22 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
 
       teamNameController.text = await application.getQuizName();
       contactNumberController.text = await application.getQuizNumber();
+      var userDataPath = path.join(
+          Platform.environment['APPDATA']!, // C:\Users\<User>\AppData\Roaming
+          'PortalDesktop',
+          'EBWebView');
       setState(() {});
       Provider.of<ProviderCoreModel>(context, listen: false).setSelectedSeat([]);
-        if (!kIsWeb && defaultTargetPlatform == TargetPlatform.windows) {
-    final availableVersion = await WebViewEnvironment.getAvailableVersion();
-    assert(availableVersion != null,
-        'Failed to find an installed WebView2 runtime or non-stable Microsoft Edge installation.');
+      if (!kIsWeb && defaultTargetPlatform == TargetPlatform.windows) {
+        final availableVersion = await WebViewEnvironment.getAvailableVersion();
+        assert(availableVersion != null, 'Failed to find an installed WebView2 runtime or non-stable Microsoft Edge installation.');
 
-    webViewEnvironment = await WebViewEnvironment.create(
-        settings: WebViewEnvironmentSettings(userDataFolder: 'custom_path'));
-  }
+        webViewEnvironment = await WebViewEnvironment.create(settings: WebViewEnvironmentSettings(userDataFolder: 'custom_path'));
+      }
 
-  if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
-    await InAppWebViewController.setWebContentsDebuggingEnabled(kDebugMode);
-  }
+      if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
+        await InAppWebViewController.setWebContentsDebuggingEnabled(kDebugMode);
+      }
       // init(detail.id!);
       // init();
     }));
@@ -114,7 +115,6 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
   void dispose() {
     body = [];
     rawBody = [];
-
 
     _animationController.dispose();
     teamNameController.dispose();
@@ -250,6 +250,7 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
   Widget build(BuildContext context) {
     ThemeData theme = Provider.of<ThemeNotifier>(context, listen: true).getTheme();
     selectedSeats = Provider.of<ProviderCoreModel>(context, listen: true).getSelectedSeat();
+    print('${APILIST.eventChooseSeat}${detail.id}');
     return CustomScaffold(
         appBar: EmptyAppBar(context: context),
         padding: EdgeInsets.zero,
@@ -277,46 +278,34 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
                     )
                   ]))
                 : Stack(
-                   
-              children: [
-                InAppWebView(
-                  key: webViewKey,
-                  webViewEnvironment: webViewEnvironment,
-                  initialUrlRequest:
-                      URLRequest(url: WebUri.uri(Uri.parse('${APILIST.eventChooseSeat}${detail.id}'))),
-      
-                  initialUserScripts: UnmodifiableListView<UserScript>([]),
-                  initialSettings: settings,
-                 
-                  onWebViewCreated: (controller) async {
-                    webViewController = controller;
-                  },
-                  onLoadStart: (controller, url) {
-                    setState(() {
-                      this.url = url.toString();
-                      urlController.text = this.url;
-                    });
-                  },
-                  onUpdateVisitedHistory: (controller, url, isReload) {
-                                if (url.toString().length >= 65) {
-              Uri uri = Uri.parse(url.toString());
-              String? seatsParam = uri.queryParameters['seats'];
+                    children: [
+                      InAppWebView(
+                        key: webViewKey,
+                        webViewEnvironment: webViewEnvironment,
+                        initialUrlRequest: URLRequest(url: WebUri.uri(Uri.parse('${APILIST.eventChooseSeat}${detail.id}'))),
+                        initialUserScripts: UnmodifiableListView<UserScript>([]),
+                        initialSettings: settings,
+                        onWebViewCreated: (controller) async {
+                          webViewController = controller;
+                        },
+                        onLoadStart: (controller, url) {
+                          setState(() {
+                            this.url = url.toString();
+                            urlController.text = this.url;
+                          });
+                        },
+                        onUpdateVisitedHistory: (controller, url, isReload) {
+                          if (url.toString().length >= 65) {
+                            Uri uri = Uri.parse(url.toString());
+                            String? seatsParam = uri.queryParameters['seats'];
 
-              // Split the seats string into a List<String>
-              List<String> seats = seatsParam != null && seatsParam.isNotEmpty ? seatsParam.split(',') : [];
-              debugPrint('seats:$seats');
-              Provider.of<ProviderCoreModel>(context, listen: false).setSelectedSeat(seats);
-            }
-                  },
-             
-             
-      
-        
-            
-                ),
-               
-              
-            
+                            // Split the seats string into a List<String>
+                            List<String> seats = seatsParam != null && seatsParam.isNotEmpty ? seatsParam.split(',') : [];
+                            debugPrint('seats:$seats');
+                            Provider.of<ProviderCoreModel>(context, listen: false).setSelectedSeat(seats);
+                          }
+                        },
+                      ),
                       Container(
                           margin: EdgeInsets.symmetric(vertical: ResponsiveFlutter.of(context).hp(2), horizontal: 16),
                           child: Row(

@@ -171,12 +171,15 @@ class _EventState extends State<Event> {
                               Row(
                                 children: [
                                   const SizedBox(width: 20),
-                                  Text(
+                                  Expanded(
+                                      child: Text(
                                     item.name?.toUpperCase() ?? '',
                                     style: TextStyles.textFt15Bold.textColor(theme.colorScheme.neutral200),
-                                  ),
-                                  const Expanded(
-                                    child: SizedBox(),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.fade,
+                                  )),
+                                  const SizedBox(
+                                    width: 12,
                                   ),
                                   Container(
                                       padding: EdgeInsets.symmetric(
