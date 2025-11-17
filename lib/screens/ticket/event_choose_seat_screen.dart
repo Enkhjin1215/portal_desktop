@@ -1,4 +1,5 @@
 import 'dart:collection';
+import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,7 @@ import 'package:portal/service/api_list.dart';
 import 'package:provider/provider.dart';
 import 'package:textstyle_extensions/textstyle_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:flutter_inappwebview_windows/flutter_inappwebview_windows.dart';
+import 'package:path/path.dart' as path;
 
 class EventChooseSeatScreen extends StatefulWidget {
   const EventChooseSeatScreen({super.key});
@@ -74,6 +75,10 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
 
       teamNameController.text = await application.getQuizName();
       contactNumberController.text = await application.getQuizNumber();
+      var userDataPath = path.join(
+          Platform.environment['APPDATA']!, // C:\Users\<User>\AppData\Roaming
+          'PortalDesktop',
+          'EBWebView');
       setState(() {});
       Provider.of<ProviderCoreModel>(context, listen: false).setSelectedSeat([]);
       if (!kIsWeb && defaultTargetPlatform == TargetPlatform.windows) {
