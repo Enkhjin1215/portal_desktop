@@ -1,7 +1,5 @@
-import 'package:cyrtranslit/cyrtranslit.dart' as cyrtranslit;
 import 'package:flutter/material.dart';
 import 'package:portal/helper/constant.dart';
-import 'package:portal/helper/func.dart';
 import 'package:portal/helper/text_styles.dart';
 import 'package:portal/language/language_constant.dart';
 import 'package:portal/models/event_model.dart';
@@ -84,7 +82,7 @@ class _EventState extends State<Event> {
                 borderStyle: ZoMonoCromeBorderStyle.mirror,
                 borderWidth: 2.5,
                 child: Container(
-                    height: ResponsiveFlutter.of(context).hp(15),
+                    height: 330,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12), image: DecorationImage(image: NetworkImage(item.coverImage!), fit: BoxFit.fill)),
                     child: Column(
@@ -95,14 +93,14 @@ class _EventState extends State<Event> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Container(
-                              margin: EdgeInsets.only(right: ResponsiveFlutter.of(context).wp(2), top: ResponsiveFlutter.of(context).hp(0.5)),
+                              margin: const EdgeInsets.only(right: 10, top: 10),
                               decoration: const BoxDecoration(
                                   color: Colors.white, borderRadius: BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8))),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                                    padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
                                     decoration: const BoxDecoration(
                                         color: Colors.red,
                                         borderRadius: BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8))),
@@ -114,33 +112,27 @@ class _EventState extends State<Event> {
                                       ),
                                     ),
                                   ),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    DateTime.parse(item.startDate ?? DateTime.now().toString()).day.toString(),
-                                    style: TextStyles.textFt18Bold,
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
+                                  Center(
+                                    child: Text(
+                                      DateTime.parse(item.startDate ?? DateTime.now().toString()).day.toString(),
+                                      style: TextStyles.textFt18Bold,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  )
                                 ],
                               ),
                             )
                           ],
                         ),
-                        const Expanded(
-                          flex: 2,
-                          child: SizedBox(),
-                        ),
-                        Container(
+                        Expanded(
+                            child: Container(
                           padding: const EdgeInsets.symmetric(vertical: 8),
                           margin: const EdgeInsets.only(top: 10),
-                          height: 100,
+                          // height: 100,
                           width: double.maxFinite,
-                          decoration:
-                              const BoxDecoration(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(8), bottomRight: Radius.circular(8))),
+                          decoration: BoxDecoration(
+                              color: Colors.black.withValues(alpha: 0.01),
+                              borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(8), bottomRight: Radius.circular(8))),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -197,7 +189,7 @@ class _EventState extends State<Event> {
                               ),
                             ],
                           ),
-                        )
+                        ))
                       ],
                     )))));
   }

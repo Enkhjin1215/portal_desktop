@@ -56,10 +56,10 @@ class _OnboardScreenState extends State<OnboardScreen> {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 150),
       margin: const EdgeInsets.symmetric(horizontal: 2.0),
-      height: 8,
+      height: 12,
       width: isActive ? 24 : 8,
       decoration: BoxDecoration(
-        color: isActive ? theme.colorScheme.greyText : theme.colorScheme.greyText.withValues(alpha: 0.5),
+        color: isActive ? theme.colorScheme.whiteColor : theme.colorScheme.whiteColor.withValues(alpha: 0.5),
         borderRadius: const BorderRadius.all(Radius.circular(10)),
         // border: Border.all(
         //   color: const Color(0xFF24ABF8),
@@ -75,17 +75,15 @@ class _OnboardScreenState extends State<OnboardScreen> {
     return Container(
       width: ResponsiveFlutter.of(context).wp(100),
       height: ResponsiveFlutter.of(context).hp(100),
-      decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(
-                Assets.onboardBackground,
-              ),
-              fit: BoxFit.fill)),
+      decoration: const BoxDecoration(image: DecorationImage(image: AssetImage(Assets.onboardBackground), fit: BoxFit.fill)),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
         children: [
+          const Expanded(
+            flex: 3,
+            child: SizedBox(),
+          ),
           SizedBox(
-            height: 120,
+            height: 100,
             child: PageView(
               controller: _pageController,
               physics: const ClampingScrollPhysics(),
@@ -120,8 +118,8 @@ class _OnboardScreenState extends State<OnboardScreen> {
               NavKey.navKey.currentState!.pushNamed(onboardLogJoinedRoute);
             },
           ),
-          const SizedBox(
-            height: 8,
+          const Expanded(
+            child: SizedBox(),
           ),
           // CustomButton(
           //   textColor: theme.colorScheme.whiteColor,
@@ -147,12 +145,12 @@ Widget item(Map<String, dynamic> data, ThemeData theme) {
     children: [
       Text(
         data['title'],
-        style: TextStyles.textFt22Bold.textColor(theme.colorScheme.whiteColor),
+        style: TextStyles.textFt28Med.textColor(theme.colorScheme.whiteColor),
       ),
       const SizedBox(
         height: 12,
       ),
-      Text(data['text'], style: TextStyles.textFt15Reg.textColor(theme.colorScheme.greyText), textAlign: TextAlign.center),
+      Text(data['text'], style: TextStyles.textFt20Regular.textColor(theme.colorScheme.whiteColor), textAlign: TextAlign.center),
       const SizedBox(
         height: 16,
       )

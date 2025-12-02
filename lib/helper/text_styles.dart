@@ -112,8 +112,8 @@ class TextStyles {
 
   static TextStyle get textFt28Med => const TextStyle(
         fontFamily: 'Zona Pro',
-        fontWeight: FontWeight.w500,
-        fontSize: 20,
+        fontWeight: FontWeight.bold,
+        fontSize: 28,
         height: 1.3,
       );
 

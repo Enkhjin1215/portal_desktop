@@ -93,43 +93,81 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                         );
                       }, itemBuilder: (context, item, index) {
                         return Container(
-                          padding: const EdgeInsets.all(16),
-                          margin: const EdgeInsets.all(4),
+                          margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                           child: Row(
-                            // crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              // Index number
                               Text(
                                 '${index + 1}.',
                                 style: TextStyles.textFt18Bold.textColor(Colors.white),
                               ),
-                              const SizedBox(
-                                width: 32,
-                              ),
+                              const SizedBox(width: 16),
+
+                              // Ticket card
                               Expanded(
                                 child: Container(
-                                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                                  width: ResponsiveFlutter.of(context).wp(100),
-                                  height: 300,
-                                  decoration: BoxDecoration(image: DecorationImage(image: NetworkImage(item.eventId.coverImage), fit: BoxFit.fill)),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      GradientText(
-                                        item.eventId.name,
-                                        style: TextStyles.textFt24Bold,
-                                      ),
-                                      const Expanded(
-                                        child: SizedBox(),
-                                      ),
-                                      GradientText(
-                                        formatDateTime(item.updatedAt.toString()),
-                                        style: TextStyles.textFt24Bold,
-                                      ),
+                                  height: 220,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(16),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black.withOpacity(0.35),
+                                        blurRadius: 10,
+                                        offset: const Offset(0, 4),
+                                      )
                                     ],
+                                    image: DecorationImage(
+                                      image: NetworkImage(item.eventId.coverImage),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(16),
+                                    child: Stack(
+                                      children: [
+                                        // Dark gradient overlay
+                                        Positioned.fill(
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              gradient: LinearGradient(
+                                                begin: Alignment.topCenter,
+                                                end: Alignment.bottomCenter,
+                                                colors: [
+                                                  Colors.black.withOpacity(0.2),
+                                                  Colors.black.withOpacity(0.8),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+
+                                        // Content
+                                        Padding(
+                                          padding: const EdgeInsets.all(16),
+                                          child: Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              // Title
+                                              GradientText(
+                                                item.eventId.name,
+                                                style: TextStyles.textFt24Bold,
+                                              ),
+                                              const Spacer(),
+
+                                              // Date
+                                              GradientText(
+                                                formatDateTime(item.updatedAt.toString()),
+                                                style: TextStyles.textFt18Bold,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              )
+                              ),
                             ],
                           ),
                         );

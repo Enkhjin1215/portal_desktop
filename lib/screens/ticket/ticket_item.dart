@@ -130,7 +130,7 @@ class _TicketItemState extends State<TicketItem> with TickerProviderStateMixin {
                         children: [
                           Text(
                             getTranslated(context, 'withSeat'),
-                            style: TextStyles.textFt14Med.textColor(theme.colorScheme.ticketDescColor.withValues(alpha: 0.7)),
+                            style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor),
                           ),
                           const SizedBox(
                             height: 8,
@@ -197,7 +197,7 @@ class _TicketItemState extends State<TicketItem> with TickerProviderStateMixin {
                                 children: [
                                   Text(
                                     widget.ticket.name!,
-                                    style: TextStyles.textFt16Bold.textColor(theme.colorScheme.ticketItemColor),
+                                    style: TextStyles.textFt16Bold.textColor(theme.colorScheme.whiteColor),
                                   ),
                                   const SizedBox(
                                     height: 8,
@@ -374,11 +374,11 @@ Widget ticketBody(BuildContext context, ThemeData theme, bool isOver, bool isAft
                 : isAfter
                     ? getTranslated(context, 'tillClose')
                     : getTranslated(context, 'tillOpen'),
-            style: TextStyles.textFt14Med.textColor(theme.colorScheme.ticketItemColor),
+            style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor),
           ),
           Text(
             isOver ? '${endDate.year}.${endDate.month}.${endDate.day}' : timer(endDate, startDate, isAfter, isOver, context),
-            style: TextStyles.textFt14Med.textColor(theme.colorScheme.ticketItemColor),
+            style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor),
           ),
         ],
       )

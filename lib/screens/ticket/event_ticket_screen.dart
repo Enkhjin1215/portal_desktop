@@ -201,182 +201,185 @@ class _EventTicketScreenState extends State<EventTicketScreen> with SingleTicker
               )
             : Stack(children: [
                 SizedBox(
-                  width: ResponsiveFlutter.of(context).wp(100),
+                  // width: ResponsiveFlutter.of(context).wp(100),
                   height: ResponsiveFlutter.of(context).hp(100),
                   child: ImageFiltered(
                     imageFilter: ImageFilter.blur(sigmaX: 60, sigmaY: 60),
                     child: Image.network(
                       detail!.coverImage!,
-                      fit: BoxFit.fitHeight,
+                      fit: BoxFit.fill,
                     ),
                   ),
                 ),
-                Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    color: theme.colorScheme.backgroundBlack.withValues(alpha: 0.6),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        InkWell(
-                            onTap: () {
-                              NavKey.navKey.currentState!.pop();
-                            },
-                            child: SizedBox(
-                              height: 40,
-                              width: double.maxFinite,
-                              child: Center(
-                                child: Container(
-                                  width: 50,
-                                  height: 6,
-                                  decoration: BoxDecoration(
-                                      color: theme.colorScheme.ticketDescColor.withOpacity(0.6), borderRadius: BorderRadius.circular(8)),
-                                ),
-                              ),
-                            )),
-                        ContainerTransparent(
-                            child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                Center(
+                    child: ConstrainedBox(
+                        constraints: const BoxConstraints(
+                          maxWidth: 700, // Desktop-д тохирсон өргөн
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Row(
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(16),
-                                  child: Image.network(
-                                    detail!.coverImage!,
-                                    height: 60,
-                                    width: 60,
-                                    fit: BoxFit.cover,
+                            InkWell(
+                                onTap: () {
+                                  NavKey.navKey.currentState!.pop();
+                                },
+                                child: SizedBox(
+                                  height: 40,
+                                  width: double.maxFinite,
+                                  child: Center(
+                                    child: Container(
+                                      width: 50,
+                                      height: 6,
+                                      decoration: BoxDecoration(
+                                          color: theme.colorScheme.ticketDescColor.withOpacity(0.6), borderRadius: BorderRadius.circular(8)),
+                                    ),
                                   ),
+                                )),
+                            ContainerTransparent(
+                                child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(16),
+                                      child: Image.network(
+                                        detail!.coverImage!,
+                                        height: 60,
+                                        width: 60,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 16,
+                                    ),
+                                    Expanded(
+                                      child: Text(
+                                        detail!.name ?? '',
+                                        style: TextStyles.textFt18Med.textColor(theme.colorScheme.whiteColor),
+                                      ),
+                                    )
+                                  ],
                                 ),
                                 const SizedBox(
-                                  width: 16,
+                                  height: 8,
                                 ),
-                                Expanded(
-                                  child: Text(
-                                    detail!.name ?? '',
-                                    style: TextStyles.textFt18Med.textColor(theme.colorScheme.whiteColor),
+                                Divider(
+                                  color: theme.colorScheme.fadedWhite,
+                                  thickness: 0.5,
+                                ),
+                                const SizedBox(
+                                  height: 8,
+                                ),
+                                const SizedBox(
+                                  height: 8,
+                                ),
+                                Row(children: [
+                                  Icon(
+                                    Icons.timer,
+                                    color: theme.colorScheme.ticketDescColor.withValues(alpha: 0.7),
                                   ),
-                                )
+                                  const SizedBox(
+                                    width: 4,
+                                  ),
+                                  Expanded(
+                                    child: Text(
+                                      '${startDate.month}-р сар ${startDate.day}, ${Utils.weekDay(startDate.weekday, isEnglish)} ● ${DateFormat('HH:mm').format(startDate)}',
+                                      style: TextStyles.textFt14Med.textColor(theme.colorScheme.ticketDescColor.withValues(alpha: 0.7)),
+                                    ),
+                                  )
+                                ]),
+                                Row(children: [
+                                  Icon(
+                                    Icons.location_pin,
+                                    color: theme.colorScheme.ticketDescColor.withValues(alpha: 0.7),
+                                  ),
+                                  const SizedBox(
+                                    width: 4,
+                                  ),
+                                  Expanded(
+                                    child: Text(
+                                      '${detail!.location!.name}',
+                                      style: TextStyles.textFt14Med.textColor(theme.colorScheme.ticketDescColor.withValues(alpha: 0.7)),
+                                    ),
+                                  )
+                                ]),
                               ],
+                            )),
+                            const SizedBox(
+                              height: 24,
+                            ),
+                            Text(
+                              getTranslated(context, 'chooseTicket'),
+                              style: TextStyles.textFt16Med.textColor(theme.colorScheme.ticketDescColor.withValues(alpha: 0.7)),
                             ),
                             const SizedBox(
-                              height: 8,
+                              height: 24,
                             ),
-                            Divider(
-                              color: theme.colorScheme.fadedWhite,
-                              thickness: 0.5,
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            Row(children: [
-                              Icon(
-                                Icons.timer,
-                                color: theme.colorScheme.ticketDescColor.withValues(alpha: 0.7),
-                              ),
-                              const SizedBox(
-                                width: 4,
-                              ),
-                              Expanded(
-                                child: Text(
-                                  '${startDate.month}-р сар ${startDate.day}, ${Utils.weekDay(startDate.weekday, isEnglish)} ● ${DateFormat('HH:mm').format(startDate)}',
-                                  style: TextStyles.textFt14Med.textColor(theme.colorScheme.ticketDescColor.withValues(alpha: 0.7)),
-                                ),
-                              )
-                            ]),
-                            Row(children: [
-                              Icon(
-                                Icons.location_pin,
-                                color: theme.colorScheme.ticketDescColor.withValues(alpha: 0.7),
-                              ),
-                              const SizedBox(
-                                width: 4,
-                              ),
-                              Expanded(
-                                child: Text(
-                                  '${detail!.location!.name}',
-                                  style: TextStyles.textFt14Med.textColor(theme.colorScheme.ticketDescColor.withValues(alpha: 0.7)),
-                                ),
-                              )
-                            ]),
-                          ],
-                        )),
-                        const SizedBox(
-                          height: 24,
-                        ),
-                        Text(
-                          getTranslated(context, 'chooseTicket'),
-                          style: TextStyles.textFt16Med.textColor(theme.colorScheme.ticketDescColor.withValues(alpha: 0.7)),
-                        ),
-                        const SizedBox(
-                          height: 24,
-                        ),
-                        Expanded(
-                            child: ListView.builder(
-                                shrinkWrap: true,
-                                itemCount: ticketList.length,
-                                itemBuilder: ((context, index) {
-                                  Map<String, dynamic> item = {};
-                                  return index + 1 == ticketList.length && ticketList[index].isSeat!
-                                      ? TicketItem(
-                                          ticket: ticketList[index],
-                                          index: index,
-                                          onPress: (p0, p1) {},
-                                          chooseSeat: true,
-                                          min: min,
-                                          max: max,
-                                          detail: detail!,
-                                          tapSeat: () {
-                                            NavKey.navKey.currentState!.pushNamed(eventChooseSeatRoute, arguments: {'detail': detail, 'body2': body});
-                                          },
-                                        )
-                                      : ticketList[index].isSeat!
-                                          ? const SizedBox()
-                                          : TicketItem(
-                                              tapSeat: () {},
-                                              detail: detail!,
+                            Expanded(
+                                child: ListView.builder(
+                                    shrinkWrap: true,
+                                    itemCount: ticketList.length,
+                                    itemBuilder: ((context, index) {
+                                      Map<String, dynamic> item = {};
+                                      return index + 1 == ticketList.length && ticketList[index].isSeat!
+                                          ? TicketItem(
                                               ticket: ticketList[index],
                                               index: index,
-                                              onPress: (bool isAdd, int count) {
-                                                Map<String, dynamic> searchValue = {
-                                                  'templateId': ticketList[index].id,
-                                                  'seats': isAdd ? count - 1 : count + 1
-                                                };
-                                                String searchValueString = searchValue.toString();
-                                                List<String> bodyStrings = body.map((e) => e.toString()).toList();
-                                                int indexOf = bodyStrings.indexOf(searchValueString);
-                                                if (indexOf != -1) {
-                                                  if (count <= 0) {
-                                                    body.removeAt(indexOf);
-                                                  } else {
-                                                    item['templateId'] = ticketList[index].id;
-                                                    item['seats'] = count;
-                                                    body[indexOf] = item;
-                                                  }
-                                                  print('index of :$indexOf \t item:$item');
-                                                  setState(() {});
-                                                } else {
-                                                  item['templateId'] = ticketList[index].id;
-                                                  item['seats'] = count;
-                                                  body.add(item);
-                                                  setState(() {});
-                                                }
-                                              });
-                                }))),
-                        const SizedBox(
-                          height: 80,
-                        )
-                        // Visibility(visible: chooseSeatVisible, child: const Text('test we')),
-                      ],
-                    ))
+                                              onPress: (p0, p1) {},
+                                              chooseSeat: true,
+                                              min: min,
+                                              max: max,
+                                              detail: detail!,
+                                              tapSeat: () {
+                                                NavKey.navKey.currentState!
+                                                    .pushNamed(eventChooseSeatRoute, arguments: {'detail': detail, 'body2': body});
+                                              },
+                                            )
+                                          : ticketList[index].isSeat!
+                                              ? const SizedBox()
+                                              : TicketItem(
+                                                  tapSeat: () {},
+                                                  detail: detail!,
+                                                  ticket: ticketList[index],
+                                                  index: index,
+                                                  onPress: (bool isAdd, int count) {
+                                                    Map<String, dynamic> searchValue = {
+                                                      'templateId': ticketList[index].id,
+                                                      'seats': isAdd ? count - 1 : count + 1
+                                                    };
+                                                    String searchValueString = searchValue.toString();
+                                                    List<String> bodyStrings = body.map((e) => e.toString()).toList();
+                                                    int indexOf = bodyStrings.indexOf(searchValueString);
+                                                    if (indexOf != -1) {
+                                                      if (count <= 0) {
+                                                        body.removeAt(indexOf);
+                                                      } else {
+                                                        item['templateId'] = ticketList[index].id;
+                                                        item['seats'] = count;
+                                                        body[indexOf] = item;
+                                                      }
+                                                      print('index of :$indexOf \t item:$item');
+                                                      setState(() {});
+                                                    } else {
+                                                      item['templateId'] = ticketList[index].id;
+                                                      item['seats'] = count;
+                                                      body.add(item);
+                                                      setState(() {});
+                                                    }
+                                                  });
+                                    }))),
+                            const SizedBox(
+                              height: 80,
+                            )
+                            // Visibility(visible: chooseSeatVisible, child: const Text('test we')),
+                          ],
+                        )))
               ]),
       ),
       floatingActionButton: IntrinsicHeight(
         child: CustomButton(
-          width: double.maxFinite,
+          width: 500,
           margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 30),
           backgroundColor: theme.colorScheme.whiteColor,
           textColor: theme.colorScheme.blackColor,

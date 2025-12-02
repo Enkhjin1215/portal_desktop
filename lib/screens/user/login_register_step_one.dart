@@ -4,6 +4,7 @@ import 'package:portal/components/custom_scaffold.dart';
 import 'package:portal/components/custom_text_input.dart';
 import 'package:portal/components/neumorphism_icon.dart';
 import 'package:portal/helper/application.dart';
+import 'package:portal/helper/assets.dart';
 import 'package:portal/helper/constant.dart';
 import 'package:portal/helper/responsive_flutter.dart';
 import 'package:portal/helper/text_styles.dart';
@@ -25,10 +26,10 @@ class LogRegStepOne extends StatefulWidget {
 }
 
 class _LogRegStepOneState extends State<LogRegStepOne> {
-  final TextEditingController _mailController = TextEditingController(text: "renchinochir.u@gmail.com");
-  final TextEditingController _pwdController = TextEditingController(text: "Test@123@123");
-  // final TextEditingController _mailController = TextEditingController(text: "discodisco@mailinator.com");
-  // final TextEditingController _pwdController = TextEditingController(text: "DrC5(ACM");
+  // final TextEditingController _mailController = TextEditingController(text: "renchinochir.u@gmail.com");
+  // final TextEditingController _pwdController = TextEditingController(text: "Test@123@123");
+  final TextEditingController _mailController = TextEditingController(text: "discodisco@mailinator.com");
+  final TextEditingController _pwdController = TextEditingController(text: "DrC5(ACM");
   // final TextEditingController _mailController = TextEditingController(text: "");
   // final TextEditingController _pwdController = TextEditingController(text: "");
 
@@ -95,94 +96,83 @@ class _LogRegStepOneState extends State<LogRegStepOne> {
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Provider.of<ThemeNotifier>(context, listen: true).getTheme();
+    ThemeData theme = Provider.of<ThemeNotifier>(context).getTheme();
+
     return CustomScaffold(
       padding: EdgeInsets.zero,
-      resizeToAvoidBottomInset: true,
+      backgroundColor: theme.colorScheme.inputBackground,
       body: Container(
-        padding: const EdgeInsets.fromLTRB(20, 10, 20, 40),
-        // width: ResponsiveFlutter.of(context).wp(100),
-        height: ResponsiveFlutter.of(context).hp(100),
-        color: theme.colorScheme.inputBackground,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Visibility(
-                visible: userType == 0,
-                child: InkWell(
-                  onTap: () {
-                    print('pop');
-                    NavKey.navKey.currentState!.pop();
-                  },
-                  child: SizedBox(
-                    height: 40,
-                    width: double.maxFinite,
-                    child: Center(
-                      child: Container(
-                        width: 48,
-                        height: 4,
-                        decoration: ShapeDecoration(
-                          color: theme.colorScheme.backColor,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(100),
-                          ),
+          // width: ResponsiveFlutter.of(context).wp(150),
+          // height: ResponsiveFlutter.of(context).hp(100),
+          decoration: const BoxDecoration(color: Colors.red, image: DecorationImage(image: AssetImage(Assets.onboardBackground), fit: BoxFit.fill)),
+          child: Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(
+                maxWidth: 700, // Desktop-д тохирсон өргөн
+              ),
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(40, 40, 40, 60),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Desktop бол drag-line хэрэггүй тул хассан
+                      const SizedBox(height: 20),
+
+                      const NeumorphismIcon(type: 0),
+                      const SizedBox(height: 32),
+
+                      Text(
+                        getTranslated(context, 'login'),
+                        style: TextStyles.textFt30.textColor(theme.colorScheme.whiteColor),
+                      ),
+                      const SizedBox(height: 16),
+
+                      Text(
+                        getTranslated(context, 'insertEmail'),
+                        style: TextStyles.textFt18Reg.textColor(theme.colorScheme.whiteColor),
+                      ),
+                      const SizedBox(height: 32),
+
+                      CustomTextField(
+                        enable: true,
+                        controller: _mailController,
+                        hintText: getTranslated(context, 'emailInput'),
+                        inputType: TextInputType.emailAddress,
+                        fillColor: Colors.white.withValues(alpha: 0.5),
+                      ),
+                      const SizedBox(height: 20),
+
+                      CustomTextField(
+                        obscureText: true,
+                        enable: true,
+                        controller: _pwdController,
+                        hintText: getTranslated(context, 'pwdInput'),
+                        inputType: TextInputType.visiblePassword,
+                        fillColor: Colors.white.withValues(alpha: 0.5),
+                      ),
+
+                      const SizedBox(height: 40),
+
+                      // Desktop-д илүү тохиромжтой Login Button
+                      SizedBox(
+                        height: 60,
+                        width: double.infinity,
+                        child: CustomButton(
+                          text: getTranslated(context, 'login'),
+                          onTap: () {
+                            if (_mailController.text.isNotEmpty && _pwdController.text.isNotEmpty) {
+                              login();
+                            }
+                          },
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                )),
-            const NeumorphismIcon(
-              type: 0,
+                ),
+              ),
             ),
-            const SizedBox(
-              height: 24,
-            ),
-            Text(
-              getTranslated(context, 'login'),
-              style: TextStyles.textFt22Bold.textColor(theme.colorScheme.whiteColor),
-            ),
-            const SizedBox(
-              height: 14,
-            ),
-            Text(
-              getTranslated(context, 'insertEmail'),
-              style: TextStyles.textFt16Reg.textColor(theme.colorScheme.weekDayColor),
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            CustomTextField(
-              enable: true,
-              controller: _mailController,
-              hintText: getTranslated(context, 'emailInput'),
-              inputType: TextInputType.emailAddress,
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            CustomTextField(
-              obscureText: true,
-              enable: true,
-              controller: _pwdController,
-              hintText: getTranslated(context, 'pwdInput'),
-              inputType: TextInputType.visiblePassword,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: IntrinsicHeight(
-          child: CustomButton(
-        width: 332,
-        alignment: Alignment.bottomCenter,
-        // margin: EdgeInsets.zero,
-        text: getTranslated(context, 'login'),
-        onTap: () {
-          if (_mailController.text.isNotEmpty && _pwdController.text.isNotEmpty) {
-            login();
-          }
-        },
-      )),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          )),
     );
   }
 }

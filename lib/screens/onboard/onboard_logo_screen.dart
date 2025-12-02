@@ -1,18 +1,17 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:portal/helper/application.dart';
-import 'package:portal/provider/provider_core.dart';
-import 'package:portal/service/response.dart';
-import 'package:portal/service/web_service.dart';
-import 'package:provider/provider.dart';
 import 'package:portal/helper/assets.dart';
 import 'package:portal/helper/constant.dart';
 import 'package:portal/helper/responsive_flutter.dart';
+import 'package:portal/provider/provider_core.dart';
 import 'package:portal/provider/theme_notifier.dart';
 import 'package:portal/router/route_path.dart';
+import 'package:portal/service/response.dart';
+import 'package:portal/service/web_service.dart';
+import 'package:provider/provider.dart';
 
 class OnboardLogoScreen extends StatefulWidget {
   const OnboardLogoScreen({super.key});

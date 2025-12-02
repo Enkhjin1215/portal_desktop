@@ -154,100 +154,99 @@ class _EventRouteState extends State<EventRoute> with SingleTickerProviderStateM
                 ),
               ),
             )
-          : Stack(
-              children: [
-                // Background image with blur
-                SizedBox(
-                  width: double.infinity,
-                  height: double.infinity,
-                  child: ImageFiltered(
-                    imageFilter: ImageFilter.blur(sigmaX: 120, sigmaY: 120, tileMode: TileMode.mirror),
-                    child: Image.network(
-                      detail!.coverImage!,
-                      fit: BoxFit.cover,
+          :
+          // Main content with scrolling
+          Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              height: double.infinity,
+              color: Colors.green.withValues(alpha: 0.05),
+              child: Row(
+                children: [
+                  // Fixed header section
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.zero,
+                      child: Column(
+                        children: [
+                          const SizedBox(height: 80),
+                          // Back button / drag handle
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              InkWell(
+                                  onTap: () {
+                                    NavKey.navKey.currentState!.pop();
+                                  },
+                                  child: const ContainerTransparent(
+                                      padding: EdgeInsets.fromLTRB(10, 12, 10, 12),
+                                      width: 48,
+                                      bRadius: 60,
+                                      child: Icon(
+                                        Icons.keyboard_arrow_down_outlined,
+                                        color: Colors.white,
+                                      ))),
+                              const Expanded(child: SizedBox()),
+                            ],
+                          ),
+
+                          // Event image and title
+                          const SizedBox(height: 20),
+
+                          if (from == 0) tabBar(theme),
+                          const SizedBox(height: 20),
+                          Text(
+                            detail!.name!,
+                            style: TextStyles.textFt22Bold.textColor(theme.colorScheme.whiteColor),
+                          ),
+                          const SizedBox(height: 20),
+                          Container(
+                              padding: const EdgeInsets.all(2),
+                              decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(16)),
+                              width: 400,
+                              height: 400,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(16),
+                                child: Image.network(detail?.featurePhoto ?? ""),
+                              )),
+                        ],
+                      ),
                     ),
                   ),
-                ),
+                  // Expanded(
+                  //   child: Container(
+                  //     color: Colors.blue,
+                  //   ),
+                  // )
 
-                // Main content with scrolling
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  height: double.infinity,
-                  color: theme.colorScheme.backgroundBlack.withOpacity(0.7),
-                  child: Column(
-                    children: [
-                      // Fixed header section
-                      Padding(
-                        padding: EdgeInsets.zero,
-                        child: Column(
-                          children: [
-                            const SizedBox(height: 16),
-                            // Back button / drag handle
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                InkWell(
-                                    onTap: () {
-                                      NavKey.navKey.currentState!.pop();
-                                    },
-                                    child: const ContainerTransparent(
-                                        padding: EdgeInsets.fromLTRB(10, 12, 10, 12),
-                                        width: 48,
-                                        bRadius: 60,
-                                        child: Icon(
-                                          Icons.keyboard_arrow_down_outlined,
-                                          color: Colors.white,
-                                        ))),
-                                const Expanded(child: SizedBox()),
-                              ],
-                            ),
-
-                            // Event image and title
-                            const SizedBox(height: 20),
-
-                            Text(
-                              detail!.name!,
-                              style: TextStyles.textFt22Bold.textColor(theme.colorScheme.whiteColor),
-                            ),
-                            const SizedBox(height: 20),
-                            if (from == 0) tabBar(theme),
-                            const SizedBox(height: 12),
-                          ],
-                        ),
-                      ),
-
-                      // Scrollable content (PageView)
-                      Expanded(
-                        child: PageView(
-                          controller: _controller,
-                          // physics: const NeverScrollableScrollPhysics(),
-                          children: [
-                            EventDetailScreen(
-                              detail: detail!,
-                              childrenList: childrenList,
-                              onTap: (value) {
-                                selectedChild = value;
-                                setState(() {});
-                              },
-                            ),
-                            EventBarScreen(
-                              detail: detail!,
-                            ),
-                            EventMerchScreen(
-                              eventDetail: detail,
-                            )
-                          ],
-                          onPageChanged: (index) {
-                            _currentIndex = index;
+                  Expanded(
+                    child: PageView(
+                      controller: _controller,
+                      // physics: const NeverScrollableScrollPhysics(),
+                      children: [
+                        EventDetailScreen(
+                          detail: detail!,
+                          childrenList: childrenList,
+                          onTap: (value) {
+                            selectedChild = value;
                             setState(() {});
                           },
                         ),
-                      ),
-                    ],
+                        EventBarScreen(
+                          detail: detail!,
+                        ),
+                        EventMerchScreen(
+                          eventDetail: detail,
+                        )
+                      ],
+                      onPageChanged: (index) {
+                        _currentIndex = index;
+                        setState(() {});
+                      },
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
       floatingActionButton: Visibility(
         visible: from == 1
@@ -258,7 +257,7 @@ class _EventRouteState extends State<EventRoute> with SingleTickerProviderStateM
                     ? true
                     : false,
         child: CustomButton(
-          width: double.maxFinite,
+          width: 500,
           margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 30),
           onTap: () async {
             print('userType from route:$userType');

@@ -74,6 +74,9 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const SizedBox(
+              height: 160,
+            ),
             EventMapTime(
                 eventDetail: widget.detail,
                 childrenList: widget.childrenList,
@@ -102,10 +105,10 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                     ))
                 : html.Html(shrinkWrap: true, anchorKey: staticAnchorKeyPlace, data: widget.detail.description ?? "", style: {
                     'body': html.Style(
-                      padding: html.HtmlPaddings.zero,
-                      margin: html.Margins.zero,
-                      textAlign: TextAlign.justify,
-                    ),
+                        padding: html.HtmlPaddings.zero,
+                        margin: html.Margins.zero,
+                        textAlign: TextAlign.justify,
+                        color: theme.colorScheme.whiteColor),
                     'p': html.Style(color: theme.colorScheme.whiteColor),
                   }),
             const SizedBox(height: 120)

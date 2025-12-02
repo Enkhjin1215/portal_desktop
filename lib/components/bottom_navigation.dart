@@ -37,10 +37,9 @@ class _BottomNavigationState extends State<BottomNavigation> with TickerProvider
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Provider.of<ThemeNotifier>(context, listen: true).getTheme();
-    double stdCutoutWidthDown = MediaQuery.of(context).viewPadding.bottom;
     return Container(
-      height: ResponsiveFlutter.of(context).hp(5),
-      padding: EdgeInsets.only(top: 12, bottom: stdCutoutWidthDown * 1.2),
+      height: 80,
+      // padding: EdgeInsets.only(top: 12, bottom: 40),
       width: double.maxFinite,
       decoration: BoxDecoration(
           border: Border(top: BorderSide(color: theme.colorScheme.fadedWhite, width: 0.3)),
@@ -55,10 +54,13 @@ class _BottomNavigationState extends State<BottomNavigation> with TickerProvider
             onTap: () {
               NavKey.navKey.currentState?.pushNamedAndRemoveUntil(homeRoute, (route) => false);
             },
-            child: Center(
-              child: Text(
-                getTranslated(context, 'event'),
-                style: TextStyles.textFt16Bold.textColor(Colors.white),
+            child: Container(
+              color: widget.currentMenu == 0 ? Colors.white.withValues(alpha: 0.05) : theme.colorScheme.backgroundColor,
+              child: Center(
+                child: Text(
+                  getTranslated(context, 'event'),
+                  style: TextStyles.textFt16Bold.textColor(Colors.white),
+                ),
               ),
             ),
           )),
@@ -67,11 +69,13 @@ class _BottomNavigationState extends State<BottomNavigation> with TickerProvider
             onTap: () {
               NavKey.navKey.currentState?.pushNamedAndRemoveUntil(purchaseRoute, (route) => false);
             },
-            child: Center(
-              child: Text(
+            child: Container(
+              color: widget.currentMenu == 1 ? Colors.white.withValues(alpha: 0.05) : theme.colorScheme.backgroundColor,
+              child: Center(
+                  child: Text(
                 'Борлуулалт',
                 style: TextStyles.textFt16Bold.textColor(Colors.white),
-              ),
+              )),
             ),
           )),
         ],

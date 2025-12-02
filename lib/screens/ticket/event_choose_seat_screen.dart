@@ -69,17 +69,17 @@ class _EventChooseSeatScreenState extends State<EventChooseSeatScreen> with Sing
       detail = args['detail'];
       rawBody = [];
       rawBody = args['body2'];
+      setState(() {});
       if (detail.name!.contains('Quiz')) {
         isQuizNight = true;
       }
 
       teamNameController.text = await application.getQuizName();
       contactNumberController.text = await application.getQuizNumber();
-      var userDataPath = path.join(
-          Platform.environment['APPDATA']!, // C:\Users\<User>\AppData\Roaming
-          'PortalDesktop',
-          'EBWebView');
-      setState(() {});
+      // var userDataPath = path.join(
+      //     Platform.environment['APPDATA']!, // C:\Users\<User>\AppData\Roaming
+      //     'PortalDesktop',
+      //     'EBWebView');
       Provider.of<ProviderCoreModel>(context, listen: false).setSelectedSeat([]);
       if (!kIsWeb && defaultTargetPlatform == TargetPlatform.windows) {
         final availableVersion = await WebViewEnvironment.getAvailableVersion();

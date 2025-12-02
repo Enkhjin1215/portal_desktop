@@ -8,7 +8,6 @@ class Assets {
   static const String login = 'assets/images/app/login.svg';
   static const String register = 'assets/images/app/register.svg';
 
-  static const String onboardBackground = 'assets/images/app/onboard.png';
   static const String logo = 'assets/images/component/logo.svg';
 
   static const String fb = 'assets/images/component/Facebook.svg';
@@ -123,4 +122,5 @@ class Assets {
 
   static const String logoPng = 'assets/images/dump/logo.png';
   static const String logoPng2 = 'assets/images/dump/output.png';
+  static const String onboardBackground = 'assets/images/dump/back.jpeg';
 }

@@ -15,6 +15,7 @@ import 'package:portal/language/app_localization.dart';
 import 'package:portal/language/language_constant.dart';
 import 'package:portal/provider/provider_cart.dart';
 import 'package:portal/provider/provider_core.dart';
+import 'package:portal/provider/provider_hold_invoice.dart';
 import 'package:portal/provider/provider_xo.dart';
 import 'package:portal/provider/theme_notifier.dart';
 import 'package:portal/router/app_router.dart';
@@ -32,6 +33,7 @@ void main() async {
   final List<Map<String, dynamic>> body = [];
   final cart = ProviderCart(body);
   final xo = ProviderXO([]);
+  final hold = ProviderHold();
 
   TicketPopup();
 
@@ -48,6 +50,9 @@ void main() async {
       ),
       ChangeNotifierProvider<ProviderXO>(
         create: (_) => xo,
+      ),
+      ChangeNotifierProvider<ProviderHold>(
+        create: (_) => hold,
       ),
     ],
     child: const MyHomePage(),

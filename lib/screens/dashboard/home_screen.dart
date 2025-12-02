@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:portal/components/bottom_navigation.dart';
 import 'package:portal/components/custom_app_bar.dart';
 import 'package:portal/components/custom_scaffold.dart';
+import 'package:portal/helper/assets.dart';
 import 'package:portal/helper/constant.dart';
 import 'package:portal/helper/responsive_flutter.dart';
 import 'package:portal/helper/text_styles.dart';
+import 'package:portal/language/language.dart';
 import 'package:portal/language/language_constant.dart';
+import 'package:portal/provider/provider_core.dart';
 import 'package:portal/provider/theme_notifier.dart';
+import 'package:portal/router/route_path.dart';
 import 'package:portal/screens/dashboard/widget_event.dart';
 import 'package:portal/service/core_requests.dart';
 import 'package:provider/provider.dart';
@@ -57,15 +61,15 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Provider.of<ThemeNotifier>(context, listen: true).getTheme();
+    bool isEnglish = Provider.of<ProviderCoreModel>(context, listen: true).isEnglish;
+
     return CustomScaffold(
       padding: EdgeInsets.zero,
-      appBar: homeAppBar(context: context),
+      // appBar: homeAppBar(context: context),
       resizeToAvoidBottomInset: false,
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        // width: ResponsiveFlutter.of(context).wp(100),
         height: ResponsiveFlutter.of(context).hp(100),
-        color: theme.colorScheme.blackColor,
+        decoration: const BoxDecoration(color: Colors.red, image: DecorationImage(image: AssetImage(Assets.onboardBackground), fit: BoxFit.fill)),
         child: SmartRefresher(
             footer: const SizedBox(),
             physics: const BouncingScrollPhysics(),
@@ -101,15 +105,76 @@ class _HomeScreenState extends State<HomeScreen> {
             onLoading: _onLoading,
             child: SingleChildScrollView(
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Container(
+                height: 80,
+                color: theme.colorScheme.blackColor.withValues(alpha: 0.4),
+                padding: const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 12),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset(
+                      Assets.portalAppBar,
+                      height: 40,
+                    ),
+                    const Expanded(
+                      flex: 2,
+                      child: SizedBox(),
+                    ),
+                    InkWell(
+                        onTap: () async {
+                          await Provider.of<ProviderCoreModel>(context, listen: false).clearUser();
+                          NavKey.navKey.currentState!.pushNamedAndRemoveUntil(logRegStepOneRoute, (route) => false);
+                        },
+                        child: Center(
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 7),
+                            width: 40,
+                            height: 40,
+                            decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.12), shape: BoxShape.circle),
+                            child: const Icon(
+                              Icons.offline_bolt,
+                              color: Colors.white,
+                            ),
+                          ),
+                        )),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Text(getTranslated(context, 'en'),
+                        style: TextStyles.textFt15Bold.textColor(isEnglish ? theme.colorScheme.whiteColor : theme.colorScheme.fadedWhite)),
+                    const SizedBox(
+                      width: 8,
+                    ),
+                    Switch(
+                      value: !isEnglish,
+                      activeColor: theme.colorScheme.fadedWhite,
+                      onChanged: (bool value) {
+                        if (value) {
+                          Provider.of<ProviderCoreModel>(context, listen: false).changeLanguage(Language(2, "mn", "Mongolia", "mn"), context);
+                        } else {
+                          Provider.of<ProviderCoreModel>(context, listen: false).changeLanguage(Language(1, "us", "English", "en"), context);
+                        }
+                      },
+                    ),
+                    const SizedBox(
+                      width: 8,
+                    ),
+                    Text(getTranslated(context, 'mn'),
+                        style: TextStyles.textFt15Bold.textColor(!isEnglish ? theme.colorScheme.whiteColor : theme.colorScheme.fadedWhite))
+                  ],
+                ),
+              ),
               // SizedBox(
               //     height: 400 + ResponsiveFlutter.of(context).hp(3),
               //     child: const Center(
               //       child: EventSlider(),
               //     )),
-              Text(
-                getTranslated(context, 'events'),
-                style: TextStyles.textFt20Bold.textColor(theme.colorScheme.whiteColor),
-              ),
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Text(
+                    getTranslated(context, 'events'),
+                    style: TextStyles.textFt20Bold.textColor(theme.colorScheme.whiteColor),
+                  )),
               const SizedBox(
                 height: 16,
               ),
@@ -128,7 +193,7 @@ class _HomeScreenState extends State<HomeScreen> {
               //         ),
               //       ),
               //     )),
-              const Event(),
+              const Padding(padding: EdgeInsets.symmetric(horizontal: 20), child: Event()),
               const SizedBox(
                 height: 80,
               )

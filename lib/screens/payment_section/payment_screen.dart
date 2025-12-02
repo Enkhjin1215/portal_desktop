@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:cyrtranslit/cyrtranslit.dart' as cyrtranslit;
 import 'package:flutter/cupertino.dart' as cup;
 import 'package:flutter/material.dart';
 import 'package:portal/components/container_transparent.dart';
@@ -20,21 +21,22 @@ import 'package:portal/models/invoice_model.dart';
 import 'package:portal/models/merch_model.dart';
 import 'package:portal/models/payment_model.dart';
 import 'package:portal/provider/provider_core.dart';
+import 'package:portal/provider/provider_hold_invoice.dart';
 import 'package:portal/provider/theme_notifier.dart';
 import 'package:portal/router/route_path.dart';
 import 'package:portal/screens/cart/popup/TicketPopup.dart';
-import 'package:portal/screens/payment_section/apple_pay_handler.dart';
+import 'package:portal/screens/payment_section/hold_invoice_screen.dart';
 import 'package:portal/screens/payment_section/payment_method_item.dart';
 import 'package:portal/screens/payment_section/payment_services.dart';
 import 'package:portal/screens/payment_section/promo_code_field.dart';
 import 'package:portal/screens/payment_section/ticket_summary_item.dart';
+import 'package:portal/screens/printer/printer_service.dart';
 import 'package:portal/service/response.dart';
 import 'package:portal/service/web_service.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:textstyle_extensions/textstyle_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:cyrtranslit/cyrtranslit.dart' as cyrtranslit;
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
@@ -63,13 +65,9 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
   String ebarimtOrgName = '';
   Promo? promoNo;
   String promoWrong = '';
-  bool isQuizNight = false;
 
   Merch? selectedMerch;
   Merchs? merch;
-
-  bool isCSOX = false;
-  bool isSteamTopUp = false;
 
   bool isCash = false;
   // Controllers
@@ -81,6 +79,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
 
   bool isReady = false;
   dynamic ebarimtResult;
+  bool _isDeleting = false;
 
   @override
   void initState() {
@@ -230,9 +229,6 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const SizedBox(
-          width: 100,
-        ),
         Column(
           children: [
             Text(
@@ -240,14 +236,14 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
               style: TextStyles.textFt20Bold.textColor(Colors.white),
             ),
             Container(
-              width: 400,
-              height: 400,
+              width: 300,
+              height: 300,
               decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(16)),
               child: Center(
                 child: QrImageView(
                   data: ebarimtResult != null ? ebarimtResult['qrData'] : invoice?.qpay?.qrText ?? '',
                   version: QrVersions.auto,
-                  size: 400.0, // Size of QR image
+                  size: 300.0, // Size of QR image
                 ),
               ),
             ),
@@ -291,13 +287,12 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
                       )),
                   InkWell(
                       onTap: () async {
-                        final allSeats = (data!["templates"] as List).expand((template) => template["seats"] as List).toList();
-                        NavKey.navKey.currentState!.pushNamed(testPrintRoute, arguments: {
-                          "name": cyrtranslit.cyr2Lat(detail?.name ?? '', langCode: "mn"),
-                          "seats": allSeats,
-                          // "seats": ["F1-SG-R2-s10", "F2-SB-R1-s11"],
-                          "date": Func.toDateStr(detail?.startDate ?? DateTime.now().toString())
-                        });
+                        final List<String> allSeats = (data!["templates"] as List).expand((template) => template["seats"] as List<String>).toList();
+                        await printerService.printTicket(
+                          seats: allSeats,
+                          eventName: cyrtranslit.cyr2Lat(detail?.name ?? '', langCode: "mn"),
+                          eventDate: Func.toDateStr(detail?.startDate ?? DateTime.now().toString()),
+                        );
                         // await _deleteInvoice();
                       },
                       child: Container(
@@ -329,12 +324,6 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
       detail = args['event'];
     }
     banks = qpayBanks.getBanks();
-    if (args['csox'] != null) {
-      isCSOX = true;
-    }
-    if (args['steam'] != null) {
-      isSteamTopUp = true;
-    }
 
     if (args['promo'] != '') {
       promoCode.text = args['promo'] ?? '';
@@ -345,9 +334,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
       orgRegNo.text = args['ebarimt'];
       _checkEbarimt();
     }
-    if (detail?.name?.contains('Quiz') ?? false) {
-      isQuizNight = true;
-    }
+
     if (args['selectedMerch'] != null) {
       selectedMerch = args['selectedMerch'];
       merch = args['merch'];
@@ -405,6 +392,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
   Future<void> _createInvoice(String paymentType) async {
     // Prepare data with promo or ebarimt if needed
     Map<String, dynamic> requestData = {...data!};
+    print('requestData-------->${requestData}');
 
     if (promoNo != null) {
       requestData['promo'] = promoCode.text.trim();
@@ -414,8 +402,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
       requestData['ebarimtReceiver'] = orgRegNo.text;
     }
 
-    invoice = await _paymentService.createInvoice(
-        context: context, data: requestData, paymentType: paymentType, isMerch: selectedMerch != null, isCsOx: isCSOX, isSteamTopUp: isSteamTopUp);
+    invoice = await _paymentService.createInvoice(context: context, data: requestData, paymentType: paymentType, isMerch: selectedMerch != null);
 
     final ThemeData theme = Provider.of<ThemeNotifier>(context, listen: false).getTheme();
 
@@ -464,8 +451,18 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
     setState(() {});
   }
 
-  Future<void> _deleteInvoice() async {
-    if (invoice != null) {
+  Future<void> _deleteInvoice({QpayInvoice? holdInvoice}) async {
+    if (holdInvoice != null) {
+      await _paymentService.deleteInvoice(context: context, invoiceId: holdInvoice.id!);
+      await Provider.of<ProviderHold>(context, listen: false).clearCurrentInvoice();
+      // await Provider.of<ProviderHold>(context, listen: false).deleteInvoice(holdInvoice.id!);
+
+      // setState(() {
+      invoice = null;
+      choosePaymentMethod = false;
+      selectedPaymentMethod = null;
+      // });
+    } else if (invoice != null) {
       await _paymentService.deleteInvoice(context: context, invoiceId: invoice!.id!);
 
       setState(() {
@@ -543,13 +540,8 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
 
   num _totalAmtCalc({Promo? coupon}) {
     num amt = 0;
-    print('is steam up :$isSteamTopUp');
 
-    if (isCSOX) {
-      return Utils.rollPrice(data!['qty']);
-    } else if (isSteamTopUp) {
-      return data!['amount'];
-    } else if (selectedMerch != null) {
+    if (selectedMerch != null) {
       //TODO
       // bar nii code
       // if (from == 0) {
@@ -616,69 +608,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
     });
   }
 
-  List<ApplePayItemDetail> _buildApplePayItems() {
-    List<ApplePayItemDetail> applelist = [];
-
-    // Add each ticket item
-    for (int i = 0; i < data!['templates'].length; i++) {
-      String label = _getTicketName(data!['templates'][i]['templateId']);
-      int amt = _getTicketPrice(data!['templates'][i]['templateId'], data!['templates'][i]['seats'], promo: promoNo).toInt();
-
-      applelist.add(ApplePayItemDetail(label: label, amount: amt.toDouble()));
-    }
-
-    // Add total
-    num totalAmt = _totalAmtCalc(coupon: promoNo);
-    applelist.add(ApplePayItemDetail(label: 'Total', amount: totalAmt.toDouble()));
-
-    return applelist;
-  }
-
-  Future<void> _handleApplePay() async {
-    // Validate requirements first
-    if (selectedVatType == -1 && (detail?.ebarimt?.isNotEmpty ?? false)) {
-      application.showToastAlert('НӨАТ сонгоно уу');
-      return;
-    }
-
-    if (selectedVatType == 1 && ebarimtOrgName.isEmpty) {
-      application.showToastAlert('Байгууллагын регистер ээ оруулна уу.');
-      return;
-    }
-
-    // Delete existing invoice if any
-    if (invoice != null) {
-      await _deleteInvoice();
-    }
-
-    // Set selected payment method (Apple Pay)
-    setState(() {
-      choosePaymentMethod = true;
-      selectedPaymentMethod = payMethodsList.firstWhere((method) => method.type == 'applepay');
-    });
-
-    // Create invoice
-    await _createInvoice(selectedPaymentMethod!.type!);
-
-    // Prepare Apple Pay
-    List<ApplePayItemDetail> list = _buildApplePayItems();
-    final token = await application.getAccessToken();
-    Future.delayed(const Duration(seconds: 3), () async {
-      await ApplePayHandler.initApplePay(orderId: invoice!.id!, items: list, token: token);
-      await ApplePayHandler.presentApplePay();
-    });
-    // Initialize and present Apple Pay
-  }
-
   Future<void> _handlePaymentMethodSelection(PaymentModel paymentMethod) async {
-    // try {
-    //   Uri uri = Uri.parse('digipay://payment/25051617145582');
-    //   launchUrl(uri);
-    // } catch (e) {
-    //   debugPrint('exception digipay:$e');
-    // }
-    //Validate requirements first
-
     if (invoice != null) {
       await _deleteInvoice();
     }
@@ -698,11 +628,15 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
     } else {
       data['ebarimtReceiver'] = '';
     }
+    QpayInvoice? curInv = Provider.of<ProviderHold>(context, listen: false).getCurrentInvoice();
+    print('curInv: ${curInv?.amt}');
 
-    await Webservice().loadPost(QpayInvoice.changeMethod, context, data, parameter: '${invoice?.id}?method=$type').then((response) async {
+    await Webservice()
+        .loadPost(QpayInvoice.changeMethod, context, data, parameter: '${curInv == null ? invoice?.id : curInv.id}?method=$type')
+        .then((response) async {
       invoice = response;
       setState(() {});
-      Future.delayed(Duration(milliseconds: 500), () async {
+      Future.delayed(const Duration(milliseconds: 500), () async {
         final ThemeData theme = Provider.of<ThemeNotifier>(context, listen: false).getTheme();
 
         // Handle non-Apple Pay / non-QPay methods that need webview
@@ -748,17 +682,64 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
     });
   }
 
+  Future<Map<String, dynamic>> buildBodyFromModel(QpayInvoice model) async {
+    print('------------------------------->current model changed 1');
+
+    await _deleteInvoice(holdInvoice: model);
+
+    print('------------------------------->current model changed 2');
+    final String? eventId = model.eventId;
+
+    final List<Map<String, dynamic>> templates = [];
+
+    if (model.templates != null) {
+      for (final t in model.templates!) {
+        if (t.templateId == null) continue;
+
+        final dynamic seats = t.seats;
+
+        templates.add({
+          "templateId": t.templateId!,
+          "seats": seats,
+        });
+      }
+    }
+
+    return {
+      "templates": templates,
+      "eventId": eventId,
+    };
+  }
+
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Provider.of<ThemeNotifier>(context, listen: true).getTheme();
-    final bool loading = Provider.of<ProviderCoreModel>(context, listen: true).getLoading();
+    final theme = context.watch<ThemeNotifier>().getTheme();
+    final loading = context.watch<ProviderCoreModel>().getLoading();
 
-    return CustomScaffold(
-      canPopWithSwipe: true,
-      padding: EdgeInsets.zero,
-      resizeToAvoidBottomInset: false,
-      appBar: EmptyAppBar(context: context, backgroundColor: theme.colorScheme.blackColor),
-      body: _buildMainContent(theme, loading),
+    return Selector<ProviderHold, QpayInvoice?>(
+      selector: (_, provider) => provider.getCurrentInvoice(),
+      builder: (context, current, child) {
+        // current өөрчлөгдөх болгонд энэ builder дуудагдана
+        if (current != null && !_isDeleting) {
+          // UI render хийсний дараа async ажиллуулна
+          WidgetsBinding.instance.addPostFrameCallback((_) async {
+            _isDeleting = true; // 🚀 LOCK ON
+            data = await buildBodyFromModel(current);
+            _isDeleting = false; // 🔓 LOCK OFF
+            if (mounted) setState(() {});
+          });
+        }
+        return CustomScaffold(
+          canPopWithSwipe: true,
+          padding: EdgeInsets.zero,
+          resizeToAvoidBottomInset: false,
+          appBar: EmptyAppBar(
+            context: context,
+            backgroundColor: Colors.black,
+          ),
+          body: _buildMainContent(theme, loading),
+        );
+      },
     );
   }
 
@@ -809,106 +790,123 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
   }
 
   Widget _buildContentContainer(ThemeData theme, bool loading) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      height: ResponsiveFlutter.of(context).hp(130),
-      color: Colors.black.withOpacity(0.68),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 20),
-            _buildDragHandle(theme),
-            const SizedBox(height: 20),
-            _buildPaymentSummary(theme),
-            const SizedBox(height: 16),
-            if (loading) _buildLoadingIndicator(theme),
-            if (detail?.ebarimt?.isNotEmpty ?? false) _buildVatSelection(theme),
+    return Row(
+      children: [
+        Expanded(
+            flex: 2,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              height: ResponsiveFlutter.of(context).hp(130),
+              color: Colors.black.withOpacity(0.68),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 20),
+                    _buildDragHandle(theme),
+                    const SizedBox(height: 20),
+                    _buildPaymentSummary(theme),
+                    const SizedBox(height: 16),
+                    if (loading) _buildLoadingIndicator(theme),
+                    if (detail?.ebarimt?.isNotEmpty ?? false) _buildVatSelection(theme),
 
-            // Promo code field
-            if (selectedMerch == null && !isCSOX)
-              PromoCodeField(
-                controller: promoCode,
-                promoCode: promoNo,
-                errorMessage: promoWrong,
-                theme: theme,
-                onCheckPromo: _checkPromo,
-                onClearPromo: _clearPromo,
-                onChangePromo: _changePromo,
+                    // Promo code field
+                    if (selectedMerch == null)
+                      PromoCodeField(
+                        controller: promoCode,
+                        promoCode: promoNo,
+                        errorMessage: promoWrong,
+                        theme: theme,
+                        onCheckPromo: _checkPromo,
+                        onClearPromo: _clearPromo,
+                        onChangePromo: _changePromo,
+                      ),
+
+                    const SizedBox(height: 16),
+                    _buildPaymentMethodsSection(theme),
+
+                    if ((selectedPaymentMethod?.type == 'pos' || selectedPaymentMethod?.type == 'wire') && invoice != null)
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CustomButton(
+                            width: 500,
+                            onTap: () {
+                              _checkPayment();
+                            },
+                            text: 'Төлбөр баталгаажуулах',
+                          ),
+                          InkWell(
+                              onTap: () async {
+                                await _deleteInvoice();
+                              },
+                              child: Container(
+                                width: 500,
+                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+                                decoration: BoxDecoration(
+                                    color: Colors.red.withValues(alpha: 0.7),
+                                    borderRadius: BorderRadius.circular(24),
+                                    border: Border.all(color: Colors.white)),
+                                child: Text(
+                                  'Цуцлах',
+                                  style: TextStyles.textFt16Med.textColor(Colors.white),
+                                  textAlign: TextAlign.center,
+                                ),
+                              )),
+                          InkWell(
+                              onTap: () async {
+                                final List<String> allSeats =
+                                    (data!["templates"] as List).expand((template) => template["seats"] as List<String>).toList();
+                                await printerService.printTicket(
+                                  seats: allSeats,
+                                  eventName: cyrtranslit.cyr2Lat(detail?.name ?? '', langCode: "mn"),
+                                  eventDate: Func.toDateStr(detail?.startDate ?? DateTime.now().toString()),
+                                );
+
+                                // NavKey.navKey.currentState!.pushNamed(testPrintRoute, arguments: {
+                                //   "name": cyrtranslit.cyr2Lat(detail?.name ?? '', langCode: "mn"),
+                                //   "seats": allSeats,
+                                //   "date": Func.toDateStr(detail?.startDate ?? DateTime.now().toString())
+                                // });
+                                // await _deleteInvoice();
+                              },
+                              child: Container(
+                                margin: EdgeInsets.only(top: 24),
+                                width: 500,
+                                padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 12),
+                                decoration: BoxDecoration(
+                                    color: Colors.blue.withValues(alpha: 0.1),
+                                    borderRadius: BorderRadius.circular(24),
+                                    border: Border.all(color: Colors.white)),
+                                child: Text(
+                                  'Хэвлэх',
+                                  style: TextStyles.textFt16Med.textColor(Colors.white),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ))
+                        ],
+                      ),
+
+                    if (choosePaymentMethod && selectedPaymentMethod?.type == 'qpay') _buildBankSelectionGrid(theme),
+
+                    // _halveWidget(theme),
+                    const SizedBox(height: 60),
+                  ],
+                ),
               ),
-
-            const SizedBox(height: 16),
-            _buildPaymentMethodsSection(theme),
-
-            if ((selectedPaymentMethod?.type == 'pos' || selectedPaymentMethod?.type == 'wire') && invoice != null)
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CustomButton(
-                    width: 500,
-                    onTap: () {
-                      _checkPayment();
-                    },
-                    text: 'Төлбөр баталгаажуулах',
-                  ),
-                  InkWell(
-                      onTap: () async {
-                        await _deleteInvoice();
-                      },
-                      child: Container(
-                        width: 500,
-                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
-                        decoration: BoxDecoration(
-                            color: Colors.red.withValues(alpha: 0.7),
-                            borderRadius: BorderRadius.circular(24),
-                            border: Border.all(color: Colors.white)),
-                        child: Text(
-                          'Цуцлах',
-                          style: TextStyles.textFt16Med.textColor(Colors.white),
-                          textAlign: TextAlign.center,
-                        ),
-                      )),
-                  InkWell(
-                      onTap: () async {
-                        final allSeats = (data!["templates"] as List).expand((template) => template["seats"] as List).toList();
-                        NavKey.navKey.currentState!.pushNamed(testPrintRoute, arguments: {
-                          "name": cyrtranslit.cyr2Lat(detail?.name ?? '', langCode: "mn"),
-                          "seats": allSeats,
-                          "date": Func.toDateStr(detail?.startDate ?? DateTime.now().toString())
-                        });
-                        // await _deleteInvoice();
-                      },
-                      child: Container(
-                        margin: EdgeInsets.only(top: 24),
-                        width: 500,
-                        padding: const EdgeInsets.symmetric(horizontal: 46, vertical: 12),
-                        decoration: BoxDecoration(
-                            color: Colors.blue.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(24),
-                            border: Border.all(color: Colors.white)),
-                        child: Text(
-                          'Хэвлэх',
-                          style: TextStyles.textFt16Med.textColor(Colors.white),
-                          textAlign: TextAlign.center,
-                        ),
-                      ))
-                ],
-              ),
-
-            if (choosePaymentMethod && selectedPaymentMethod?.type == 'qpay') _buildBankSelectionGrid(theme),
-
-            // _halveWidget(theme),
-            const SizedBox(height: 60),
-          ],
-        ),
-      ),
+            )),
+        const Expanded(
+          child: HoldInvoiceScreen(),
+        )
+      ],
     );
   }
 
   Widget _buildDragHandle(ThemeData theme) {
     return InkWell(
         onTap: () {
+          Provider.of<ProviderHold>(context, listen: false).clearCurrentInvoice();
           NavKey.navKey.currentState!.pop();
         },
         child: SizedBox(
@@ -954,37 +952,6 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
   }
 
   Widget _buildTotalAmountDisplay(ThemeData theme) {
-    // Regular price
-
-    if (isCSOX) {
-      if (data!['qty'] < 5) {
-        return Text(
-          Func.toMoneyStr(_totalAmtCalc()),
-          style: TextStyles.textFt24Bold.textColor(theme.colorScheme.whiteColor),
-        );
-      } else {
-        return Column(
-          children: [
-            // Original price (strikethrough)
-            Text(
-              Func.toMoneyStr(data!['qty'] * 2000),
-              style: TextStyle(
-                  decoration: TextDecoration.lineThrough,
-                  decorationThickness: 1.4,
-                  decorationColor: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w700,
-                  color: theme.colorScheme.whiteColor),
-            ),
-            // Discounted price
-            Text(
-              Func.toMoneyStr(Utils.rollPrice(data!['qty'])),
-              style: TextStyles.textFt24Bold.textColor(theme.colorScheme.discountColor),
-            ),
-          ],
-        );
-      }
-    }
     if (promoNo == null) {
       return Text(
         Func.toMoneyStr(_totalAmtCalc()),
@@ -1037,70 +1004,28 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
               ),
             ]),
           )
-        : isCSOX
-            ? Container(
-                margin: const EdgeInsets.only(bottom: 16),
-                child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                  RichText(
-                    text: TextSpan(
-                        text: 'Эрх',
-                        style: TextStyles.textFt14Med.textColor(theme.colorScheme.ticketDescColor.withValues(alpha: 0.7)),
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: ' x ${data!['qty']}',
-                            style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor),
-                          ),
-                        ]),
-                  ),
-                  Text(
-                    Func.toMoneyStr(_totalAmtCalc()),
-                    style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor),
-                  ),
-                ]),
-              )
-            : isSteamTopUp
-                ? Container(
-                    margin: const EdgeInsets.only(bottom: 16),
-                    child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                      RichText(
-                        text: TextSpan(
-                            text: 'Steam цэнэглэлт',
-                            style: TextStyles.textFt14Med.textColor(theme.colorScheme.ticketDescColor.withValues(alpha: 0.7)),
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: '',
-                                style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor),
-                              ),
-                            ]),
-                      ),
-                      Text(
-                        Func.toMoneyStr(_totalAmtCalc()),
-                        style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor),
-                      ),
-                    ]),
-                  )
-                : ListView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    padding: EdgeInsets.zero,
-                    itemCount: data!['templates'].length,
-                    itemBuilder: (context, index) {
-                      final templateId = data!['templates'][index]['templateId'];
-                      final seats = data!['templates'][index]['seats'] is List<dynamic>
-                          ? data!['templates'][index]['seats'].length
-                          : data!['templates'][index]['seats'];
+        : ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            padding: EdgeInsets.zero,
+            itemCount: data!['templates'].length,
+            itemBuilder: (context, index) {
+              final templateId = data!['templates'][index]['templateId'];
+              final seats = data!['templates'][index]['seats'] is List<dynamic>
+                  ? data!['templates'][index]['seats'].length
+                  : data!['templates'][index]['seats'];
 
-                      final originalPrice = _getTicketPrice(templateId, seats);
-                      final discountedPrice = promoNo != null ? _getTicketPrice(templateId, seats, promo: promoNo) : null;
+              final originalPrice = _getTicketPrice(templateId, seats);
+              final discountedPrice = promoNo != null ? _getTicketPrice(templateId, seats, promo: promoNo) : null;
 
-                      return TicketSummaryItem(
-                        name: _getTicketName(templateId),
-                        quantity: seats,
-                        originalPrice: originalPrice,
-                        discountedPrice: discountedPrice,
-                        theme: theme,
-                      );
-                    });
+              return TicketSummaryItem(
+                name: _getTicketName(templateId),
+                quantity: seats,
+                originalPrice: originalPrice,
+                discountedPrice: discountedPrice,
+                theme: theme,
+              );
+            });
   }
 
   Widget _buildVatSelection(ThemeData theme) {
@@ -1180,3 +1105,60 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
     );
   }
 }
+
+
+
+  // List<ApplePayItemDetail> _buildApplePayItems() {
+  //   List<ApplePayItemDetail> applelist = [];
+
+  //   // Add each ticket item
+  //   for (int i = 0; i < data!['templates'].length; i++) {
+  //     String label = _getTicketName(data!['templates'][i]['templateId']);
+  //     int amt = _getTicketPrice(data!['templates'][i]['templateId'], data!['templates'][i]['seats'], promo: promoNo).toInt();
+
+  //     applelist.add(ApplePayItemDetail(label: label, amount: amt.toDouble()));
+  //   }
+
+  //   // Add total
+  //   num totalAmt = _totalAmtCalc(coupon: promoNo);
+  //   applelist.add(ApplePayItemDetail(label: 'Total', amount: totalAmt.toDouble()));
+
+  //   return applelist;
+  // }
+
+  // Future<void> _handleApplePay() async {
+  //   // Validate requirements first
+  //   if (selectedVatType == -1 && (detail?.ebarimt?.isNotEmpty ?? false)) {
+  //     application.showToastAlert('НӨАТ сонгоно уу');
+  //     return;
+  //   }
+
+  //   if (selectedVatType == 1 && ebarimtOrgName.isEmpty) {
+  //     application.showToastAlert('Байгууллагын регистер ээ оруулна уу.');
+  //     return;
+  //   }
+
+  //   // Delete existing invoice if any
+  //   if (invoice != null) {
+  //     await _deleteInvoice();
+  //   }
+
+  //   // Set selected payment method (Apple Pay)
+  //   setState(() {
+  //     choosePaymentMethod = true;
+  //     selectedPaymentMethod = payMethodsList.firstWhere((method) => method.type == 'applepay');
+  //   });
+
+  //   // Create invoice
+  //   await _createInvoice(selectedPaymentMethod!.type!);
+
+  //   // Prepare Apple Pay
+  //   List<ApplePayItemDetail> list = _buildApplePayItems();
+  //   final token = await application.getAccessToken();
+  //   Future.delayed(const Duration(seconds: 3), () async {
+  //     await ApplePayHandler.initApplePay(orderId: invoice!.id!, items: list, token: token);
+  //     await ApplePayHandler.presentApplePay();
+  //   });
+  //   // Initialize and present Apple Pay
+  // }
+
