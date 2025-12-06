@@ -128,29 +128,37 @@ class Utils {
   }
 
   static String formatSeatCode(String seatCode, String type) {
-    RegExp regExp = RegExp(r'(?:F(\d+)-S([A-Z0-9]+)-)?R(\d+)-s(\d+)');
-    Match? match = regExp.firstMatch(seatCode);
-    if (match != null) {
-      String floor = match.group(1) ?? '';
-      String sector = match.group(2) ?? '';
-      String row = match.group(3) ?? '';
-      String seat = match.group(4) ?? '';
+    // Split into parts: ["SF2", "R1", "s9"]
+    final parts = seatCode.split('-');
 
-      switch (type) {
-        case 'floor':
-          return floor;
-        case 'sector':
-          return sector;
-        case 'seat':
-          return seat;
-        case 'row':
-          return row;
-        default:
-          return '*';
+    String floor = '*';
+    String sector = '*';
+    String row = '*';
+    String seat = '*';
+
+    for (var part in parts) {
+      if (part.startsWith('F')) {
+        floor = part.substring(1); // F2 → 2
+      } else if (part.startsWith('S')) {
+        sector = part.substring(1); // SF2 → F2
+      } else if (part.startsWith('R')) {
+        row = part.substring(1); // R1 → 1
+      } else if (part.startsWith('s')) {
+        seat = part.substring(1); // s9 → 9
       }
-      // return 'Floor: $floor, Sector: $sector, Seat: $seat';
-    } else {
-      return '';
+    }
+
+    switch (type) {
+      case 'floor':
+        return floor;
+      case 'sector':
+        return sector;
+      case 'row':
+        return row;
+      case 'seat':
+        return seat;
+      default:
+        return '*';
     }
   }
 

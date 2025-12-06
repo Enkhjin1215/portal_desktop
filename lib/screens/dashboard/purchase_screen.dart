@@ -5,6 +5,7 @@ import 'package:portal/components/custom_app_bar.dart';
 import 'package:portal/components/custom_scaffold.dart';
 import 'package:portal/helper/responsive_flutter.dart';
 import 'package:portal/helper/text_styles.dart';
+import 'package:portal/helper/utils.dart';
 import 'package:portal/provider/theme_notifier.dart';
 import 'package:portal/screens/cart/ticket/ticketShape/gradient_text.dart';
 import 'package:portal/screens/dashboard/purchase_model.dart';
@@ -156,10 +157,22 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                                               const Spacer(),
 
                                               // Date
-                                              GradientText(
-                                                formatDateTime(item.updatedAt.toString()),
-                                                style: TextStyles.textFt18Bold,
-                                              ),
+                                              Row(
+                                                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  GradientText(
+                                                    formatDateTime(item.updatedAt.toString()),
+                                                    style: TextStyles.textFt18Bold,
+                                                  ),
+                                                  const Expanded(
+                                                    child: SizedBox(),
+                                                  ),
+                                                  if (item.seatId != '') item2('Давхар', Utils.formatSeatCode(item.seatId, 'floor'), theme),
+                                                  if (item.seatId != '') item2('Сектор', Utils.formatSeatCode(item.seatId, 'sector'), theme),
+                                                  if (item.seatId != '') item2('Эгнээ', Utils.formatSeatCode(item.seatId, 'row'), theme),
+                                                  if (item.seatId != '') item2('Суудал', Utils.formatSeatCode(item.seatId, 'seat'), theme),
+                                                ],
+                                              )
                                             ],
                                           ),
                                         ),
@@ -173,5 +186,22 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                         );
                       })))
             ])));
+  }
+
+  item2(String a, String b, ThemeData theme) {
+    return Container(
+        margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+        padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 6),
+        decoration: BoxDecoration(color: theme.colorScheme.greyText.withValues(alpha: 0.4), borderRadius: BorderRadius.circular(8)),
+        child: Center(
+            child: Column(
+          children: [
+            Text(a, style: TextStyles.textFt12Med.textColor(theme.colorScheme.whiteColor)),
+            const SizedBox(
+              height: 1,
+            ),
+            Text(b, style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor))
+          ],
+        )));
   }
 }

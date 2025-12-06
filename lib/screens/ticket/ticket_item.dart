@@ -344,27 +344,24 @@ Widget ticketBody(BuildContext context, ThemeData theme, bool isOver, bool isAft
       const SizedBox(
         height: 12,
       ),
-      // ticket.hideSoldNumbers == null || (ticket.hideSoldNumbers?.isEmpty ?? false)
-      //     ? Row(
-      //         children: [
-      //           Text(
-      //             getTranslated(context, 'left'),
-      //             style: TextStyles.textFt14Med.textColor(theme.colorScheme.ticketItemColor),
-      //           ),
-      //           const Expanded(
-      //             child: SizedBox(),
-      //           ),
-      //           SvgPicture.asset(Assets.miniTicket),
-      //           const SizedBox(
-      //             width: 8,
-      //           ),
-      //           RichText(
-      //             text:
-      //                 TextSpan(text: '${ticket.avl}', style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor), children: <TextSpan>[]),
-      //           ),
-      //         ],
-      //       )
-      //     : const SizedBox(),
+      Row(
+        children: [
+          Text(
+            getTranslated(context, 'left'),
+            style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor),
+          ),
+          const Expanded(
+            child: SizedBox(),
+          ),
+          SvgPicture.asset(Assets.miniTicket),
+          const SizedBox(
+            width: 8,
+          ),
+          RichText(
+            text: TextSpan(text: '${ticket.avl}', style: TextStyles.textFt14Med.textColor(theme.colorScheme.whiteColor), children: <TextSpan>[]),
+          ),
+        ],
+      ),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

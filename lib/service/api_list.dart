@@ -1,21 +1,21 @@
 class APILIST {
   // development
-  // static const baseUrl = 'http://192.168.1.33:3030/v1';
-  // static const authService = 'http://192.168.1.33:3030/v1';
+  // static const baseUrl = 'http://192.168.1.102:3030/v1';
+  // static const authService = 'http://192.168.1.102:3030/v1';
 
-  // static const baseUrl = 'https://client.portal.mn/v1';
+  static const baseUrl = 'https://client.portal.mn/v1';
 
-  // static const authService = 'https://client.portal.mn/v1';
+  static const authService = 'https://client.portal.mn/v1';
 
-  // static const adminUrl = 'https://admin.portal.mn/v1';
+  static const adminUrl = 'https://admin.portal.mn/v1';
 
-  static const authService = 'https://st-client.portal.mn/v1';
+  // static const authService = 'https://st-client.portal.mn/v1';
 
-  static const baseUrl = 'https://st-client.portal.mn/v1';
+  // static const baseUrl = 'https://st-client.portal.mn/v1';
 
-  static const adminUrl = 'https://st-admin.portal.mn/v1';
+  // static const adminUrl = 'https://st-admin.portal.mn/v1';
 
-  static const eventChooseSeat = 'https://stage.portal.mn/seat-picker/';
+  static const eventChooseSeat = 'https://portal.mn/seat-picker/';
 
   static const webUrl = 'https://www.portal.mn/';
 
@@ -95,7 +95,7 @@ class APILIST {
 
   static const ebarimtget = '$baseUrl/kass/ebarimt/';
 
-  static const promoCheck = '$baseUrl/promo/validate';
+  static const promoCheck = '$baseUrl/kass/validate-promo';
 
   static const ticketDivide = '$baseUrl/ticket/divide/';
 

@@ -495,7 +495,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
       int seatCount = seats.length;
 
       // No promo or promo for different template
-      if (promo == null || (promo.templateId!.isNotEmpty && promo.templateId != templateId)) {
+      if (promo == null || (promo.templateId!.isNotEmpty && !promo.templateId!.contains(templateId))) {
         return ticket.sellPrice!.amt! * seatCount;
       }
 
@@ -516,7 +516,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
           int quantity = int.parse(seats.toString());
 
           // No promo or promo for different template
-          if (promo == null || (promo.templateId!.isNotEmpty && promo.templateId != templateId)) {
+          if (promo == null || (promo.templateId!.isNotEmpty && !promo.templateId!.contains(templateId))) {
             return detail!.tickets![i].sellPrice!.amt! * quantity;
           }
 

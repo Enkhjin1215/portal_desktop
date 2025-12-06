@@ -99,13 +99,16 @@ class PrinterService {
   // ----------------------------------------------------------
   Future<void> _printUSB(List<String> seats, String eventName, String eventDate) async {
     try {
+      await _printerStream?.cancel();
       // scan printers
       await printerPlugin.getPrinters(connectionTypes: [ConnectionType.USB]);
 
       _printerStream = printerPlugin.devicesStream.listen((List<Printer> devices) {
         usbPrinters = devices;
       });
-
+      for (var printer in usbPrinters) {
+        usbPrinters.firstWhere((e) => e.name!.contains('80'));
+      }
       // wait a bit for scan to complete
       await Future.delayed(const Duration(seconds: 1));
 
