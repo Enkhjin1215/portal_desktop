@@ -12,12 +12,7 @@ class UsbPrinterBottomSheet extends StatefulWidget {
   final String eventName;
   final String eventDate;
 
-  const UsbPrinterBottomSheet({
-    super.key,
-    required this.seats,
-    required this.eventName,
-    required this.eventDate,
-  });
+  const UsbPrinterBottomSheet({super.key, required this.seats, required this.eventName, required this.eventDate});
 
   @override
   State<UsbPrinterBottomSheet> createState() => _UsbPrinterBottomSheetState();
@@ -92,10 +87,7 @@ class _UsbPrinterBottomSheetState extends State<UsbPrinterBottomSheet> {
       if (printerNames.isEmpty) {
         try {
           print('Trying: system_profiler SPUSBDataType');
-          final result = await Process.run(
-            'system_profiler',
-            ['SPUSBDataType', '-json'],
-          );
+          final result = await Process.run('system_profiler', ['SPUSBDataType', '-json']);
 
           if (result.exitCode == 0) {
             final output = result.stdout.toString();
@@ -146,10 +138,7 @@ class _UsbPrinterBottomSheetState extends State<UsbPrinterBottomSheet> {
             end tell
           ''';
 
-          final result = await Process.run(
-            'osascript',
-            ['-e', script],
-          );
+          final result = await Process.run('osascript', ['-e', script]);
 
           print('AppleScript exit code: ${result.exitCode}');
           print('AppleScript output: ${result.stdout}');
@@ -203,15 +192,11 @@ class _UsbPrinterBottomSheetState extends State<UsbPrinterBottomSheet> {
 
       List<int> bytes = [];
       bytes += generator.feed(1);
+      bytes += generator.feed(1);
 
       bytes += generator.text(
         'PORTAL.MN',
-        styles: const PosStyles(
-          align: PosAlign.center,
-          bold: true,
-          height: PosTextSize.size2,
-          width: PosTextSize.size2,
-        ),
+        styles: const PosStyles(align: PosAlign.center, bold: true, height: PosTextSize.size2, width: PosTextSize.size2),
       );
 
       bytes += generator.feed(1);
@@ -241,17 +226,9 @@ class _UsbPrinterBottomSheetState extends State<UsbPrinterBottomSheet> {
         bytes += generator.text('Seat ${i + 1}:', styles: const PosStyles(align: PosAlign.left, bold: true));
 
         // Extract values
-        final floorNum = data.entries
-            .firstWhere(
-              (e) => e.key.toUpperCase().startsWith('F'),
-              orElse: () => const MapEntry('', ''),
-            )
-            .value;
+        final floorNum = data.entries.firstWhere((e) => e.key.toUpperCase().startsWith('F'), orElse: () => const MapEntry('', '')).value;
 
-        final sectorEntry = data.entries.firstWhere(
-          (e) => e.key.toUpperCase().startsWith('S') && e.key != 's',
-          orElse: () => const MapEntry('', ''),
-        );
+        final sectorEntry = data.entries.firstWhere((e) => e.key.toUpperCase().startsWith('S') && e.key != 's', orElse: () => const MapEntry('', ''));
 
         final sectorLetter = sectorEntry.key.replaceFirst(RegExp(r'^S', caseSensitive: false), '');
         final sectorValue = sectorEntry.value;
@@ -277,9 +254,7 @@ class _UsbPrinterBottomSheetState extends State<UsbPrinterBottomSheet> {
       if (Platform.isMacOS) {
         if (selectedMacOSPrinter == null || selectedMacOSPrinter!.isEmpty) {
           if (mounted) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text("Please select a printer first.")),
-            );
+            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Please select a printer first.")));
           }
           return;
         }
@@ -303,10 +278,7 @@ class _UsbPrinterBottomSheetState extends State<UsbPrinterBottomSheet> {
           // ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(('File size: ${await printFile.length()} bytes'))));
 
           // Print using lp command
-          final result = await Process.run(
-            '/bin/bash',
-            ['-c', '/usr/bin/lp -d "${selectedMacOSPrinter!}" -o raw "${printFile.path}"'],
-          );
+          final result = await Process.run('/bin/bash', ['-c', '/usr/bin/lp -d "${selectedMacOSPrinter!}" -o raw "${printFile.path}"']);
 
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(('lp exit code: ${result.exitCode}'))));
           if (result.stdout.toString().isNotEmpty) {
@@ -328,22 +300,16 @@ class _UsbPrinterBottomSheetState extends State<UsbPrinterBottomSheet> {
 
           if (mounted) {
             if (result.exitCode == 0) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text("Printed via macOS CUPS successfully!")),
-              );
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Printed via macOS CUPS successfully!")));
               NavKey.navKey.currentState!.pushNamedAndRemoveUntil(homeRoute, (route) => false);
             } else {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text("Print error: ${result.stderr}")),
-              );
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Print error: ${result.stderr}")));
             }
           }
         } catch (e) {
           print('Print error: $e');
           if (mounted) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text("Print error: $e")),
-            );
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Print error: $e")));
           }
         }
 
@@ -353,9 +319,7 @@ class _UsbPrinterBottomSheetState extends State<UsbPrinterBottomSheet> {
       // ✅ Normal flow (Windows / Android / Linux)
       if (selectedPrinter == null) {
         if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text("Please select a printer first.")),
-          );
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Please select a printer first.")));
         }
         return;
       }
@@ -365,9 +329,7 @@ class _UsbPrinterBottomSheetState extends State<UsbPrinterBottomSheet> {
       await printerPlugin.disconnect(selectedPrinter!);
 
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("Printed successfully!")),
-        );
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Printed successfully!")));
         NavKey.navKey.currentState!.pushNamedAndRemoveUntil(homeRoute, (route) => false);
       }
     } catch (e) {
@@ -393,18 +355,12 @@ class _UsbPrinterBottomSheetState extends State<UsbPrinterBottomSheet> {
               width: 40,
               height: 5,
               margin: const EdgeInsets.only(bottom: 16),
-              decoration: BoxDecoration(
-                color: Colors.grey.shade400,
-                borderRadius: BorderRadius.circular(10),
-              ),
+              decoration: BoxDecoration(color: Colors.grey.shade400, borderRadius: BorderRadius.circular(10)),
             ),
 
             Text(
               Platform.isMacOS ? 'Available CUPS Printers' : 'Available USB Printers',
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
 
             const SizedBox(height: 12),
@@ -414,8 +370,8 @@ class _UsbPrinterBottomSheetState extends State<UsbPrinterBottomSheet> {
               child: isEmpty
                   ? const Center(child: Text("No printers found"))
                   : Platform.isMacOS
-                      ? _buildMacOSPrinterList()
-                      : _buildWindowsPrinterList(),
+                  ? _buildMacOSPrinterList()
+                  : _buildWindowsPrinterList(),
             ),
 
             const SizedBox(height: 16),
@@ -423,19 +379,11 @@ class _UsbPrinterBottomSheetState extends State<UsbPrinterBottomSheet> {
             Row(
               children: [
                 Expanded(
-                  child: OutlinedButton.icon(
-                    icon: const Icon(Icons.refresh),
-                    label: const Text("Rescan"),
-                    onPressed: _scanPrinters,
-                  ),
+                  child: OutlinedButton.icon(icon: const Icon(Icons.refresh), label: const Text("Rescan"), onPressed: _scanPrinters),
                 ),
                 const SizedBox(width: 12),
                 Expanded(
-                  child: ElevatedButton.icon(
-                    icon: const Icon(Icons.print),
-                    label: const Text("Print"),
-                    onPressed: _connectAndPrint,
-                  ),
+                  child: ElevatedButton.icon(icon: const Icon(Icons.print), label: const Text("Print"), onPressed: _connectAndPrint),
                 ),
               ],
             ),

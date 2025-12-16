@@ -26,10 +26,10 @@ class LogRegStepOne extends StatefulWidget {
 }
 
 class _LogRegStepOneState extends State<LogRegStepOne> {
-  // final TextEditingController _mailController = TextEditingController(text: "renchinochir.u@gmail.com");
-  // final TextEditingController _pwdController = TextEditingController(text: "Test@123@123");
-  final TextEditingController _mailController = TextEditingController(text: "discodisco@mailinator.com");
-  final TextEditingController _pwdController = TextEditingController(text: "DrC5(ACM");
+  final TextEditingController _mailController = TextEditingController(text: "renchinochir.u@gmail.com");
+  final TextEditingController _pwdController = TextEditingController(text: "Test@123@123");
+  // final TextEditingController _mailController = TextEditingController(text: "discodisco@mailinator.com");
+  // final TextEditingController _pwdController = TextEditingController(text: "DrC5(ACM");
   // final TextEditingController _mailController = TextEditingController(text: "");
   // final TextEditingController _pwdController = TextEditingController(text: "");
 
