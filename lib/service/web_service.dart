@@ -70,6 +70,9 @@ class Webservice {
         throw Exception(result.error);
       }
     } catch (e) {
+           ScaffoldMessenger.of(context).showSnackBar(
+               SnackBar(content: Text( "Web Service exception:$e")),
+            );
       debugPrint('Web Service exception: $e');
       if (context.mounted) {
         Provider.of<ProviderCoreModel>(context, listen: false).setLoading(false);

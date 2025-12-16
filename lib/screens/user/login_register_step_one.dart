@@ -26,13 +26,14 @@ class LogRegStepOne extends StatefulWidget {
 }
 
 class _LogRegStepOneState extends State<LogRegStepOne> {
-  // final TextEditingController _mailController = TextEditingController(text: "renchinochir.u@gmail.com");
+  // final TextEditingController _mailController = TextEditingController(text: "renc inochir.u@gmail.com");
   // final TextEditingController _pwdController = TextEditingController(text: "Test@123@123");
   final TextEditingController _mailController = TextEditingController(text: "discodisco@mailinator.com");
   final TextEditingController _pwdController = TextEditingController(text: "DrC5(ACM");
   // final TextEditingController _mailController = TextEditingController(text: "");
   // final TextEditingController _pwdController = TextEditingController(text: "");
-
+  // enkhjin@mongolnft.com
+  // 128443
   int userType = 0;
   bool canBack = false;
   @override
@@ -74,7 +75,7 @@ class _LogRegStepOneState extends State<LogRegStepOne> {
   login() async {
     // email = await application.getEmail();
     // String password = await application.getpassword();
-
+try{
     final Map<String, dynamic> data = <String, dynamic>{};
     data['email'] = _mailController.text;
     data['password'] = _pwdController.text;
@@ -92,6 +93,11 @@ class _LogRegStepOneState extends State<LogRegStepOne> {
         NavKey.navKey.currentState?.pushNamedAndRemoveUntil(homeRoute, (route) => false);
       }
     });
+    }catch(e){
+           ScaffoldMessenger.of(context).showSnackBar(
+               SnackBar(content: Text("$e")),
+            );
+}
   }
 
   @override
@@ -103,7 +109,7 @@ class _LogRegStepOneState extends State<LogRegStepOne> {
       backgroundColor: theme.colorScheme.inputBackground,
       body: Container(
           // width: ResponsiveFlutter.of(context).wp(150),
-          // height: ResponsiveFlutter.of(context).hp(100),
+          // height: ResponsiveFlutter.of(cont ext).hp(100),
           decoration: const BoxDecoration(color: Colors.red, image: DecorationImage(image: AssetImage(Assets.onboardBackground), fit: BoxFit.fill)),
           child: Center(
             child: ConstrainedBox(
