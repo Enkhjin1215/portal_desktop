@@ -16,7 +16,7 @@ class Promo {
   DateTime? createdAt;
   DateTime? updatedAt;
   int? v;
-  String? templateId;
+  List<dynamic>? templateId;
   String? eventId;
 
   Promo(
@@ -50,7 +50,7 @@ class Promo {
         updatedAt: json['updatedAt'] != null ? DateTime.parse(json['updatedAt']) : null,
         eventId: json['eventId'] ?? '',
         v: json['__v'],
-        templateId: json['templateId'] ?? '');
+        templateId: json['templateId'] ?? []);
   }
 
   Map<String, dynamic> toJson() {

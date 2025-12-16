@@ -54,29 +54,30 @@ class TicketItem2 {
   final SellPrice sellPrice;
   final DateTime createdAt;
   final DateTime updatedAt;
+  final String seatId;
 
-  TicketItem2({
-    required this.id,
-    required this.eventId,
-    required this.templateId,
-    required this.type,
-    required this.isSeat,
-    required this.sellPrice,
-    required this.createdAt,
-    required this.updatedAt,
-  });
+  TicketItem2(
+      {required this.id,
+      required this.eventId,
+      required this.templateId,
+      required this.type,
+      required this.isSeat,
+      required this.sellPrice,
+      required this.createdAt,
+      required this.updatedAt,
+      required this.seatId});
 
   factory TicketItem2.fromJson(Map<String, dynamic> json) {
     return TicketItem2(
-      id: json['_id'] as String,
-      eventId: Event.fromJson(json['eventId'] as Map<String, dynamic>),
-      templateId: json['templateId'] as String,
-      type: json['type'] as String,
-      isSeat: json['isSeat'] as bool,
-      sellPrice: SellPrice.fromJson(json['sellPrice'] as Map<String, dynamic>),
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-    );
+        id: json['_id'] as String,
+        eventId: Event.fromJson(json['eventId'] as Map<String, dynamic>),
+        templateId: json['templateId'] as String,
+        type: json['type'] as String,
+        isSeat: json['isSeat'] as bool,
+        sellPrice: SellPrice.fromJson(json['sellPrice'] as Map<String, dynamic>),
+        createdAt: DateTime.parse(json['createdAt'] as String),
+        updatedAt: DateTime.parse(json['updatedAt'] as String),
+        seatId: json['seatId'] ?? '');
   }
 
   Map<String, dynamic> toJson() {

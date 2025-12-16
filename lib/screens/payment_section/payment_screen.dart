@@ -30,6 +30,7 @@ import 'package:portal/screens/payment_section/payment_method_item.dart';
 import 'package:portal/screens/payment_section/payment_services.dart';
 import 'package:portal/screens/payment_section/promo_code_field.dart';
 import 'package:portal/screens/payment_section/ticket_summary_item.dart';
+import 'package:portal/screens/printer/bottomsheet_printer.dart';
 import 'package:portal/screens/printer/printer_service.dart';
 import 'package:portal/service/response.dart';
 import 'package:portal/service/web_service.dart';
@@ -495,7 +496,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
       int seatCount = seats.length;
 
       // No promo or promo for different template
-      if (promo == null || (promo.templateId!.isNotEmpty && promo.templateId != templateId)) {
+      if (promo == null || (promo.templateId!.isNotEmpty && !promo.templateId!.contains(templateId))) {
         return ticket.sellPrice!.amt! * seatCount;
       }
 
@@ -516,7 +517,7 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
           int quantity = int.parse(seats.toString());
 
           // No promo or promo for different template
-          if (promo == null || (promo.templateId!.isNotEmpty && promo.templateId != templateId)) {
+          if (promo == null || (promo.templateId!.isNotEmpty && !promo.templateId!.contains(templateId))) {
             return detail!.tickets![i].sellPrice!.amt! * quantity;
           }
 
@@ -858,11 +859,25 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
                               onTap: () async {
                                 final List<String> allSeats =
                                     (data!["templates"] as List).expand((template) => template["seats"] as List<String>).toList();
-                                await printerService.printTicket(
-                                  seats: allSeats,
-                                  eventName: cyrtranslit.cyr2Lat(detail?.name ?? '', langCode: "mn"),
-                                  eventDate: Func.toDateStr(detail?.startDate ?? DateTime.now().toString()),
+
+                                showModalBottomSheet(
+                                  context: context,
+                                  isScrollControlled: true,
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                                  ),
+                                  builder: (_) => UsbPrinterBottomSheet(
+                                    seats: allSeats,
+                                    eventName: cyrtranslit.cyr2Lat(detail?.name ?? '', langCode: "mn"),
+                                    eventDate: Func.toDateStr(detail?.startDate ?? DateTime.now().toString()),
+                                  ),
                                 );
+
+                                // await printerService.printTicket(
+                                //   seats: allSeats,
+                                //   eventName: cyrtranslit.cyr2Lat(detail?.name ?? '', langCode: "mn"),
+                                //   eventDate: Func.toDateStr(detail?.startDate ?? DateTime.now().toString()),
+                                // );
 
                                 // NavKey.navKey.currentState!.pushNamed(testPrintRoute, arguments: {
                                 //   "name": cyrtranslit.cyr2Lat(detail?.name ?? '', langCode: "mn"),
