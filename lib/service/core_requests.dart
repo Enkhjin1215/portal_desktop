@@ -19,29 +19,29 @@ class CoreRequests {
         }
         if (!only) {
           debugPrint('daraagiin huseltiig duudna');
-          sentFCMToken(context);
+          // sentFCMToken(context);
         }
       });
     }
   }
 
-  sentFCMToken(BuildContext context) async {
-    bool isSent = Provider.of<ProviderCoreModel>(context, listen: false).getIsSentFCMToken();
-    String token = await application.getPushNotifToken() ?? '';
-    int userType = await application.getUserType();
-    if (userType < 2) {
-      print('guest');
-    } else {
-      if (!isSent && token != '') {
-        Map<String, dynamic> data = {'fcmToken': token};
-        await Webservice().loadPatch(Response.sendFCMToken, context, data).then((response) {
-          if (context.mounted) {
-            Provider.of<ProviderCoreModel>(context, listen: false).setIsSentFCMToken(true);
-          }
-        });
-      }
-    }
-  }
+  // sentFCMToken(BuildContext context) async {
+  //   bool isSent = Provider.of<ProviderCoreModel>(context, listen: false).getIsSentFCMToken();
+  //   String token = await application.getPushNotifToken() ?? '';
+  //   int userType = await application.getUserType();
+  //   if (userType < 2) {
+  //     print('guest');
+  //   } else {
+  //     if (!isSent && token != '') {
+  //       Map<String, dynamic> data = {'fcmToken': token};
+  //       await Webservice().loadPatch(Response.sendFCMToken, context, data).then((response) {
+  //         if (context.mounted) {
+  //           Provider.of<ProviderCoreModel>(context, listen: false).setIsSentFCMToken(true);
+  //         }
+  //       });
+  //     }
+  //   }
+  // }
 
   getWallet(BuildContext context, {bool only = false}) async {
     await Webservice().loadGet(WalletList.getWalletList, context, parameter: '').then((response) {
