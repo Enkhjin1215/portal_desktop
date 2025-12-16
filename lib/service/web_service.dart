@@ -38,7 +38,7 @@ final client = IOClient(HttpClient()..badCertificateCallback = (X509Certificate 
 
 /// Main service class for handling API requests.
 class Webservice {
-  final _client = client;
+  final _client = http.Client();
 
   /// Makes a POST request to the API.
   Future<dynamic> loadPost<T>(Resource<T> resource, BuildContext context, dynamic body, {String parameter = ''}) async {
