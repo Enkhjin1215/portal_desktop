@@ -196,62 +196,31 @@ class _HomeScreenState extends State<HomeScreen> {
               //       ),
               //     )),
               const Padding(padding: EdgeInsets.symmetric(horizontal: 20), child: Event()),
-              Row(
-                children: [
-                  Expanded(
-                    child: CachedNetworkImage(
-                      imageUrl: 'https://images.pexels.com/photos/29531041/pexels-photo-29531041.jpeg',
-                      height: 200,
-                      width: double.maxFinite,
-                      fit: BoxFit.cover,
-                      errorWidget: (context, url, error) {
-                        return Container(
-                          width: double.maxFinite,
-                          height: 200,
-                          color: Colors.black54, // арын фон (заавал биш)
-                          alignment: Alignment.center,
-                          child: Text(
-                            '$url :===:${error.toString()}',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                  Expanded(
-                    child: Image.network(
-                      'https://images.pexels.com/photos/28722060/pexels-photo-28722060.jpeg',
-                      height: 200,
-                    ),
-                  )
-                ],
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      height: 200,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: CachedNetworkImageProvider('https://images.pexels.com/photos/35104428/pexels-photo-35104428.jpeg'),
-                          fit: BoxFit.cover,
-                        ),
+
+              CachedNetworkImage(
+                imageUrl: 'https://images.pexels.com/photos/29531041/pexels-photo-29531041.jpeg',
+                height: 100,
+                width: 200,
+                fit: BoxFit.cover,
+                errorWidget: (context, url, error) {
+                  return Container(
+                    width: double.maxFinite,
+                    height: 200,
+                    color: Colors.black54, // арын фон (заавал биш)
+                    alignment: Alignment.center,
+                    child: Text(
+                      '$url :===:${error.toString()}',
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: SvgPicture.network(
-                      'https://www.svgrepo.com/show/529852/sale-square.svg',
-                      height: 200,
-                    ),
-                  )
-                ],
+                  );
+                },
               ),
+
               const SizedBox(
                 height: 80,
               )

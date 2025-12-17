@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:app_links/app_links.dart';
 import 'package:flutter/gestures.dart';
@@ -21,12 +22,11 @@ import 'package:portal/provider/theme_notifier.dart';
 import 'package:portal/router/app_router.dart';
 import 'package:portal/router/route_path.dart';
 import 'package:portal/screens/cart/popup/TicketPopup.dart';
-import 'package:portal/service/firebase_notification.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  HttpOverrides.global = MyHttpOverrides();
   GestureBinding.instance.resamplingEnabled = true;
   bool isDark = await application.getThemeType();
   final core = ProviderCoreModel();
@@ -226,4 +226,11 @@ void configLoading() {
     ..userInteractions = true;
 
   //..customAnimation = CustomAnimation();
+}
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)..badCertificateCallback = (X509Certificate cert, String host, int port) => true;
+  }
 }
