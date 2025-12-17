@@ -104,6 +104,7 @@ class PrinterService {
       await printerPlugin.getPrinters(connectionTypes: [ConnectionType.USB]);
 
       _printerStream = printerPlugin.devicesStream.listen((List<Printer> devices) {
+        print("testtttt : ${devices.length}");
         usbPrinters = devices;
       });
       for (var printer in usbPrinters) {
@@ -113,19 +114,21 @@ class PrinterService {
       await Future.delayed(const Duration(seconds: 1));
 
       if (usbPrinters.isEmpty) {
-        throw Exception("USB printer not found");
+        // throw Exception("USB printer not found");
+        // _printUSB(seats, eventName, eventDate);
       }
-
-      final Printer printer = usbPrinters.first;
+   
+      final Printer printer = usbPrinters.firstWhere((e)=>e.name!.contains('80'));
       final bytes = await _buildPrintBytes(seats, eventName, eventDate);
 
       await printerPlugin.connect(printer);
       await printerPlugin.printData(printer, bytes);
       await printerPlugin.disconnect(printer);
     } catch (e) {
+      print("EXCEPTION PRINT:$e");
       rethrow;
     } finally {
-      dispose();
+          dispose();
     }
   }
 
