@@ -289,10 +289,18 @@ class _PaymentScreenState extends State<PaymentScreen> with WidgetsBindingObserv
                   InkWell(
                       onTap: () async {
                         final List<String> allSeats = (data!["templates"] as List).expand((template) => template["seats"] as List<String>).toList();
-                        await printerService.printTicket(
-                          seats: allSeats,
-                          eventName: cyrtranslit.cyr2Lat(detail?.name ?? '', langCode: "mn"),
-                          eventDate: Func.toDateStr(detail?.startDate ?? DateTime.now().toString()),
+
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                          ),
+                          builder: (_) => UsbPrinterBottomSheet(
+                            seats: allSeats,
+                            eventName: cyrtranslit.cyr2Lat(detail?.name ?? '', langCode: "mn"),
+                            eventDate: Func.toDateStr(detail?.startDate ?? DateTime.now().toString()),
+                          ),
                         );
                         // await _deleteInvoice();
                       },
